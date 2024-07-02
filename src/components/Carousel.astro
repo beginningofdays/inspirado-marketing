@@ -1,0 +1,100 @@
+---
+import main from '../js/main.js';
+---
+
+<div class="d-flex flex-column">
+    <div class="">
+        <section class="component-carousel">
+            <!-- Slider main container -->
+            <div class="swiper">
+              <!-- Additional required wrapper -->
+              <div class="swiper-wrapper">
+                <!-- Slides -->
+                <div class="swiper-slide">
+                  <img src="https://cdn.pixabay.com/photo/2015/04/19/08/32/marguerite-729510__480.jpg" alt="flower 1" />
+                  <div class="image-text">
+                    <h3>Image 1</h3>
+                    <p>Subtitle text</p>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <img src="https://cdn.pixabay.com/photo/2014/02/27/16/10/tree-276014_960_720.jpg" alt="flower 2" />
+                  <div class="image-text">Image 2</div>
+                </div>
+                <div class="swiper-slide">
+                  <img src="https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885_960_720.jpg" alt="flower 3" />
+                  <div class="image-text">Image 3</div>
+                </div>
+                ...
+              </div>
+              <!-- If we need pagination -->
+              <div class="swiper-pagination"></div>
+        
+              <!-- If we need navigation buttons -->
+              <div class="swiper-button-prev"></div>
+              <div class="swiper-button-next"></div>
+        
+              <!-- If we need scrollbar
+              <div class="swiper-scrollbar"></div> -->
+            </div>
+            </section>
+          <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+         
+    </div>
+    <div class="p-2">List of the Top Ireland Digital Marketing Companies</div>
+</div>
+
+
+<style>
+img {
+  vertical-align: middle;
+}
+
+/* carousel */
+.carousel-container {
+  width: 100%;
+  position: relative;
+  margin: 0 auto;
+}
+
+.swiper img {
+  width: 100%;
+  transition: all 0.3s ease;
+}
+
+.slide {
+  aspect-ratio: 16/9;
+  width: 100%;
+  display: none;
+  overflow: hidden;
+  justify-content: center;
+  align-items: center;
+}
+
+.main {
+  display: block;
+}
+
+.image-text {
+  position: absolute;
+  bottom: 20%;
+  left: 20%;
+  padding: 20px; 
+  font-size: 20px;
+  justify-content: center;
+  align-items: center;
+  color: rgb(255, 255, 255);
+  background: rgba(0, 0, 0, 0.5);
+}
+.image-text h3,
+.image-text p {
+  margin: 5px;
+}
+
+.swiper-pagination {
+  bottom: 50px;
+}
+
+
+
+</style>
