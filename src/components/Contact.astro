@@ -1,0 +1,51 @@
+---
+const {} = Astro.props;
+---
+
+<div class="flex flex-column mb-3">
+    <div class="component-contact">
+    
+    </div>
+    
+<div class="component-address">
+     <ul> 
+        <li>Contact Information</li>
+        <li>Maynooth</li>
+        <li>Co Kildare</li>
+        <li>W24 5677</li>
+        <li>Ireland</li>
+    </ul>
+</div>
+    
+<div class="component-map">
+    <div id="map">
+        <script>
+            const map = L.map('map').setView([53.38116, -6.59122],14); 
+            //Maynooth Town
+            L.marker([53.38116, -6.59122],{
+                draggable:true,
+                title: "Hover Text"
+            }).addTo(map).bindPopup('<h3>Inspirado Marketing</h3><p><ul><li>Maynooth</li><li>Co Kildare</li><li>W24 5677</li><li>Ireland</li></ul></p>')
+
+            L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                attribution: ''
+            }).addTo(map);
+            
+        </script>
+        </div>
+    </div>
+   </div>
+</div> 
+
+
+<style>
+    .component-map{
+        width:100%;
+        height:300px;
+    }
+
+    #map{
+       width:100%;
+       height:100%;
+    }
+</style>
