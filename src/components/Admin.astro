@@ -2,30 +2,80 @@
 const {imageURL} = Astro.props;
 ---
 
-
-
-<div class="flex flex-column mb-3">
+<div class="flex-column mb-3">
     <div class="">
         <p>Welcome to the Adminstration Page of my Inspirado Marketing</p>
         <p>Please use your administration creditionals to access the marketing Data</p> 
     </div>
-    <div class="component-admin-form"
-    <h1>Admin Logon</h1>
-    <form>
-        <!-- Email input -->
-        <div data-mdb-input-init class="form-outline mb-4">
-          <input type="email" id="form2Example1" class="form-control" />
-          <label class="form-label" for="form2Example1">Email address</label>
-        </div>
-      
-        <!-- Password input -->
-        <div data-mdb-input-init class="form-outline mb-4">
-          <input type="password" id="form2Example2" class="form-control" />
-          <label class="form-label" for="form2Example2">Password</label>
-        </div>
-      
-        <!-- Submit button -->
-        <button data-mdb-ripple-init type="button" class="btn btn-primary btn-block mb-4">Submit</button>
-      </form>
-    </div>
+    <div class="component-admin-form">
+    <h1>View and Filter Data</h1>
+    
+    <label for="filterCountry">Filter by Country:</label>
+    <input type="text" id="filterCountry"><br><br>
+    
+    <label for="filterEmail">Filter by Email:</label>
+    <input type="text" id="filterEmail"><br><br>
+    
+    <label for="filterDate">Filter by Date (YYYY-MM-DD):</label>
+    <input type="date" id="filterDate"><br><br>
+    
+    <button onclick="filterData()">Filter</button>
+    <button onclick="resetFilters()">Reset Filters</button>
+    
+    <h2>Data:</h2>
+    <div id="dataDisplay"></div>
 </div> 
+
+<script>
+function displayData(data) {
+  const dataDisplay = document.getElementById('dataDisplay');
+  dataDisplay.innerHTML = '';
+
+  data.forEach(entry => {
+      const entryDiv = document.createElement('div');
+      entryDiv.innerHTML = `
+          <p><strong>First Name:</strong> ${entry.firstname}</p>
+          <p><strong>Last Name:</strong> ${entry.lastname}</p>
+          <p><strong>Country:</strong> ${entry.country}</p>
+          <p><strong>Email:</strong> ${entry.email}</p>
+          <p><strong>Text:</strong> ${entry.text}</p>
+          <p><strong>Date:</strong> ${entry.date}</p>
+          <hr>
+      `;
+      dataDisplay.appendChild(entryDiv);
+  });
+}
+
+function filterData() {
+  const filterCountry = document.getElementById('filterCountry').value.toLowerCase();
+  const filterEmail = document.getElementById('filterEmail').value.toLowerCase();
+  const filterDate = document.getElementById('filterDate').value;
+
+  let allData = JSON.parse(localStorage.getItem('formData')) || [];
+
+  if (filterCountry) {
+      allData = allData.filter(entry => entry.country.toLowerCase().includes(filterCountry));
+  }
+  if (filterEmail) {
+      allData = allData.filter(entry => entry.email.toLowerCase().includes(filterEmail));
+  }
+  if (filterDate) {
+      allData = allData.filter(entry => entry.date.startsWith(filterDate));
+  }
+
+  displayData(allData);
+}
+
+function resetFilters() {
+  document.getElementById('filterCountry').value = '';
+  document.getElementById('filterEmail').value = '';
+  document.getElementById('filterDate').value = '';
+  displayData(JSON.parse(localStorage.getItem('formData')) || []);
+}
+
+// Initial display of data
+window.onload = function() {
+  displayData(JSON.parse(localStorage.getItem('formData')) || []);
+};
+
+</script>

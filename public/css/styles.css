@@ -3,6 +3,11 @@
     --secondary:#000000;
 }
 
+.header{
+    background-color: var(--primary);
+}
+
+
 /*MEDIA QUERIES*/
 
 /* Small devices (landscape phones, 576px and up)*/

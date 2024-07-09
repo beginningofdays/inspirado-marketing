@@ -2,8 +2,8 @@
 
 ---
 
-<header class="flex">
-        <div class="menu"> <!--padding issue -->
+<header class="flex-row">
+        <div class="menu" id="menu"> <!--padding issue -->
           <nav>
             <ul class="nav">
               <li><a href="work.html">OUR WORK</a></li>
@@ -14,45 +14,42 @@
             </ul>
           </nav>
         </div>
-      </header>
-      
-      <div class="sliding-panel" id="slidingPanel">
-        <ul class="panel-nav">
-          <li><a href="work.html">OUR WORK</a></li>
-          <li><a href="company.html">COMPANY</a></li>
-          <li><a href="contact.html">CONTACT US</a></li>
-          <li><a href="getstarted.html">GET STARTED</a></li>
-        </ul>
+
+        <div class="sliding-panel" id="slidingPanel">
+          <ul class="panel-nav">
+              <li><a href="work.html">OUR WORK</a></li>
+              <li><a href="company.html">COMPANY</a></li>
+              <li><a href="contact.html">CONTACT US</a></li>
+              <li><a href="getstarted.html">GET STARTED</a></li>
+          </ul>
       </div>
-</div>
-  
+</header>
+      
+
 <style>
 .menu {
-  justify-content: flex-end;
-  align-items: center;
-  margin: 10px 0;
+  background-color: black;
+  height:60px;
 }
 
-.mobile-nav{
+.menu .mobile-nav{
   display:none;
-}
-
-.sliding-panel{
-  display:none;
-}
-
-
-.mobile-nav {
-  display: none;
+  font-size: larger;
+  margin:15px 0 0 30px;
 }
 
 .nav li {
   display: none;
 }
 
+.nav li a {
+  text-decoration: none;
+  color:white;
+}
+
 .nav .mobile-nav {
   display: block;
-   z-index:2000;
+  z-index:2000;
 }
 
 .sliding-panel {
@@ -70,7 +67,8 @@
 }
 
 .sliding-panel.active {
-  left: 0;
+  top:0;
+  left:0;
 }
 
 .panel-nav {
@@ -90,8 +88,6 @@
   color: white;
   font-size: 24px;
 }
-
-
 </style>
 
 <script>
@@ -120,3 +116,5 @@
     togglePanel();
   });
 });
+
+</script>

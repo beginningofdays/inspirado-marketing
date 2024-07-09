@@ -2,7 +2,7 @@
 const {} = Astro.props;
 ---
 
-<div class="flex flex-column mb-3">
+<div class="flex-column mb-3">
     
     <div class="component-demo-text">
         <h1>OBrien's Paid Social Cares</h1>
@@ -13,69 +13,53 @@ const {} = Astro.props;
     </div>
     
 <div class="component-getstarted-form">
-    <form>
-    <!-- 2 column grid layout with text inputs for the first and last names -->
-    <div class="row mb-4">
-        <div class="col">
-        <div data-mdb-input-init class="form-outline">
-            <input type="text" id="form6Example1" class="form-control" />
-            <label class="form-label" for="form6Example1">First name</label>
-        </div>
-        </div>
-        <div class="col">
-        <div data-mdb-input-init class="form-outline">
-            <input type="text" id="form6Example2" class="form-control" />
-            <label class="form-label" for="form6Example2">Last name</label>
-        </div>
-        </div>
-    </div>
-
-    <!-- Text input -->
-    <div data-mdb-input-init class="form-outline mb-4">
-        <input type="text" id="form6Example3" class="form-control" />
-        <label class="form-label" for="form6Example3">Company name</label>
-    </div>
-
-    <!-- Text input -->
-    <div data-mdb-input-init class="form-outline mb-4">
-        <input type="text" id="form6Example4" class="form-control" />
-        <label class="form-label" for="form6Example4">Address</label>
-    </div>
-
-    <!-- Email input -->
-    <div data-mdb-input-init class="form-outline mb-4">
-        <input type="email" id="form6Example5" class="form-control" />
-        <label class="form-label" for="form6Example5">Email</label>
-    </div>
-
-    <!-- Number input -->
-    <div data-mdb-input-init class="form-outline mb-4">
-        <input type="number" id="form6Example6" class="form-control" />
-        <label class="form-label" for="form6Example6">Phone</label>
-    </div>
-
-    <!-- Message input -->
-    <div data-mdb-input-init class="form-outline mb-4">
-        <textarea class="form-control" id="form6Example7" rows="4"></textarea>
-        <label class="form-label" for="form6Example7">Additional information</label>
-    </div>
-
-    <!-- Checkbox -->
-    <div class="form-check d-flex justify-content-center mb-4">
-        <input
-        class="form-check-input me-2"
-        type="checkbox"
-        value=""
-        id="form6Example8"
-        checked
-        />
-        <label class="form-check-label" for="form6Example8"> Create an account? </label>
-    </div>
-
-    <!-- Submit button -->
-    <button data-mdb-ripple-init type="button" class="btn btn-primary btn-block mb-4">Place order</button>
-    </form>
-
+    <form id="dataForm">
+        <label for="firstname">First Name:</label>
+        <input type="text" id="firstname" name="firstname" required><br><br>
+        
+        <label for="lastname">Last Name:</label>
+        <input type="text" id="lastname" name="lastname" required><br><br>
+        
+        <label for="country">Country:</label>
+        <input type="text" id="country" name="country" required><br><br>
+        
+        <label for="email">Email Address:</label>
+        <input type="email" id="email" name="email" required><br><br>
+        
+        <label for="text">Text:</label>
+        <textarea id="text" name="text" required></textarea><br><br>
+        
+        <button type="submit">Submit</button>
+    </form>    
 </div> 
 
 </div>
+
+
+
+<script>
+    document.getElementById('dataForm').addEventListener('submit', function (e) {
+    e.preventDefault(); // Prevents the default form submission
+
+    // Gather form data
+    const data = {
+        firstname: document.getElementById('firstname').value,
+        lastname: document.getElementById('lastname').value,
+        country: document.getElementById('country').value,
+        email: document.getElementById('email').value,
+        text: document.getElementById('text').value,
+        date: new Date().toISOString()
+    };
+
+    // Retrieve existing data from local storage
+    let allData = JSON.parse(localStorage.getItem('formData')) || [];
+    // Add new data
+    allData.push(data);
+    // Store updated data in local storage
+    localStorage.setItem('formData', JSON.stringify(allData));
+    // Reset the form
+    document.getElementById('dataForm').reset();
+    // Notify the user
+    alert('Data submitted successfully!');
+});
+</script>
