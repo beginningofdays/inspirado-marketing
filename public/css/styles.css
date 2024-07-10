@@ -3,10 +3,52 @@
     --secondary:#000000;
 }
 
+body{
+    font-family: sans-serif;
+}
+
 .header{
     background-color: var(--primary);
 }
 
+h1{
+    font: 700 2.5rem / 3.125rem sans-serif;
+    color: #3a3a3a;
+}
+
+.digital-message {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center the content horizontally */
+    margin-top: 2rem; /* Add some space from the top (optional) */
+    margin-bottom: 2rem; /* Add some space from the bottom (optional) */
+  }
+  
+  .digital-message h4 {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center the text and the line */
+    position: relative; /* Make sure the pseudo-element is positioned correctly */
+    padding-bottom: 1rem; /* Add space for the line */
+  }
+  
+  .digital-message h4::after {
+    content: "";
+    display: block;
+    height: 2px; /* Line height */
+    width: 100px; /* Line width */
+    background: #1c4880; /* Dark blue color for the line */
+    margin-top: 0.5rem; /* Space between the text and the line */
+  }
+
+.component-title{
+    text-align: center;
+}
+
+.component-content{
+  
+    justify-content: left;
+}
 
 /*MEDIA QUERIES*/
 

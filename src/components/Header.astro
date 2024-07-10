@@ -3,7 +3,7 @@
 ---
 
 <header class="flex-row">
-        <div class="menu" id="menu"> <!--padding issue -->
+        <div class="menu" id="menu"> 
           <nav>
             <ul class="nav">
               <li><a href="work.html">OUR WORK</a></li>
@@ -27,29 +27,38 @@
       
 
 <style>
+/* Existing styles */
 .menu {
   background-color: black;
-  height:60px;
+  height: 60px;
 }
 
-.menu .mobile-nav{
-  display:none;
+.menu .mobile-nav {
+  display: none;
   font-size: larger;
-  margin:15px 0 0 30px;
+  margin: 15px 0 0 30px;
 }
 
-.nav li {
+.menu .nav {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  height: 100%;
+}
+
+.menu .nav li {
   display: none;
 }
 
-.nav li a {
+.menu .nav li a {
   text-decoration: none;
-  color:white;
+  color: white;
 }
 
-.nav .mobile-nav {
+.menu .nav .mobile-nav {
   display: block;
-  z-index:2000;
+  margin-right: 30px; /* Adjust the margin to your preference */
+  z-index: 2000;
 }
 
 .sliding-panel {
@@ -67,8 +76,8 @@
 }
 
 .sliding-panel.active {
-  top:0;
-  left:0;
+  top: 0;
+  left: 0;
 }
 
 .panel-nav {
@@ -88,6 +97,19 @@
   color: white;
   font-size: 24px;
 }
+
+/* Additional styles for desktop view */
+@media (min-width: 768px) {
+  .menu .nav li {
+    display: inline-block;
+    margin: 0 15px;
+  }
+
+  .menu .mobile-nav {
+    display: none;
+  }
+}
+
 </style>
 
 <script>
