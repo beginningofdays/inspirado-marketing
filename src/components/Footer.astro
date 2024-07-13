@@ -2,26 +2,42 @@
 const {} = Astro.props;
 ---
 
-<div class="component-footer flex-column mb-3">
-    <div class="">
+<div class="component-footer flex-column">
+    <div class="logo">
         LOGO
     </div>
-    <div class="">
-        	<ul> 
-                <li>Contact Information</li>
-                <li>Maynooth</li>
-                <li>Co Kildare</li>
-                <li>W24 5677</li>
-                <li>Ireland</li>
-            </ul>
+    <div class="contact-info">
+        <ul> 
+            <li>Contact Information</li>
+            <li>Maynooth</li>
+            <li>Co Kildare</li>
+            <li>W24 5677</li>
+            <li>Ireland</li>
+        </ul>
     </div>
-    <div class="" title="marketing" id="marketing">
-
+    <div class="marketing" title="marketing" id="marketing">
+        <!-- Marketing Content -->
     </div>
-</div> 
+</div>
 
 <style>
-    .component-footer{
-        background-color: red;
-    }
+.component-footer {
+    background-color: black;
+    color: white;
+    text-align: center; /* Center text inside elements */
+}
+
+.component-footer div {
+    margin: 5px 0; /* Space between items */
+}
+
+.component-footer ul {
+    list-style: none; /* Remove bullet points */
+    padding: 0;
+    margin: 0;
+}
+
+.component-footer li {
+    margin: 5px 0; /* Space between list items */
+}
 </style>
