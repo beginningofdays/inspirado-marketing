@@ -3,114 +3,112 @@
 ---
 
 <header class="flex-row">
-        <div class="menu" id="menu"> 
-          <nav>
-            <ul class="nav">
+  <div class="menu" id="menu">
+      <div class="component-logo"><a href="index.html">LOGO</a></div>
+      <nav>
+          <ul class="nav">
               <li><a href="work.html">OUR WORK</a></li>
               <li><a href="company.html">COMPANY</a></li>
               <li><a href="contact.html">CONTACT US</a></li>
               <li><a href="getstarted.html">GET STARTED</a></li>
               <li class="mobile-nav"><a href="#">MENU</a></li>
-            </ul>
-          </nav>
-        </div>
-
-        <div class="sliding-panel" id="slidingPanel">
-          <ul class="panel-nav">
-              <li><a href="work.html">OUR WORK</a></li>
-              <li><a href="company.html">COMPANY</a></li>
-              <li><a href="contact.html">CONTACT US</a></li>
-              <li><a href="getstarted.html">GET STARTED</a></li>
           </ul>
-      </div>
+      </nav>
+  </div>
+
+  <div class="sliding-panel" id="slidingPanel">
+      <ul class="panel-nav">
+          <li><a href="work.html">OUR WORK</a></li>
+          <li><a href="company.html">COMPANY</a></li>
+          <li><a href="contact.html">CONTACT US</a></li>
+          <li><a href="getstarted.html">GET STARTED</a></li>
+      </ul>
+  </div>
 </header>
-      
 
 <style>
 /* Existing styles */
-.menu {
-  background-color: black;
-  height: 60px;
+.component-logo {
+background-color: white;
+margin: 0 auto; /* Center horizontally in flex container */
+text-align: center;
 }
 
-.menu .mobile-nav {
-  display: none;
-  font-size: larger;
-  margin: 15px 0 0 30px;
+.menu {
+display: flex;
+justify-content: space-between;
+align-items: center;
+background-color: black;
+height: 60px;
+padding: 0 15px;
+}
+
+.menu nav {
+flex: 1;
+display: flex;
+justify-content: flex-end;
 }
 
 .menu .nav {
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  height: 100%;
+display: flex;
+justify-content: flex-end;
+align-items: center;
+height: 100%;
 }
 
 .menu .nav li {
-  display: none;
+display: none;
 }
 
 .menu .nav li a {
-  text-decoration: none;
-  color: white;
+text-decoration: none;
+color: white;
 }
 
 .menu .nav .mobile-nav {
-  display: block;
-  margin-right: 30px; /* Adjust the margin to your preference */
-  z-index: 2000;
+display: block;
+margin-right: 30px; /* Adjust the margin to your preference */
+z-index: 2000;
 }
 
 .sliding-panel {
-  position: fixed;
-  top: 0;
-  left: 100%;
-  width: 100%;
-  height: 100%;
-  background: black;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  transition: left 0.3s ease;
-  z-index: 1000;
+position: fixed;
+top: 0;
+left: 100%;
+width: 100%;
+height: 100%;
+background: black;
+display: flex;
+justify-content: center;
+align-items: center;
+transition: left 0.3s ease;
+z-index: 1000;
 }
 
 .sliding-panel.active {
-  top: 0;
-  left: 0;
+top: 0;
+left: 0;
 }
 
 .panel-nav {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  text-align: center;
+list-style: none;
+padding: 0;
+margin: 0;
+text-align: center;
 }
 
 .panel-nav li {
-  display: block;
-  margin: 20px 0;
+display: block;
+margin: 20px 0;
 }
 
 .panel-nav a {
-  text-decoration: none;
-  color: white;
-  font-size: 24px;
+text-decoration: none;
+color: white;
+font-size: 24px;
 }
-
-/* Additional styles for desktop view */
-@media (min-width: 768px) {
-  .menu .nav li {
-    display: inline-block;
-    margin: 0 15px;
-  }
-
-  .menu .mobile-nav {
-    display: none;
-  }
-}
-
 </style>
+
 
 <script>
   document.addEventListener("DOMContentLoaded", function() {

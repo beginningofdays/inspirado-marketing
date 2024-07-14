@@ -2,9 +2,9 @@
 const {imageURL} = Astro.props;
 ---
 
-<div class="flex-column mb-3">
-    <div class="">
-        <h1>OBrien's Paid Social Cares</h1>
+<div class="flex-column">
+    <div class="component-services">
+        <h1>OBrien's Paid Social</h1><br/
         <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
            Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
            when an unknown printer took a galley of type and scrambled it to make a type specimen book.
@@ -12,12 +12,22 @@ const {imageURL} = Astro.props;
     <div class="">{imageURL}</div>
     </div>
    
-    <div class="">
-        <h1>OBrien's Paid Social Cares</h1>
+    <div class="component-services">
+        <h1>OBrien's Paid Social</h1>
         <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
            Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
            when an unknown printer took a galley of type and scrambled it to make a type specimen book.
            ries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
     <div class="">{imageURL}</div>
     </div>
-</div> 
+</div>
+
+
+<style>
+    .component-services{  
+        display:flex;
+        flex-direction: column;
+        justify-content: center;
+        margin: 0 30px;
+    }
+</style>

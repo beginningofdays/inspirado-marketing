@@ -56,7 +56,16 @@ h1{
 @media (min-width: 576px) { ... }
 
 /* Medium devices (tablets, 768px and up)*/
-@media (min-width: 768px) { ... }
+@media (min-width: 768px) { 
+    .menu .nav li {
+        display: inline-block;
+        margin: 0 15px;
+      }
+      
+      .menu .mobile-nav {
+        display: none;
+      }
+}
 
 /* Large devices (desktops, 992px and up) */ 
 @media (min-width: 992px) { ... }
