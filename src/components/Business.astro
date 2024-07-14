@@ -1,14 +1,15 @@
 ---
-import images from '../js/images.json'; // Import JSON data
 
-const { imageIndex } = Astro.props; // Get the image index from props, which will decide which image to display
-const selectedImage = images[imageIndex] || images[0]; // Default to the first image if no index is provided
+import images from '/public/js/business.json'; // Ensure this path is correct relative to the component's location
+
 ---
 
 <div class="flex-column component-business">
-  <div class="component-business-image">
-    <img src={selectedImage.src} alt={selectedImage.alt} class="banner-image"/>
-  </div>
+  {images.map((image, index) => (
+    <div class="component-business-image" key={index}>
+      <img src={image.src} alt={image.alt} class="banner-image" />
+    </div>
+  ))}
 </div>
 
 
@@ -30,5 +31,4 @@ const selectedImage = images[imageIndex] || images[0]; // Default to the first i
   border-radius: 8px; /* Optional: add some border radius */
   box-shadow: 0 4px 8px rgba(0,0,0,0.2); /* Optional: add some shadow */
 }
-
 </style>

@@ -1,15 +1,19 @@
 ---
-const {imageURL} = Astro.props;
+import images from '/public/js/services.json'; // Ensure this path is correct relative to the component's location
 ---
 
 <div class="flex-column">
     <div class="component-services">
-        <h1>OBrien's Paid Social</h1><br/
+        <h1>OBrien's Paid Social</h1><br/>
         <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
            Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
            when an unknown printer took a galley of type and scrambled it to make a type specimen book.
-           ries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
-    <div class="">{imageURL}</div>
+           It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
+        {images[0] && (
+            <div class="component-business-image">
+                <img src={images[0].src} alt={images[0].alt} class="banner-image" />
+            </div>
+        )}
     </div>
    
     <div class="component-services">
@@ -17,11 +21,14 @@ const {imageURL} = Astro.props;
         <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
            Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
            when an unknown printer took a galley of type and scrambled it to make a type specimen book.
-           ries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
-    <div class="">{imageURL}</div>
+           It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
+        {images[1] && (
+            <div class="component-business-image">
+                <img src={images[1].src} alt={images[1].alt} class="banner-image" />
+            </div>
+        )}
     </div>
 </div>
-
 
 <style>
     .component-services{  
@@ -29,5 +36,15 @@ const {imageURL} = Astro.props;
         flex-direction: column;
         justify-content: center;
         margin: 0 30px;
+    }
+
+    .component-business-image {
+        border: 1px solid red; /* Add border to see if the image container is present */
+        padding: 10px; /* Add padding to see if the image is visible */
+    }
+
+    .banner-image {
+        max-width: 100%; /* Ensure images fit within the container */
+        height: auto; /* Maintain aspect ratio */
     }
 </style>
