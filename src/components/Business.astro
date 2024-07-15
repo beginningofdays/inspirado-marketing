@@ -1,34 +1,105 @@
 ---
-
 import images from '/public/js/business.json'; // Ensure this path is correct relative to the component's location
-
 ---
 
-<div class="flex-column component-business">
-  {images.map((image, index) => (
-    <div class="component-business-image" key={index}>
-      <img src={image.src} alt={image.alt} class="banner-image" />
-    </div>
-  ))}
+<div class="flex-row component-services">
+  <h1>Clients</h1>
+  <div class="image-grid">
+    {images[0] && (
+      <a href={images[0].href} class="component-business-image">
+        <img src={images[0].src} alt={images[0].alt} class="banner-image" />
+      </a>
+    )}
+    {images[1] && (
+      <a href={images[1].href} class="component-business-image">
+        <img src={images[1].src} alt={images[1].alt} class="banner-image" />
+      </a>
+    )}
+    {images[2] && (
+      <a href={images[2].href} class="component-business-image">
+        <img src={images[2].src} alt={images[2].alt} class="banner-image" />
+      </a>
+    )}
+    {images[3] && (
+      <a href={images[3].href} class="component-business-image">
+        <img src={images[3].src} alt={images[3].alt} class="banner-image" />
+      </a>
+    )}
+    {images[4] && (
+      <a href={images[4].href} class="component-business-image">
+        <img src={images[4].src} alt={images[4].alt} class="banner-image" />
+      </a>
+    )}
+    {images[5] && (
+      <a href={images[5].href} class="component-business-image">
+        <img src={images[5].src} alt={images[5].alt} class="banner-image" />
+      </a>
+    )}
+  </div>
 </div>
 
-
 <style>
-.component-business {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
+  .component-services {
+    text-align: center;
+  }
 
-.component-business-image {
-  margin: 10px 0;
-}
+  .image-grid {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 10px;
+    gap: 3px;
+  }
 
-.banner-image {
-  width: 100%;
-  max-width: 600px; /* Adjust as needed */
-  height: auto;
-  border-radius: 8px; /* Optional: add some border radius */
-  box-shadow: 0 4px 8px rgba(0,0,0,0.2); /* Optional: add some shadow */
-}
+  .component-business-image {
+    position: relative;
+    width: 100px;
+    height: 100px;
+  }
+
+  .component-business-image::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 255, 0, 0.3); /* Light green overlay */
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  .component-business-image:hover::after {
+    opacity: 1;
+  }
+
+  .banner-image {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover; /* Ensure image covers the container */
+  }
+
+  @media (max-width: 768px) {
+    .component-business-image {
+      width: 120px;
+      height: 120px;
+    }
+
+    .image-grid {
+      gap: 5px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .component-business-image {
+      width: 150px;
+      height: 150px;
+    }
+
+    .image-grid {
+      gap: 10px;
+    }
+  }
 </style>

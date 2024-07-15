@@ -1,38 +1,56 @@
 ---
-const {imageURL} = Astro.props;
+const {} = Astro.props;
+import images from '/public/js/teams.json'; // Ensure this path is correct relative to the component's location
 ---
-
-<div class="flex-column mb-3">
-    <div class="">
-    <h1>The is the company information</h1>
-    <p>Marketing agency from Cork. We are the marketing
-        partner of growing and establisghed blah blah blah blah
-        blah blah blah blah blah blah blah blah
-    </p>
+<div class="component-company flex-column mb-3">
+    <div>
+        <h2>Company Information</h2>
+        <p>Marketing agency from Cork. We are the marketing
+            partner of growing and established businesses. We provide comprehensive marketing solutions to help you achieve your goals.
+        </p>
     </div>
     
-    <div class="component-team">
-    <h2>The Team</h2>
-    <div class="component-team-member">
-    <img src = {imageURL} class="card-img">
-    <div class="component-team-member-text">
-    <p>Marketing agency from Cork. We are the marketing
-        partner of growing and establisghed blah blah blah blah
-        blah blah blah blah blah blah blah blah
-    </p>
-    </div>
-</div>
-
-<div class="component-team-member">
-            <img src = {imageURL} class="card-img">
-            <div class="component-team-member-text">
-            <p>Marketing agency from Cork. We are the marketing
-               partner of growing and establisghed blah blah blah blah
-               blah blah blah blah blah blah blah blah
-           </p>
-           </div>
-    </div>
+    <div class="component-team-container">
+        <h2>The Team</h2>
+        <p>Our hard-working team at Inspirado Marketing</p>
+        <div class="component-team-member">
+            {images[0] && (
+                <img src={images[0].src} alt={images[0].alt} class="component-image" /> 
+            )}
+            <p>Albert Gillick (CEO)</p>
+        </div>
     </div> 
 </div>
 
+<style>
+    .component-company {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .component-team-container {
+        margin-top: 20px;
+    }
+
+    .component-team-member {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        margin-top: 20px;
+    }
+
+    .component-image {
+        width: 200px;
+        height: 200px;
+        object-fit: cover;
+        border:1px solid gray
+    }
+
+    .component-team-member p {
+        margin-top: 10px;
+        font-size: 16px;
+        text-align: center;
+    }
+</style>
 
