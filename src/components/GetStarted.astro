@@ -3,63 +3,150 @@ const {} = Astro.props;
 ---
 
 <div class="flex-column mb-3">
-    
     <div class="component-demo-text">
         <h1>OBrien's Paid Social Cares</h1>
         <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
-           Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
-           when an unknown printer took a galley of type and scrambled it to make a type specimen book.
-           ries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
+            Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
+            when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+            ries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
     </div>
     
-<div class="component-getstarted-form">
-    <form id="dataForm">
-        <label for="firstname">First Name:</label>
-        <input type="text" id="firstname" name="firstname" required><br><br>
-        
-        <label for="lastname">Last Name:</label>
-        <input type="text" id="lastname" name="lastname" required><br><br>
-        
-        <label for="country">Country:</label>
-        <input type="text" id="country" name="country" required><br><br>
-        
-        <label for="email">Email Address:</label>
-        <input type="email" id="email" name="email" required><br><br>
-        
-        <label for="text">Text:</label>
-        <textarea id="text" name="text" required></textarea><br><br>
-        
-        <button type="submit">Submit</button>
-    </form>    
-</div> 
-
+    <div class="component-form flex-column mb-3">
+        <form id="dataForm">
+            <!-- 2 column grid layout with text inputs for the first and last names -->
+            <div class="row mb-3">
+                <div class="col">
+                    <div data-mdb-input-init class="form-outline">
+                        <input type="text" id="firstname" class="form-control" placeholder="First Name"/>
+                    </div>
+                </div>
+                <div class="col"> 
+                    <div data-mdb-input-init class="form-outline">
+                        <input type="text" id="lastname" class="form-control" placeholder="Last Name" />
+                    </div>
+                </div>
+            </div>
+                      
+            <!-- Text input -->
+            <div data-mdb-input-init class="form-outline mb-4">
+                <input type="text" id="company-name" class="form-control" placeholder="Company Name"/>
+            </div>
+                      
+            <!-- Text input -->
+            <div data-mdb-input-init class="form-outline mb-4">
+                <input type="text" id="address" class="form-control" placeholder="Address" />
+            </div>
+                      
+            <!-- Email input -->
+            <div data-mdb-input-init class="form-outline mb-4">
+                <input type="email" id="email" class="form-control" placeholder="Email"/>
+            </div>
+                      
+            <!-- Number input -->
+            <div data-mdb-input-init class="form-outline mb-4">
+                <input type="number" id="phone" class="form-control" placeholder="Phone"/>
+            </div>
+                      
+            <!-- Message input -->
+            <div data-mdb-input-init class="form-outline mb-4">
+                <textarea class="form-control" id="message" rows="4" placeholder="Message"></textarea>
+            </div>
+                   
+            <!-- Submit button -->
+            <button data-mdb-ripple-init type="submit" class="btn btn-primary btn-block mb-4">Submit</button>
+        </form>
+    </div>
 </div>
-
-
 
 <script>
     document.getElementById('dataForm').addEventListener('submit', function (e) {
-    e.preventDefault(); // Prevents the default form submission
+        e.preventDefault(); // Prevents the default form submission
 
-    // Gather form data
-    const data = {
-        firstname: document.getElementById('firstname').value,
-        lastname: document.getElementById('lastname').value,
-        country: document.getElementById('country').value,
-        email: document.getElementById('email').value,
-        text: document.getElementById('text').value,
-        date: new Date().toISOString()
-    };
+        // Gather form data
+        const data = {
+            firstname: document.getElementById('firstname').value,
+            lastname: document.getElementById('lastname').value,
+            companyName: document.getElementById('company-name').value,
+            address: document.getElementById('address').value,
+            email: document.getElementById('email').value,
+            phone: document.getElementById('phone').value,
+            message: document.getElementById('message').value,
+            date: new Date().toISOString()
+        };
 
-    // Retrieve existing data from local storage
-    let allData = JSON.parse(localStorage.getItem('formData')) || [];
-    // Add new data
-    allData.push(data);
-    // Store updated data in local storage
-    localStorage.setItem('formData', JSON.stringify(allData));
-    // Reset the form
-    document.getElementById('dataForm').reset();
-    // Notify the user
-    alert('Data submitted successfully!');
-});
+        // Retrieve existing data from local storage
+        let allData = JSON.parse(localStorage.getItem('formData')) || [];
+        // Add new data
+        allData.push(data);
+        // Store updated data in local storage
+        localStorage.setItem('formData', JSON.stringify(allData));
+        // Reset the form
+        document.getElementById('dataForm').reset();
+        // Notify the user
+        alert('Information Submitted!');
+    });
 </script>
+
+
+<style>
+.component-form {
+    display: flex;
+    justify-content: center; /* Center the form horizontally */
+    align-items: center; /* Center the form vertically */
+    width: 90%;
+    margin: 0 auto; /* Center the component within the parent container */
+}
+    
+form {
+    background-color: #1c4880; /* Dark blue background for the form */
+    padding: 2rem; /* Add padding around the form content */
+    border-radius: 8px; /* Rounded corners for the form */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow effect for the form */
+    width: 100%; /* Ensure form takes up full width of its container */
+    max-width: 600px; /* Set a maximum width for the form */
+    border: none; /* Ensure no border is applied */
+}
+    
+    /*.form-outline {
+      margin-bottom: 1.5rem; /* Space between form elements 
+      border: none; /* Ensure no border is applied 
+    }*/
+    
+.form-control {
+    background-color: #ffffff; /* White background for form fields */
+    color: #333; /* Dark text color for readability */
+    border: 1px solid #ced4da; /* Light gray border for form fields */
+    border-radius: 4px; /* Slightly rounded corners for form fields */
+    padding: 0.75rem 1rem; /* Padding inside form fields */
+}
+    
+.form-control::placeholder {
+    color: #6c757d; /* Light gray color for placeholder text */
+}
+    
+textarea.form-control {
+    background-color: #ffffff; /* White background for the textarea */
+    color: #333; /* Dark text color for readability */
+    border: 1px solid #ced4da; /* Light gray border for the textarea */
+    border-radius: 4px; /* Slightly rounded corners for the textarea */
+    padding: 0.75rem 1rem; /* Padding inside the textarea */
+}
+    
+.btn-primary {
+    background-color: #003366; /* Dark blue background for the submit button */
+    border: none; /* Remove default border */
+    color: #fff; /* White text color */
+    padding: 0.75rem 1.5rem; /* Padding inside the button */
+    font-size: 1rem; /* Font size for the button text */
+    border-radius: 4px; /* Slightly rounded corners for the button */
+}
+    
+.btn-primary:hover {
+    background-color: #002244; /* Darker blue background on hover */
+}
+.btn-primary:focus, .btn-primary:active {
+    outline: none; /* Remove the default focus outline */
+    box-shadow: none; /* Remove default box shadow on focus */
+}    
+</style>
+    

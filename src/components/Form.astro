@@ -1,133 +1,59 @@
----
-const {} = Astro.props;
----
-
-<div class="component-form flex-column mb-3">
-    <form>
-        <!-- 2 column grid layout with text inputs for the first and last names -->
-        <div class="row mb-3">
-          <div class="col">
-            <div data-mdb-input-init class="form-outline">
-              <input type="text" id="form6Example1" class="form-control" placeholder="First Name"/>
-            </div>
-          </div>
-          <div class="col">
-            <div data-mdb-input-init class="form-outline">
-              <input type="text" id="form6Example2" class="form-control" placeholder="Last Name" />
-            </div>
-          </div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OBrien's Paid Social Cares</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="flex-column mb-3">
+        <div class="component-demo-text">
+            <h1>OBrien's Paid Social Cares</h1>
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+                Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
+                when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+                ries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
         </div>
-      
-        <!-- Text input -->
-        <div data-mdb-input-init class="form-outline mb-4">
-          <input type="text" id="form6Example3" class="form-control" placeholder="Company Name"/>
+        
+        <div class="component-form flex-column mb-3">
+            <form id="dataForm">
+                <div class="row mb-3">
+                    <div class="col">
+                        <div data-mdb-input-init class="form-outline">
+                            <input type="text" id="firstname" class="form-control" placeholder="First Name"/>
+                        </div>
+                    </div>
+                    <div class="col"> 
+                        <div data-mdb-input-init class="form-outline">
+                            <input type="text" id="lastname" class="form-control" placeholder="Last Name" />
+                        </div>
+                    </div>
+                </div>
+                <div data-mdb-input-init class="form-outline mb-4">
+                    <input type="text" id="company-name" class="form-control" placeholder="Company Name"/>
+                </div>
+                <div data-mdb-input-init class="form-outline mb-4">
+                    <input type="text" id="address" class="form-control" placeholder="Address" />
+                </div>
+                <div data-mdb-input-init class="form-outline mb-4">
+                    <input type="email" id="email" class="form-control" placeholder="Email"/>
+                </div>
+                <div data-mdb-input-init class="form-outline mb-4">
+                    <input type="number" id="phone" class="form-control" placeholder="Phone"/>
+                </div>
+                <div data-mdb-input-init class="form-outline mb-4">
+                    <textarea class="form-control" id="message" rows="4" placeholder="Message"></textarea>
+                </div>
+                <button data-mdb-ripple-init type="submit" class="btn btn-primary btn-block mb-4">Submit</button>
+            </form>
         </div>
-      
-        <!-- Text input -->
-        <div data-mdb-input-init class="form-outline mb-4">
-          <input type="text" id="form6Example4" class="form-control" placeholder="Address" />
-        </div>
-      
-        <!-- Email input -->
-        <div data-mdb-input-init class="form-outline mb-4">
-          <input type="email" id="form6Example5" class="form-control" placeholder="Email"/>
-        </div>
-      
-        <!-- Number input -->
-        <div data-mdb-input-init class="form-outline mb-4">
-          <input type="number" id="form6Example6" class="form-control" placeholder="Phone"/>
-        </div>
-      
-        <!-- Message input -->
-        <div data-mdb-input-init class="form-outline mb-4">
-          <textarea class="form-control" id="form6Example7" rows="4" placeholder="Message"></textarea>
-        </div>
-   
-        <!-- Submit button -->
-        <button data-mdb-ripple-init type="button" class="btn btn-primary btn-block mb-4">Submit</button>
-      </form>
+    </div>
 
-      <div id="map"></div>
-</div>
+    <div id="form-data-table-component"></div>
 
-<style>
-.component-form {
-  display: flex;
-  justify-content: center; /* Center the form horizontally */
-  align-items: center; /* Center the form vertically */
-  width: 90%;
-  margin: 0 auto; /* Center the component within the parent container */
-}
-
-form {
-  background-color: #1c4880; /* Dark blue background for the form */
-  padding: 2rem; /* Add padding around the form content */
-  border-radius: 8px; /* Rounded corners for the form */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow effect for the form */
-  width: 100%; /* Ensure form takes up full width of its container */
-  max-width: 600px; /* Set a maximum width for the form */
-  border: none; /* Ensure no border is applied */
-}
-
-/*.form-outline {
-  margin-bottom: 1.5rem; /* Space between form elements 
-  border: none; /* Ensure no border is applied 
-}*/
-
-.form-control {
-  background-color: #ffffff; /* White background for form fields */
-  color: #333; /* Dark text color for readability */
-  border: 1px solid #ced4da; /* Light gray border for form fields */
-  border-radius: 4px; /* Slightly rounded corners for form fields */
-  padding: 0.75rem 1rem; /* Padding inside form fields */
-}
-
-.form-control::placeholder {
-  color: #6c757d; /* Light gray color for placeholder text */
-}
-
-textarea.form-control {
-  background-color: #ffffff; /* White background for the textarea */
-  color: #333; /* Dark text color for readability */
-  border: 1px solid #ced4da; /* Light gray border for the textarea */
-  border-radius: 4px; /* Slightly rounded corners for the textarea */
-  padding: 0.75rem 1rem; /* Padding inside the textarea */
-}
-
-.btn-primary {
-  background-color: #003366; /* Dark blue background for the submit button */
-  border: none; /* Remove default border */
-  color: #fff; /* White text color */
-  padding: 0.75rem 1.5rem; /* Padding inside the button */
-  font-size: 1rem; /* Font size for the button text */
-  border-radius: 4px; /* Slightly rounded corners for the button */
-}
-
-.btn-primary:hover {
-  background-color: #002244; /* Darker blue background on hover */
-}
-
-.btn-primary:focus, .btn-primary:active {
-  outline: none; /* Remove the default focus outline */
-  box-shadow: none; /* Remove default box shadow on focus */
-}
+    <script src="js/main1.js" type="module"></script>
+</body>
+</html>
 
 
-</style>
-
-<script>
-    var form = document.getElementById('sheetdb-form');
-form.addEventListener("submit", e => {
-  e.preventDefault();
-  fetch(form.action, {
-      method : "POST",
-      body: new FormData(document.getElementById("sheetdb-form")),
-  }).then(
-      response => response.json()
-  ).then((html) => {
-    // you can put any JS code here
-    window.open('page2.html', '_blank');
-
-  });
-});
-</script>

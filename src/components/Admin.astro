@@ -1,81 +1,229 @@
 ---
-const {imageURL} = Astro.props;
+const { imageURL } = Astro.props;
 ---
 
 <div class="flex-column mb-3">
     <div class="">
-        <p>Welcome to the Adminstration Page of my Inspirado Marketing</p>
-        <p>Please use your administration creditionals to access the marketing Data</p> 
+        <p>Welcome to the Administration Page of my Inspirado Marketing</p>
+        <p>Please use your administration credentials to access the marketing data</p> 
     </div>
     <div class="component-admin-form">
-    <h1>View and Filter Data</h1>
-    
-    <label for="filterCountry">Filter by Country:</label>
-    <input type="text" id="filterCountry"><br><br>
-    
-    <label for="filterEmail">Filter by Email:</label>
-    <input type="text" id="filterEmail"><br><br>
-    
-    <label for="filterDate">Filter by Date (YYYY-MM-DD):</label>
-    <input type="date" id="filterDate"><br><br>
-    
-    <button onclick="filterData()">Filter</button>
-    <button onclick="resetFilters()">Reset Filters</button>
-    
-    <h2>Data:</h2>
-    <div id="dataDisplay"></div>
-</div> 
+
+        <h1>Filter Data</h1>
+        
+        <!-- Filter Inputs in two rows and buttons in one row -->
+        <div class="filter-container">
+            <div class="filter-row">
+                <label for="filterFirstname">First Name:</label>
+                <input type="text" id="filterFirstname">
+                
+                <label for="filterLastname">Last Name:</label>
+                <input type="text" id="filterLastname">
+            </div>
+            
+            <div class="filter-row">
+                <label for="filterCountry">Country:</label>
+                <input type="text" id="filterCountry">
+                
+                <label for="filterEmail">Email:</label>
+                <input type="text" id="filterEmail">
+                
+                <label for="filterDate">Date:</label>
+                <input type="date" id="filterDate">
+            </div>
+
+            <div class="button-row">
+                <button id="filterButton">Apply Filter</button>
+                <button id="clearButton">Clear Filters</button>
+            </div>
+        </div>
+
+        <h2>Data:</h2>
+        
+        <!-- Table for displaying data -->
+        <table id="dataTable">
+            <thead>
+                <tr>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Country</th>
+                    <th>Email</th>
+                    <th>Text</th>
+                    <th>Date</th>
+                </tr>
+            </thead>
+            <tbody id="dataDisplay">
+                <!-- Rows will be inserted here dynamically -->
+            </tbody>
+        </table>
+    </div> 
+</div>
+
+<style>
+    /* Table Styles */
+    #dataTable {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+    }
+
+    /* Header Styles */
+    #dataTable thead {
+        background-color: #003366; /* Dark blue background for the header */
+        color: white; /* White text color for the header */
+    }
+
+    #dataTable th {
+        padding: 10px;
+        text-align: left;
+    }
+
+    /* Row Styles */
+    #dataTable tbody tr:nth-child(even) {
+        background-color: #d0e6f9; /* Light blue background for even rows */
+    }
+
+    #dataTable tbody tr:nth-child(odd) {
+        background-color: #f9d0d0; /* Light red background for odd rows */
+    }
+
+    #dataTable td {
+        padding: 10px;
+        border-bottom: 1px solid #ddd; /* Light gray border for rows */
+    }
+
+    /* Filter Container Styles */
+    .filter-container {
+        margin-bottom: 20px;
+    }
+
+    /* Filter Row Styles */
+    .filter-row {
+        display: flex;
+        gap: 10px; /* Space between elements */
+        margin-bottom: 10px;
+        flex-wrap: wrap;
+    }
+
+    .filter-row label {
+        margin-right: 5px;
+        white-space: nowrap; /* Prevent labels from wrapping */
+    }
+
+    .filter-row input {
+        margin-right: 10px;
+        padding: 5px;
+    }
+
+    /* Button Row Styles */
+    .button-row {
+        display: flex;
+        gap: 10px; /* Space between buttons */
+    }
+
+    .button-row button {
+        padding: 10px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+
+    .button-row #filterButton {
+        background-color: #003366; /* Dark blue background for the Apply Filter button */
+        color: white; /* White text color */
+    }
+
+    .button-row #filterButton:hover {
+        background-color: #002244; /* Darker blue on hover */
+    }
+
+    .button-row #clearButton {
+        background-color: #cccccc; /* Light gray background for the Clear Filters button */
+        color: black; /* Black text color */
+    }
+
+    .button-row #clearButton:hover {
+        background-color: #b3b3b3; /* Darker gray on hover */
+    }
+</style>
 
 <script>
-function displayData(data) {
-  const dataDisplay = document.getElementById('dataDisplay');
-  dataDisplay.innerHTML = '';
+    // Function to display data in the table
+    function displayData(data) {
+        const dataDisplay = document.getElementById('dataDisplay');
+        dataDisplay.innerHTML = ''; // Clear previous content
 
-  data.forEach(entry => {
-      const entryDiv = document.createElement('div');
-      entryDiv.innerHTML = `
-          <p><strong>First Name:</strong> ${entry.firstname}</p>
-          <p><strong>Last Name:</strong> ${entry.lastname}</p>
-          <p><strong>Country:</strong> ${entry.country}</p>
-          <p><strong>Email:</strong> ${entry.email}</p>
-          <p><strong>Text:</strong> ${entry.text}</p>
-          <p><strong>Date:</strong> ${entry.date}</p>
-          <hr>
-      `;
-      dataDisplay.appendChild(entryDiv);
-  });
-}
+        data.forEach(entry => {
+            const row = document.createElement('tr');
+            row.innerHTML = `
+                <td>${entry.firstname || 'N/A'}</td>
+                <td>${entry.lastname || 'N/A'}</td>
+                <td>${entry.country || 'N/A'}</td>
+                <td>${entry.email || 'N/A'}</td>
+                <td>${entry.text || 'N/A'}</td>
+                <td>${entry.date || 'N/A'}</td>
+            `;
+            dataDisplay.appendChild(row);
+        });
+    }
 
-function filterData() {
-  const filterCountry = document.getElementById('filterCountry').value.toLowerCase();
-  const filterEmail = document.getElementById('filterEmail').value.toLowerCase();
-  const filterDate = document.getElementById('filterDate').value;
+    // Function to apply all filters based on user input
+    function applyFilter() {
+        const filterFirstname = document.getElementById('filterFirstname').value.toLowerCase();
+        const filterLastname = document.getElementById('filterLastname').value.toLowerCase();
+        const filterCountry = document.getElementById('filterCountry').value.toLowerCase();
+        const filterEmail = document.getElementById('filterEmail').value.toLowerCase();
+        const filterDate = document.getElementById('filterDate').value;
 
-  let allData = JSON.parse(localStorage.getItem('formData')) || [];
+        let allData = JSON.parse(localStorage.getItem('formData')) || [];
+        
+        if (filterFirstname) {
+            allData = allData.filter(entry => 
+                (entry.firstname || '').toLowerCase().includes(filterFirstname)
+            );
+        }
+        if (filterLastname) {
+            allData = allData.filter(entry => 
+                (entry.lastname || '').toLowerCase().includes(filterLastname)
+            );
+        }
+        if (filterCountry) {
+            allData = allData.filter(entry => 
+                (entry.country || '').toLowerCase().includes(filterCountry)
+            );
+        }
+        if (filterEmail) {
+            allData = allData.filter(entry => 
+                (entry.email || '').toLowerCase().includes(filterEmail)
+            );
+        }
+        if (filterDate) {
+            allData = allData.filter(entry => 
+                entry.date.startsWith(filterDate)
+            );
+        }
 
-  if (filterCountry) {
-      allData = allData.filter(entry => entry.country.toLowerCase().includes(filterCountry));
-  }
-  if (filterEmail) {
-      allData = allData.filter(entry => entry.email.toLowerCase().includes(filterEmail));
-  }
-  if (filterDate) {
-      allData = allData.filter(entry => entry.date.startsWith(filterDate));
-  }
+        displayData(allData);
+    }
 
-  displayData(allData);
-}
+    // Function to clear all filters
+    function clearFilters() {
+        document.getElementById('filterFirstname').value = '';
+        document.getElementById('filterLastname').value = '';
+        document.getElementById('filterCountry').value = '';
+        document.getElementById('filterEmail').value = '';
+        document.getElementById('filterDate').value = '';
+        displayData(JSON.parse(localStorage.getItem('formData')) || []);
+    }
 
-function resetFilters() {
-  document.getElementById('filterCountry').value = '';
-  document.getElementById('filterEmail').value = '';
-  document.getElementById('filterDate').value = '';
-  displayData(JSON.parse(localStorage.getItem('formData')) || []);
-}
+    // Set up event listeners for filter buttons
+    document.addEventListener('DOMContentLoaded', function() {
+        document.getElementById('filterButton').addEventListener('click', applyFilter);
+        document.getElementById('clearButton').addEventListener('click', clearFilters);
+    });
 
-// Initial display of data
-window.onload = function() {
-  displayData(JSON.parse(localStorage.getItem('formData')) || []);
-};
-
+    // Initial display of data
+    window.onload = function() {
+        displayData(JSON.parse(localStorage.getItem('formData')) || []);
+    };
 </script>
