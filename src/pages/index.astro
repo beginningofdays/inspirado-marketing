@@ -1,7 +1,5 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Carousel from '../components/Carousel.astro';
-import Banner from '../components/Banner.astro';
 import DigitalMessage from '../components/DigitalMessage.astro';
 import Form from '../components/Form.astro';
 import Services from '../components/Services.astro';
@@ -9,11 +7,10 @@ import MarketingVideo from '../components/MarketingVideo.astro';
 ---
 
 <Layout title="Inspirado Marketing">
-	<main>
-		<Banner imageURL="/images/marketing.jpg"/>	
+	<main>	
 		<DigitalMessage title="DigitalMessage" content="Marketing agency from Cork. We are the marketing partner of growing and established organisations across Ireland" id="digitalmessage"/>
 		<Form title="Form" id="Form" content=""/>
-		<Services title="Services" content="" id="services"/>
-		<MarketingVideo title="marketing" id="marketing"/>
+		<Services title="Services" content="" id="Services"/>
+		<MarketingVideo title="Marketing" id="Marketing"/>
 	</main>
 </Layout>

@@ -14,9 +14,9 @@ import images from '/public/js/services.json'; // Ensure this path is correct re
                 <img src={images[0].src} alt={images[0].alt} class="banner-image" />
             </div>
         )}
-    </div>
+</div>
    
-    <div class="component-services">
+<div class="component-services">
         <h1>OBrien's Paid Social</h1>
         <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
            Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
@@ -34,8 +34,9 @@ import images from '/public/js/services.json'; // Ensure this path is correct re
     .component-services{  
         display:flex;
         flex-direction: column;
+        align-items:center;
         justify-content: center;
-        margin: 0 30px;
+        min-height: 100vh;
     }
 
     .component-business-image {
