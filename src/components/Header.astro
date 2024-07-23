@@ -1,10 +1,14 @@
 ---
-
+const {imageURL} = Astro.props;
 ---
 
 <header class="flex-row">
   <div class="menu" id="menu">
-      <div class="component-logo"><a href="index.html">LOGO</a></div>
+      <div class="component-logo">
+          <a href="index.html">
+              <img src="images/inspirado-logo.png" alt="Inspirado Logo">
+          </a>
+      </div>
       <nav>
           <ul class="nav">
               <li><a href="work.html">OUR WORK</a></li>
@@ -21,111 +25,211 @@
           <li><a href="work.html">OUR WORK</a></li>
           <li><a href="company.html">COMPANY</a></li>
           <li><a href="contact.html">CONTACT US</a></li>
-         <li><a href="getstarted.html">GET STARTED</a></li>
+          <li><a href="getstarted.html">GET STARTED</a></li>
       </ul>
   </div>
 </header>
 
+<div class="flex-column component-banner-container mb-3">
+   <div class="component-banner-image">
+       <img src={imageURL} alt="Banner Image" class="banner-image"/>
+       <div class="banner-text">
+           Increase Your Sales & Leads Today
+           <p>This is more marketing information</p>
+       </div>
+       <a href="getstarted.html"><button type="button" class="banner-button">Let's Get Started</button></a>
+   </div>
+</div> 
+
 <style>
-.component-logo {
-background-color: white;
-margin: 0 auto; /* Center horizontally in flex container */
-text-align: center;
+/* General Styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
-.menu{
-display: flex;
-justify-content: space-between;
-align-items: center;
-background-color: black;
-height: 60px;
-padding: 0 15px;
+.flex-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.component-logo {
+    background-color: white;
+    margin: 0 auto;
+    text-align: center;
+    flex: 0 0 auto; /* Prevents flexbox from stretching the logo */
+}
+
+.component-logo img {
+    max-width: 100%;
+    height: auto;
+    width: 200px; /* Adjust this value as necessary */
+}
+
+.menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: black;
+    width: 100%;
+    height: 60px;
+    padding: 0 15px;
 }
 
 .menu nav {
-flex: 1;
-display: flex;
-justify-content: flex-end;
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.menu .nav {
+    display: flex;
+    list-style: none;
 }
 
 .menu .nav li {
-display: none;
+    display: none;
 }
 
 .menu .nav li a {
-text-decoration: none;
-color: white;
+    text-decoration: none;
+    color: white;
 }
 
 .menu .nav .mobile-nav {
-display: block;
-margin-right: 30px; /* Adjust the margin to your preference */
-z-index: 2000;
+    display: block;
+    margin-right: 30px; /* Adjust the margin to your preference */
+    z-index: 2000;
 }
 
 .sliding-panel {
-position: fixed;
-top: 0;
-left: 100%;
-width: 100%;
-height: 100%;
-background: black;
-display: flex;
-justify-content: center;
-align-items: center;
-transition: left 0.3s ease;
-z-index: 1000;
+    position: fixed;
+    top: 0;
+    left: 100%;
+    width: 100%;
+    height: 100%;
+    background: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: left 0.3s ease;
+    z-index: 1000;
 }
 
 .sliding-panel.active {
-top: 0;
-left: 0;
+    top: 0;
+    left: 0;
 }
 
 .panel-nav {
-list-style: none;
-padding: 0;
-margin: 0;
-text-align: center;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: center;
 }
 
 .panel-nav li {
-display: block;
-margin: 20px 0;
+    display: block;
+    margin: 20px 0;
 }
 
 .panel-nav a {
-text-decoration: none;
-color: white;
-font-size: 24px;
+    text-decoration: none;
+    color: white;
+    font-size: 24px;
+}
+
+/* Media Queries for Responsive Design */
+@media (min-width: 768px) {
+    .menu .nav li {
+        display: block;
+        margin-left: 20px;
+    }
+
+    .menu .nav .mobile-nav {
+        display: none;
+    }
+}
+
+.component-banner-container {
+    width: 100%;
+    height: 400px; /* Fixed height */
+    overflow: hidden;
+    position: relative; /* Ensures that absolutely positioned elements are relative to this container */
+}
+
+.component-banner-image {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.banner-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures the image covers the entire container while maintaining its aspect ratio */
+    display: block; /* Remove bottom space under image */
+}
+
+.banner-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white; /* Adjust text color as needed */
+    font-size: 24px; /* Adjust font size as needed */
+    text-align: center;
+}
+
+.banner-button {
+    position: absolute;
+    bottom: 20px; /* Adjust this value to move the button closer to or further from the bottom */
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #ffffff; /* Adjust button styles as needed */
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    background-color: #dd0000;
+    border-radius: 10px;
+    transition: border 0.3s ease;
+}
+
+.banner-button:hover {
+    border: 2px solid white;
 }
 </style>
 
 
 <script>
-  document.addEventListener("DOMContentLoaded", function() {
-  const mobileNav = document.querySelector('.mobile-nav a');
-  const slidingPanel = document.getElementById('slidingPanel');
-  const closePanel = document.querySelector('.close-panel');
+document.addEventListener("DOMContentLoaded", function() {
+    const mobileNav = document.querySelector('.mobile-nav a');
+    const slidingPanel = document.getElementById('slidingPanel');
+    const closePanel = document.querySelector('.close-panel');
 
-  function togglePanel() {
-    if (slidingPanel.classList.contains('active')) {
-      mobileNav.textContent = 'MENU';
-      slidingPanel.classList.remove('active');
-    } else {
-      mobileNav.textContent = 'CLOSE';
-      slidingPanel.classList.add('active');
+    function togglePanel() {
+        if (slidingPanel.classList.contains('active')) {
+            mobileNav.textContent = 'MENU';
+            slidingPanel.classList.remove('active');
+        } else {
+            mobileNav.textContent = 'CLOSE';
+            slidingPanel.classList.add('active');
+        }
     }
-  }
 
-  mobileNav.addEventListener('click', function(event) {
-    event.preventDefault();
-    togglePanel();
-  });
+    mobileNav.addEventListener('click', function(event) {
+        event.preventDefault();
+        togglePanel();
+    });
 
-  closePanel.addEventListener('click', function(event) {
-    event.preventDefault();
-    togglePanel();
-  });
+    closePanel.addEventListener('click', function(event) {
+        event.preventDefault();
+        togglePanel();
+    });
 });
 </script>
