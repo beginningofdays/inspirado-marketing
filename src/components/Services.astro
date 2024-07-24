@@ -4,279 +4,148 @@ const { content } = Astro.props;
 <div class="container-fluid gx-0">
   <div class="row justify-content-center">
     <div class="col-lg-8">
-      <div class="component-form mb-3">
-        <form id="dataForm">
-          <!-- 2 column grid layout with text inputs for the first and last names -->
-          <div class="row mb-3">
-            <div class="col">
-              <div data-mdb-input-init class="form-outline">
-                <input type="text" id="firstname" class="form-control" placeholder="First Name" />
+
+
+      <!-- Community Marketing Section -->
+      <div class="p-5 component-service-color-1 border border-1 mb-3">
+        <h1>Community Marketing</h1>
+        <p>As a community marketing agency, our mission is to help brands connect with their audiences on a deeper level. We understand that building a thriving community requires more than just promotional messages</p>
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#communityMarketingModal">
+          More Information
+        </button>
+        <!-- Community Marketing Modal -->
+        <div class="modal fade" id="communityMarketingModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="communityMarketingModalLabel" aria-hidden="true">
+          <div class="modal-dialog modal-lg"> <!-- Adjust size here -->
+            <div class="modal-content modal-height">
+              <div class="modal-header">
+                <h5 class="modal-title" id="communityMarketingModalLabel">Community Marketing - Page 1</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
               </div>
-            </div>
-            <div class="col">
-              <div data-mdb-input-init class="form-outline">
-                <input type="text" id="lastname" class="form-control" placeholder="Last Name" />
+              <div class="modal-body" id="communityMarketingContent">
+                <div class="modal-page" id="communityMarketingPage1">
+                  At Inspirado Marketing, we are passionate about helping brands build and sustain vibrant communities. Our community marketing strategies are designed to create lasting connections and drive meaningful engagement. Partner with us to unlock the full potential of community marketing and watch your brand thrive in a loyal and engaged community.
+                </div>
+                <div class="modal-page d-none" id="communityMarketingPage2">
+                  Investing in community marketing offers numerous benefits for your brand:
+                  <ul>
+                    <li>Increased Loyalty: By fostering a sense of belonging, you can cultivate loyal customers who are more likely to advocate for your brand.</li>
+                    <li>Enhanced Trust: Authentic interactions build trust, making your brand more credible and reliable in the eyes of your community.</li>
+                    <li>Valuable Feedback: Engaged communities provide valuable insights and feedback, helping you understand your customers' needs and preferences.</li>
+                    <li>Organic Growth: Satisfied community members are more likely to share their positive experiences, leading to organic growth through word-of-mouth.</li>
+                  </ul>
+                </div>
               </div>
-            </div>
-          </div>
-
-          <!-- Text input -->
-          <div data-mdb-input-init class="form-outline mb-4">
-            <input type="text" id="company-name" class="form-control" placeholder="Company Name" />
-          </div>
-
-          <!-- Text input -->
-          <div data-mdb-input-init class="form-outline mb-4">
-            <input type="text" id="address" class="form-control" placeholder="Address" />
-          </div>
-
-          <!-- Email input -->
-          <div data-mdb-input-init class="form-outline mb-4">
-            <input type="email" id="email" class="form-control" placeholder="Email" />
-          </div>
-
-          <!-- Number input -->
-          <div data-mdb-input-init class="form-outline mb-4">
-            <input type="number" id="phone" class="form-control" placeholder="Phone" />
-          </div>
-
-          <!-- Message input -->
-          <div data-mdb-input-init class="form-outline mb-4">
-            <textarea class="form-control" id="message" rows="4" placeholder="Message"></textarea>
-          </div>
-
-          <!-- Submit button -->
-          <button data-mdb-ripple-init type="submit" class="btn btn-primary btn-block mb-4">Submit</button>
-        </form>
-      </div>
-    </div>
-  </div>
-
-  <div class="row">
-    <div class="col-lg-2"></div> <!-- Left Space Column -->
-    <div class="col-lg-8 d-flex flex-column align-items-center justify-content-center">
-      <!-- Center Content Column -->
-      <div class="flex-column">
-        <!-- Email Marketing Section -->
-        <div class="p-5 component-service-color-1 border border-1 mb-3">
-          <h1>Email Marketing</h1>
-          <p>Grow your business with powerful and highly targeted email marketing campaigns</p>
-          <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#emailMarketingModal">
-            More Information
-          </button>
-
-          <!-- Email Marketing Modal -->
-          <div class="modal fade" id="emailMarketingModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="emailMarketingModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h5 class="modal-title" id="emailMarketingModalLabel">Email Marketing - Page 1</h5>
-                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body" id="emailMarketingContent">
-                  <div class="modal-page" id="emailMarketingPage1">
-                    Email is one of the most effective marketing tools for modern businesses. At SWOT Digital, we are highly experienced in creating and managing email marketing campaigns that get right to the heart of the matter – your customer’s inboxes!
-                    Our precisely targeted campaigns give your business a direct channel to the people that matter – consumers and customers that are precisely chosen to fit the demographic your business appeals to!
-                  </div>
-                  <div class="modal-page d-none" id="emailMarketingPage2">
-                    This is the next page of content. You can include additional information or details here.
-                  </div>
-                </div>
-                <div class="modal-footer">
-                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                  <button type="button" class="btn btn-primary" id="emailMarketingNextPage">Next Page</button>
-                </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" id="communityMarketingNextPage">Next Page</button>
               </div>
             </div>
           </div>
         </div>
+      </div>
 
-        <!-- Social Media Advertising Section -->
-        <div class="p-5 component-service-color-1 border border-1 mb-3">
-          <h1>Social Media Advertising</h1>
-          <p>Unlock the power of social media and grow your audience with effective advertising campaigns</p>
-          <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#socialMediaModal">
-            More Information
-          </button>
+      <!-- Community Building Section -->
+      <div class="p-5 component-service-color-1 border border-1 mb-3">
+        <h1>Community Building</h1>
+        <p>Unlock the power of social media and grow your audience with effective advertising campaigns</p>
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#communityBuildingModal">
+          More Information
+        </button>
+        <!-- Community Building Modal -->
+        <div class="modal fade" id="communityBuildingModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="communityBuildingModalLabel" aria-hidden="true">
+          <div class="modal-dialog modal-lg"> <!-- Adjust size here -->
+            <div class="modal-content modal-height">
+              <div class="modal-header">
+                <h5 class="modal-title" id="communityBuildingModalLabel">Community Building</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body" id="communityBuildingContent">
+                <div class="modal-page" id="communityBuildingPage1">
+                  Community building is the process of creating and developing a network of individuals who share common interests, values, or goals. 
+                  It’s about creating a sense of belonging and engagement among your audience, making them feel like an integral part of your brand’s journey
+                </div>
+                <div class="modal-page d-none" id="communityBuildingPage2">
+                  Investing in community building offers numerous advantages for your brand:
+                  <ul>
+                  <li>Stronger Brand Loyalty: A well-nurtured community fosters deep emotional connections, leading to increased brand loyalty and advocacy.</li>
+                  <li>Enhanced Customer Insights: Engaged community members provide valuable feedback and insights, helping you better understand their needs and preferences.</li
+                  <li>Organic Growth: A thriving community generates organic growth through word-of-mouth and referrals, reducing the need for extensive promotional efforts.</li>
+                  <li>Increased Engagement: Active communities drive higher levels of engagement, creating a more vibrant and interactive brand presence.</li>
+                  </ul>
+                  </div>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" id="communityBuildingNextPage">Next Page</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
 
-          <!-- Social Media Modal -->
-          <div class="modal fade" id="socialMediaModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="socialMediaModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h5 class="modal-title" id="socialMediaModalLabel">Social Media Advertising - Page 1</h5>
-                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      <!-- Social Media Section -->
+      <div class="p-5 component-service-color-1 border border-1 mb-3">
+        <h1>Social Media</h1>
+        <p>Platforms like Reddit, Quora, and Discord offer unique opportunities for brands to engage with their audiences, foster meaningful interactions, and build loyal communities. At [Agency Name], we specialize in leveraging these platforms to help brands create and nurture vibrant communities that drive long-term success</p>
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#socialMediaModal">
+          More Information
+        </button>
+        <!-- Social Media Modal -->
+        <div class="modal fade" id="socialMediaModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="socialMediaModalLabel" aria-hidden="true">
+          <div class="modal-dialog modal-lg"> <!-- Adjust size here -->
+            <div class="modal-content modal-height">
+              <div class="modal-header">
+                <h5 class="modal-title" id="socialMediaModalLabel">Social Media</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body" id="socialMediaContent">
+                <div class="modal-page" id="socialMediaPage1">
+                  Platforms like Reddit, Quora, and Discord offer unique opportunities for brands to engage with their audiences, foster meaningful interactions, and build loyal communities. At Inspirado Marketing, we specialize in leveraging these platforms to help brands create and nurture vibrant communities that drive long-term success
                 </div>
-                <div class="modal-body" id="socialMediaContent">
-                  <div class="modal-page" id="socialMediaPage1">
-                    Social Media’s exponential growth has seen it rise to be an essential factor in any business’s online profile.
-                    The last few years have seen sites like Facebook, Twitter, YouTube, Instagram and LinkedIn all expand and now feature in the top ten most visited sites in Ireland. At SWOT Digital, we can help you unlock this massive market with engaging Social Media ad campaigns.
-                    Our expert teams can create and manage Social Media campaigns that are customised to meet your goals and grow your audience.
-                    Contact us today to find out more about how we can help you grow your social media presence and maximise its effect.
-                  </div>
-                  <div class="modal-page d-none" id="socialMediaPage2">
-                    This is the next page of content. You can include additional information or details here.
-                  </div>
-                </div>
-                <div class="modal-footer">
-                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                  <button type="button" class="btn btn-primary" id="socialMediaNextPage">Next Page</button>
-                </div>
+                <div class="modal-page d-none" id="socialMediaPage2">
+                  Investing in community building on platforms like Reddit, Quora, and Discord offers numerous benefits for your brand:
+                  <ul>
+                  <li>Enhanced Brand Loyalty: Engaged communities foster deep emotional connections, leading to increased brand loyalty and advocacy. </li>
+                  <li>Valuable Customer Insights: Active communities provide valuable feedback and insights, helping you better understand your audience’s needs and preferences.</li>
+                  <li>Organic Growth: Thriving communities generate organic growth through word-of-mouth and referrals, reducing the need for extensive promotional efforts.</li>
+                  <li>Higher Engagement: Active participation and real-time interactions drive higher levels of engagement, creating a more dynamic and interactive brand presence. </li>
+                  </ul>
+              </div>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" id="socialMediaNextPage">Next Page</button>
               </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-    <div class="col-lg-2"></div> <!-- Right Space Column -->
   </div>
 </div>
 
-<script>
-  document.addEventListener('DOMContentLoaded', function() {
-    // Page 1 and Page 2 for Email Marketing Modal
-    const emailMarketingNextPageButton = document.getElementById('emailMarketingNextPage');
-    const emailMarketingPage1 = document.getElementById('emailMarketingPage1');
-    const emailMarketingPage2 = document.getElementById('emailMarketingPage2');
 
-    let emailMarketingCurrentPage = 1;
-
-    emailMarketingNextPageButton.addEventListener('click', function() {
-      if (emailMarketingCurrentPage === 1) {
-        emailMarketingPage1.classList.add('d-none');
-        emailMarketingPage2.classList.remove('d-none');
-        emailMarketingCurrentPage = 2;
-        emailMarketingNextPageButton.textContent = 'Previous Page'; // Change button text
-      } else {
-        emailMarketingPage2.classList.add('d-none');
-        emailMarketingPage1.classList.remove('d-none');
-        emailMarketingCurrentPage = 1;
-        emailMarketingNextPageButton.textContent = 'Next Page'; // Change button text
-      }
-    });
-
-    // Page 1 and Page 2 for Social Media Advertising Modal
-    const socialMediaNextPageButton = document.getElementById('socialMediaNextPage');
-    const socialMediaPage1 = document.getElementById('socialMediaPage1');
-    const socialMediaPage2 = document.getElementById('socialMediaPage2');
-
-    let socialMediaCurrentPage = 1;
-
-    socialMediaNextPageButton.addEventListener('click', function() {
-      if (socialMediaCurrentPage === 1) {
-        socialMediaPage1.classList.add('d-none');
-        socialMediaPage2.classList.remove('d-none');
-        socialMediaCurrentPage = 2;
-        socialMediaNextPageButton.textContent = 'Previous Page'; // Change button text
-      } else {
-        socialMediaPage2.classList.add('d-none');
-        socialMediaPage1.classList.remove('d-none');
-        socialMediaCurrentPage = 1;
-        socialMediaNextPageButton.textContent = 'Next Page'; // Change button text
-      }
-    });
-  });
-
-  document.getElementById('dataForm').addEventListener('submit', function(e) {
-    e.preventDefault(); // Prevents the default form submission
-
-    // Gather form data
-    const data = {
-      firstname: document.getElementById('firstname').value,
-      lastname: document.getElementById('lastname').value,
-      companyName: document.getElementById('company-name').value,
-      address: document.getElementById('address').value,
-      email: document.getElementById('email').value,
-      phone: document.getElementById('phone').value,
-      message: document.getElementById('message').value,
-      date: new Date().toISOString()
-    };
-
-    // Retrieve existing data from local storage
-    let allData = JSON.parse(localStorage.getItem('formData')) || [];
-    // Add new data
-    allData.push(data);
-    // Store updated data in local storage
-    localStorage.setItem('formData', JSON.stringify(allData));
-    // Reset the form
-    document.getElementById('dataForm').reset();
-    // Notify the user
-    alert('Information Submitted!');
-  });
-</script>
 
 <style>
-  .component-form {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 20px; /* 20px gap at the top */
-    margin-bottom: 20px; /* 20px gap at the bottom */
-    width: 100%; /* Ensures the form takes the full width of its container */
-  }
-
-  form {
-    background-color: #1c4880; /* Dark blue background for the form */
-    padding: 2rem; /* Add padding around the form content */
-    border-radius: 8px; /* Rounded corners for the form */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow effect for the form */
-    width: 100%; /* Ensure form takes up full width of its container */
-    border: none; /* Ensure no border is applied */
-  }
-
-  .form-control {
-    background-color: #ffffff; /* White background for form fields */
-    color: #333; /* Dark text color for readability */
-    border: 1px solid #ced4da; /* Light gray border for form fields */
-    border-radius: 4px; /* Slightly rounded corners for form fields */
-    padding: 0.75rem 1rem; /* Padding inside form fields */
-  }
-
-  .form-control::placeholder {
-    color: #6c757d; /* Light gray color for placeholder text */
-  }
-
-  textarea.form-control {
-    background-color: #ffffff; /* White background for the textarea */
-    color: #333; /* Dark text color for readability */
-    border: 1px solid #ced4da; /* Light gray border for the textarea */
-    border-radius: 4px; /* Slightly rounded corners for the textarea */
-    padding: 0.75rem 1rem; /* Padding inside the textarea */
-  }
-
-  .btn-primary {
-    background-color: #003366; /* Dark blue background for the submit button */
-    border: none; /* Remove default border */
-    color: #fff; /* White text color */
-    padding: 0.75rem 1.5rem; /* Padding inside the button */
-    font-size: 1rem; /* Font size for the button text */
-    border-radius: 4px; /* Slightly rounded corners for the button */
-  }
-
-  .btn-primary:hover {
-    background-color: #002244; /* Darker blue background on hover */
-  }
-
-  .btn-primary:focus,
-  .btn-primary:active {
-    outline: none; /* Remove the default focus outline */
-    box-shadow: none; /* Remove default box shadow on focus */
-  }
 
   .modal-content {
-    background-color: #1c4880; /* Matching background color for modals */
-    color: white; /* White text color for readability */
-    border: none; /* Remove default border */
+    background-color: #D29604;
+    color: white;
+    border: none;
   }
 
   .modal-footer .btn-secondary {
-    background-color: #6c757d; /* Background color for the close button */
-    border: none; /* Remove default border */
+    background-color: #6c757d;
+    border: none;
+  }
+
+  .modal-height {
+    min-height: 400px; /* Adjust height as needed */
   }
 
   .component-service-color-1 {
-    background-color: #1c4880; /* Dark blue background for the component sections */
-    color: white; /* White text color for readability */
-    margin-bottom: 20px; /* 20px gap below each modal */
+    background-color: #D29604;
+    color: white;
+    margin-bottom: 20px;
   }
 </style>

@@ -1,36 +1,176 @@
 ---
 const {content} = Astro.props;
 ---
-
-<div class="communuity-message flex-column mb-3">
-    <div class="pt-1 component-title">
+<div class="community-message flex-column mb-3">
+    <div class="component-title">
         <div class="title-wrapper">
             <div class="line"></div>
             <h2>Community Strategy</h2>
             <div class="line"></div>
         </div>
     </div>
-    <div class="pl-4 component-content">{content}</div>
-    <div class="line"></div>
-    <h2></h2>
-    <div class="line"></div>
-</div> 
+    <div class="component-content pb-3">{content}.</div>
+    
+    <div class="title-wrapper">
+        <div class="line"></div>
+        <h2>Discover Your Community Strategy</h2>
+        <div class="line"></div>
+    </div>
+    <p class="component-content">Are you ready to build a thriving community for your brand on Reddit, Quora, or Discord? Discover your customized community strategy by filling out the form below. Our team at [Agency Name] will analyze your brand’s needs and provide a tailored plan to help you create and sustain a vibrant, engaged community.</p>
+
+      <!-- Form Section -->
+      <div class="component-form mb-3">
+        <form id="dataForm">
+          <!-- Form Inputs -->
+          <div class="row mb-3">
+            <div class="col">
+              <div data-mdb-input-init class="form-outline">
+                <input type="text" id="firstname" class="form-control" placeholder="First Name" />
+              </div>
+            </div>
+            <div class="col">
+              <div data-mdb-input-init class="form-outline">
+                <input type="text" id="lastname" class="form-control" placeholder="Last Name" />
+              </div>
+            </div>
+          </div>
+          <div data-mdb-input-init class="form-outline mb-4">
+            <input type="text" id="company-name" class="form-control" placeholder="Company Name" />
+          </div>
+          <div data-mdb-input-init class="form-outline mb-4">
+            <input type="text" id="address" class="form-control" placeholder="Address" />
+          </div>
+          <div data-mdb-input-init class="form-outline mb-4">
+            <input type="email" id="email" class="form-control" placeholder="Email" />
+          </div>
+          <div data-mdb-input-init class="form-outline mb-4">
+            <input type="number" id="phone" class="form-control" placeholder="Phone" />
+          </div>
+          <div data-mdb-input-init class="form-outline mb-4">
+            <textarea class="form-control" id="message" rows="4" placeholder="Message"></textarea>
+          </div>
+          <button data-mdb-ripple-init type="submit" class="btn btn-primary btn-block mb-4">Submit</button>
+        </form>
+      </div>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Page navigation for Community Marketing Modal
+      const communityMarketingNextPageButton = document.getElementById('communityMarketingNextPage');
+      const communityMarketingPage1 = document.getElementById('communityMarketingPage1');
+      const communityMarketingPage2 = document.getElementById('communityMarketingPage2');
+  
+      let communityMarketingCurrentPage = 1;
+  
+      communityMarketingNextPageButton.addEventListener('click', function() {
+        if (communityMarketingCurrentPage === 1) {
+          communityMarketingPage1.classList.add('d-none');
+          communityMarketingPage2.classList.remove('d-none');
+          communityMarketingCurrentPage = 2;
+          communityMarketingNextPageButton.textContent = 'Previous Page'; // Change button text
+        } else {
+          communityMarketingPage2.classList.add('d-none');
+          communityMarketingPage1.classList.remove('d-none');
+          communityMarketingCurrentPage = 1;
+          communityMarketingNextPageButton.textContent = 'Next Page'; // Change button text
+        }
+      });
+  
+      // Page navigation for Community Building Modal
+      const communityBuildingNextPageButton = document.getElementById('communityBuildingNextPage');
+      const communityBuildingPage1 = document.getElementById('communityBuildingPage1');
+      const communityBuildingPage2 = document.getElementById('communityBuildingPage2');
+  
+      let communityBuildingCurrentPage = 1;
+  
+      communityBuildingNextPageButton.addEventListener('click', function() {
+        if (communityBuildingCurrentPage === 1) {
+          communityBuildingPage1.classList.add('d-none');
+          communityBuildingPage2.classList.remove('d-none');
+          communityBuildingCurrentPage = 2;
+          communityBuildingNextPageButton.textContent = 'Previous Page'; // Change button text
+        } else {
+          communityBuildingPage2.classList.add('d-none');
+          communityBuildingPage1.classList.remove('d-none');
+          communityBuildingCurrentPage = 1;
+          communityBuildingNextPageButton.textContent = 'Next Page'; // Change button text
+        }
+      });
+  
+      // Page navigation for Social Media Modal
+      const socialMediaNextPageButton = document.getElementById('socialMediaNextPage');
+      const socialMediaPage1 = document.getElementById('socialMediaPage1');
+      const socialMediaPage2 = document.getElementById('socialMediaPage2');
+  
+      let socialMediaCurrentPage = 1;
+  
+      socialMediaNextPageButton.addEventListener('click', function() {
+        if (socialMediaCurrentPage === 1) {
+          socialMediaPage1.classList.add('d-none');
+          socialMediaPage2.classList.remove('d-none');
+          socialMediaCurrentPage = 2;
+          socialMediaNextPageButton.textContent = 'Previous Page'; // Change button text
+        } else {
+          socialMediaPage2.classList.add('d-none');
+          socialMediaPage1.classList.remove('d-none');
+          socialMediaCurrentPage = 1;
+          socialMediaNextPageButton.textContent = 'Next Page'; // Change button text
+        }
+      });
+    });
+  
+    document.getElementById('dataForm').addEventListener('submit', function(e) {
+      e.preventDefault(); // Prevents the default form submission
+  
+      // Gather form data
+      const data = {
+        firstname: document.getElementById('firstname').value,
+        lastname: document.getElementById('lastname').value,
+        companyName: document.getElementById('company-name').value,
+        address: document.getElementById('address').value,
+        email: document.getElementById('email').value,
+        phone: document.getElementById('phone').value,
+        message: document.getElementById('message').value,
+        date: new Date().toISOString()
+      };
+  
+      // Retrieve existing data from local storage
+      let allData = JSON.parse(localStorage.getItem('formData')) || [];
+      // Add new data
+      allData.push(data);
+      // Store updated data in local storage
+      localStorage.setItem('formData', JSON.stringify(allData));
+      // Reset the form
+      document.getElementById('dataForm').reset();
+      // Notify the user
+      alert('Information Submitted!');
+    });
+  </script>
+
+
+
+
+
+
+
+
+
+
+
 
 <style>
 .community-message {
     display: flex;
     flex-direction: column;
     align-items: center; /* Center the content horizontally */
-    margin-top: 2rem; /* Add some space from the top (optional) */
-    margin-bottom: 2rem; /* Add some space from the bottom (optional) */
 }
 
 .title-wrapper {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 100%;
-}
+    width: 100%;}
 
 .title-wrapper h2 {
     margin: 0 1rem; /* Add some space between the lines and the text */
@@ -48,8 +188,63 @@ const {content} = Astro.props;
     width: 100%;
 }
 
-.component-content {
-    text-align: center;
-}
+
+/*FORM*/
+
+.component-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+    width: 100%;
+  }
+
+  form {
+    background-color: #1c4880;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    border: none;
+  }
+
+  .form-control {
+    background-color: #ffffff;
+    color: #333;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    padding: 0.75rem 1rem;
+  }
+
+  .form-control::placeholder {
+    color: #6c757d;
+  }
+
+  textarea.form-control {
+    background-color: #ffffff;
+    color: #333;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    padding: 0.75rem 1rem;
+  }
+
+  .btn-primary {
+    background-color: #003366;
+    border: none;
+    color: #fff;
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    border-radius: 4px;
+  }
+
+  .btn-primary:hover {
+    background-color: #002244;
+  }
+
+  .btn-primary:focus,
+  .btn-primary:active {
+    outline: none;
+    box-shadow: none;
+  }
 
 </style>

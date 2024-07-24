@@ -4,7 +4,7 @@ const {} = Astro.props;
 
 <div class="component-footer flex-column">
     <div class="logo">
-        LOGO
+        <img src="images/inspirado-logo1.png" alt="Inspirado Logo">
     </div>
     <div class="contact-info">
         <ul> 
@@ -39,5 +39,11 @@ const {} = Astro.props;
 
 .component-footer li {
     margin: 5px 0; /* Space between list items */
+}
+
+.component-logo img {
+  max-width: 100%;
+  height: auto;
+  width: 200px; /* Adjust this value as necessary */
 }
 </style>
