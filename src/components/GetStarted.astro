@@ -3,8 +3,14 @@ const {} = Astro.props;
 ---
 
 <div class="flex-column mb-3">
+
+    <div class="title-wrapper">
+        <div class="line"></div>
+        <h2>Clients</h2>
+        <div class="line"></div>
+    </div>
+    
     <div class="component-demo-text">
-        <h1>OBrien's Paid Social Cares</h1>
         <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
             Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
             when an unknown printer took a galley of type and scrambled it to make a type specimen book.
@@ -148,5 +154,25 @@ textarea.form-control {
     outline: none; /* Remove the default focus outline */
     box-shadow: none; /* Remove default box shadow on focus */
 }    
+
+.title-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.title-wrapper h2 {
+    margin: 0 1rem; /* Add some space between the lines and the text */
+    word-wrap: break-word; /* Break words if necessary */
+    word-break: break-word; /* Ensure long words break to fit container */
+}
+
+.line {
+    flex-grow: 1;
+    height: 2px; /* Line height */
+    background: #1c4880; /* Dark blue color for the line */
+}
 </style>
     

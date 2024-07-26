@@ -3,17 +3,18 @@ const {} = Astro.props;
 ---
 
 <div class="component-footer flex-column">
-    <div class="logo">
-        <img src="images/inspirado-logo1.png" alt="Inspirado Logo">
-    </div>
-    <div class="contact-info">
-        <ul> 
-            <li>Contact Information</li>
-            <li>Maynooth</li>
-            <li>Co Kildare</li>
-            <li>W24 5677</li>
-            <li>Ireland</li>
-        </ul>
+    <div class="logo-and-info">
+        <div class="logo">
+            <img src="images/inspirado-logo1.png" alt="Inspirado Logo">
+        </div>
+        <div class="contact-info">
+            <ul> 
+                <li>Maynooth</li>
+                <li>Co Kildare</li>
+                <li>W24 5677</li>
+                <li>Ireland</li>
+            </ul>
+        </div>
     </div>
     <div class="marketing" title="marketing" id="marketing">
         <!-- Marketing Content -->
@@ -25,10 +26,19 @@ const {} = Astro.props;
     background-color: black;
     color: white;
     text-align: center; /* Center text inside elements */
+
+}
+
+.logo-and-info {
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    justify-content: center;
+    align-items: center;
+    gap: 10px; /* Space between logo and contact info */
 }
 
 .component-footer div {
-    margin: 5px 0; /* Space between items */
+    margin: 0px 0; /* Space between items */
 }
 
 .component-footer ul {
@@ -41,9 +51,15 @@ const {} = Astro.props;
     margin: 5px 0; /* Space between list items */
 }
 
-.component-logo img {
-  max-width: 100%;
-  height: auto;
-  width: 200px; /* Adjust this value as necessary */
+.logo img {
+    width: auto;
+    height: auto;
+    max-width: 200px; /* Set a max width for the logo */
+}
+
+.contact-info {
+    text-align: center; /* Center the contact info text */
+    padding: 0;
+    margin: 0;
 }
 </style>

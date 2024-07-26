@@ -3,9 +3,14 @@ import images from '/public/js/services.json'; // Ensure this path is correct re
 ---
 
 <div class="flex-column">
+    <div class="title-wrapper">
+        <div class="line"></div>
+        <h2>Clients</h2>
+        <div class="line"></div>
+    </div>
+
     <div class="component-services">
-        <h1>OBrien's Paid Social</h1><br/>
-        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+        <p><strong>Business Name</strong> Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
            Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
            when an unknown printer took a galley of type and scrambled it to make a type specimen book.
            It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
@@ -17,14 +22,13 @@ import images from '/public/js/services.json'; // Ensure this path is correct re
 </div>
    
 <div class="component-services">
-        <h1>OBrien's Paid Social</h1>
-        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+        <p><strong>Business Name</strong> Ipsum is simply dummy text of the printing and typesetting industry. 
            Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
            when an unknown printer took a galley of type and scrambled it to make a type specimen book.
            It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
-        {images[1] && (
+           {images[0] && (
             <div class="component-business-image">
-                <img src={images[1].src} alt={images[1].alt} class="banner-image" />
+                <img src={images[0].src} alt={images[0].alt} class="banner-image" />
             </div>
         )}
     </div>
@@ -48,4 +52,24 @@ import images from '/public/js/services.json'; // Ensure this path is correct re
         max-width: 100%; /* Ensure images fit within the container */
         height: auto; /* Maintain aspect ratio */
     }
+
+    .title-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.title-wrapper h2 {
+    margin: 0 1rem; /* Add some space between the lines and the text */
+    word-wrap: break-word; /* Break words if necessary */
+    word-break: break-word; /* Ensure long words break to fit container */
+}
+
+.line {
+    flex-grow: 1;
+    height: 2px; /* Line height */
+    background: #1c4880; /* Dark blue color for the line */
+}
 </style>
