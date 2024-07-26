@@ -14,10 +14,12 @@ const {} = Astro.props;
                 <li>W24 5677</li>
                 <li>Ireland</li>
             </ul>
+            <div class="social-media-icons pb-2">
+                <a href="#"><img src="/public/images/Social/facebook.png" alt="Facebook"></a>
+                <a href="#"><img src="/public/images/Social/instagram.png" alt="Instagram"></a>
+                <a href="#"><img src="/public/images/Social/youtube.png" alt="YouTube"></a>
+            </div>
         </div>
-    </div>
-    <div class="marketing" title="marketing" id="marketing">
-        <!-- Marketing Content -->
     </div>
 </div>
 
@@ -26,7 +28,6 @@ const {} = Astro.props;
     background-color: black;
     color: white;
     text-align: center; /* Center text inside elements */
-
 }
 
 .logo-and-info {
@@ -61,5 +62,17 @@ const {} = Astro.props;
     text-align: center; /* Center the contact info text */
     padding: 0;
     margin: 0;
+}
+
+.social-media-icons {
+    display: flex; /* Display icons in a row */
+    justify-content: center; /* Center the icons horizontally */
+    gap: 10px; /* Space between icons */
+    margin-top: 10px; /* Space between address and social icons */
+}
+
+.social-media-icons img {
+    width: 24px; /* Set a width for the social media icons */
+    height: 24px; /* Set a height for the social media icons */
 }
 </style>

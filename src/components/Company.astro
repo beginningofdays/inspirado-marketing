@@ -11,19 +11,38 @@ import images from '/public/js/teams.json'; // Ensure this path is correct relat
     </div>
 
     <div class="">    
-        <p>Marketing agency from Cork. We are the marketing
-            partner of growing and established businesses. We provide comprehensive marketing solutions to help you achieve your goals.
-        </p>
+        <p>At our Cork-based marketing agency, we pride ourselves on being the dedicated marketing partner for both growing and established businesses. Our mission is to empower your company to achieve its goals through a tailored approach that encompasses a full spectrum of marketing solutions.
+        We understand that every business is unique, and we take the time to understand your specific needs, challenges, and objectives. By leveraging our expertise in various aspects of marketing, we create customized strategies that drive results and help your business thrive in today's competitive landscape.</p>
+
+        <p class="highlight">Our comprehensive services include:</p>
+        <ul class="no-dots">         
+            <li><strong>Strategic Planning:</strong> We collaborate with you to develop a detailed marketing plan that aligns with your business objectives and sets a clear path for success.</li>
+            <li><strong>Brand Development:</strong> Our team helps you build a strong, recognizable brand that resonates with your target audience and sets you apart from the competition.</li>
+            <li><strong>Digital Marketing:</strong> From SEO and content marketing to social media management and pay-per-click advertising, we utilize the latest digital tools and techniques to enhance your online presence and drive traffic to your website.</li>
+            <li><strong>Creative Services:</strong> Our creative team delivers visually compelling designs and engaging content that captivate your audience and communicate your brand’s message effectively.</li>
+        </ul>
     </div>
     
     <div class="component-team-container">
-        <h2>The Team</h2>
-        <p>Our hard-working team at Inspirado Marketing</p>
+        <div class="title-wrapper">
+            <div class="line"></div>
+            <h2>The Team</h2>
+            <div class="line"></div>
+        </div>
         <div class="component-team-member">
             {images[0] && (
-                <img src={images[0].src} alt={images[0].alt} class="component-image" /> 
+                <div class="team-member-content">
+                    <img src={images[0].src} alt={images[0].alt} class="component-image" />
+                    <div class="team-member-text">
+                        <figure class="quote">
+                            <blockquote>
+                                Albert Gillick, the dynamic CEO, has carved a niche for himself by leveraging his diverse background in acting, marketing, and community engagement.
+                                Albert's commitment to community engagement has been a cornerstone of his career. He believes in the power of community and the importance of giving back. Under his leadership, companies have launched numerous initiatives aimed at fostering community development and social responsibility. His ability to bring people together and inspire collective action has earned him respect and admiration both within and outside the corporate world.
+                            </blockquote>
+                        </figure>
+                    </div>
+                </div>
             )}
-            <p>Albert Gillick (CEO)</p>
         </div>
     </div> 
 </div>
@@ -36,7 +55,13 @@ import images from '/public/js/teams.json'; // Ensure this path is correct relat
     }
 
     .component-team-container {
-        margin-top: 20px;
+        margin: 0px;
+    }
+
+    .team-member-content {
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
     }
 
     .component-team-member {
@@ -50,35 +75,58 @@ import images from '/public/js/teams.json'; // Ensure this path is correct relat
         width: 200px;
         height: 200px;
         object-fit: cover;
-        border:1px solid gray
+        border: 1px solid gray;
+        margin-right: 20px; /* Space between image and text */
     }
 
-    .component-team-member p {
-        margin-top: 10px;
+    .team-member-text {
+        flex: 1;
+    }
+
+    .team-member-text p {
+        margin: 0;
         font-size: 16px;
-        text-align: center;
     }
-
 
     .title-wrapper {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    box-sizing: border-box;
-}
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        box-sizing: border-box;
+    }
 
-.title-wrapper h2 {
-    margin: 0 1rem; /* Add some space between the lines and the text */
-    word-wrap: break-word; /* Break words if necessary */
-    word-break: break-word; /* Ensure long words break to fit container */
-}
+    .title-wrapper h2 {
+        margin: 0 1rem; /* Add some space between the lines and the text */
+        word-wrap: break-word; /* Break words if necessary */
+        word-break: break-word; /* Ensure long words break to fit container */
+    }
 
-.line {
-    flex-grow: 1;
-    height: 2px; /* Line height */
-    background: #1c4880; /* Dark blue color for the line */
-}
-  
+    .line {
+        flex-grow: 1;
+        height: 2px; /* Line height */
+        background: #1c4880; /* Dark blue color for the line */
+    }
+
+    .no-dots {
+        list-style-type: none;
+        padding-left: 0;
+    }
+
+    .highlight {
+        color: red;
+        font-weight: bold;
+    }
+
+    .quote {
+        margin: 0;
+        background: #eee;
+        padding: 1em;
+        border-radius: 1em;
+    }
+
+    .quote figcaption,
+    .quote blockquote {
+        margin: 1em;
+    }
 </style>
-
