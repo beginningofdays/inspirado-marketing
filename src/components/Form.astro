@@ -1,5 +1,5 @@
 ---
-const {content} = Astro.props;
+const { content } = Astro.props;
 ---
 <div class="community-message flex-column mb-3">
     <div class="component-title">
@@ -12,10 +12,12 @@ const {content} = Astro.props;
     <div class="component-content pb-3">{content}.</div>
     
     <div class="component-marketing-form-header">
-        <div class="left-column"><a href="/images/img6.jpg"><img src="/images/img6.jpg" alt="Image 6"></a></div>
+        <div class="left-column">
+            <a href="/images/img6.jpg"><img src="/images/img6.jpg" alt="Image 6"></a>
+        </div>
         <div class="right-column">
-        <p>Inspirado Marketing, we understand that building a loyal customer base goes beyond traditional advertising. Our community marketing approach is designed to cultivate strong, meaningful connections with your target audience, transforming them into dedicated brand advocates.</p>
-        <p>At Inspirado Marketing, we believe in the power of community to drive your brand forward. Let us help you connect, engage, and grow with a dedicated community that loves your brand as much as you do.</p>
+            <p>Inspirado Marketing, we understand that building a loyal customer base goes beyond traditional advertising. Our community marketing approach is designed to cultivate strong, meaningful connections with your target audience, transforming them into dedicated brand advocates.</p>
+            <p>At Inspirado Marketing, we believe in the power of community to drive your brand forward. Let us help you connect, engage, and grow with a dedicated community that loves your brand as much as you do.</p>
         </div>    
     </div>
 
@@ -156,6 +158,11 @@ const {content} = Astro.props;
 </script>
 
 <style>
+/* Reset default margins and paddings */
+* {
+    box-sizing: border-box;
+}
+
 .community-message {
     display: flex;
     flex-direction: column;
@@ -193,17 +200,17 @@ const {content} = Astro.props;
 
 .component-marketing-form-header {
     display: flex;
-    flex-direction: column; /* Stack columns vertically by default */
     width: 100%;
     gap: 5px; /* Space between the columns */
+    flex: 1; /* Each column takes up equal space */
 }
 
-.left-column, .right-column {
-    flex: 1; /* Each column takes up equal space */
-    overflow-wrap: break-word; /* Ensure text wraps within its container */
-    word-break: break-word; /* Prevent long words from overflowing */s
-    margin:0px;
-    padding:0px;
+.left-column{
+ padding-top:5px;
+}
+
+.right-column {
+ 
 }
 
 
@@ -281,6 +288,5 @@ textarea.form-control {
     outline: none;
     box-shadow: none;
 }
-
-
 </style>
+
