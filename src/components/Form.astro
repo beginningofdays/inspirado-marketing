@@ -200,19 +200,19 @@ const { content } = Astro.props;
 
 .component-marketing-form-header {
     display: flex;
+    flex-direction: column; /* Stack image and text */
     width: 100%;
     gap: 5px; /* Space between the columns */
-    flex: 1; /* Each column takes up equal space */
 }
 
-.left-column{
- padding-top:5px;
+.left-column {
+    padding-top: 5px;
+    width: 100%;
 }
 
 .right-column {
- 
+    width: 100%;
 }
-
 
 .left-column img {
     max-width: 100%; /* Ensure image scales within its container */
@@ -235,7 +235,7 @@ const { content } = Astro.props;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     width: 100%;
 }
 
@@ -289,4 +289,3 @@ textarea.form-control {
     box-shadow: none;
 }
 </style>
-

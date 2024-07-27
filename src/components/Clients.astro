@@ -9,9 +9,9 @@ import images from '/public/js/services.json'; // Ensure this path is correct re
         <div class="line"></div>
     </div>
 
-    <div class="component-services">
+<div class="component-services">
         <p><strong>PhysioCare</strong> was established in 2001 and has developed into an extensive team of health care providers across five clinic locations. Our team consists of a 
-            strong mix of our highly experienced Chartered Physiotherapists, Personal Trainers, Class Instructors, Front-of-House and Admin teams. They work side by side to deliver the best quality of care and customer experience for you to ensure that your experience at PhysioCare is nothing but positive.</p>
+        strong mix of our highly experienced Chartered Physiotherapists, Personal Trainers, Class Instructors, Front-of-House and Admin teams. They work side by side to deliver the best quality of care and customer experience for you to ensure that your experience at PhysioCare is nothing but positive.</p>
         {images[0] && (
             <div class="component-business-image">
                 <img src={images[0].src} alt={images[0].alt} class="banner-image" />
@@ -29,7 +29,8 @@ import images from '/public/js/services.json'; // Ensure this path is correct re
                 <img src={images[1].src} alt={images[1].alt} class="banner-image" />
             </div>
         )}
-    </div>
+</div>
+
 </div>
 
 <style>
@@ -38,12 +39,10 @@ import images from '/public/js/services.json'; // Ensure this path is correct re
         flex-direction: column;
         align-items:center;
         justify-content: center;
-        min-height: 100vh;
     }
 
     .component-business-image {
         border: 1px solid red; /* Add border to see if the image container is present */
-        padding: 10px; /* Add padding to see if the image is visible */
     }
 
     .banner-image {

@@ -5,28 +5,40 @@ const {} = Astro.props;
 <div class="flex-column pb-2">    
     <div class="image-gallery">
         <div class="left-column">
-            <a href="https://www.bdo.ie/en-gb/bdo-ireland" data-lightbox="image-gallery">
-                <img src="/images/bdo.jpg" alt="dbo">
-                <div class="overlay">BDO IRELAND</div>
+            <div class="">
+                <div class="title-wrapper">
+                    <div class="line"></div>
+                    <h2>Success Stories</h2>
+                    <div class="line"></div>
+                </div>
+                Inspirado Marketing is dedicated to connecting with businesses and facilitating their community marketing initiatives. 
+                By leveraging our expertise in community outreach and brand development, we have successfully partnered with companies like Sweetgreen, Stack, and Sports Physio. These collaborations have resulted in impactful campaigns that enhanced their visibility and growth potential within their communities. 
+            </div>
+
+            <a href="https://www.sweetgreen.com/" data-lightbox="image-gallery">
+                <img src="/images/sweetgreens.png" alt="sweet greens">
+                <div class="overlay">Sweet Greens</div>
+            </a>
+        
+        </div>
+        <div class="right-column">
+            <a href="https:/www.stacked.ie/" data-lightbox="image-gallery">
+                <img src="/images/stack.png" alt="stack">
+                <div class="overlay">STACK</div>
+            </a>
+
+            <a href="https://physio.ie/" data-lightbox="image-gallery">
+                <img src="/images/spi.jpg" alt="sports physio ireland">
+                <div class="overlay">SPORTS PHYSIO IRELAND</div>
             </a>
             <a href="https://physio.ie/" data-lightbox="image-gallery">
                 <img src="/images/spi.jpg" alt="sports physio ireland">
                 <div class="overlay">SPORTS PHYSIO IRELAND</div>
             </a>
-        </div>
-        <div class="right-column">
-            <a href="https://www.stacked.ie/" data-lightbox="image-gallery">
-                <img src="/images/stack.png" alt="stack">
-                <div class="overlay">STACK</div>
-            </a>
-            <a href="https://www.sweetgreen.com/" data-lightbox="image-gallery">
-                <img src="/images/sweetgreens.png" alt="sweet greens">
-                <div class="overlay">Sweet Greens</div>
-            </a>
+
         </div>
     </div>
 </div>
-
 
 <script>
 lightbox.option({
@@ -35,10 +47,7 @@ lightbox.option({
 })
 </script>
 
-
 <style>
-
-
 .image-gallery {
     display: flex;
     justify-content: space-between;
@@ -55,6 +64,7 @@ lightbox.option({
     position: relative; /* For positioning the overlay and text */
     margin-bottom: 5px;
     overflow: hidden; /* To clip the overlay */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add shadow to images */
 }
 
 .left-column a:last-child, .right-column a:last-child {
@@ -93,4 +103,38 @@ a:hover .overlay {
     pointer-events: auto; /* Allow interactions with the overlay */
 }
 
+/* Media query for mobile view */
+@media (max-width: 768px) {
+    .image-gallery {
+        flex-direction: column; /* Stack images vertically */
+    }
+
+    .left-column, .right-column {
+        flex-direction: column;
+    }
+
+    .left-column a, .right-column a {
+        margin-bottom: 10px; /* Add more space between images */
+    }
+}
+
+.title-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.title-wrapper h2 {
+    margin: 0 1rem; /* Add some space between the lines and the text */
+    word-wrap: break-word; /* Break words if necessary */
+    word-break: break-word; /* Ensure long words break to fit container */
+}
+
+.line {
+    flex-grow: 1;
+    height: 2px; /* Line height */
+    background: #1c4880; /* Dark blue color for the line */
+}
 </style>
