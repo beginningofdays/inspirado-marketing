@@ -1,0 +1,83 @@
+---
+
+---
+<div class="flex-column">
+<div class="login-container">
+    <h1>Login</h1>
+    <form id="loginForm">
+        <label for="username">Username:</label>
+        <input type="text" id="username" required>
+        
+        <label for="password">Password:</label>
+        <input type="password" id="password" required>     
+        <button type="submit">Log In</button>
+    </form>
+</div>
+</div>
+
+<script>
+    document.getElementById('loginForm').addEventListener('submit', function(event) {
+        event.preventDefault(); // Prevent form from submitting normally
+        
+        const username = document.getElementById('username').value;
+        const password = document.getElementById('password').value;
+
+        if (username === 'administrator' && password === 'lordoftherings') {
+            // Redirect to admin page if credentials are correct
+            window.location.href = 'admin.html';
+        } else {
+            alert('Invalid username or password');
+        }
+    });
+</script>
+
+<style>
+
+
+.login-container {
+    display:flex;
+    
+    background-color: #1c4880; /* Dark blue background for the form */
+    padding: 2rem; /* Add padding around the form content */
+    border-radius: 8px; /* Rounded corners for the form */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow effect for the form */
+    width: 100%;
+    max-width: 600px; /* Set a maximum width for the form */
+}
+
+.login-container h1 {
+    color: #ffffff;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.login-container label {
+    color: #ffffff;
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.login-container input {
+    width: 100%;
+    padding: 0.75rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.login-container button {
+    width: 100%;
+    padding: 0.75rem;
+    border: none;
+    border-radius: 4px;
+    background-color: #003366; /* Dark blue background for the button */
+    color: #ffffff;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.login-container button:hover {
+    background-color: #002244; /* Darker blue on hover */
+}
+</style>
