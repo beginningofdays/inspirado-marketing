@@ -1,5 +1,5 @@
 ---
-const {} = Astro.props;
+import images from '/public/js/lightbox.json';
 ---
 
 <div class="flex-column pb-2">    
@@ -15,24 +15,28 @@ const {} = Astro.props;
                 By leveraging our expertise in community outreach and brand development, we have successfully partnered with companies like Sweetgreen, Stack, and Sports Physio. These collaborations have resulted in impactful campaigns that enhanced their visibility and growth potential within their communities. 
             </div>
 
-            <a href="https://www.sweetgreen.com/" data-lightbox="image-gallery">
-                <img src="/images/sweetgreens.png" alt="sweet greens">
-                <div class="overlay">Sweet Greens</div>
-            </a>
-        
+            {images[0] && (
+                    <a href="https://www.sweetgreen.com/" data-lightbox="image-gallery">
+                    <img src={images[0].src} alt={images[0].alt} class="banner-image"/>
+                    <div class="overlay">Sweet Greens</div>
+                    </a>
+            )}
         </div>
+
         <div class="right-column pt-4">
-            <a href="https:/www.stacked.ie/" data-lightbox="image-gallery">
-                <img src="/images/stack.png" alt="stack">
-                <div class="overlay">STACK</div>
-            </a>
+            {images[1] && (
+                <a href="https:/www.stacked.ie/" data-lightbox="image-gallery">
+                <img src={images[1].src} alt={images[1].alt} class="banner-image"/>
+                <div class="overlay">SWEET GREENS</div>
+                </a>
+            )}
 
-            <a href="https://physio.ie/" data-lightbox="image-gallery">
-                <img src="/images/spi.jpg" alt="sports physio ireland">
+            {images[2] && (
+                <a href="https://physio.ie/" data-lightbox="image-gallery">
+                <img src={images[2].src} alt={images[2].alt} class="banner-image"/>
                 <div class="overlay">SPORTS PHYSIO IRELAND</div>
-            </a>
-
-
+                </a>
+            )}  
         </div>
     </div>
 </div>

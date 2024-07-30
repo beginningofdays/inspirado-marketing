@@ -387,6 +387,63 @@ p{
 }
 
 
+/*LIGHTBOX COMPONENT STYLES*/
+.image-gallery {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+  gap: 3px;
+}
+
+.left-column, .right-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.left-column a, .right-column a {
+  position: relative; /* For positioning the overlay and text */
+  margin-bottom: 5px;
+  overflow: hidden; /* To clip the overlay */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add shadow to images */
+}
+
+.left-column a:last-child, .right-column a:last-child {
+  margin-bottom: 0;
+}
+
+.left-column img, .right-column img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.3s ease; /* Smooth scaling effect */
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Semi-transparent grey */
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.3s ease; /* Smooth fade-in effect */
+  pointer-events: none; /* Allow clicking through the overlay */
+}
+
+a:hover img {
+  transform: scale(1.05); /* Slightly scale up the image */
+}
+
+a:hover .overlay {
+  opacity: 1;
+  pointer-events: auto; /* Allow interactions with the overlay */
+}
+
+
 /*FOOTER COMPONENT STYLES*/
 .component-footer {
   background-color: black;
