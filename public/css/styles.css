@@ -48,8 +48,6 @@ p{
 
 .title-wrapper h2 {
   margin: 0 1rem; /* Add some space between the lines and the text */
-  word-wrap: break-word; /* Break words if necessary */
-  word-break: break-word; /* Ensure long words break to fit container */
 }
 
 .line {
@@ -492,14 +490,14 @@ p{
 
 
 /*ADMIN COMPONENT STYLES*/
-    /* Table Styles */
+/* Table Styles */
 #dataTable {
     width: 100%;
     border-collapse: collapse;
     margin-top: 20px;
 }
 
-  /* Header Styles */
+/* Header Styles */
 #dataTable thead {
     background-color: #003366; /* Dark blue background for the header */
     color: white; /* White text color for the header */
@@ -510,7 +508,7 @@ p{
     text-align: left;
 }
 
-  /* Row Styles */
+/* Row Styles */
 #dataTable tbody tr:nth-child(even) {
     background-color: #d0e6f9; /* Light blue background for even rows */
 }
@@ -582,7 +580,7 @@ p{
 /*MEDIA QUERIES*/
 
 /* Small devices (landscape phones, 576px and up)*/
-@media (min-width: 576px) { ... }
+@media (min-width: 576px) {  }
 
 /* Medium devices (tablets, 768px and up)*/
 @media (min-width: 768px) {
@@ -604,4 +602,3 @@ p{
 
 /* XX-Large devices (larger desktops, 1400px and up)*/ 
 @media (min-width: 1400px) { }
-
