@@ -15,10 +15,24 @@ const {} = Astro.props;
                 <li>Ireland</li>
             </ul>
             <div class="social-media-icons pb-2">
-                <a href="#"><img src="/public/images/Social/facebook.png" alt="Facebook"></a>
-                <a href="#"><img src="/public/images/Social/instagram.png" alt="Instagram"></a>
-                <a href="#"><img src="/public/images/Social/youtube.png" alt="YouTube"></a>
+                <div class="facebook-icon" id="facebookShare"><img src="/public/images/Social/facebook.png" alt="Facebook"></div> 
+                <div class="twitter-icon" id="twitterShare"><img src="/public/images/Social/twitter.png" alt="twitter"></div>
             </div>
         </div>
     </div>
 </div>
+
+<script>
+    document.getElementById('facebookShare').addEventListener('click', function() {
+      const urlToShare = encodeURIComponent(window.location.href);
+      const facebookShareUrl = `https://www.facebook.com/sharer/sharer.php?u=${urlToShare}`;
+      window.open(facebookShareUrl, 'facebook-share-dialog', 'width=800,height=600');
+    });
+
+    document.getElementById('twitterShare').addEventListener('click', function() {
+      const urlToShare = encodeURIComponent(window.location.href);
+      const textToShare = encodeURIComponent('Check out this awesome webpage: ');
+      const twitterShareUrl = `https://twitter.com/intent/tweet?url=${urlToShare}&text=${textToShare}`;
+      window.open(twitterShareUrl, 'twitter-share-dialog', 'width=800,height=600');
+    });
+</script>
