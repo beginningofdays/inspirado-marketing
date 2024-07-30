@@ -1,8 +1,8 @@
 /*ROOT STYLES*/
 :root{
-    --primary:#EFEDE4;
-    --secondary:#ffffff;
-    --header:#000000;
+  --primary:#EFEDE4;
+  --secondary:#ffffff;
+  --header:#000000;
 }
 
 body{
@@ -13,7 +13,7 @@ body{
 }
 
 .header{
-    background-color: var(--header);
+  background-color: var(--header);
 }
 
 .flex-column {
