@@ -1,4 +1,4 @@
 [
-    { "src": "/images/spi.jpg", "alt": "physiocare" },
-    { "src": "/images/bdo.jpg", "alt": "bdo" }
-  ]
+    { "src": "/images/spi.jpg", "alt": "physiocare", "title": "physiocare" },
+    { "src": "/images/bdo.jpg", "alt": "bdo", "title": "bdo"}
+]

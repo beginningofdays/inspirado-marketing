@@ -38,7 +38,7 @@ p{
 
 
 /*HEADER AND LINE STYLE*/
-.title-wrapper {
+.component-title-wrapper {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -46,11 +46,11 @@ p{
   box-sizing: border-box;
 }
 
-.title-wrapper h2 {
+.component-title-wrapper h2 {
   margin: 0 1rem; /* Add some space between the lines and the text */
 }
 
-.line {
+.component-line {
   flex-grow: 1;
   height: 2px; /* Line height */
   background: #1c4880; /* Dark blue color for the line */
@@ -580,25 +580,46 @@ p{
 /*MEDIA QUERIES*/
 
 /* Small devices (landscape phones, 576px and up)*/
-@media (min-width: 576px) {  }
+@media (min-width: 576px) { 
+
+}
 
 /* Medium devices (tablets, 768px and up)*/
 @media (min-width: 768px) {
-  .menu .nav li {
-    display: block;
-    margin-left: 20px;
-  }
+.menu .nav li {
+  display: block;
+  margin-left: 20px;
+}
 
-  .menu .nav .mobile-nav {
-    display: none;
-  }
+.menu .nav .mobile-nav {
+  display: none;
+}
+
+.image-gallery {
+  flex-direction: column; /* Stack images vertically */
+}
+
+.left-column, .right-column {
+  flex-direction: column;
+}
+
+.left-column a, .right-column a {
+  margin-bottom: 10px; /* Add more space between images */
+}
+
 }
 
 /* Large devices (desktops, 992px and up) */ 
-@media (min-width: 992px) { }
+@media (min-width: 992px) { 
+
+}
 
 /* X-Large devices (large desktops, 1200px and up)*/ 
-@media (min-width: 1200px) { }
+@media (min-width: 1200px) {
+  
+}
 
 /* XX-Large devices (larger desktops, 1400px and up)*/ 
-@media (min-width: 1400px) { }
+@media (min-width: 1400px) { 
+
+}

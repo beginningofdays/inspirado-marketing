@@ -6,10 +6,10 @@ const {} = Astro.props;
     <div class="image-gallery">
         <div class="left-column">
             <div class="">
-                <div class="title-wrapper">
-                    <div class="line"></div>
+                <div class="component-title-wrapper">
+                    <div class="component-line"></div>
                     <h2>Success Stories</h2>
-                    <div class="line"></div>
+                    <div class="component-line"></div>
                 </div>
                 Inspirado Marketing is dedicated to connecting with businesses and facilitating their community marketing initiatives. 
                 By leveraging our expertise in community outreach and brand development, we have successfully partnered with companies like Sweetgreen, Stack, and Sports Physio. These collaborations have resulted in impactful campaigns that enhanced their visibility and growth potential within their communities. 
@@ -38,10 +38,12 @@ const {} = Astro.props;
 </div>
 
 <script>
-lightbox.option({
-  'resizeDuration': 200,
-  'wrapAround': true
-})
+    document.addEventListener('DOMContentLoaded', function() {
+      lightbox.option({
+        'resizeDuration': 200,
+        'wrapAround': true
+      });
+    });
 </script>
 
 <style>
@@ -101,37 +103,7 @@ a:hover .overlay {
 }
 
 /* Media query for mobile view */
-@media (max-width: 768px) {
-    .image-gallery {
-        flex-direction: column; /* Stack images vertically */
-    }
 
-    .left-column, .right-column {
-        flex-direction: column;
-    }
 
-    .left-column a, .right-column a {
-        margin-bottom: 10px; /* Add more space between images */
-    }
-}
 
-.title-wrapper {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    box-sizing: border-box;
-}
-
-.title-wrapper h2 {
-    margin: 0 1rem; /* Add some space between the lines and the text */
-    word-wrap: break-word; /* Break words if necessary */
-    word-break: break-word; /* Ensure long words break to fit container */
-}
-
-.line {
-    flex-grow: 1;
-    height: 2px; /* Line height */
-    background: #1c4880; /* Dark blue color for the line */
-}
 </style>
