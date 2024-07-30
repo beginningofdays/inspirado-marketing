@@ -14,6 +14,36 @@ body{
     background-color: var(--header);
 }
 
+.flex-column {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+
+/*HEADER AND LINE STYLE*/
+.title-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.title-wrapper h2 {
+  margin: 0 1rem; /* Add some space between the lines and the text */
+  word-wrap: break-word; /* Break words if necessary */
+  word-break: break-word; /* Ensure long words break to fit container */
+}
+
+.line {
+  flex-grow: 1;
+  height: 2px; /* Line height */
+  background: #1c4880; /* Dark blue color for the line */
+}
+
+
 /*FONTS*/
 h1{
     font-family: "Roboto", sans-serif;
@@ -93,29 +123,550 @@ h1{
   font-style: italic;
 }
 
+
+/*NAR BAR LOGO STYLES*/
+.flex-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.component-logo {
+  background-color: white;
+  margin: 0 auto;
+  text-align: center;
+  flex: 0 0 auto;
+}
+
+.component-logo img {
+  max-width: 100%;
+  height: auto;
+  width: 200px; /* Adjust this value as necessary */
+}
+
+
+/* DESKTOP NAV BAR MENU STYLES */
+.menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: black;
+  width: 100%;
+  height: 60px;
+  padding: 0 15px;
+}
+
+.menu nav {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.menu .nav {
+  display: flex;
+  list-style: none;
+}
+
+.menu .nav li {
+  display: none;
+}
+
+.menu .nav li a {
+  text-decoration: none;
+  color: white;
+}
+
+
+/* MOBILE NAV BAR MENU STYLES */
+.menu .nav .mobile-nav {
+  display: block;
+  margin-right: 30px; /* Adjust the margin to your preference */
+  z-index: 2000;
+}
+
+.sliding-panel {
+  position: fixed;
+  top: 0;
+  left: 100%;
+  width: 100%;
+  height: 100%;
+  background: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: left 0.3s ease;
+  z-index: 1000;
+}
+
+.sliding-panel.active {
+  top: 0;
+  left: 0;
+}
+
+.panel-nav {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+}
+
+.panel-nav li {
+  display: block;
+  margin: 20px 0;
+}
+
+.panel-nav a {
+  text-decoration: none;
+  color: white;
+  font-size: 24px;
+}
+
+
+/* BANNER STYLES */
+.component-banner-container {
+  width: 100%;
+  height: 400px; /* Fixed height */
+  overflow: hidden;
+  position: relative; /* Ensures that absolutely positioned elements are relative to this container */
+}
+
+.component-banner-image {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.banner-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensures the image covers the entire container while maintaining its aspect ratio */
+  display: block; /* Remove bottom space under image */
+}
+
+.banner-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Black overlay with 50% opacity */
+}
+
+.banner-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  color: white;
+  z-index: 1; /* Ensure content is above the overlay */
+}
+
+.banner-text {
+  margin-bottom: 20px;
+}
+
+.banner-button {
+  background-color: #dd0000; /* Adjust button styles as needed */
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 10px;
+  transition: border 0.3s ease;
+}
+
+.banner-button:hover {
+  border: 2px solid white;
+}
+
+
+/*SERVICES COMPONENT STYLES*/
+.modal-content {
+  background-color: #D29604;
+  color: white;
+  border: none;
+  width:100%;
+}
+.modal-footer .btn-secondary {
+  background-color: #6c757d;
+  border: none;
+}
+.modal-height {
+  min-height: 400px; /* Adjust height as needed */
+}
+.component-service-color-1 {
+  background-color: grey;
+  color: white;
+  margin-bottom: 20px;
+}
+
+
+/*CONTACT STYLES*/ 
+.component-company {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.component-team-container {
+  margin: 0px;
+}
+
+.team-member-content {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+}
+
+.component-team-member {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-top: 20px;
+}
+
+.component-image {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border: 1px solid gray;
+  margin-right: 20px; /* Space between image and text */
+}
+
+.team-member-text {
+  flex: 1;
+}
+
+.team-member-text p {
+  margin: 0;
+  font-size: 16px;
+}
+
+.no-dots {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.highlight {
+  color: red;
+  font-weight: bold;
+}
+
+.quote {
+  margin: 0;
+  background: #eee;
+  padding: 1em;
+  border-radius: 1em;
+}
+
+.quote figcaption,
+.quote blockquote {
+  margin: 1em;
+}
+
+
+/*CLIENT COMPONENT STYLES*/
+.component-services{  
+  display:flex;
+  flex-direction: column;
+  align-items:center;
+  justify-content: center;
+}
+
+.component-business-image {
+  border: 1px solid red; /* Add border to see if the image container is present */
+}
+
+.banner-image {
+  max-width: 100%; /* Ensure images fit within the container */
+  height: auto; /* Maintain aspect ratio */
+}
+
+
+/*BUSINESS COMPONENT STYLES*/
+.image-grid {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 10px;
+  gap: 3px;
+}
+
+.banner-image {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover; /* Ensure image covers the container */
+}
+
+
+/*MARKETING VIDEO COMPONENT STYLES*/
+.video-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+}
+
+.component-video {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%; /* 16:9 aspect ratio */
+  height: 0;
+  overflow: hidden;
+}
+
+.component-video iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+
+/*CONTACT STYLES*/ 
+.component-map{
+  width:100%;
+  height:300px;
+}
+#map{
+  width:100%;
+  height:100%;
+}
+.component-address{
+  text-align: center;
+}
+.component-address ul {
+  list-style-type: none; /* Remove the dots from the list */
+  padding: 0; /* Remove default padding */
+}
+.component-address li {
+  margin-bottom: 0.5rem; /* Optional: Add some space between list items */
+}
+
+
+/*FOOTER STYLES*/
+.component-footer {
+  background-color: black;
+  color: white;
+  text-align: center; /* Center text inside elements */
+}
+
+.logo-and-info {
+  display: flex;
+  flex-direction: column; /* Stack items vertically */
+  justify-content: center;
+  align-items: center;
+  gap: 10px; /* Space between logo and contact info */
+}
+
+.component-footer div {
+  margin: 0px 0; /* Space between items */
+}
+
+.component-footer ul {
+  list-style: none; /* Remove bullet points */
+  padding: 0;
+  margin: 0;
+}
+
+.component-footer li {
+  margin: 5px 0; /* Space between list items */
+}
+
+.logo img {
+  width: auto;
+  height: auto;
+  max-width: 200px; /* Set a max width for the logo */
+}
+
+.contact-info {
+  text-align: center; /* Center the contact info text */
+  padding: 0;
+  margin: 0;
+}
+
+.social-media-icons {
+  display: flex; /* Display icons in a row */
+  justify-content: center; /* Center the icons horizontally */
+  gap: 10px; /* Space between icons */
+  margin-top: 10px; /* Space between address and social icons */
+}
+
+.social-media-icons img {
+  width: 24px; /* Set a width for the social media icons */
+  height: 24px; /* Set a height for the social media icons */
+}
+
+
+/*LOGON COMPONENT STYLES*/
+.login-container {
+  display:flex;
+  background-color: #1c4880; /* Dark blue background for the form */
+  padding: 2rem; /* Add padding around the form content */
+  border-radius: 8px; /* Rounded corners for the form */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow effect for the form */
+  width: 100%;
+  max-width: 600px; /* Set a maximum width for the form */
+}
+
+.login-container h1 {
+  color: #ffffff;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.login-container label {
+  color: #ffffff;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.login-container input {
+  width: 100%;
+  padding: 0.75rem;
+  margin-bottom: 1rem;
+  border: 1px solid #ced4da;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.login-container button {
+  width: 100%;
+  padding: 0.75rem;
+  border: none;
+  border-radius: 4px;
+  background-color: #003366; /* Dark blue background for the button */
+  color: #ffffff;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.login-container button:hover {
+  background-color: #002244; /* Darker blue on hover */
+}
+
+
+/*ADMIN COMPONENT STYLES*/
+    /* Table Styles */
+#dataTable {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+  /* Header Styles */
+#dataTable thead {
+    background-color: #003366; /* Dark blue background for the header */
+    color: white; /* White text color for the header */
+}
+
+#dataTable th {
+    padding: 10px;
+    text-align: left;
+}
+
+  /* Row Styles */
+#dataTable tbody tr:nth-child(even) {
+    background-color: #d0e6f9; /* Light blue background for even rows */
+}
+
+#dataTable tbody tr:nth-child(odd) {
+    background-color: #f9d0d0; /* Light red background for odd rows */
+}
+
+#dataTable td {
+    padding: 10px;
+    border-bottom: 1px solid #ddd; /* Light gray border for rows */
+}
+
+/* Filter Container Styles */
+.filter-container {
+    margin-bottom: 20px;
+}
+
+/* Filter Row Styles */
+.filter-row {
+    display: flex;
+    gap: 10px; /* Space between elements */
+    margin-bottom: 10px;
+    flex-wrap: wrap;
+}
+
+.filter-row label {
+    margin-right: 5px;
+    white-space: nowrap; /* Prevent labels from wrapping */
+}
+
+.filter-row input {
+    margin-right: 10px;
+    padding: 5px;
+}
+
+/* Button Row Styles */
+.button-row {
+    display: flex;
+    gap: 10px; /* Space between buttons */
+}
+
+.button-row button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.button-row #filterButton {
+    background-color: #003366; /* Dark blue background for the Apply Filter button */
+    color: white; /* White text color */
+}
+
+.button-row #filterButton:hover {
+    background-color: #002244; /* Darker blue on hover */
+}
+
+.button-row #clearButton {
+    background-color: #cccccc; /* Light gray background for the Clear Filters button */
+    color: black; /* Black text color */
+}
+
+.button-row #clearButton:hover {
+    background-color: #b3b3b3; /* Darker gray on hover */
+}
+
+
 /*MEDIA QUERIES*/
 
 /* Small devices (landscape phones, 576px and up)*/
 @media (min-width: 576px) { ... }
 
 /* Medium devices (tablets, 768px and up)*/
-@media (min-width: 768px) { 
-    .menu .nav li {
-        display: inline-block;
-        margin: 0 15px;
-      }
-      
-      .menu .mobile-nav {
-        display: none;
-      }
+@media (min-width: 768px) {
+  .menu .nav li {
+    display: block;
+    margin-left: 20px;
+  }
+
+  .menu .nav .mobile-nav {
+    display: none;
+  }
 }
 
 /* Large devices (desktops, 992px and up) */ 
-@media (min-width: 992px) { ... }
+@media (min-width: 992px) { }
 
 /* X-Large devices (large desktops, 1200px and up)*/ 
-@media (min-width: 1200px) { ... }
+@media (min-width: 1200px) { }
 
 /* XX-Large devices (larger desktops, 1400px and up)*/ 
-@media (min-width: 1400px) { ... }
+@media (min-width: 1400px) { }
 

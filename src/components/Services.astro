@@ -4,8 +4,6 @@ const { content } = Astro.props;
 <div class="container-fluid gx-0">
   <div class="row justify-content-center">
     <div class="col-lg-12">
-
-
       <!-- Community Marketing Section -->
       <div class="p-5 component-service-color-1 border border-1 mb-3">
         <h1>Community Marketing</h1>
@@ -13,9 +11,10 @@ const { content } = Astro.props;
         <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#communityMarketingModal">
           More Information
         </button>
+        
         <!-- Community Marketing Modal -->
         <div class="modal fade" id="communityMarketingModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="communityMarketingModalLabel" aria-hidden="true">
-          <div class="modal-dialog modal-lg"> <!-- Adjust size here -->
+          <div class="modal-dialog modal-lg">
             <div class="modal-content modal-height">
               <div class="modal-header">
                 <h5 class="modal-title" id="communityMarketingModalLabel">Community Marketing - Page 1</h5>
@@ -51,9 +50,10 @@ const { content } = Astro.props;
         <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#communityBuildingModal">
           More Information
         </button>
+
         <!-- Community Building Modal -->
         <div class="modal fade" id="communityBuildingModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="communityBuildingModalLabel" aria-hidden="true">
-          <div class="modal-dialog modal-lg"> <!-- Adjust size here -->
+          <div class="modal-dialog modal-lg">
             <div class="modal-content modal-height">
               <div class="modal-header">
                 <h5 class="modal-title" id="communityBuildingModalLabel">Community Building</h5>
@@ -61,18 +61,17 @@ const { content } = Astro.props;
               </div>
               <div class="modal-body" id="communityBuildingContent">
                 <div class="modal-page" id="communityBuildingPage1">
-                  Community building is the process of creating and developing a network of individuals who share common interests, values, or goals. 
-                  It’s about creating a sense of belonging and engagement among your audience, making them feel like an integral part of your brand’s journey
+                  Community building is the process of creating and developing a network of individuals who share common interests, values, or goals. It’s about creating a sense of belonging and engagement among your audience, making them feel like an integral part of your brand’s journey
                 </div>
                 <div class="modal-page d-none" id="communityBuildingPage2">
                   Investing in community building offers numerous advantages for your brand:
                   <ul>
-                  <li>Stronger Brand Loyalty: A well-nurtured community fosters deep emotional connections, leading to increased brand loyalty and advocacy.</li>
-                  <li>Enhanced Customer Insights: Engaged community members provide valuable feedback and insights, helping you better understand their needs and preferences.</li
-                  <li>Organic Growth: A thriving community generates organic growth through word-of-mouth and referrals, reducing the need for extensive promotional efforts.</li>
-                  <li>Increased Engagement: Active communities drive higher levels of engagement, creating a more vibrant and interactive brand presence.</li>
+                    <li>Stronger Brand Loyalty: A well-nurtured community fosters deep emotional connections, leading to increased brand loyalty and advocacy.</li>
+                    <li>Enhanced Customer Insights: Engaged community members provide valuable feedback and insights, helping you better understand their needs and preferences.</li>
+                    <li>Organic Growth: A thriving community generates organic growth through word-of-mouth and referrals, reducing the need for extensive promotional efforts.</li>
+                    <li>Increased Engagement: Active communities drive higher levels of engagement, creating a more vibrant and interactive brand presence.</li>
                   </ul>
-                  </div>
+                </div>
               </div>
               <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
@@ -90,9 +89,10 @@ const { content } = Astro.props;
         <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#socialMediaModal">
           More Information
         </button>
+
         <!-- Social Media Modal -->
         <div class="modal fade" id="socialMediaModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="socialMediaModalLabel" aria-hidden="true">
-          <div class="modal-dialog modal-lg"> <!-- Adjust size here -->
+          <div class="modal-dialog modal-lg">
             <div class="modal-content modal-height">
               <div class="modal-header">
                 <h5 class="modal-title" id="socialMediaModalLabel">Social Media</h5>
@@ -105,12 +105,12 @@ const { content } = Astro.props;
                 <div class="modal-page d-none" id="socialMediaPage2">
                   Investing in community building on platforms like Reddit, Quora, and Discord offers numerous benefits for your brand:
                   <ul>
-                  <li>Enhanced Brand Loyalty: Engaged communities foster deep emotional connections, leading to increased brand loyalty and advocacy. </li>
-                  <li>Valuable Customer Insights: Active communities provide valuable feedback and insights, helping you better understand your audience’s needs and preferences.</li>
-                  <li>Organic Growth: Thriving communities generate organic growth through word-of-mouth and referrals, reducing the need for extensive promotional efforts.</li>
-                  <li>Higher Engagement: Active participation and real-time interactions drive higher levels of engagement, creating a more dynamic and interactive brand presence. </li>
+                    <li>Enhanced Brand Loyalty: Engaged communities foster deep emotional connections, leading to increased brand loyalty and advocacy.</li>
+                    <li>Valuable Customer Insights: Active communities provide valuable feedback and insights, helping you better understand your audience’s needs and preferences.</li>
+                    <li>Organic Growth: Thriving communities generate organic growth through word-of-mouth and referrals, reducing the need for extensive promotional efforts.</li>
+                    <li>Higher Engagement: Active participation and real-time interactions drive higher levels of engagement, creating a more dynamic and interactive brand presence.</li>
                   </ul>
-              </div>
+                </div>
               </div>
               <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
@@ -125,28 +125,3 @@ const { content } = Astro.props;
 </div>
 
 
-
-<style>
-
-  .modal-content {
-    background-color: #D29604;
-    color: white;
-    border: none;
-    width:100%;
-  }
-
-  .modal-footer .btn-secondary {
-    background-color: #6c757d;
-    border: none;
-  }
-
-  .modal-height {
-    min-height: 400px; /* Adjust height as needed */
-  }
-
-  .component-service-color-1 {
-    background-color: grey;
-    color: white;
-    margin-bottom: 20px;
-  }
-</style>
