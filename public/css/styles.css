@@ -124,7 +124,7 @@ h1{
 }
 
 
-/*NAR BAR LOGO STYLES*/
+/*NAR BAR LOGO COMPONENT STYLES*/
 .flex-row {
   display: flex;
   justify-content: center;
@@ -145,7 +145,7 @@ h1{
 }
 
 
-/* DESKTOP NAV BAR MENU STYLES */
+/* DESKTOP NAV BAR MENU COMPONENT STYLES */
 .menu {
   display: flex;
   justify-content: space-between;
@@ -177,7 +177,7 @@ h1{
 }
 
 
-/* MOBILE NAV BAR MENU STYLES */
+/* MOBILE NAV BAR COMPONENT STYLES */
 .menu .nav .mobile-nav {
   display: block;
   margin-right: 30px; /* Adjust the margin to your preference */
@@ -222,7 +222,7 @@ h1{
 }
 
 
-/* BANNER STYLES */
+/* BANNER COMPONENT STYLES */
 .component-banner-container {
   width: 100%;
   height: 400px; /* Fixed height */
@@ -307,7 +307,7 @@ h1{
 }
 
 
-/*CONTACT STYLES*/ 
+/*CONTACT COMPONENT STYLES*/ 
 .component-company {
   display: flex;
   flex-direction: column;
@@ -433,7 +433,7 @@ h1{
 }
 
 
-/*CONTACT STYLES*/ 
+/*CONTACT COMPONENT STYLES*/ 
 .component-map{
   width:100%;
   height:300px;
@@ -454,7 +454,7 @@ h1{
 }
 
 
-/*FOOTER STYLES*/
+/*FOOTER COMPONENT STYLES*/
 .component-footer {
   background-color: black;
   color: white;
