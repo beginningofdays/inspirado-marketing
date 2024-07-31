@@ -1,21 +1,26 @@
-/*ROOT STYLES*/
-:root{
-  --primary:#EFEDE4;
-  --secondary:#ffffff;
-  --header:#000000;
+/* Root Styles */
+:root {
+  --primary: #EFEDE4;
+  --secondary: #ffffff;
+  --header: #000000;
+  --accent: #FF5733; /* Accent color for call-to-action buttons */
+  --hover-accent: #C70039; /* Darker shade for hover effect */
 }
 
-body{
- font-family: "Roboto", sans-serif;
- background-color: var(--primary);
- font-weight: 400;
- font-style: normal;
+/* Body */
+body {
+  font-family: "Roboto", sans-serif;
+  background-color: var(--primary);
+  font-weight: 400;
+  font-style: normal;
 }
 
-.header{
+/* Header */
+.header {
   background-color: var(--header);
 }
 
+/* Flex Column */
 .flex-column {
   display: flex;
   justify-content: center;
@@ -23,23 +28,22 @@ body{
   height: 100%;
 }
 
-
-/*FONTS*/
-h1{
+/* Fonts */
+h1 {
   font-family: "Roboto", sans-serif;
   color: var(--secondary);
+  font-size: 2rem; /* Increase font size for better visibility */
 }
 
-p{
+p {
   font-family: "Roboto", sans-serif;
   font-weight: 400;
   font-style: normal;
-  padding:0px;
-  margin:0px;
+  padding: 0;
+  margin: 0;
 }
 
-
-/*HEADER AND LINE STYLE*/
+/* Header Title and Line Style */
 .component-title-wrapper {
   display: flex;
   align-items: center;
@@ -49,17 +53,16 @@ p{
 }
 
 .component-title-wrapper h2 {
-  margin: 0 1rem; /* Add some space between the lines and the text */
+  margin: 0 1rem; /* Add space between lines and text */
 }
 
 .component-line {
   flex-grow: 1;
   height: 2px; /* Line height */
-  background: #1c4880; /* Dark blue color for the line */
+  background: var(--accent); /* Accent color for the line */
 }
 
-
-/*NAR BAR LOGO COMPONENT STYLES*/
+/* Navbar Logo */
 .flex-row {
   display: flex;
   justify-content: center;
@@ -67,7 +70,7 @@ p{
 }
 
 .component-logo {
-  background-color: white;
+  background-color: var(--secondary);
   margin: 0 auto;
   text-align: center;
   flex: 0 0 auto;
@@ -76,19 +79,19 @@ p{
 .component-logo img {
   max-width: 100%;
   height: auto;
-  width: 200px; /* Adjust this value as necessary */
+  width: 200px; /* Adjust as necessary */
 }
 
-
-/* DESKTOP NAV BAR MENU COMPONENT STYLES */
+/* Desktop Navbar Menu */
 .menu {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: black;
+  background-color: var(--header);
   width: 100%;
   height: 60px;
   padding: 0 15px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add shadow for depth */
 }
 
 .menu nav {
@@ -103,20 +106,28 @@ p{
 }
 
 .menu .nav li {
-  display: none;
+  display: block;
+  margin-left: 20px; /* Space between menu items */
 }
 
 .menu .nav li a {
   text-decoration: none;
-  color: white;
+  color: var(--secondary);
+  font-weight: 500; /* Slightly bolder font for better readability */
+  font-size: 16px; /* Increase font size */
+  transition: color 0.3s ease; /* Smooth color transition on hover */
 }
 
+.menu .nav li a:hover {
+  color: var(--accent); /* Accent color on hover */
+}
 
-/* MOBILE NAV BAR COMPONENT STYLES */
+/* Mobile Navbar */
 .menu .nav .mobile-nav {
   display: block;
-  margin-right: 30px; /* Adjust the margin to your preference */
+  margin-right: 30px; /* Margin for the mobile menu */
   z-index: 2000;
+  font-size: 18px; /* Larger font size for better visibility */
 }
 
 .sliding-panel {
@@ -125,7 +136,7 @@ p{
   left: 100%;
   width: 100%;
   height: 100%;
-  background: black;
+  background: var(--header);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -134,7 +145,6 @@ p{
 }
 
 .sliding-panel.active {
-  top: 0;
   left: 0;
 }
 
@@ -152,12 +162,35 @@ p{
 
 .panel-nav a {
   text-decoration: none;
-  color: white;
+  color: var(--secondary);
   font-size: 24px;
+  font-weight: 500; /* Bold font for better visibility */
+  transition: color 0.3s ease; /* Smooth color transition on hover */
 }
 
+.panel-nav a:hover {
+  color: var(--accent); /* Accent color on hover */
+}
 
-/* BANNER COMPONENT STYLES */
+/* Banner Button */
+.banner-button {
+  background-color: var(--accent);
+  color: var(--secondary);
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: 500; /* Bold text */
+  border-radius: 5px; /* Rounded corners */
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth transitions */
+}
+
+.banner-button:hover {
+  background-color: var(--hover-accent); /* Darker accent color on hover */
+  transform: scale(1.05); /* Slight scaling effect */
+}
+
+/* Banner Component Styles */
 .component-banner-container {
   width: 100%;
   height: 400px; /* Fixed height */
@@ -196,7 +229,7 @@ p{
   flex-direction: column;
   align-items: center;
   text-align: center;
-  color: white;
+  color: var(--secondary);
   z-index: 1; /* Ensure content is above the overlay */
 }
 
@@ -204,70 +237,7 @@ p{
   margin-bottom: 20px;
 }
 
-.banner-button {
-  background-color: #dd0000; /* Adjust button styles as needed */
-  border: none;
-  padding: 10px 20px;
-  font-size: 16px;
-  color: white;
-  font-weight: bold;
-  cursor: pointer;
-  border-radius: 10px;
-  transition: border 0.3s ease;
-}
-
-.banner-button:hover {
-  border: 2px solid white;
-}
-
-/*MARKETING VIDEO COMPONENT STYLES*/
-.video-container {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  height: 100%;
-}
-
-.component-video {
-  position: relative;
-  width: 100%;
-  padding-bottom: 56.25%; /* 16:9 aspect ratio */
-  height: 0;
-  overflow: hidden;
-}
-
-.component-video iframe {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  border: 0;
-}
-
-
-/*CONTACT COMPONENT STYLES*/ 
-.component-map{
-  width:100%;
-  height:300px;
-}
-#map{
-  width:100%;
-  height:100%;
-}
-.component-address{
-  text-align: center;
-}
-.component-address ul {
-  list-style-type: none; /* Remove the dots from the list */
-  padding: 0; /* Remove default padding */
-}
-.component-address li {
-  margin-bottom: 0.5rem; /* Optional: Add some space between list items */
-}
-
-
-/*LIGHTBOX COMPONENT STYLES*/
+/* Lightbox Component Styles */
 .image-gallery {
   display: flex;
   justify-content: space-between;
@@ -305,7 +275,7 @@ p{
   width: 100%;
   height: 100%;
   background: rgba(0, 0, 0, 0.5); /* Semi-transparent grey */
-  color: white;
+  color: var(--secondary);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -323,11 +293,10 @@ a:hover .overlay {
   pointer-events: auto; /* Allow interactions with the overlay */
 }
 
-
-/*FOOTER COMPONENT STYLES*/
+/* Footer Component Styles */
 .component-footer {
-  background-color: black;
-  color: white;
+  background-color: var(--header);
+  color: var(--secondary);
   text-align: center; /* Center text inside elements */
 }
 
@@ -377,11 +346,10 @@ a:hover .overlay {
   height: 24px; /* Set a height for the social media icons */
 }
 
-
-/*LOGON COMPONENT STYLES*/
+/* Login Component Styles */
 .login-container {
-  display:flex;
-  background-color: #1c4880; /* Dark blue background for the form */
+  display: flex;
+  background-color: var(--header); /* Dark background for the form */
   padding: 2rem; /* Add padding around the form content */
   border-radius: 8px; /* Rounded corners for the form */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow effect for the form */
@@ -390,13 +358,13 @@ a:hover .overlay {
 }
 
 .login-container h1 {
-  color: #ffffff;
+  color: var(--secondary);
   text-align: center;
   margin-bottom: 1rem;
 }
 
 .login-container label {
-  color: #ffffff;
+  color: var(--secondary);
   display: block;
   margin-bottom: 0.5rem;
 }
@@ -415,107 +383,102 @@ a:hover .overlay {
   padding: 0.75rem;
   border: none;
   border-radius: 4px;
-  background-color: #003366; /* Dark blue background for the button */
-  color: #ffffff;
+  background-color: var(--accent); /* Accent color for the button */
+  color: var(--secondary);
   cursor: pointer;
   font-size: 1rem;
 }
 
 .login-container button:hover {
-  background-color: #002244; /* Darker blue on hover */
+  background-color: var(--hover-accent); /* Darker accent on hover */
 }
 
-
-/*ADMIN COMPONENT STYLES*/
+/* Admin Component Styles */
 /* Table Styles */
 #dataTable {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 20px;
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
 }
 
 /* Header Styles */
 #dataTable thead {
-    background-color: #003366; /* Dark blue background for the header */
-    color: white; /* White text color for the header */
+  background-color: var(--header); /* Dark header background */
+  color: var(--secondary); /* White text color */
 }
 
 #dataTable th {
-    padding: 10px;
-    text-align: left;
+  padding: 10px;
+  text-align: left;
 }
 
 /* Row Styles */
 #dataTable tbody tr:nth-child(even) {
-    background-color: #d0e6f9; /* Light blue background for even rows */
+  background-color: #d0e6f9; /* Light blue background for even rows */
 }
 
 #dataTable tbody tr:nth-child(odd) {
-    background-color: #f9d0d0; /* Light red background for odd rows */
+  background-color: #f9d0d0; /* Light red background for odd rows */
 }
 
 #dataTable td {
-    padding: 10px;
-    border-bottom: 1px solid #ddd; /* Light gray border for rows */
+  padding: 10px;
+  border-bottom: 1px solid #ddd; /* Light gray border for rows */
 }
 
 /* Filter Container Styles */
 .filter-container {
-    margin-bottom: 20px;
+  margin-bottom: 20px;
 }
 
 /* Filter Row Styles */
 .filter-row {
-    display: flex;
-    gap: 10px; /* Space between elements */
-    margin-bottom: 10px;
-    flex-wrap: wrap;
+  display: flex;
+  gap: 10px; /* Space between elements */
+  margin-bottom: 10px;
+  flex-wrap: wrap;
 }
 
 .filter-row label {
-    margin-right: 5px;
-    white-space: nowrap; /* Prevent labels from wrapping */
+  margin-right: 5px;
+  white-space: nowrap; /* Prevent labels from wrapping */
 }
 
 .filter-row input {
-    margin-right: 10px;
-    padding: 5px;
+  margin-right: 10px;
+  padding: 5px;
 }
 
 /* Button Row Styles */
 .button-row {
-    display: flex;
-    gap: 10px; /* Space between buttons */
+  display: flex;
+  gap: 10px; /* Space between buttons */
 }
 
 .button-row button {
-    padding: 10px 20px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
 }
 
 .button-row #filterButton {
-    background-color: #003366; /* Dark blue background for the Apply Filter button */
-    color: white; /* White text color */
+  background-color: var(--header); /* Dark blue background for the Apply Filter button */
+  color: var(--secondary); /* White text color */
 }
 
 .button-row #filterButton:hover {
-    background-color: #002244; /* Darker blue on hover */
+  background-color: var(--hover-accent); /* Darker blue on hover */
 }
 
 .button-row #clearButton {
-    background-color: #cccccc; /* Light gray background for the Clear Filters button */
-    color: black; /* Black text color */
+  background-color: #cccccc; /* Light gray background for the Clear Filters button */
+  color: black; /* Black text color */
 }
 
 .button-row #clearButton:hover {
-    background-color: #b3b3b3; /* Darker gray on hover */
+  background-color: #b3b3b3; /* Darker gray on hover */
 }
-
-
-/*MEDIA QUERIES*/
-
 
 /* Base Styles (default desktop layout) */
 .image-gallery {
@@ -556,7 +519,7 @@ a:hover .overlay {
   width: 100%;
   height: 100%;
   background: rgba(0, 0, 0, 0.5);
-  color: white;
+  color: var(--secondary);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -643,8 +606,3 @@ a:hover .overlay {
     margin-left: 20px; /* Space between image and text */
   }
 }
-
-
-
-
-

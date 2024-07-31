@@ -216,6 +216,7 @@ const { } = Astro.props;
     height: auto; /* Maintain aspect ratio */
 }
 
+
 /* FORM STYLING */
 .component-form {
     display: flex;
@@ -273,5 +274,14 @@ textarea.form-control {
 .btn-primary:active {
     outline: none;
     box-shadow: none;
+}
+@media (min-width: 768px) {
+    .component-marketing-form-header {
+        flex-direction: row; /* Switch to row layout on larger screens */
+    }
+
+    .left-column, .right-column {
+        width: 50%; /* Each column takes up 50% of the width */
+    }
 }
 </style>

@@ -15,15 +15,6 @@ import images from '/public/js/services.json';
         <p>At Inspirado Marketing, we pride ourselves on our dedicated and talented team. Each member brings a unique set of skills and a passion for innovation, driving our success and ensuring we deliver outstanding results for our clients.</p>
     </div>
     
-<div class="component-address">
-     <ul> 
-        <li><u><strong>Contact Information</strong></u></li>
-        <li>Maynooth</li>
-        <li>Co Kildare</li>
-        <li>W24 5677</li>
-        <li>Ireland</li>
-    </ul>
-</div>
     
 <div class="component-map">
     <div id="map">
@@ -37,10 +28,9 @@ import images from '/public/js/services.json';
 
             L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
                 attribution: ''
-            }).addTo(map);
-            
+            }).addTo(map);       
         </script>
-        </div>
+    </div>
     </div>
    </div>
 </div> 
@@ -52,6 +42,18 @@ import images from '/public/js/services.json';
   gap: 20px;
 }
 
+.component-map {
+  position: relative;
+  width: 100%;
+  height: 400px; /* Adjust the height as needed */
+  margin-top: 20px; /* Add some space above the map */
+}
+#map {
+  width: 100%;
+  height: 100%;
+  border: 1px solid #ddd; /* Optional: adds a border around the map */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: adds a shadow around the map */
+}
 .component-team-container {
   margin: 0px;
 }
@@ -108,3 +110,5 @@ import images from '/public/js/services.json';
   margin: 1em;
 }
 </style>
+
+
