@@ -1,5 +1,5 @@
 ---
-const { content } = Astro.props;
+const { } = Astro.props;
 ---
 <div class="community-message flex-column mb-3">
     <div class="component-title">
@@ -9,7 +9,7 @@ const { content } = Astro.props;
             <div class="component-line"></div>
         </div>
     </div>
-    <div class="component-content pb-3">{content}.</div>
+
     
     <div class="component-marketing-form-header">
         <div class="left-column">
@@ -17,7 +17,11 @@ const { content } = Astro.props;
         </div>
         <div class="right-column">
             <p>Inspirado Marketing, we understand that building a loyal customer base goes beyond traditional advertising. Our community marketing approach is designed to cultivate strong, meaningful connections with your target audience, transforming them into dedicated brand advocates.</p>
-            <p>At Inspirado Marketing, we believe in the power of community to drive your brand forward. Let us help you connect, engage, and grow with a dedicated community that loves your brand as much as you do.</p>
+            <p>At Inspirado Marketing, we believe in the power of community to drive your brand forward. Let us help you connect, engage, and grow.</p> 
+            <div class="right-column-images">    
+            <img src="/public/images/community-header.jpg" class="community-image">
+    
+        </div>
         </div>    
     </div>
 
@@ -171,6 +175,11 @@ const { content } = Astro.props;
     box-sizing: border-box; /* Include padding and border in width calculation */
 }
 
+.community-image{
+    height:209px;
+    width:100%;
+}
+
 .component-title {
     display: flex;
     justify-content: center;
@@ -188,26 +197,23 @@ const { content } = Astro.props;
 .left-column {
     padding-top: 5px;
     width: 100%;
+    height:100%;
 }
 
 .right-column {
     width: 100%;
 }
 
+.right-column-images{
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+    gap:5px;
+}
+
 .left-column img {
     max-width: 100%; /* Ensure image scales within its container */
     height: auto; /* Maintain aspect ratio */
-}
-
-/* Responsive Design */
-@media (min-width: 768px) {
-    .component-marketing-form-header {
-        flex-direction: row; /* Switch to row layout on larger screens */
-    }
-
-    .left-column, .right-column {
-        width: 50%; /* Each column takes up 50% of the width */
-    }
 }
 
 /* FORM STYLING */

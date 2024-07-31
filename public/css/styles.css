@@ -34,6 +34,8 @@ p{
   font-family: "Roboto", sans-serif;
   font-weight: 400;
   font-style: normal;
+  padding:0px;
+  margin:0px;
 }
 
 
@@ -217,128 +219,6 @@ p{
 .banner-button:hover {
   border: 2px solid white;
 }
-
-
-/*SERVICES COMPONENT STYLES*/
-.modal-content {
-  background-color: #D29604;
-  color: white;
-  border: none;
-  width:100%;
-}
-.modal-footer .btn-secondary {
-  background-color: #6c757d;
-  border: none;
-}
-.modal-height {
-  min-height: 400px; /* Adjust height as needed */
-}
-.component-service-color-1 {
-  background-color: rgb(27, 109, 172);
-  color: white;
-  margin-bottom: 20px;
-}
-
-
-/*CONTACT COMPONENT STYLES*/ 
-.component-company {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-
-.component-team-container {
-  margin: 0px;
-}
-
-.team-member-content {
-  display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-}
-
-.component-team-member {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  margin-top: 20px;
-}
-
-.component-image {
-  width: 200px;
-  height: 200px;
-  object-fit: cover;
-  border: 1px solid gray;
-  margin-right: 20px; /* Space between image and text */
-}
-
-.team-member-text {
-  flex: 1;
-}
-
-.team-member-text p {
-  margin: 0;
-  font-size: 16px;
-}
-
-.no-dots {
-  list-style-type: none;
-  padding-left: 0;
-}
-
-.highlight {
-  color: red;
-  font-weight: bold;
-}
-
-.quote {
-  margin: 0;
-  background: #eee;
-  padding: 1em;
-  border-radius: 1em;
-}
-
-.quote figcaption,
-.quote blockquote {
-  margin: 1em;
-}
-
-
-/*CLIENT COMPONENT STYLES*/
-.component-services{  
-  display:flex;
-  flex-direction: column;
-  align-items:center;
-  justify-content: center;
-}
-
-.component-business-image {
-  border: 1px solid red; /* Add border to see if the image container is present */
-}
-
-.banner-image {
-  max-width: 100%; /* Ensure images fit within the container */
-  height: auto; /* Maintain aspect ratio */
-}
-
-
-/*BUSINESS COMPONENT STYLES*/
-.image-grid {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: center;
-  margin-top: 10px;
-  gap: 3px;
-}
-
-.banner-image {
-  width: 100%;
-  height: 100%;
-  display: block;
-  object-fit: cover; /* Ensure image covers the container */
-}
-
 
 /*MARKETING VIDEO COMPONENT STYLES*/
 .video-container {
@@ -636,47 +516,135 @@ a:hover .overlay {
 
 /*MEDIA QUERIES*/
 
-/* Small devices (landscape phones, 576px and up)*/
-@media (min-width: 576px) { 
 
-}
-
-/* Medium devices (tablets, 768px and up)*/
-@media (min-width: 768px) {
-.menu .nav li {
-  display: block;
-  margin-left: 20px;
-}
-
-.menu .nav .mobile-nav {
-  display: none;
-}
-
+/* Base Styles (default desktop layout) */
 .image-gallery {
-  flex-direction: column; /* Stack images vertically */
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+  gap: 10px; /* Adjust the gap between columns as needed */
 }
 
-.left-column, .right-column {
+.left-column {
+  width: 60%; /* Adjust as needed */
+}
+
+.right-column {
+  width: 38%; /* Adjust as needed */
+  display: flex;
   flex-direction: column;
+  gap: 10px; /* Space between stacked images */
 }
 
 .left-column a, .right-column a {
-  margin-bottom: 10px; /* Add more space between images */
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
+.left-column img, .right-column img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.3s ease;
 }
 
-/* Large devices (desktops, 992px and up) */ 
-@media (min-width: 992px) { 
-
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
 }
 
-/* X-Large devices (large desktops, 1200px and up)*/ 
-@media (min-width: 1200px) {
+a:hover img {
+  transform: scale(1.05);
+}
+
+a:hover .overlay {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* Mobile view adjustments (tablets and below, 768px and below) */
+@media (max-width: 768px) {
+  .image-gallery {
+    flex-direction: column; /* Stack images vertically */
+  }
   
+  .left-column, .right-column {
+    width: 100%;
+    flex-direction: column;
+  }
+  
+  .right-column {
+    margin-top: 10px; /* Space between left and right columns */
+  }
+  
+  .left-column a, .right-column a {
+    margin-bottom: 10px; /* Space between images */
+  }
+
+  .team-member-content { 
+    flex-direction: column; /* Stack image and text vertically on small screens */
+    align-items: center;
+    text-align: center;
+  }
+
+  .team-member-text {
+    margin-left: 0; /* Remove left margin for smaller screens */
+  }
 }
 
-/* XX-Large devices (larger desktops, 1400px and up)*/ 
-@media (min-width: 1400px) { 
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+  .menu .nav li {
+    display: block;
+    margin-left: 20px;
+  }
 
+  .menu .nav .mobile-nav {
+    display: none;
+  }
+
+  .image-gallery {
+    flex-direction: row;
+  }
+  
+  .left-column {
+    width: 60%;
+  }
+  
+  .right-column {
+    width: 38%;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+  
+  .right-column img {
+    height: 100%;
+  }
+  
+  .team-member-content { 
+    flex-direction: row; /* Align image and text in a row for medium screens and up */
+    align-items: flex-start;
+  }
+
+  .team-member-text {
+    margin-left: 20px; /* Space between image and text */
+  }
 }
+
+
+
+
+
