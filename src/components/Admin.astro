@@ -11,76 +11,76 @@ const { imageURL } = Astro.props;
 
         <h1>Filter Data</h1>
         
-        <!-- Filter Inputs in two rows and buttons in one row -->
-        <div class="filter-container">
-            <div class="filter-row">
-                <label for="filterFirstname">First Name:</label>
-                <input type="text" id="filterFirstname">
+<!-- Filter Inputs in two rows and buttons in one row -->
+    <div class="filter-container">
+        <div class="filter-row">
+            <label for="filterFirstname">First Name:</label>
+            <input type="text" id="filterFirstname">
                 
-                <label for="filterLastname">Last Name:</label>
-                <input type="text" id="filterLastname">
-            </div>
+            <label for="filterLastname">Last Name:</label>
+            <input type="text" id="filterLastname">
+        </div>
             
-            <div class="filter-row">
-                <label for="filterCountry">Country:</label>
-                <input type="text" id="filterCountry">
+        <div class="filter-row">
+            <label for="filterCountry">Country:</label>
+            <input type="text" id="filterCountry">
                 
-                <label for="filterEmail">Email:</label>
-                <input type="text" id="filterEmail">
+            <label for="filterEmail">Email:</label>
+            <input type="text" id="filterEmail">
                 
-                <label for="filterDate">Date:</label>
-                <input type="date" id="filterDate">
-            </div>
-
-            <div class="button-row">
-                <button id="filterButton">Apply Filter</button>
-                <button id="clearButton">Clear Filters</button>
-            </div>
+            <label for="filterDate">Date:</label>
+            <input type="date" id="filterDate">
         </div>
 
-        <h2>Data:</h2>
+        <div class="button-row">
+            <button id="filterButton">Apply Filter</button>
+            <button id="clearButton">Clear Filters</button>
+        </div>
+    </div>
+
+    <h2>Data:</h2>
         
-        <!-- Table for displaying data -->
-        <table id="dataTable">
-            <thead>
-                <tr>
-                    <th>First Name</th>
-                    <th>Last Name</th>
-                    <th>Country</th>
-                    <th>Email</th>
-                    <th>Text</th>
-                    <th>Date</th>
-                </tr>
-            </thead>
-            <tbody id="dataDisplay">
+    <!-- Table for displaying data -->
+    <table id="dataTable">
+        <thead>
+            <tr>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Country</th>
+                <th>Email</th>
+                <th>Text</th>
+                <th>Date</th>
+            </tr>
+        </thead>
+        <tbody id="dataDisplay">
                 <!-- Rows will be inserted here dynamically -->
-            </tbody>
-        </table>
+        </tbody>
+    </table>
     </div> 
 </div>
 
 
 <script>
-    // Function to display data in the table
-    function displayData(data) {
-        const dataDisplay = document.getElementById('dataDisplay');
-        dataDisplay.innerHTML = ''; // Clear previous content
+// Display data in the table
+function displayData(data) {
+    const dataDisplay = document.getElementById('dataDisplay');
+    dataDisplay.innerHTML = ''; // Clear previous content
 
-        data.forEach(entry => {
-            const row = document.createElement('tr');
-            row.innerHTML = `
-                <td>${entry.firstname || 'N/A'}</td>
-                <td>${entry.lastname || 'N/A'}</td>
-                <td>${entry.country || 'N/A'}</td>
-                <td>${entry.email || 'N/A'}</td>
-                <td>${entry.text || 'N/A'}</td>
-                <td>${entry.date || 'N/A'}</td>
-            `;
-            dataDisplay.appendChild(row);
-        });
-    }
+    data.forEach(entry => {
+    const row = document.createElement('tr');
+        row.innerHTML = `
+            <td>${entry.firstname || 'N/A'}</td>
+            <td>${entry.lastname || 'N/A'}</td>
+            <td>${entry.country || 'N/A'}</td>
+            <td>${entry.email || 'N/A'}</td>
+            <td>${entry.text || 'N/A'}</td>
+            <td>${entry.date || 'N/A'}</td>
+        `;
+        dataDisplay.appendChild(row);
+    });
+}
 
-    // Function to apply all filters based on user input
+// Filters based on user input
 function applyFilter() {
   const filterFirstname = document.getElementById('filterFirstname').value.toLowerCase();
   const filterLastname = document.getElementById('filterLastname').value.toLowerCase();
@@ -119,7 +119,7 @@ function applyFilter() {
     displayData(allData);
 }
 
-    // Function to clear all filters
+// Function to clear all filters
 function clearFilters() {
     document.getElementById('filterFirstname').value = '';
     document.getElementById('filterLastname').value = '';

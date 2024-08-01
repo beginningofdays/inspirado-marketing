@@ -1,5 +1,4 @@
 ---
-
 ---
 <div class="container-fluid gx-0">
   <div class="row justify-content-center">
@@ -94,7 +93,7 @@
     </div>
   </div>
 </div>
-</div>
+
 
 
 <!-- Social Media Modal -->
@@ -125,8 +124,10 @@
     </div>
   </div>
 </div>
+</div>
 
 <style>
+/*main service componenet container*/
 .component-services-wrapper {
   display: flex;
   flex-direction: row;
@@ -157,6 +158,8 @@
   position: relative;
   z-index: 2;
 }
+
+/*modal background images*/
 .component-service:first-of-type {
   background-image: url('/images/community-marketing.jpg'); 
 }
@@ -171,10 +174,12 @@
   align-items: flex-start; /* Align items to the start of the container */
   gap: 5px; /* Space between image and text */
 }
+
+/*modal image sizing and styling*/
 .modal-image {
   width:400px; /* Adjust width as needed */
   height: 250px; /* Maintain aspect ratio */
-  border-radius: 8px; /* Optional: rounded corners for the image */
+  border-radius: 8px; /* rounded corners for the image */
   flex-shrink: 0; /* Prevent image from shrinking */
 }
 .modal-text {
@@ -197,12 +202,13 @@
 .modal-page .list-header{
   color:#FFD700;
 }
+/*modal content relative postioning*/
 .modal-content {
-  position: relative; /* Position relative for the pseudo-element */
+  position: relative; 
   color: white;
   border: none;
   width: 100%;
-  overflow: hidden; /* To ensure the pseudo-element stays within bounds */
+  overflow: hidden; 
 }
 .modal-content::before {
   content: '';

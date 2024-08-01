@@ -13,12 +13,15 @@ const {imageURL} = Astro.props;
 </div> 
 
 <style>
+
+/* absolutely positioned elements are relative to this container */
 .component-banner-container {
-  width: 100%;
-  height: 100%; /* Set height to the desired value or use a specific height, e.g., 300px */
+  width: 100%; /*width*/
+  height: 100%; /*height*/
   overflow: hidden;
-  position: relative; /* Optional: Ensures that absolutely positioned elements are relative to this container */
+  position: relative; 
 }
+/*banner text positioning and transform*/
 .banner-text {
   position: absolute;
   top: 50%;
@@ -27,8 +30,10 @@ const {imageURL} = Astro.props;
   color: white; /* Adjust text color as needed */
   font-size: 24px; /* Adjust font size as needed */
   text-align: center;
-  white-space: nowrap; /* Prevents text from wrapping to the next line */
+  white-space: nowrap; 
 }
+
+/*banner button positioning and styling*/
 .banner-button {
   position: absolute;
   bottom: 20px; /* Adjust this value to move the button closer to or further from the bottom */
@@ -40,10 +45,10 @@ const {imageURL} = Astro.props;
   font-size: 16px;
   color:white;
   font-weight:bold;
-  cursor: pointer;
+  cursor: pointer; /*cursor styling*/
   background-color:#dd0000;
   border-radius:10px;
-  transition:border 0.3s ease;
+  transition:border 0.3s ease; /*transistion*/ 
 }
 .banner-button:hover{
   border:2px solid white;
