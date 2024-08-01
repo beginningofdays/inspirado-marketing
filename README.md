@@ -66,7 +66,7 @@ Inside of your Astro project, you'll see the following folders and files:
 │   └── pages/
 │       └── admin.astro
 │         └── company.astro
-│        └── contact.astro
+│         └── contact.astro
 │         └── getstarted.astro
 │         └── index.astro
 │         └── logon.astro
