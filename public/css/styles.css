@@ -15,7 +15,7 @@ body {
   font-style: normal;
 }
 
-/* Header */
+/* Header Color */
 .header {
   background-color: var(--header);
 }
@@ -33,11 +33,13 @@ h1 {
   color: var(--secondary);
 }
 
+/*paragraph resets*/
 p {
   padding: 0;
   margin: 0;
 }
 
+/* Text Highlight with Underline */
 .text-hightlight{
   color:#800000;
   text-decoration:underline;
@@ -57,13 +59,14 @@ p {
   margin: 0 1rem; /* Add space between lines and text */
 }
 
+/* Title Line spacer*/
 .component-line {
   flex-grow: 1;
   height: 2px; /* Line height */
   background: var(--accent); /* Accent color for the line */
 }
 
-/* Navbar Logo */
+/* Navbar Logo positioning */
 .flex-row {
   display: flex;
   justify-content: center;
@@ -77,6 +80,7 @@ p {
   flex: 0 0 auto;
 }
 
+/*logo image sizing*/
 .component-logo img {
   max-width: 100%;
   height: auto;
@@ -95,6 +99,7 @@ p {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add shadow for depth */
 }
 
+/*Divides Nav bar equally*/
 .menu nav {
   flex: 1;
   display: flex;
@@ -107,16 +112,17 @@ p {
   list-style: none;
 }
 
+/*positions the menu on the flex-end*/
 .menu .nav li {
   display: block;
-  margin-left: 20px; /* Space between menu items */
+  margin-left: 20px; 
 }
 
 .menu .nav li a {
   text-decoration: none;
   color: var(--secondary);
-  font-weight: 500; /* Slightly bolder font for better readability */
-  font-size: 16px; /* Increase font size */
+  font-weight: 500; 
+  font-size: 16px;
   transition: color 0.3s ease; /* Smooth color transition on hover */
 }
 
@@ -132,6 +138,7 @@ p {
   font-size: 18px; /* Larger font size for better visibility */
 }
 
+/*Sliding panel displaying mobile navigation*/
 .sliding-panel {
   position: fixed;
   top: 0;
@@ -146,6 +153,7 @@ p {
   z-index: 1000;
 }
 
+/*active state for sliding panel*/
 .sliding-panel.active {
   left: 0;
 }
@@ -166,7 +174,7 @@ p {
   text-decoration: none;
   color: var(--secondary);
   font-size: 24px;
-  font-weight: 500; /* Bold font for better visibility */
+  font-weight: 500; 
   transition: color 0.3s ease; /* Smooth color transition on hover */
 }
 
@@ -184,9 +192,10 @@ p {
   font-weight: 500; /* Bold text */
   border-radius: 5px; /* Rounded corners */
   cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth transitions */
+  transition: background-color 0.3s ease, transform 0.3s ease; /* Button Smooth transitions */
 }
 
+/*Button hover transform*/
 .banner-button:hover {
   background-color: var(--hover-accent); /* Darker accent color on hover */
   transform: scale(1.05); /* Slight scaling effect */
@@ -206,6 +215,7 @@ p {
   position: relative;
 }
 
+/*image cover for container*/
 .banner-image {
   width: 100%;
   height: 100%;
@@ -213,6 +223,7 @@ p {
   display: block; /* Remove bottom space under image */
 }
 
+/*position and black overlay for image*/
 .banner-overlay {
   position: absolute;
   top: 0;
@@ -222,6 +233,7 @@ p {
   background: rgba(0, 0, 0, 0.5); /* Black overlay with 50% opacity */
 }
 
+/*banner position for text and button*/
 .banner-content {
   position: absolute;
   top: 50%;
@@ -259,6 +271,7 @@ p {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add shadow to images */
 }
 
+/* left column child padding reset*/ 
 .left-column a:last-child, .right-column a:last-child {
   margin-bottom: 0;
 }
@@ -306,6 +319,7 @@ a:hover .overlay {
   padding: 20px; /* Adjusted padding for better spacing */
 }
 
+/*Footer item positioning*/ 
 .footer-content {
   display: flex;
   justify-content: space-between;
@@ -339,6 +353,7 @@ a:hover .overlay {
   margin: 3px 0; /* Reduced spacing between list items */
 }
 
+/*social icons and validation spacing*/
 .social-and-validator {
   flex: 1;
   text-align: center; /* Align text to center */
@@ -347,6 +362,7 @@ a:hover .overlay {
   align-items: center; /* Center align items */
 }
 
+/*Social icons positioning*/
 .social-media-icons {
   display: flex; /* Display icons in a row */
   justify-content: center; /* Center the icons */
@@ -354,21 +370,22 @@ a:hover .overlay {
   margin-bottom: 5px; /* Reduced space between social icons and CSS validator */
 }
 
+/*social icon sizing*/
 .social-media-icons img {
   width: 32px; /* Increased size of the social media icons */
   height: 32px;
 }
 
+/*Css-Validation styles*/
 .css-validator {
   text-align: center; /* Center the CSS validator */
 }
 
+/*validation image sizing*/
 .css-validator img {
   width: 88px;
   height: 31px;
 }
-
-
 
 
 /* Login Component Styles */
@@ -426,7 +443,7 @@ a:hover .overlay {
   margin-top: 20px;
 }
 
-/* Header Styles */
+/* Table Header Styles */
 #dataTable thead {
   background-color: var(--header); /* Dark header background */
   color: var(--secondary); /* White text color */
@@ -487,6 +504,7 @@ a:hover .overlay {
   cursor: pointer;
 }
 
+/* filter butoon coloring*/
 .button-row #filterButton {
   background-color: var(--header); /* Dark blue background for the Apply Filter button */
   color: var(--secondary); /* White text color */
@@ -496,6 +514,7 @@ a:hover .overlay {
   background-color: var(--hover-accent); /* Darker blue on hover */
 }
 
+/*filter clear button*/
 .button-row #clearButton {
   background-color: #cccccc; /* Light gray background for the Clear Filters button */
   color: black; /* Black text color */
@@ -569,6 +588,7 @@ a:hover .overlay {
   display: none; /* Hide the normal menu items */
 }
 
+/*shows mobile menu*/
 .menu .nav .mobile-nav {
   display: block; /* Show the mobile menu */
 }
@@ -590,14 +610,16 @@ a:hover .overlay {
   margin-bottom: 10px; /* Space between images */
 }
 
+/* Stack image and text vertically on small screens */
 .team-member-content { 
-  flex-direction: column; /* Stack image and text vertically on small screens */
+  flex-direction: column; 
   align-items: center;
   text-align: center;
 }
 
+/* Remove left margin for smaller screens */
 .team-member-text {
-    margin-left: 0; /* Remove left margin for smaller screens */
+    margin-left: 0; 
 }
 }
 
@@ -630,13 +652,15 @@ a:hover .overlay {
 .right-column img {
   height: 100%;
 }
-  
+
+/* Align image and text in a row for medium screens and up */
 .team-member-content { 
-  flex-direction: row; /* Align image and text in a row for medium screens and up */
+  flex-direction: row; 
   align-items: flex-start;
 }
 
+/* Space between image and text */
 .team-member-text {
-  margin-left: 20px; /* Space between image and text */
+  margin-left: 20px; 
 }
 }
