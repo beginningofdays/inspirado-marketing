@@ -12,6 +12,15 @@ npm create astro@latest -- --template basics
 
 ![just-the-basics](https://github.com/withastro/astro/assets/2244813/a0a5533c-a856-4198-8470-2d67b1d7c554)
 
+What the project does
+Why the project is useful
+How users can get started with the project
+Where users can get help with your project
+Who maintains and contributes to the project
+
+
+
+
 ## 🚀 Project Structure
 
 Inside of your Astro project, you'll see the following folders and files:
