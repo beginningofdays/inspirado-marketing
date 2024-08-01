@@ -19,14 +19,59 @@ Inside of your Astro project, you'll see the following folders and files:
 ```text
 /
 ├── public/
-│   └── favicon.svg
+│     ├── css/     
+│     │   └── styles.css
+│     ├── images/
+│     │   ├── Social/
+│     │   │   └── facebook.png
+│     │   │   └── instagram.png
+│     │   │   └── twitter.png
+│     │   │   └── youtube.png
+│     │   └── albert.jpg     
+│     │   └── bdo.jpg
+│     │   └── community-banner.jpg
+│     │   └── community-building.jpg
+│     │   └── community-group.jpg
+│     │   └── community-header.jpg
+│     │   └── community-marketing.jpg
+│     │   └── community-online.jpg
+│     │   └── community.png
+│     │   └── hands.jpg
+│     │   └── inspirado-logo.png
+│     │   └── instagram.png
+│     │   └── physio.jpg
+│     │   └── social-media.png
+│     │   └── stack.png
+│     ├── js/
+│         └── lightbox.json
+│         └── services.json
+│         └── teams.json
 ├── src/
 │   ├── components/
-│   │   └── Card.astro
+│   │   └── Admin.astro
+│   │   └── Banner.astro
+│   │   └── Clients.astro
+│   │   └── Company.astro
+│   │   └── Contact.astro
+│   │   └── Footer.astro
+│   │   └── Form.astro
+│   │   └── GetStarted.astro
+│   │   └── Header.astro
+│   │   └── Lightbox.astro
+│   │   └── Logon.astro
+│   │   └── MarketingVideo.astro
+│   │   └── Services.astro
 │   ├── layouts/
 │   │   └── Layout.astro
 │   └── pages/
+│       └── admin.astro
+│       └── company.astro
+│       └── contact.astro
+│       └── getstarted.astro
 │       └── index.astro
+│       └── logon.astro
+│       └── work.astro
+│ 
 └── package.json
 ```
 
