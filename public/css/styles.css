@@ -38,6 +38,12 @@ p {
   margin: 0;
 }
 
+.text-hightlight{
+  color:#800000;
+  text-decoration:underline;
+  font-weight: 700;
+}
+
 /* Header Title and Line Style */
 .component-title-wrapper {
   display: flex;

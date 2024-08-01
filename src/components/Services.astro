@@ -35,7 +35,7 @@
       </div>
     </div>
   </div>
-</div>
+
 
 <!-- Community Marketing Modal -->
 <div class="modal fade" id="communityMarketingModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="communityMarketingModalLabel" aria-hidden="true">
@@ -94,6 +94,8 @@
     </div>
   </div>
 </div>
+</div>
+
 
 <!-- Social Media Modal -->
 <div class="modal fade" id="socialMediaModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="socialMediaModalLabel" aria-hidden="true">
@@ -125,14 +127,12 @@
 </div>
 
 <style>
-/* Flexbox for Side-by-Side Modals */
 .component-services-wrapper {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   gap: 20px; /* Space between the columns */
 }
-
 .component-service {
   position: relative; /* Necessary for the pseudo-element positioning */
   flex: 1;
@@ -143,8 +143,6 @@
   overflow: hidden; /* To ensure the pseudo-element stays within the bounds */
   padding: 20px; /* Optional: adds padding inside the component */
 }
-
-/* Create the overlay */
 .component-service::before {
   content: '';
   position: absolute;
@@ -155,70 +153,50 @@
   background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent overlay */
   z-index: 1;
 }
-
-/* Ensure text appears above the overlay */
 .component-service * {
   position: relative;
   z-index: 2;
 }
-
-/* Set background images */
 .component-service:first-of-type {
   background-image: url('/images/community-marketing.jpg'); 
 }
-
 .component-service:nth-of-type(2) {
   background-image: url('/images/community-building.jpg'); 
 }
-
 .component-service:nth-of-type(3) {
   background-image: url('/images/social-media.png'); 
 }
-
 .modal-page{
   display: flex;
   align-items: flex-start; /* Align items to the start of the container */
   gap: 5px; /* Space between image and text */
 }
-
-/* Style for images in modal pages */
 .modal-image {
   width:400px; /* Adjust width as needed */
   height: 250px; /* Maintain aspect ratio */
   border-radius: 8px; /* Optional: rounded corners for the image */
   flex-shrink: 0; /* Prevent image from shrinking */
 }
-
-/* Text container styling */
 .modal-text {
   flex: 1; /* Allow text to take remaining space */
   line-height: 1.0; /* Improve readability */
 }
-
 .modal-text h2{
   text-align:center;   
   text-decoration: underline;
   color: #F0F8FF;
 }
-
-
-
-/* Remove default list styling */
 .modal-page ul {
   list-style-type: none; /* Remove bullets */
   padding-left: 0; /* Remove padding */
   margin: 0; /* Remove margin */
 }
-
-/* Optional: Style list items */
 .modal-page li {
   margin-bottom: 10px; /* Space between list items */
 }
-
 .modal-page .list-header{
   color:#FFD700;
 }
-/* Modal Content Styles */
 .modal-content {
   position: relative; /* Position relative for the pseudo-element */
   color: white;
@@ -226,8 +204,6 @@
   width: 100%;
   overflow: hidden; /* To ensure the pseudo-element stays within bounds */
 }
-
-/* Create the overlay for modal content */
 .modal-content::before {
   content: '';
   position: absolute;
@@ -239,34 +215,25 @@
   z-index: 1;
   pointer-events: none; /* Ensure interactions with the modal content are not blocked */
 }
-
-/* Ensure modal text and content are above the overlay */
 .modal-body,.modal-footer,.modal-header {
   position: relative;
   z-index: 2;
 }
-
 .modal-footer .btn-secondary {
   border: none;
 }
-/* Style for the close button */
 .btn-close {
   color: #ffffff; /* Set the text color to white */
   background-color: white;
   opacity: 0.75;
   filter: invert(1);
 }
-
 .modal-height {
   min-height: 400px; /* Adjust height as needed */
 }
-
-/* Responsive Styling */
 @media (max-width: 992px) {
-  .component-services-wrapper {
-    flex-direction: column;
-  }
+.component-services-wrapper {
+  flex-direction: column;
 }
-
-
+}
 </style>

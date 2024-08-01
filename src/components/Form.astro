@@ -1,5 +1,5 @@
 ---
-const { } = Astro.props;
+import images from '/public/js/services.json';
 ---
 <div class="community-message flex-column mb-3">
     <div class="component-title">
@@ -9,11 +9,14 @@ const { } = Astro.props;
             <div class="component-line"></div>
         </div>
     </div>
-
     
     <div class="component-marketing-form-header">
         <div class="left-column">
-            <a href="/images/img6.jpg"><img src="/images/img6.jpg" alt="Image 6"></a>
+            {images[2] && (
+                <a href="#" data-lightbox="image-gallery">
+                <img src={images[2].src} alt={images[2].alt} class="banner-image"/>
+                </a>
+            )}
         </div>
         <div class="right-column">
             <p>Inspirado Marketing, we understand that building a loyal customer base goes beyond traditional advertising. Our community marketing approach is designed to cultivate strong, meaningful connections with your target audience, transforming them into dedicated brand advocates.</p>
@@ -65,220 +68,193 @@ const { } = Astro.props;
 </div>
 
 <script>
-    document.addEventListener('DOMContentLoaded', function() {
-        // Page navigation for Community Marketing Modal
-        const communityMarketingNextPageButton = document.getElementById('communityMarketingNextPage');
-        const communityMarketingPage1 = document.getElementById('communityMarketingPage1');
-        const communityMarketingPage2 = document.getElementById('communityMarketingPage2');
+document.addEventListener('DOMContentLoaded', function() {
+// Page navigation for Community Marketing Modal
+const communityMarketingNextPageButton = document.getElementById('communityMarketingNextPage');
+const communityMarketingPage1 = document.getElementById('communityMarketingPage1');
+
     
-        let communityMarketingCurrentPage = 1;
+let communityMarketingCurrentPage = 1;
     
-        communityMarketingNextPageButton.addEventListener('click', function() {
-            if (communityMarketingCurrentPage === 1) {
-                communityMarketingPage1.classList.add('d-none');
-                communityMarketingPage2.classList.remove('d-none');
-                communityMarketingCurrentPage = 2;
-                communityMarketingNextPageButton.textContent = 'Previous Page'; // Change button text
-            } else {
-                communityMarketingPage2.classList.add('d-none');
-                communityMarketingPage1.classList.remove('d-none');
-                communityMarketingCurrentPage = 1;
-                communityMarketingNextPageButton.textContent = 'Next Page'; // Change button text
-            }
-        });
-    
-        // Page navigation for Community Building Modal
-        const communityBuildingNextPageButton = document.getElementById('communityBuildingNextPage');
-        const communityBuildingPage1 = document.getElementById('communityBuildingPage1');
-        const communityBuildingPage2 = document.getElementById('communityBuildingPage2');
-    
-        let communityBuildingCurrentPage = 1;
-    
-        communityBuildingNextPageButton.addEventListener('click', function() {
-            if (communityBuildingCurrentPage === 1) {
-                communityBuildingPage1.classList.add('d-none');
-                communityBuildingPage2.classList.remove('d-none');
-                communityBuildingCurrentPage = 2;
-                communityBuildingNextPageButton.textContent = 'Previous Page'; // Change button text
-            } else {
-                communityBuildingPage2.classList.add('d-none');
-                communityBuildingPage1.classList.remove('d-none');
-                communityBuildingCurrentPage = 1;
-                communityBuildingNextPageButton.textContent = 'Next Page'; // Change button text
-            }
-        });
-    
-        // Page navigation for Social Media Modal
-        const socialMediaNextPageButton = document.getElementById('socialMediaNextPage');
-        const socialMediaPage1 = document.getElementById('socialMediaPage1');
-        const socialMediaPage2 = document.getElementById('socialMediaPage2');
-    
-        let socialMediaCurrentPage = 1;
-    
-        socialMediaNextPageButton.addEventListener('click', function() {
-            if (socialMediaCurrentPage === 1) {
-                socialMediaPage1.classList.add('d-none');
-                socialMediaPage2.classList.remove('d-none');
-                socialMediaCurrentPage = 2;
-                socialMediaNextPageButton.textContent = 'Previous Page'; // Change button text
-            } else {
-                socialMediaPage2.classList.add('d-none');
-                socialMediaPage1.classList.remove('d-none');
-                socialMediaCurrentPage = 1;
-                socialMediaNextPageButton.textContent = 'Next Page'; // Change button text
-            }
-        });
+communityMarketingNextPageButton.addEventListener('click', function() {
+        if (communityMarketingCurrentPage === 1) {
+            communityMarketingPage1.classList.add('d-none');
+            communityMarketingPage2.classList.remove('d-none');
+
+        } else {
+            communityMarketingPage2.classList.add('d-none');
+            communityMarketingPage1.classList.remove('d-none');
+            communityMarketingCurrentPage = 1;
+        }
     });
+    
+// Page navigation for Community Building Modal
+const communityBuildingNextPageButton = document.getElementById('communityBuildingNextPage');
+const communityBuildingPage1 = document.getElementById('communityBuildingPage1');
 
-    document.getElementById('dataForm').addEventListener('submit', function(e) {
-        e.preventDefault(); // Prevents the default form submission
+    
+let communityBuildingCurrentPage = 1;
+    
+communityBuildingNextPageButton.addEventListener('click', function() {
+        if (communityBuildingCurrentPage === 1) {
+            communityBuildingPage1.classList.add('d-none');
+            communityBuildingPage2.classList.remove('d-none');
 
-        // Gather form data
-        const data = {
-            firstname: document.getElementById('firstname').value,
-            lastname: document.getElementById('lastname').value,
-            companyName: document.getElementById('company-name').value,
-            address: document.getElementById('address').value,
-            email: document.getElementById('email').value,
-            phone: document.getElementById('phone').value,
-            message: document.getElementById('message').value,
-            date: new Date().toISOString()
-        };
-
-        // Retrieve existing data from local storage
-        let allData = JSON.parse(localStorage.getItem('formData')) || [];
-        // Add new data
-        allData.push(data);
-        // Store updated data in local storage
-        localStorage.setItem('formData', JSON.stringify(allData));
-        // Reset the form
-        document.getElementById('dataForm').reset();
-        // Notify the user
-        alert('Information Submitted!');
+        } else {
+            communityBuildingPage2.classList.add('d-none');
+            communityBuildingPage1.classList.remove('d-none');
+            communityBuildingCurrentPage = 1;
+        }
     });
+    
+// Page navigation for Social Media Modal
+const socialMediaNextPageButton = document.getElementById('socialMediaNextPage');
+const socialMediaPage1 = document.getElementById('socialMediaPage1');
+
+    
+let socialMediaCurrentPage = 1;
+    
+socialMediaNextPageButton.addEventListener('click', function() {
+        if (socialMediaCurrentPage === 1) {
+            socialMediaPage1.classList.add('d-none');
+            socialMediaPage2.classList.remove('d-none');
+
+        } else {
+            socialMediaPage2.classList.add('d-none');
+            socialMediaPage1.classList.remove('d-none');
+            socialMediaCurrentPage = 1;
+        }
+    });
+});
+
+document.getElementById('dataForm').addEventListener('submit', function(e) {
+    e.preventDefault(); // Prevents the default form submission
+
+    // Gather form data
+    const data = {
+        firstname: document.getElementById('firstname').value,
+        lastname: document.getElementById('lastname').value,
+        companyName: document.getElementById('company-name').value,
+        address: document.getElementById('address').value,
+        email: document.getElementById('email').value,
+        phone: document.getElementById('phone').value,
+        message: document.getElementById('message').value,
+        date: new Date().toISOString()
+    };
+
+// Retrieve existing data from local storage
+let allData = JSON.parse(localStorage.getItem('formData')) || [];
+// Add new data
+allData.push(data);
+// Store updated data in local storage
+localStorage.setItem('formData', JSON.stringify(allData));
+// Reset the form
+document.getElementById('dataForm').reset();
+// Notify the user
+    alert('Information Submitted!');
+});
 </script>
 
 <style>
-/* Reset default margins and paddings */
-* {
-    box-sizing: border-box;
-}
-
 .community-message {
-    display: flex;
-    flex-direction: column;
-    align-items: center; /* Center the content horizontally */
-    width: 100%; /* Ensure the container uses full width */
-    box-sizing: border-box; /* Include padding and border in width calculation */
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center the content horizontally */
+  width: 100%; /* Ensure the container uses full width */
+  box-sizing: border-box; /* Include padding and border in width calculation */
 }
-
 .community-image{
-    height:209px;
-    width:100%;
+  height:209px;
+  width:100%;
 }
-
 .component-title {
-    display: flex;
-    justify-content: center;
-    width: 100%;
-    box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  box-sizing: border-box;
 }
-
 .component-marketing-form-header {
-    display: flex;
-    flex-direction: column; /* Stack image and text */
-    width: 100%;
-    gap: 5px; /* Space between the columns */
+  display: flex;
+  flex-direction: column; /* Stack image and text */
+  width: 100%;
+  gap: 5px; /* Space between the columns */
 }
-
 .left-column {
-    padding-top: 5px;
-    width: 100%;
-    height:100%;
+  padding-top: 5px;
+  width: 100%;
+  height:100%;
 }
-
 .right-column {
-    width: 100%;
+  width: 100%;
 }
-
 .right-column-images{
-    display:flex;
-    flex-direction: row;
-    justify-content: center;
-    gap:5px;
+  display:flex;
+  flex-direction: row;
+  justify-content: center;
+  gap:5px;
 }
-
 .left-column img {
-    max-width: 100%; /* Ensure image scales within its container */
-    height: auto; /* Maintain aspect ratio */
+  max-width: 100%; /* Ensure image scales within its container */
+  height: auto; /* Maintain aspect ratio */
 }
-
 
 /* FORM STYLING */
 .component-form {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 10px;
-    width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
+  width: 100%;
 }
-
 form {
-    background-color: #1c4880;
-    padding: 2rem;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    width: 100%;
-    border: none;
+  background-color: #1c4880;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  width: 100%;
+  border: none;
 }
-
 .form-control {
-    background-color: #ffffff;
-    color: #333;
-    border: 1px solid #ced4da;
-    border-radius: 4px;
-    padding: 0.75rem 1rem;
-    width: 100%; /* Full width for form fields */
+  background-color: #ffffff;
+  color: #333;
+  border: 1px solid #ced4da;
+  border-radius: 4px;
+  padding: 0.75rem 1rem;
+  width: 100%; /* Full width for form fields */
 }
-
 .form-control::placeholder {
-    color: #6c757d;
+  color: #6c757d;
 }
-
 textarea.form-control {
-    background-color: #ffffff;
-    color: #333;
-    border: 1px solid #ced4da;
-    border-radius: 4px;
-    padding: 0.75rem 1rem;
-    width: 100%; /* Full width for textarea */
+  background-color: #ffffff;
+  color: #333;
+  border: 1px solid #ced4da;
+  border-radius: 4px;
+  padding: 0.75rem 1rem;
+  width: 100%; /* Full width for textarea */
 }
-
 .btn-primary {
-    background-color: #003366;
-    border: none;
-    color: #fff;
-    padding: 0.75rem 1.5rem;
-    font-size: 1rem;
-    border-radius: 4px;
+  background-color: #003366;
+  border: none;
+  color: #fff;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  border-radius: 4px;
 }
-
 .btn-primary:hover {
-    background-color: #002244;
+  background-color: #002244;
 }
-
 .btn-primary:focus,
 .btn-primary:active {
-    outline: none;
-    box-shadow: none;
+  outline: none;
+  box-shadow: none;
 }
 @media (min-width: 768px) {
-    .component-marketing-form-header {
-        flex-direction: row; /* Switch to row layout on larger screens */
-    }
-
-    .left-column, .right-column {
-        width: 50%; /* Each column takes up 50% of the width */
-    }
+.component-marketing-form-header {
+  flex-direction: row; /* Switch to row layout on larger screens */
+}
+.left-column, .right-column {
+  width: 50%; /* Each column takes up 50% of the width */
+}
 }
 </style>

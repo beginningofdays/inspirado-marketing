@@ -81,62 +81,62 @@ const { imageURL } = Astro.props;
     }
 
     // Function to apply all filters based on user input
-    function applyFilter() {
-        const filterFirstname = document.getElementById('filterFirstname').value.toLowerCase();
-        const filterLastname = document.getElementById('filterLastname').value.toLowerCase();
-        const filterCountry = document.getElementById('filterCountry').value.toLowerCase();
-        const filterEmail = document.getElementById('filterEmail').value.toLowerCase();
-        const filterDate = document.getElementById('filterDate').value;
+function applyFilter() {
+  const filterFirstname = document.getElementById('filterFirstname').value.toLowerCase();
+  const filterLastname = document.getElementById('filterLastname').value.toLowerCase();
+  const filterCountry = document.getElementById('filterCountry').value.toLowerCase();
+  const filterEmail = document.getElementById('filterEmail').value.toLowerCase();
+  const filterDate = document.getElementById('filterDate').value;
 
-        let allData = JSON.parse(localStorage.getItem('formData')) || [];
+  let allData = JSON.parse(localStorage.getItem('formData')) || [];
         
-        if (filterFirstname) {
-            allData = allData.filter(entry => 
-                (entry.firstname || '').toLowerCase().includes(filterFirstname)
-            );
-        }
-        if (filterLastname) {
-            allData = allData.filter(entry => 
-                (entry.lastname || '').toLowerCase().includes(filterLastname)
-            );
-        }
-        if (filterCountry) {
-            allData = allData.filter(entry => 
-                (entry.country || '').toLowerCase().includes(filterCountry)
-            );
-        }
-        if (filterEmail) {
-            allData = allData.filter(entry => 
-                (entry.email || '').toLowerCase().includes(filterEmail)
-            );
-        }
-        if (filterDate) {
-            allData = allData.filter(entry => 
-                entry.date.startsWith(filterDate)
-            );
-        }
-
-        displayData(allData);
+  if (filterFirstname) {
+    allData = allData.filter(entry => 
+            (entry.firstname || '').toLowerCase().includes(filterFirstname)
+        );
     }
+   if (filterLastname) {
+    allData = allData.filter(entry => 
+            (entry.lastname || '').toLowerCase().includes(filterLastname)
+        );
+    }
+   if (filterCountry) {
+    allData = allData.filter(entry => 
+            (entry.country || '').toLowerCase().includes(filterCountry)
+        );
+    }
+   if (filterEmail) {
+    allData = allData.filter(entry => 
+                (entry.email || '').toLowerCase().includes(filterEmail)
+        );
+    }
+   if (filterDate) {
+    allData = allData.filter(entry => 
+                entry.date.startsWith(filterDate)
+        );
+    }
+
+    displayData(allData);
+}
 
     // Function to clear all filters
-    function clearFilters() {
-        document.getElementById('filterFirstname').value = '';
-        document.getElementById('filterLastname').value = '';
-        document.getElementById('filterCountry').value = '';
-        document.getElementById('filterEmail').value = '';
-        document.getElementById('filterDate').value = '';
-        displayData(JSON.parse(localStorage.getItem('formData')) || []);
-    }
+function clearFilters() {
+    document.getElementById('filterFirstname').value = '';
+    document.getElementById('filterLastname').value = '';
+    document.getElementById('filterCountry').value = '';
+    document.getElementById('filterEmail').value = '';
+    document.getElementById('filterDate').value = '';
+    displayData(JSON.parse(localStorage.getItem('formData')) || []);
+}
 
-    // Set up event listeners for filter buttons
+// Set up event listeners for filter buttons
     document.addEventListener('DOMContentLoaded', function() {
-        document.getElementById('filterButton').addEventListener('click', applyFilter);
-        document.getElementById('clearButton').addEventListener('click', clearFilters);
-    });
+    document.getElementById('filterButton').addEventListener('click', applyFilter);
+    document.getElementById('clearButton').addEventListener('click', clearFilters);
+});
 
-    // Initial display of data
+// Initial display of data
     window.onload = function() {
         displayData(JSON.parse(localStorage.getItem('formData')) || []);
-    };
+};
 </script>

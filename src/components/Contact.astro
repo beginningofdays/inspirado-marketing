@@ -41,7 +41,7 @@ const {} = Astro.props;
         </div>
       </div>
     </div>
-  </div>
+</div>
 
 <style>
 .component-address-map-wrapper {
@@ -52,7 +52,6 @@ const {} = Astro.props;
   margin-top: 20px; /* Space above the flex container */
   width: 100%;
 }
-
 .component-address,
 .component-map {
   flex: 1;
@@ -62,46 +61,38 @@ const {} = Astro.props;
   align-items: center; /* Center content horizontally */
   text-align: center; /* Center text inside the address */
 }
-
 .component-address {
   padding-right: 20px; /* Optional: add some padding for better spacing */
 }
-
 .component-address ul {
   list-style-type: none; /* Remove bullets from the list */
   padding-left: 0; /* Remove left padding */
 }
-
 .component-map {
   position: relative;
   height: 400px; /* Adjust the height as needed */
   width: 100%;
 }
-
 #map {
   width: 100%;
   height: 100%;
   border: 1px solid #ddd; /* Optional: adds a border around the map */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: adds a shadow around the map */
 }
-
 .component-team-container {
   margin: 0px;
 }
-
 .team-member-content {
   display: flex;
   flex-direction: row;
   align-items: flex-start;
 }
-
 .component-team-member {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   margin-top: 20px;
 }
-
 .component-image {
   width: 200px;
   height: 200px;
@@ -109,37 +100,26 @@ const {} = Astro.props;
   border: 1px solid gray;
   margin-right: 20px; /* Space between image and text */
 }
-
 .team-member-text {
   flex: 1;
 }
-
 .team-member-text p {
   margin: 0;
   font-size: 16px;
 }
-
-.no-dots {
-  list-style-type: none;
-  padding-left: 0;
-}
-
 /* Media query for mobile view */
 @media (max-width: 768px) {
-  .component-address-map-wrapper {
-    flex-direction: column; /* Stack elements vertically on mobile */
-  }
-
-  .component-address {
-    padding-right: 0; /* Remove padding for mobile */
-    margin-top: 20px; /* Add space between map and address */
-  }
-
-  .component-map #map {
-    margin-bottom: 20px; /* Add space below the map */
-    max-width:100%;
-    height: 400px; /* Set a fixed height for the map on mobile */
- }
-
+.component-address-map-wrapper {
+  flex-direction: column; /* Stack elements vertically on mobile */
+}
+.component-address {
+  padding-right: 0; /* Remove padding for mobile */
+  margin-top: 20px; /* Add space between map and address */
+}
+.component-map #map {
+  margin-bottom: 20px; /* Add space below the map */
+  max-width:100%;
+  height: 400px; /* Set a fixed height for the map on mobile */
+}
 }
 </style>

@@ -3,21 +3,21 @@ const {} = Astro.props;
 import images from '/public/js/teams.json'; // Ensure this path is correct relative to the component's location
 ---
 <div class="component-company flex-column mb-3">
-
     <div class="component-title-wrapper">
         <div class="component-line"></div>
         <h2>Company</h2>
         <div class="component-line"></div>
     </div>
 
-    <div class="">    
+    <div class="component-agency">    
         <p>At our Maynooth-based marketing agency, we pride ourselves on being the dedicated marketing partner for both growing and established businesses. Our mission is to empower your company to achieve its goals through a tailored approach that encompasses a full spectrum of marketing solutions.
-        We understand that every business is unique, and we take the time to understand your specific needs, challenges, and objectives. By leveraging our expertise in various aspects of marketing, we create customized strategies that drive results and help your business thrive in today's competitive landscape.</p>        <p class="highlight">Our comprehensive services include:</p>
-        <ul class="no-dots">         
-            <li><strong>Strategic Planning:</strong> We collaborate with you to develop a detailed marketing plan that aligns with your business objectives and sets a clear path for success.</li>
-            <li><strong>Brand Development:</strong> Our team helps you build a strong, recognizable brand that resonates with your target audience and sets you apart from the competition.</li>
-            <li><strong>Digital Marketing:</strong> From SEO and content marketing to social media management and pay-per-click advertising, we utilize the latest digital tools and techniques to enhance your online presence and drive traffic to your website.</li>
-            <li><strong>Creative Services:</strong> Our creative team delivers visually compelling designs and engaging content that captivate your audience and communicate your brand’s message effectively.</li>
+        We understand that every business is unique, and we take the time to understand your specific needs, challenges, and objectives. By leveraging our expertise in various aspects of marketing, we create customized strategies that drive results and help your business thrive in today's competitive landscape.</p>        
+        <p class="component-highlight pt-2 pb-2">Our comprehensive services include:</p>
+        <ul class="component-no-dots">         
+            <li><strong>Strategic Social Media Planning:</strong>We work with you to create a targeted social media strategy that aligns with your community goals and fosters meaningful connections with your audience.</li>
+            <li><strong>Community Brand Building:</strong>Our team helps you develop a strong, relatable brand identity that resonates within your social media communities and sets you apart in the online space.</li>
+            <li><strong>Social Media Engagement:</strong>From community management and content creation to targeted social media campaigns, we leverage the power of social platforms to grow your community and enhance engagement.</li>
+            <li><strong>Creative Content Creation:</strong>Our creative team produces visually appealing and shareable content that captures your community's attention and effectively communicates your brand’s message on social media.</li>
         </ul>
     </div>
     
@@ -46,39 +46,41 @@ import images from '/public/js/teams.json'; // Ensure this path is correct relat
 
 <style>
 .component-company {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 30px;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 30px;
 }
-
-/* Styling for the team member section */
+.component-agency{
+  padding:0px;
+}
+.component-highlight{
+  font-weight: 400; 
+  font-size: 21px;
+}
 .team-member-content {
-    display: flex;
-    flex-direction: row; /* Align items in a row */
-    align-items: flex-start; /* Align the text to the top of the image */
-    gap: 20px; /* Space between the image and the text */
+  display: flex;
+  flex-direction: row; /* Align items in a row */
+  align-items: flex-start; /* Align the text to the top of the image */
+  gap: 20px; /* Space between the image and the text */
 }
-
 .component-image {
-    width: 150px; /* Set width to 150px */
-    height: 150px; /* Set height to 150px */
-    object-fit: cover; /* Ensure the image covers the area without distortion */
-    border-radius: 8px;
+  width: 150px; /* Set width to 150px */
+  height: 150px; /* Set height to 150px */
+  object-fit: cover; /* Ensure the image covers the area without distortion */
+  border-radius: 8px;
 }
-
 .team-member-text {
-    flex: 1; /* Allow text to take up remaining space */
-    text-align: justify;
+  flex: 1; /* Allow text to take up remaining space */
+  text-align: justify;
 }
-
 @media (max-width: 768px) {
-  .team-member-content {
-      flex-direction: column; /* Stack image and text vertically on small screens */
-      align-items: center;
-      text-align: center;
-  }
-
-  .team-member-text {
-      margin-left: 0; /* Remove left margin for smaller screens */
-  }
+.team-member-content {
+  flex-direction: column; /* Stack image and text vertically on small screens */
+  align-items: center;
+  text-align: center;
+}
+.team-member-text {
+  margin-left: 0; /* Remove left margin for smaller screens */
+}
+}
 </style>

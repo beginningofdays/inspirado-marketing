@@ -11,7 +11,7 @@ const {} = Astro.props;
     </div>
     
     <div class="component-demo-text">
-        <p>To tailor our services to your unique needs, we need a bit more information from you. Please fill out the form below, and one of our team members will be in touch shortly to discuss how we can best support your marketing goals.</p>
+        <p>To tailor our services to your unique needs, we need a bit more information from you. <span class="text-hightlight">Please fill out the form below</span>, and one of our team members will be in touch shortly to discuss how we can best support your marketing goals.</p>
     </div>
     
     <div class="component-form flex-column mb-3">
@@ -93,62 +93,51 @@ const {} = Astro.props;
 
 <style>
 .component-form {
-    display: flex;
-    justify-content: center; /* Center the form horizontally */
-    align-items: center; /* Center the form vertically */
-    width: 100%;
-    margin: 0 auto; /* Center the component within the parent container */
-}
-    
+  display: flex;
+  justify-content: center; /* Center the form horizontally */
+  align-items: center; /* Center the form vertically */
+  width: 100%;
+  margin: 0 auto; /* Center the component within the parent container */
+}    
 form {
-    background-color: #1c4880; /* Dark blue background for the form */
-    padding: 2rem; /* Add padding around the form content */
-    border-radius: 8px; /* Rounded corners for the form */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow effect for the form */
-    width: 100%; /* Ensure form takes up full width of its container */
-    border: none; /* Ensure no border is applied */
+  background-color: #1c4880; /* Dark blue background for the form */
+  padding: 2rem; /* Add padding around the form content */
+  border-radius: 8px; /* Rounded corners for the form */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow effect for the form */
+  width: 100%; /* Ensure form takes up full width of its container */
+  border: none; /* Ensure no border is applied */
 }
-    
-    /*.form-outline {
-      margin-bottom: 1.5rem; /* Space between form elements 
-      border: none; /* Ensure no border is applied 
-    }*/
-    
 .form-control {
-    background-color: #ffffff; /* White background for form fields */
-    color: #333; /* Dark text color for readability */
-    border: 1px solid #ced4da; /* Light gray border for form fields */
-    border-radius: 4px; /* Slightly rounded corners for form fields */
-    padding: 0.75rem 1rem; /* Padding inside form fields */
+  background-color: #ffffff; /* White background for form fields */
+  color: #333; /* Dark text color for readability */
+  border: 1px solid #ced4da; /* Light gray border for form fields */
+  border-radius: 4px; /* Slightly rounded corners for form fields */
+  padding: 0.75rem 1rem; /* Padding inside form fields */
 }
-    
 .form-control::placeholder {
-    color: #6c757d; /* Light gray color for placeholder text */
-}
-    
+  color: #6c757d; /* Light gray color for placeholder text */
+}    
 textarea.form-control {
-    background-color: #ffffff; /* White background for the textarea */
-    color: #333; /* Dark text color for readability */
-    border: 1px solid #ced4da; /* Light gray border for the textarea */
-    border-radius: 4px; /* Slightly rounded corners for the textarea */
-    padding: 0.75rem 1rem; /* Padding inside the textarea */
-}
-    
+  background-color: #ffffff; /* White background for the textarea */
+  color: #333; /* Dark text color for readability */
+  border: 1px solid #ced4da; /* Light gray border for the textarea */
+  border-radius: 4px; /* Slightly rounded corners for the textarea */
+  padding: 0.75rem 1rem; /* Padding inside the textarea */
+}    
 .btn-primary {
-    background-color: #003366; /* Dark blue background for the submit button */
-    border: none; /* Remove default border */
-    color: #fff; /* White text color */
-    padding: 0.75rem 1.5rem; /* Padding inside the button */
-    font-size: 1rem; /* Font size for the button text */
-    border-radius: 4px; /* Slightly rounded corners for the button */
-}
-    
+  background-color: #003366; /* Dark blue background for the submit button */
+  border: none; /* Remove default border */
+  color: #fff; /* White text color */
+  padding: 0.75rem 1.5rem; /* Padding inside the button */
+  font-size: 1rem; /* Font size for the button text */
+  border-radius: 4px; /* Slightly rounded corners for the button */
+}    
 .btn-primary:hover {
-    background-color: #002244; /* Darker blue background on hover */
+  background-color: #002244; /* Darker blue background on hover */
 }
 .btn-primary:focus, .btn-primary:active {
-    outline: none; /* Remove the default focus outline */
-    box-shadow: none; /* Remove default box shadow on focus */
+  outline: none; /* Remove the default focus outline */
+  box-shadow: none; /* Remove default box shadow on focus */
 }    
 
 </style>

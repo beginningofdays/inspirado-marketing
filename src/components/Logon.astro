@@ -16,18 +16,18 @@ const {} = Astro.props;
 </div>
 
 <script>
-    document.getElementById('loginForm').addEventListener('submit', function(event) {
-        event.preventDefault(); // Prevent form from submitting normally
+document.getElementById('loginForm').addEventListener('submit', function(event) {
+    event.preventDefault(); // Prevent form from submitting normally
         
-        const username = document.getElementById('username').value;
-        const password = document.getElementById('password').value;
+    const username = document.getElementById('username').value;
+    const password = document.getElementById('password').value;
 
-        if (username === 'administrator' && password === 'lordoftherings') {
-            // Redirect to admin page if credentials are correct
-            window.location.href = 'admin.html';
-        } else {
-            alert('Invalid username or password');
-        }
-    });
+    if (username === 'administrator' && password === 'lordoftherings') {
+        // Redirect to admin page if credentials are correct
+        window.location.href = 'admin.html';
+    } else {
+        alert('Invalid username or password');
+     }
+});
 </script>
 

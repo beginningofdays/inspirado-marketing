@@ -9,9 +9,8 @@ import images from '/public/js/services.json'; // Ensure this path is correct re
         <div class="component-line"></div>
     </div>
 
-<div class="component-services">
-        <p><strong>PhysioCare</strong> was established in 2001 and has developed into an extensive team of health care providers across five clinic locations. Our team consists of a 
-        strong mix of our highly experienced Chartered Physiotherapists, Personal Trainers, Class Instructors, Front-of-House and Admin teams. They work side by side to deliver the best quality of care and customer experience for you to ensure that your experience at PhysioCare is nothing but positive.</p>
+<div class="component-services pb-2">
+        <p>We're proud to support <a href ="https://physio.ie/"><span class="text-hightlight">PhysioCare</span></a> in its mission to provide top-quality care and outstanding customer experiences in 2024. Through our strategic community marketing approach, we help PhysioCare connect more deeply with its clients, fostering a strong sense of trust and loyalty. By amplifying PhysioCare's values and expertise, we ensure that more people can benefit from the exceptional care and services they offer.</p>
         {images[0] && (
             <div class="component-business-image">
                 <img src={images[0].src} alt={images[0].alt} class="banner-image" />
@@ -20,8 +19,7 @@ import images from '/public/js/services.json'; // Ensure this path is correct re
 </div>
    
 <div class="component-services">
-        <p><strong>BDO</strong> Ireland is the leader in advising and funding ambitious Irish businesses, helping them to grow in domestic and international markets. 
-            We offer a comprehensive array of services including audit, tax, advisory and consulting. Our goal is to craft integrated business solutions that speak to the individual needs and aspirations of each client.</p>
+        <p>We're excited to support <a href ="https://www.bdo.ie/en-gb/bdo-ireland"><span class="text-hightlight">BDO Ireland</span></a> in its mission to empower businesses with the strategic insights and financial guidance they need to thrive. Our community marketing expertise enhances BDO Ireland's outreach, connecting them more effectively with their target audience and fostering long-lasting client relationships. By amplifying BDO Ireland’s commitment to personalized service and business growth, we help them reach new heights of success and visibility.</p>
            {images[1] && (
             <div class="component-business-image">
                 <img src={images[1].src} alt={images[1].alt} class="banner-image" />
@@ -39,11 +37,9 @@ import images from '/public/js/services.json'; // Ensure this path is correct re
   align-items:center;
   justify-content: center;
 }
-
 .component-business-image {
   padding:0px;
 }
-
 .banner-image {
   max-width: 100%; /* Ensure images fit within the container */
   height: auto; /* Maintain aspect ratio */
