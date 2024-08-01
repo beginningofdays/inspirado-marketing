@@ -65,12 +65,12 @@ Inside of your Astro project, you'll see the following folders and files:
 │   │   └── Layout.astro
 │   └── pages/
 │       └── admin.astro
-│         └── company.astro
-│         └── contact.astro
-│         └── getstarted.astro
-│         └── index.astro
-│         └── logon.astro
-│         └── work.astro
+│       └── company.astro
+│       └── contact.astro
+│       └── getstarted.astro
+│       └── index.astro
+│       └── logon.astro
+│       └── work.astro
 │ 
 └── package.json
 ```
