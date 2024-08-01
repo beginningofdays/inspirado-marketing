@@ -9,7 +9,7 @@
 
 /* Body */
 body {
-  font-family: "Roboto", sans-serif;
+  font-family: "Open Sans", sans-serif;
   background-color: var(--primary);
   font-weight: 400;
   font-style: normal;
@@ -29,16 +29,11 @@ body {
 }
 
 /* Fonts */
-h1 {
-  font-family: "Roboto", sans-serif;
+h1 { 
   color: var(--secondary);
-  font-size: 2rem; /* Increase font size for better visibility */
 }
 
 p {
-  font-family: "Roboto", sans-serif;
-  font-weight: 400;
-  font-style: normal;
   padding: 0;
   margin: 0;
 }
