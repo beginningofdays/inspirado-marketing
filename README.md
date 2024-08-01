@@ -58,7 +58,7 @@ Inside of your Astro project, you'll see the following folders and files:
 │   │   └── GetStarted.astro
 │   │   └── Header.astro
 │   │   └── Lightbox.astro
-│   │   └── Logon.astro#
+│   │   └── Logon.astro
 │   │   └── MarketingVideo.astro
 │   │   └── Services.astro
 │   ├── layouts/
