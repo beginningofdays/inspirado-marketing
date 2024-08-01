@@ -98,6 +98,7 @@ p {
   flex: 1;
   display: flex;
   justify-content: flex-end;
+  margin-right:30px;
 }
 
 .menu .nav {
@@ -297,54 +298,76 @@ a:hover .overlay {
 .component-footer {
   background-color: var(--header);
   color: var(--secondary);
-  text-align: center; /* Center text inside elements */
-}
-
-.logo-and-info {
   display: flex;
-  flex-direction: column; /* Stack items vertically */
   justify-content: center;
   align-items: center;
-  gap: 10px; /* Space between logo and contact info */
+  padding: 20px; /* Adjusted padding for better spacing */
 }
 
-.component-footer div {
-  margin: 0px 0; /* Space between items */
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 800px; /* Reduced max width to bring items closer */
+  gap: 20px; /* Add some gap between the sections */
 }
 
-.component-footer ul {
-  list-style: none; /* Remove bullet points */
-  padding: 0;
-  margin: 0;
-}
-
-.component-footer li {
-  margin: 5px 0; /* Space between list items */
+.logo {
+  flex: 1; /* Take up equal space */
 }
 
 .logo img {
-  width: auto;
+  max-width: 150px; /* Reduced the size of the logo */
   height: auto;
-  max-width: 200px; /* Set a max width for the logo */
 }
 
 .contact-info {
+  flex: 1;
   text-align: center; /* Center the contact info text */
+}
+
+.contact-info ul {
+  list-style: none; /* Remove list dots */
   padding: 0;
   margin: 0;
+}
+
+.contact-info li {
+  margin: 3px 0; /* Reduced spacing between list items */
+}
+
+.social-and-validator {
+  flex: 1;
+  text-align: center; /* Align text to center */
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center align items */
 }
 
 .social-media-icons {
   display: flex; /* Display icons in a row */
-  justify-content: center; /* Center the icons horizontally */
-  gap: 10px; /* Space between icons */
-  margin-top: 10px; /* Space between address and social icons */
+  justify-content: center; /* Center the icons */
+  gap: 15px; /* Increased gap between icons */
+  margin-bottom: 5px; /* Reduced space between social icons and CSS validator */
 }
 
 .social-media-icons img {
-  width: 24px; /* Set a width for the social media icons */
-  height: 24px; /* Set a height for the social media icons */
+  width: 32px; /* Increased size of the social media icons */
+  height: 32px;
 }
+
+.css-validator {
+  text-align: center; /* Center the CSS validator */
+}
+
+.css-validator img {
+  width: 88px;
+  height: 31px;
+}
+
+
+
 
 /* Login Component Styles */
 .login-container {

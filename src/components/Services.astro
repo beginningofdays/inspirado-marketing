@@ -1,149 +1,260 @@
 ---
-const { content } = Astro.props;
+
 ---
 <div class="container-fluid gx-0">
   <div class="row justify-content-center">
     <div class="col-lg-12">
-      <!-- Community Marketing Section -->
-      <div class="p-5 component-service-color-1 border border-1 mb-3">
-        <h1>Community Marketing</h1>
-        <p>As a community marketing agency, our mission is to help brands connect with their audiences on a deeper level. We understand that building a thriving community requires more than just promotional messages</p>
-        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#communityMarketingModal">
-          More Information
-        </button>
-        
-        <!-- Community Marketing Modal -->
-        <div class="modal fade" id="communityMarketingModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="communityMarketingModalLabel" aria-hidden="true">
-          <div class="modal-dialog modal-lg">
-            <div class="modal-content modal-height">
-              <div class="modal-header">
-                <h5 class="modal-title" id="communityMarketingModalLabel">Community Marketing - Page 1</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-              </div>
-              <div class="modal-body" id="communityMarketingContent">
-                <div class="modal-page" id="communityMarketingPage1">
-                  At Inspirado Marketing, we are passionate about helping brands build and sustain vibrant communities. Our community marketing strategies are designed to create lasting connections and drive meaningful engagement. Partner with us to unlock the full potential of community marketing and watch your brand thrive in a loyal and engaged community.
-                </div>
-                <div class="modal-page d-none" id="communityMarketingPage2">
-                  Investing in community marketing offers numerous benefits for your brand:
-                  <ul>
-                    <li>Increased Loyalty: By fostering a sense of belonging, you can cultivate loyal customers who are more likely to advocate for your brand.</li>
-                    <li>Enhanced Trust: Authentic interactions build trust, making your brand more credible and reliable in the eyes of your community.</li>
-                    <li>Valuable Feedback: Engaged communities provide valuable insights and feedback, helping you understand your customers' needs and preferences.</li>
-                    <li>Organic Growth: Satisfied community members are more likely to share their positive experiences, leading to organic growth through word-of-mouth.</li>
-                  </ul>
-                </div>
-              </div>
-              <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary" id="communityMarketingNextPage">Next Page</button>
-              </div>
-            </div>
-          </div>
+      <!-- Services Wrapper -->
+      <div class="component-services-wrapper">
+        <!-- Community Marketing Section -->
+        <div class="component-service p-5 border border-1 mb-3">
+          <h1>Community Marketing</h1>
+          <p>As a community marketing agency, our mission is to help brands connect with their audiences on a deeper level.</p>
+          <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#communityMarketingModal">
+            More Information
+          </button>
         </div>
-      </div>
 
-      <!-- Community Building Section -->
-      <div class="p-5 component-service-color-1 border border-1 mb-3">
-        <h1>Community Building</h1>
-        <p>In the ever-evolving landscape of marketing, community building has become a cornerstone for brands aiming to establish deeper connections and foster long-lasting relationships with their audiences. At Inspirado Marketing, we are experts in community building, focusing on creating and nurturing communities that are both engaged and loyal. Our approach goes beyond mere marketing strategies; it’s about cultivating a space where genuine connections flourish</p>
-        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#communityBuildingModal">
-          More Information
-        </button>
-
-        <!-- Community Building Modal -->
-        <div class="modal fade" id="communityBuildingModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="communityBuildingModalLabel" aria-hidden="true">
-          <div class="modal-dialog modal-lg">
-            <div class="modal-content modal-height">
-              <div class="modal-header">
-                <h5 class="modal-title" id="communityBuildingModalLabel">Community Building</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-              </div>
-              <div class="modal-body" id="communityBuildingContent">
-                <div class="modal-page" id="communityBuildingPage1">
-                  Community building is the process of creating and developing a network of individuals who share common interests, values, or goals. It’s about creating a sense of belonging and engagement among your audience, making them feel like an integral part of your brand’s journey
-                </div>
-                <div class="modal-page d-none" id="communityBuildingPage2">
-                  Investing in community building offers numerous advantages for your brand:
-                  <ul>
-                    <li>Stronger Brand Loyalty: A well-nurtured community fosters deep emotional connections, leading to increased brand loyalty and advocacy.</li>
-                    <li>Enhanced Customer Insights: Engaged community members provide valuable feedback and insights, helping you better understand their needs and preferences.</li>
-                    <li>Organic Growth: A thriving community generates organic growth through word-of-mouth and referrals, reducing the need for extensive promotional efforts.</li>
-                    <li>Increased Engagement: Active communities drive higher levels of engagement, creating a more vibrant and interactive brand presence.</li>
-                  </ul>
-                </div>
-              </div>
-              <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary" id="communityBuildingNextPage">Next Page</button>
-              </div>
-            </div>
-          </div>
+        <!-- Community Building Section -->
+        <div class="component-service p-5 border border-1 mb-3">
+          <h1>Community Building</h1>
+          <p>In the ever-evolving landscape of marketing, community building has become a cornerstone for brands aiming to establish deeper connections.</p>
+          <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#communityBuildingModal">
+            More Information
+          </button>
         </div>
-      </div>
 
-      <!-- Social Media Section -->
-      <div class="p-5 component-service-color-1 border border-1 mb-3">
-        <h1>Social Media</h1>
-        <p>Platforms like Reddit, Quora, and Discord offer unique opportunities for brands to engage with their audiences, foster meaningful interactions, and build loyal communities. At Inspirado Marketing, we specialize in leveraging these platforms to help brands create and nurture vibrant communities that drive long-term success</p>
-        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#socialMediaModal">
-          More Information
-        </button>
-
-        <!-- Social Media Modal -->
-        <div class="modal fade" id="socialMediaModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="socialMediaModalLabel" aria-hidden="true">
-          <div class="modal-dialog modal-lg">
-            <div class="modal-content modal-height">
-              <div class="modal-header">
-                <h5 class="modal-title" id="socialMediaModalLabel">Social Media</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-              </div>
-              <div class="modal-body" id="socialMediaContent">
-                <div class="modal-page" id="socialMediaPage1">
-                  Platforms like Reddit, Quora, and Discord offer unique opportunities for brands to engage with their audiences, foster meaningful interactions, and build loyal communities. At Inspirado Marketing, we specialize in leveraging these platforms to help brands create and nurture vibrant communities that drive long-term success
-                </div>
-                <div class="modal-page d-none" id="socialMediaPage2">
-                  Investing in community building on platforms like Reddit, Quora, and Discord offers numerous benefits for your brand:
-                  <ul>
-                    <li>Enhanced Brand Loyalty: Engaged communities foster deep emotional connections, leading to increased brand loyalty and advocacy.</li>
-                    <li>Valuable Customer Insights: Active communities provide valuable feedback and insights, helping you better understand your audience’s needs and preferences.</li>
-                    <li>Organic Growth: Thriving communities generate organic growth through word-of-mouth and referrals, reducing the need for extensive promotional efforts.</li>
-                    <li>Higher Engagement: Active participation and real-time interactions drive higher levels of engagement, creating a more dynamic and interactive brand presence.</li>
-                  </ul>
-                </div>
-              </div>
-              <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary" id="socialMediaNextPage">Next Page</button>
-              </div>
-            </div>
-          </div>
+        <!-- Social Media Section -->
+        <div class="component-service p-5 border border-1 mb-3">
+          <h1>Social Media</h1>
+          <p>Platforms like Reddit, Quora, and Discord offer unique opportunities for brands to engage with their audiences.</p>
+          <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#socialMediaModal">
+            More Information
+          </button>
         </div>
       </div>
     </div>
   </div>
 </div>
 
+<!-- Community Marketing Modal -->
+<div class="modal fade" id="communityMarketingModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="communityMarketingModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content modal-height">
+      <div class="modal-header">
+        <h5 class="modal-title" id="communityMarketingModalLabel">Community Marketing</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body" id="communityMarketingContent">
+        <div class="modal-page" id="communityMarketingPage1">
+          <img src="/images/community-marketing.jpg" class="modal-image"/>
+         <div class="modal-text">
+          <h2>Benefits</h2>
+          <ul>
+            <li>Increased Loyalty: By fostering a sense of belonging, you can cultivate loyal customers.</li>
+            <li>Enhanced Trust: Authentic interactions build trust.</li>
+            <li>Valuable Feedback: Engaged communities provide valuable insights.</li>
+            <li>Organic Growth: Satisfied community members are more likely to share their experiences.</li>
+          </ul>
+        </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Community Building Modal -->
+<div class="modal fade" id="communityBuildingModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="communityBuildingModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content modal-height">
+      <div class="modal-header">
+        <h5 class="modal-title" id="communityBuildingModalLabel">Community Building</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body" id="communityBuildingContent">
+        <div class="modal-page" id="communityBuildingPage1">
+          <img src="/images/community-building.jpg" class="modal-image"/>
+          <div class="modal-text">
+           <h2>Benefits</h2>
+          <ul>
+            <li>Stronger Brand Loyalty: A well-nurtured community fosters deep emotional connections.</li>
+            <li>Enhanced Customer Insights: Engaged community members provide valuable feedback.</li>
+            <li>Organic Growth: A thriving community generates organic growth.</li>
+            <li>Increased Engagement: Active communities drive higher levels of engagement.</li>
+          </ul>
+        </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Social Media Modal -->
+<div class="modal fade" id="socialMediaModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="socialMediaModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content modal-height">
+      <div class="modal-header">
+        <h5 class="modal-title" id="socialMediaModalLabel">Social Media</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body" id="socialMediaContent">
+        <div class="modal-page" id="socialMediaPage1">
+          <img src="/images/social-media.png" class="modal-image"/>
+          <div class="modal-text">
+           <h2>Benefits</h2>
+          <ul>
+            <li>Enhanced Brand Loyalty: Engaged communities foster deep emotional connections.</li>
+            <li>Valuable Customer Insights: Active communities provide valuable feedback.</li>
+            <li>Organic Growth: Thriving communities generate organic growth through word-of-mouth.</li>
+            <li>Higher Engagement: Active participation and real-time interactions drive higher levels of engagement.</li>
+          </ul>  
+        </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
 
 <style>
-  /*SERVICES COMPONENT STYLES*/
+/* Flexbox for Side-by-Side Modals */
+.component-services-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 20px; /* Space between the columns */
+}
+
+.component-service {
+  position: relative; /* Necessary for the pseudo-element positioning */
+  flex: 1;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: white;
+  overflow: hidden; /* To ensure the pseudo-element stays within the bounds */
+  padding: 20px; /* Optional: adds padding inside the component */
+}
+
+/* Create the overlay */
+.component-service::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent overlay */
+  z-index: 1;
+}
+
+/* Ensure text appears above the overlay */
+.component-service * {
+  position: relative;
+  z-index: 2;
+}
+
+/* Set background images */
+.component-service:first-of-type {
+  background-image: url('/images/community-marketing.jpg'); 
+}
+
+.component-service:nth-of-type(2) {
+  background-image: url('/images/community-building.jpg'); 
+}
+
+.component-service:nth-of-type(3) {
+  background-image: url('/images/social-media.png'); 
+}
+
+.modal-page{
+  display: flex;
+  align-items: flex-start; /* Align items to the start of the container */
+  gap: 5px; /* Space between image and text */
+}
+
+/* Style for images in modal pages */
+.modal-image {
+  width:400px; /* Adjust width as needed */
+  height: 250px; /* Maintain aspect ratio */
+  border-radius: 8px; /* Optional: rounded corners for the image */
+  flex-shrink: 0; /* Prevent image from shrinking */
+}
+
+/* Text container styling */
+.modal-text {
+  flex: 1; /* Allow text to take remaining space */
+  line-height: 1.0; /* Improve readability */
+}
+
+/* Remove default list styling */
+.modal-page ul {
+  list-style-type: none; /* Remove bullets */
+  padding-left: 0; /* Remove padding */
+  margin: 0; /* Remove margin */
+}
+
+/* Optional: Style list items */
+.modal-page li {
+  margin-bottom: 10px; /* Space between list items */
+}
+/* Modal Content Styles */
 .modal-content {
-  background-color: #D29604;
+  position: relative; /* Position relative for the pseudo-element */
   color: white;
   border: none;
-  width:100%;
+  width: 100%;
+  overflow: hidden; /* To ensure the pseudo-element stays within bounds */
 }
+
+/* Create the overlay for modal content */
+.modal-content::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent overlay */
+  z-index: 1;
+  pointer-events: none; /* Ensure interactions with the modal content are not blocked */
+}
+
+/* Ensure modal text and content are above the overlay */
+.modal-body,.modal-footer,.modal-header {
+  position: relative;
+  z-index: 2;
+}
+
 .modal-footer .btn-secondary {
-  background-color: #6c757d;
   border: none;
 }
+/* Style for the close button */
+.btn-close {
+  color: #ffffff; /* Set the text color to white */
+  background-color: white;
+  opacity: 0.75;
+  filter: invert(1);
+}
+
 .modal-height {
   min-height: 400px; /* Adjust height as needed */
 }
-.component-service-color-1 {
-  background-color: rgb(27, 109, 172);
-  color: white;
-  margin-bottom: 20px;
+
+/* Responsive Styling */
+@media (max-width: 992px) {
+  .component-services-wrapper {
+    flex-direction: column;
+  }
 }
+
 
 </style>
