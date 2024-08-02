@@ -169,47 +169,52 @@
 .component-service:nth-of-type(3) {
   background-image: url('/images/social-media.png'); 
 }
-.modal-page{
+.modal-page {
   display: flex;
-  align-items: flex-start; /* Align items to the start of the container */
-  gap: 5px; /* Space between image and text */
+  align-items: flex-start; 
+  gap: 5px; 
 }
 
-/*modal image sizing and styling*/
 .modal-image {
-  width:400px; /* Adjust width as needed */
-  height: 250px; /* Maintain aspect ratio */
-  border-radius: 8px; /* rounded corners for the image */
-  flex-shrink: 0; /* Prevent image from shrinking */
+  width: 400px; 
+  height: 250px;
+  border-radius: 8px;
+  flex-shrink: 0;
 }
+
 .modal-text {
-  flex: 1; /* Allow text to take remaining space */
-  line-height: 1.0; /* Improve readability */
+  flex: 1;
+  line-height: 1.0;
 }
-.modal-text h2{
-  text-align:center;   
+
+.modal-text h2 {
+  text-align: center;
   text-decoration: underline;
   color: #F0F8FF;
 }
+
 .modal-page ul {
-  list-style-type: none; /* Remove bullets */
-  padding-left: 0; /* Remove padding */
-  margin: 0; /* Remove margin */
+  list-style-type: none;
+  padding-left: 0;
+  margin: 0;
 }
+
 .modal-page li {
-  margin-bottom: 10px; /* Space between list items */
+  margin-bottom: 10px; 
 }
-.modal-page .list-header{
-  color:#FFD700;
+
+.modal-page .list-header {
+  color: #FFD700;
 }
-/*modal content relative postioning*/
+
 .modal-content {
-  position: relative; 
+  position: relative;
   color: white;
   border: none;
   width: 100%;
-  overflow: hidden; 
+  overflow: hidden;
 }
+
 .modal-content::before {
   content: '';
   position: absolute;
@@ -217,29 +222,45 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent overlay */
+  background-color: rgba(0, 0, 0, 0.7);
   z-index: 1;
-  pointer-events: none; /* Ensure interactions with the modal content are not blocked */
+  pointer-events: none;
 }
-.modal-body,.modal-footer,.modal-header {
+
+.modal-body, .modal-footer, .modal-header {
   position: relative;
   z-index: 2;
 }
+
 .modal-footer .btn-secondary {
   border: none;
 }
+
 .btn-close {
-  color: #ffffff; /* Set the text color to white */
+  color: #ffffff;
   background-color: white;
   opacity: 0.75;
   filter: invert(1);
 }
+
 .modal-height {
-  min-height: 400px; /* Adjust height as needed */
+  min-height: 400px;
 }
-@media (max-width: 992px) {
-.component-services-wrapper {
-  flex-direction: column;
+
+/* Media query for mobile view */
+@media (max-width: 576px) {
+  .modal-page {
+    flex-direction: column; /* Stack image and text */
+    align-items: center; /* Center items horizontally */
+  }
+
+  .modal-image {
+    width: 100%; /* Make image full width */
+    height: auto; /* Adjust height to maintain aspect ratio */
+  }
+
+  .modal-text {
+    text-align: center; /* Center-align text on smaller screens */
+    padding-top: 20px; /* Add some space between image and text */
+  }
 }
-}
-</style>

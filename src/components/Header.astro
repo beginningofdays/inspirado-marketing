@@ -62,7 +62,7 @@ const { imageURL } = Astro.props;
       }
     }
 
-    // Event listener for mobileNav, only if mobileNav exists
+    // Event listener for mobileNav
     if (mobileNav) {
       mobileNav.addEventListener('click', function (event) {
         event.preventDefault();
@@ -70,7 +70,7 @@ const { imageURL } = Astro.props;
       });
     }
 
-    // Event listener for closePanel, only if closePanel exists
+    // Event listener for closePanel
     if (closePanel) {
       closePanel.addEventListener('click', function (event) {
         event.preventDefault();
