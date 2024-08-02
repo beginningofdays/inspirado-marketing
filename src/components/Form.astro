@@ -30,8 +30,7 @@ import images from './js/services.json';
         <h2>Community Strategy</h2>
         <div class="component-line"></div>
     </div>
-    <p class="component-content">Are you ready to build a thriving community for your brand on Reddit, Quora, or Discord? Discover your customized community strategy by <span class="text-highlight">filling out the form below.</span> Our team at Inspirado Marketing will analyze your brand’s needs and provide a tailored plan to help you create and sustain a vibrant, engaged community.</p>
-    
+    <p class="component-content">Are you ready to build a thriving community for your brand on Reddit, Quora, or Discord? Discover your customized community strategy by <span class="text-hightlight">filling out the form below.</span> Our team at Inspirado Marketing will analyze your brand’s needs and provide a tailored plan to help you create and sustain a vibrant, engaged community.</p>
     <!-- Form Section -->
     <div class="component-form mb-1">
         <form id="dataForm">
@@ -69,48 +68,32 @@ import images from './js/services.json';
 </div>
 
 <script>
-document.addEventListener('DOMContentLoaded', function() {
-    // Handle form submission
-    document.getElementById('dataForm')?.addEventListener('submit', function(e) {
-        e.preventDefault(); // Prevents the default form submission
+document.getElementById('dataForm')?.addEventListener('submit', function(e) {
+    e.preventDefault(); // Prevents the default form submission
 
-        // Gather form data using FormData API
-        const form = document.getElementById('dataForm') as HTMLFormElement;
-        const formData = new FormData(form);
-        const data = Object.fromEntries(formData.entries());
+    // Gather form data
+    const data = {
+        firstname: (document.getElementById('firstname') as HTMLInputElement)?.value ?? '',
+        lastname: (document.getElementById('lastname') as HTMLInputElement)?.value ?? '',
+        companyName: (document.getElementById('company-name') as HTMLInputElement)?.value ?? '',
+        address: (document.getElementById('address') as HTMLInputElement)?.value ?? '',
+        email: (document.getElementById('email') as HTMLInputElement)?.value ?? '',
+        phone: (document.getElementById('phone') as HTMLInputElement)?.value ?? '',
+        message: (document.getElementById('message') as HTMLTextAreaElement)?.value ?? '',
+        date: new Date().toISOString()
+    };
 
-        // Add date field manually
-        data.date = new Date().toISOString();
-
-        // Retrieve existing data from local storage
-        let allData: any[] = JSON.parse(localStorage.getItem('formData') ?? '[]');
-        
-        // Add new data
-        allData.push(data);
-        
-        // Store updated data in local storage
-        localStorage.setItem('formData', JSON.stringify(allData));
-        
-        // Reset the form
-        form.reset();
-        
-        // Notify the user
-        alert('Information Submitted!');
-    });
-
-    // Handle modal close functionality if applicable
-    const closeButtons = document.querySelectorAll('.btn-close-modal');
-    closeButtons.forEach(button => {
-        button.addEventListener('click', function() {
-            const modal = this.closest('.modal');
-            if (modal) {
-                modal.classList.add('d-none');
-            }
-        });
-    });
+    // Retrieve existing data from local storage
+    let allData: any[] = JSON.parse(localStorage.getItem('formData') ?? '[]');
+    // Add new data
+    allData.push(data);
+    // Store updated data in local storage
+    localStorage.setItem('formData', JSON.stringify(allData));
+    // Reset the form
+    (document.getElementById('dataForm') as HTMLFormElement)?.reset();
+  
 });
 </script>
-
 
 <style>
 .community-message {
