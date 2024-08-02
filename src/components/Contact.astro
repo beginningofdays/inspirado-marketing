@@ -1,6 +1,6 @@
 ---
-import L from 'leaflet';
-import "leaflet/dist/leaflet.css";
+import "../components/js/leaflet.js";
+import "../components/js/leaflet.css";
 ---
 
 <div class="flex-column mb-3">
@@ -26,7 +26,7 @@ import "leaflet/dist/leaflet.css";
       </div>
   
       <div class="component-map">
-        <div id="map" style="height: 400px;"></div>
+        <div id="map"></div>
       </div>
     </div>
 </div>
@@ -45,7 +45,6 @@ import "leaflet/dist/leaflet.css";
     }).addTo(map);       
   });
 </script>
-
 
 <style>
 .component-address-map-wrapper {
