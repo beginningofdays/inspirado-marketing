@@ -42,3 +42,29 @@ const { imageURL } = Astro.props;
     </div>
   </div>
 </div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+  const mobileNav = document.querySelector('.mobile-nav a');
+  const slidingPanel = document.getElementById('slidingPanel');
+  const closePanel = document.querySelector('.close-panel');
+  
+    function togglePanel() {
+      if (slidingPanel.classList.contains('active')) {
+        mobileNav.textContent = 'MENU';
+        slidingPanel.classList.remove('active');
+      } else {
+        mobileNav.textContent = 'CLOSE';
+        slidingPanel.classList.add('active');
+      }
+    }
+  
+    mobileNav.addEventListener('click', function (event) {
+      event.preventDefault();
+      togglePanel();
+    });
+  
+    closePanel.addEventListener('click', function (event) {
+      event.preventDefault();
+      togglePanel();
+    });
