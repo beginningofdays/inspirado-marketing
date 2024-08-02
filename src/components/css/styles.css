@@ -632,17 +632,14 @@ a:hover .overlay {
   gap: 5px; /* Space between image and text */
 }
 
-.modal-image {
-    width:100%; /* Adjust width as needed */
-    height: 250px; /* Maintain aspect ratio */
-    border-radius: 8px; /* rounded corners for the image */
-    flex-shrink: 0; /* Prevent image from shrinking */
-  }
+.modal-page{
+  height:50px;
+}
 
 .modal-height {
     min-height: 430px; /* Adjust height as needed */
   }
-  
+
 }
 
 
