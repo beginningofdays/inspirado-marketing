@@ -1,120 +1,128 @@
----
-import images from './js/services.json';
----
-<div class="community-message flex-column mb-3">
-    <div class="component-title">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Community Marketing Form</title>
+    <style>
+        /* Add your styles here */
+    </style>
+</head>
+<body>
+    <div class="community-message flex-column mb-3">
+        <div class="component-title">
+            <div class="component-title-wrapper">
+                <div class="component-line"></div>
+                <h2>Community Marketing</h2>
+                <div class="component-line"></div>
+            </div>
+        </div>
+        
+        <div class="component-marketing-form-header">
+            <div class="left-column">
+                <a href="#" data-lightbox="image-gallery">
+                    <img src="path-to-your-image" alt="Image Description" class="banner-image"/>
+                </a>
+            </div>
+            <div class="right-column">
+                <p>Inspirado Marketing, we understand that building a loyal customer base goes beyond traditional advertising. Our community marketing approach is designed to cultivate strong, meaningful connections with your target audience, transforming them into dedicated brand advocates.</p>
+                <p>At Inspirado Marketing, we believe in the power of community to drive your brand forward. Let us help you connect, engage, and grow.</p> 
+                <p>Let us help you build a vibrant, engaged community around your brand. Connect with us today, and let’s embark on a journey to inspire, engage, and elevate your business to new heights.</p>
+            </div>    
+        </div>
+
         <div class="component-title-wrapper">
             <div class="component-line"></div>
-            <h2>Community Marketing</h2>
+            <h2>Community Strategy</h2>
             <div class="component-line"></div>
         </div>
-    </div>
-    
-    <div class="component-marketing-form-header">
-        <div class="left-column">
-            {images[2] && (
-                <a href="#" data-lightbox="image-gallery">
-                    <img src={images[2].src} alt={images[2].alt} class="banner-image"/>
-                </a>
-            )}
+        <p class="component-content">Are you ready to build a thriving community for your brand on Reddit, Quora, or Discord? Discover your customized community strategy by <span class="text-hightlight">filling out the form below.</span> Our team at Inspirado Marketing will analyze your brand’s needs and provide a tailored plan to help you create and sustain a vibrant, engaged community.</p>
+        <!-- Form Section -->
+        <div class="component-form mb-1">
+            <form id="dataForm">
+                <!-- Form Inputs -->
+                <div class="row mb-3">
+                    <div class="col">
+                        <div data-mdb-input-init class="form-outline">
+                            <input type="text" id="firstname" class="form-control" placeholder="First Name" required/>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div data-mdb-input-init class="form-outline">
+                            <input type="text" id="lastname" class="form-control" placeholder="Last Name" required/>
+                        </div>
+                    </div>
+                </div>
+                <div data-mdb-input-init class="form-outline mb-4">
+                    <input type="text" id="company-name" class="form-control" placeholder="Company Name"/>
+                </div>
+                <div data-mdb-input-init class="form-outline mb-4">
+                    <input type="text" id="address" class="form-control" placeholder="Address"/>
+                </div>
+                <div data-mdb-input-init class="form-outline mb-4">
+                    <input type="email" id="email" class="form-control" placeholder="Email" required/>
+                </div>
+                <div data-mdb-input-init class="form-outline mb-4">
+                    <input type="number" id="phone" class="form-control" placeholder="Phone"/>
+                </div>
+                <div data-mdb-input-init class="form-outline mb-4">
+                    <textarea class="form-control" id="message" rows="4" placeholder="Message"></textarea>
+                </div>
+                <button data-mdb-ripple-init type="submit" class="btn btn-primary btn-block mb-4">Submit</button>
+            </form>
         </div>
-        <div class="right-column">
-            <p>Inspirado Marketing, we understand that building a loyal customer base goes beyond traditional advertising. Our community marketing approach is designed to cultivate strong, meaningful connections with your target audience, transforming them into dedicated brand advocates.</p>
-            <p>At Inspirado Marketing, we believe in the power of community to drive your brand forward. Let us help you connect, engage, and grow.</p> 
-            <p>Let us help you build a vibrant, engaged community around your brand. Connect with us today, and let’s embark on a journey to inspire, engage, and elevate your business to new heights.</p>
-        </div>    
     </div>
 
-    <div class="component-title-wrapper">
-        <div class="component-line"></div>
-        <h2>Community Strategy</h2>
-        <div class="component-line"></div>
-    </div>
-    <p class="component-content">Are you ready to build a thriving community for your brand on Reddit, Quora, or Discord? Discover your customized community strategy by <span class="text-hightlight">filling out the form below.</span> Our team at Inspirado Marketing will analyze your brand’s needs and provide a tailored plan to help you create and sustain a vibrant, engaged community.</p>
-    <!-- Form Section -->
-    <div class="component-form mb-1">
-        <form id="dataForm">
-            <!-- Form Inputs -->
-            <div class="row mb-3">
-                <div class="col">
-                    <div data-mdb-input-init class="form-outline">
-                        <input type="text" id="firstname" class="form-control" placeholder="First Name" />
-                    </div>
-                </div>
-                <div class="col">
-                    <div data-mdb-input-init class="form-outline">
-                        <input type="text" id="lastname" class="form-control" placeholder="Last Name" />
-                    </div>
-                </div>
-            </div>
-            <div data-mdb-input-init class="form-outline mb-4">
-                <input type="text" id="company-name" class="form-control" placeholder="Company Name" />
-            </div>
-            <div data-mdb-input-init class="form-outline mb-4">
-                <input type="text" id="address" class="form-control" placeholder="Address" />
-            </div>
-            <div data-mdb-input-init class="form-outline mb-4">
-                <input type="email" id="email" class="form-control" placeholder="Email" />
-            </div>
-            <div data-mdb-input-init class="form-outline mb-4">
-                <input type="number" id="phone" class="form-control" placeholder="Phone" />
-            </div>
-            <div data-mdb-input-init class="form-outline mb-4">
-                <textarea class="form-control" id="message" rows="4" placeholder="Message"></textarea>
-            </div>
-            <button data-mdb-ripple-init type="submit" class="btn btn-primary btn-block mb-4">Submit</button>
-        </form>
-    </div>
-</div>
+    <script>
+        class FormSubmission {
+            constructor(firstname, lastname, companyName, address, email, phone, message, date) {
+                this.firstname = firstname;
+                this.lastname = lastname;
+                this.companyName = companyName;
+                this.address = address;
+                this.email = email;
+                this.phone = phone;
+                this.message = message;
+                this.date = date;
+            }
+        }
 
-<script>
-class FormSubmission {
-    constructor(
-        firstname,
-        lastname,
-        companyName,
-        address,
-        email,
-        phone,
-        message,
-        date
-    ) {
-        this.firstname = firstname;
-        this.lastname = lastname;
-        this.companyName = companyName;
-        this.address = address;
-        this.email = email;
-        this.phone = phone;
-        this.message = message;
-        this.date = date;
-    }
-}
+        document.getElementById('dataForm')?.addEventListener('submit', function(e) {
+            e.preventDefault(); // Prevents the default form submission
 
-document.getElementById('dataForm')?.addEventListener('submit', function(e) {
-    e.preventDefault(); // Prevents the default form submission
+            // Gather form data
+            const firstname = document.getElementById('firstname')?.value ?? '';
+            const lastname = document.getElementById('lastname')?.value ?? '';
+            const companyName = document.getElementById('company-name')?.value ?? '';
+            const address = document.getElementById('address')?.value ?? '';
+            const email = document.getElementById('email')?.value ?? '';
+            const phone = document.getElementById('phone')?.value ?? '';
+            const message = document.getElementById('message')?.value ?? '';
+            const date = new Date().toLocaleString();
 
-    // Gather form data
-    const formSubmission = new FormSubmission(
-        (document.getElementById('firstname') as HTMLInputElement)?.value ?? '',
-        (document.getElementById('lastname') as HTMLInputElement)?.value ?? '',
-        (document.getElementById('company-name') as HTMLInputElement)?.value ?? '',
-        (document.getElementById('address') as HTMLInputElement)?.value ?? '',
-        (document.getElementById('email') as HTMLInputElement)?.value ?? '',
-        (document.getElementById('phone') as HTMLInputElement)?.value ?? '',
-        (document.getElementById('message') as HTMLTextAreaElement)?.value ?? '',
-        new Date().toLocaleString()
-    );
+            const formSubmission = new FormSubmission(
+                firstname,
+                lastname,
+                companyName,
+                address,
+                email,
+                phone,
+                message,
+                date
+            );
 
-    // Retrieve existing data from local storage
-    let allData = JSON.parse(localStorage.getItem('formData') ?? '[]');
-    // Add new data
-    allData.push(formSubmission);
-    // Store updated data in local storage
-    localStorage.setItem('formData', JSON.stringify(allData));
-    // Form Reset
-    (document.getElementById('dataForm') as HTMLFormElement)?.reset();
-});
-</script>
+            // Retrieve existing data from local storage
+            let allData = JSON.parse(localStorage.getItem('formData') ?? '[]');
+            // Add new data
+            allData.push(formSubmission);
+            // Store updated data in local storage
+            localStorage.setItem('formData', JSON.stringify(allData));
+            // Form Reset
+            document.getElementById('dataForm')?.reset();
+        });
+    </script>
+</body>
+</html>
 
 <style>
 .community-message {
