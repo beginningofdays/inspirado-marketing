@@ -1,6 +1,6 @@
 ---
 import "../components/js/leaflet.js";
-import "../components/css/leaflet.css";
+import "../components/js/leaflet.css";
 ---
 
 <div class="flex-column mb-3">
@@ -26,23 +26,20 @@ import "../components/css/leaflet.css";
       </div>
   
       <div class="component-map">
-        <div id="map" style="height: 400px;"></div>
+        <div id="map"></div>
       </div>
     </div>
 </div>
 
 <script>
-  // Ensure this script runs after the page is fully loaded
   document.addEventListener('DOMContentLoaded', () => {
-    // Initialize Leaflet map
     const map = L.map('map').setView([53.38116, -6.59122], 14); 
-    // Add a draggable marker
+    // Maynooth Town
     L.marker([53.38116, -6.59122], {
       draggable: true,
       title: "Hover Text"
     }).addTo(map).bindPopup('<div style="text-align: center;"><h3><strong>Inspirado Marketing</strong></h3><br/>Maynooth<br/>Co Kildare<br/>W24 5677<br/>Ireland</div>');
 
-    // Add OpenStreetMap tiles
     L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
       attribution: ''
     }).addTo(map);       
