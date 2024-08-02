@@ -632,6 +632,14 @@ a:hover .overlay {
   gap: 5px; /* Space between image and text */
 }
 
+.modal-image {
+    width:350px; /* Adjust width as needed */
+    height: 250px; /* Maintain aspect ratio */
+    border-radius: 8px; /* rounded corners for the image */
+    flex-shrink: 0; /* Prevent image from shrinking */
+  }
+}
+
 }
 
 /* Medium devices (tablets, 768px and up) */
