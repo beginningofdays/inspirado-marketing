@@ -1,6 +1,7 @@
 ---
-import "../components/js/leaflet.js";
-import "../components/js/leaflet.css";
+import { onMount } from 'solid-js';
+import L from 'leaflet';
+import 'leaflet/dist/leaflet.css';
 ---
 
 <div class="flex-column mb-3">
@@ -32,9 +33,9 @@ import "../components/js/leaflet.css";
 </div>
 
 <script>
-  document.addEventListener('DOMContentLoaded', function () {
+  onMount(() => {
     const map = L.map('map').setView([53.38116, -6.59122], 14); 
-    //Maynooth Town
+    // Maynooth Town
     L.marker([53.38116, -6.59122], {
       draggable: true,
       title: "Hover Text"
@@ -42,7 +43,7 @@ import "../components/js/leaflet.css";
 
     L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
       attribution: ''
-    }).addTo(map);       
+    }).addTo(map);
   });
 </script>
 
