@@ -1,148 +1,44 @@
 ---
+const { imageURL } = Astro.props;
 ---
-<div class="flex-column mb-3">
-  <div class="component-title-wrapper">
-      <div class="component-line"></div>
-      <h2>Get Started</h2>
-      <div class="component-line"></div>
+<header class="flex-row">
+  <div class="menu" id="menu">
+    <div class="component-logo">
+      <a href="index.html">
+        <img src="images/inspirado-logo1.png" alt="Inspirado Logo">
+      </a>
+    </div>
+    <nav>
+      <ul class="nav">
+        <li><a href="work.html">OUR WORK</a></li>
+        <li><a href="company.html">COMPANY</a></li>
+        <li><a href="contact.html">CONTACT US</a></li>
+        <li><a href="getstarted.html">GET STARTED</a></li>
+        <li class="mobile-nav"><a href="#">MENU</a></li>
+      </ul>
+    </nav>
   </div>
-  
-  <div class="component-demo-text">
-      <p>To tailor our services to your unique needs, we need a bit more information from you. <span class="text-hightlight">Please fill out the form below</span>, and one of our team members will be in touch shortly to discuss how we can best support your marketing goals.</p>
+
+  <div class="sliding-panel" id="slidingPanel">
+    <ul class="panel-nav">
+      <li><a href="work.html">OUR WORK</a></li>
+      <li><a href="company.html">COMPANY</a></li>
+      <li><a href="contact.html">CONTACT US</a></li>
+      <li><a href="getstarted.html">GET STARTED</a></li>
+    </ul>
   </div>
-  
-  <div class="component-form flex-column mb-3">
-      <form id="dataForm">
-          <!-- 2 column grid layout with text inputs for the first and last names -->
-          <div class="row mb-3">
-              <div class="col">
-                  <div data-mdb-input-init class="form-outline">
-                      <input type="text" id="firstname" class="form-control" placeholder="First Name"/>
-                  </div>
-              </div>
-              <div class="col"> 
-                  <div data-mdb-input-init class="form-outline">
-                      <input type="text" id="lastname" class="form-control" placeholder="Last Name" />
-                  </div>
-              </div>
-          </div>
-                    
-          <!-- Text input -->
-          <div data-mdb-input-init class="form-outline mb-4">
-              <input type="text" id="company-name" class="form-control" placeholder="Company Name"/>
-          </div>
-                    
-          <!-- Text input -->
-          <div data-mdb-input-init class="form-outline mb-4">
-              <input type="text" id="address" class="form-control" placeholder="Address" />
-          </div>
-                    
-          <!-- Email input -->
-          <div data-mdb-input-init class="form-outline mb-4">
-              <input type="email" id="email" class="form-control" placeholder="Email"/>
-          </div>
-                    
-          <!-- Number input -->
-          <div data-mdb-input-init class="form-outline mb-4">
-              <input type="number" id="phone" class="form-control" placeholder="Phone"/>
-          </div>
-                    
-          <!-- Message input -->
-          <div data-mdb-input-init class="form-outline mb-4">
-              <textarea class="form-control" id="message" rows="4" placeholder="Message"></textarea>
-          </div>
-                 
-          <!-- Submit button -->
-          <button data-mdb-ripple-init type="submit" class="btn btn-primary btn-block mb-4">Submit</button>
-      </form>
+</header>
+
+<div class="flex-column component-banner-container mb-3">
+  <div class="component-banner-image">
+    <img src={imageURL} alt="Banner Image" class="banner-image" />
+    <div class="banner-overlay"></div>
+    <div class="banner-content">
+      <div class="banner-text">
+        <h1><strong>FIND YOUR COMMUNITY AND INCREASE YOUR SALES</strong></h1>
+        <p>Helping brands gain competitive an edge within their communties</p>
+      </div>
+      <a href="getstarted.html"><button type="button" class="banner-button">Let's Get Started</button></a>
+    </div>
   </div>
 </div>
-
-<script>
-  document.getElementById('dataForm')?.addEventListener('submit', function (e) {
-      e.preventDefault(); // Prevents the default form submission
-
-      // Gather form data
-      const firstnameElement = document.getElementById('firstname') as HTMLInputElement | null;
-      const lastnameElement = document.getElementById('lastname') as HTMLInputElement | null;
-      const companyNameElement = document.getElementById('company-name') as HTMLInputElement | null;
-      const addressElement = document.getElementById('address') as HTMLInputElement | null;
-      const emailElement = document.getElementById('email') as HTMLInputElement | null;
-      const phoneElement = document.getElementById('phone') as HTMLInputElement | null;
-      const messageElement = document.getElementById('message') as HTMLTextAreaElement | null;
-
-      // Check if elements exist and gather their values
-      const data = {
-          firstname: firstnameElement?.value ?? '',
-          lastname: lastnameElement?.value ?? '',
-          companyName: companyNameElement?.value ?? '',
-          address: addressElement?.value ?? '',
-          email: emailElement?.value ?? '',
-          phone: phoneElement?.value ?? '',
-          message: messageElement?.value ?? '',
-          date: new Date().toISOString()
-      };
-
-      // Retrieve existing data from local storage
-      let allData: any[] = JSON.parse(localStorage.getItem('formData') ?? '[]');
-      // Add new data
-      allData.push(data);
-      // Store updated data in local storage
-      localStorage.setItem('formData', JSON.stringify(allData));
-      // Reset the form
-      (document.getElementById('dataForm') as HTMLFormElement)?.reset();
-      // Notify the user
-      alert('Information Submitted!');
-  });
-</script>
-
-<style>
-.component-form {
-display: flex;
-justify-content: center; /* Center the form horizontally */
-align-items: center; /* Center the form vertically */
-width: 100%;
-margin: 0 auto; /* Center the component within the parent container */
-}    
-form {
-background-color: #1c4880; /* Dark blue background for the form */
-padding: 2rem; /* Add padding around the form content */
-border-radius: 8px; /* Rounded corners for the form */
-box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow effect for the form */
-width: 100%; /* Ensure form takes up full width of its container */
-border: none; /* Ensure no border is applied */
-}
-.form-control {
-background-color: #ffffff; /* White background for form fields */
-color: #333; /* Dark text color for readability */
-border: 1px solid #ced4da; /* Light gray border for form fields */
-border-radius: 4px; /* Slightly rounded corners for form fields */
-padding: 0.75rem 1rem; /* Padding inside form fields */
-}
-.form-control::placeholder {
-color: #6c757d; /* Light gray color for placeholder text */
-}    
-textarea.form-control {
-background-color: #ffffff; /* White background for the textarea */
-color: #333; /* Dark text color for readability */
-border: 1px solid #ced4da; /* Light gray border for the textarea */
-border-radius: 4px; /* Slightly rounded corners for the textarea */
-padding: 0.75rem 1rem; /* Padding inside the textarea */
-}    
-.btn-primary {
-background-color: #003366; /* Dark blue background for the submit button */
-border: none; /* Remove default border */
-color: #fff; /* White text color */
-padding: 0.75rem 1.5rem; /* Padding inside the button */
-font-size: 1rem; /* Font size for the button text */
-border-radius: 4px; /* Slightly rounded corners for the button */
-}    
-.btn-primary:hover {
-background-color: #002244; /* Darker blue background on hover */
-}
-.btn-primary:focus, .btn-primary:active {
-outline: none; /* Remove the default focus outline */
-box-shadow: none; /* Remove default box shadow on focus */
-}    
-
-</style>
