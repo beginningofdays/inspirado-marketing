@@ -7,7 +7,6 @@ The Aim of the project is to create a Community Marketing Website.
 The goal of the website to develop an interative marketing website with functional AP
 
 Structure of the Website
-------------------------
 /
 ├── public/
 │     ├── css/     
