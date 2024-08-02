@@ -13,7 +13,6 @@
     
     <div class="component-form flex-column mb-3">
         <form id="dataForm">
-            <!-- 2 column grid layout with text inputs for the first and last names -->
             <div class="row mb-3">
                 <div class="col">
                     <div data-mdb-input-init class="form-outline">
@@ -58,8 +57,7 @@
     </div>
 </div>
 
-<script>
-// Define the FormSubmission class with proper types
+<script>// Define the FormSubmission class with proper types
 class FormSubmission {
     firstname: string;
     lastname: string;
@@ -127,7 +125,6 @@ document.getElementById('dataForm')?.addEventListener('submit', function(e) {
     // Form Reset
     form.reset();
 });
-
 </script>
 
 <style>
@@ -178,5 +175,4 @@ textarea.form-control {
   outline: none; /* Remove the default focus outline */
   box-shadow: none; /* Remove default box shadow on focus */
 }    
-
 </style>
