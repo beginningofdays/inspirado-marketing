@@ -68,30 +68,51 @@ import images from './js/services.json';
 </div>
 
 <script>
+class FormSubmission {
+    constructor(
+        firstname,
+        lastname,
+        companyName,
+        address,
+        email,
+        phone,
+        message,
+        date
+    ) {
+        this.firstname = firstname;
+        this.lastname = lastname;
+        this.companyName = companyName;
+        this.address = address;
+        this.email = email;
+        this.phone = phone;
+        this.message = message;
+        this.date = date;
+    }
+}
+
 document.getElementById('dataForm')?.addEventListener('submit', function(e) {
     e.preventDefault(); // Prevents the default form submission
 
     // Gather form data
-    const data = {
-        firstname: (document.getElementById('firstname') as HTMLInputElement)?.value ?? '',
-        lastname: (document.getElementById('lastname') as HTMLInputElement)?.value ?? '',
-        companyName: (document.getElementById('company-name') as HTMLInputElement)?.value ?? '',
-        address: (document.getElementById('address') as HTMLInputElement)?.value ?? '',
-        email: (document.getElementById('email') as HTMLInputElement)?.value ?? '',
-        phone: (document.getElementById('phone') as HTMLInputElement)?.value ?? '',
-        message: (document.getElementById('message') as HTMLTextAreaElement)?.value ?? '',
-        date: new Date().toLocaleString()
-    };
+    const formSubmission = new FormSubmission(
+        (document.getElementById('firstname') as HTMLInputElement)?.value ?? '',
+        (document.getElementById('lastname') as HTMLInputElement)?.value ?? '',
+        (document.getElementById('company-name') as HTMLInputElement)?.value ?? '',
+        (document.getElementById('address') as HTMLInputElement)?.value ?? '',
+        (document.getElementById('email') as HTMLInputElement)?.value ?? '',
+        (document.getElementById('phone') as HTMLInputElement)?.value ?? '',
+        (document.getElementById('message') as HTMLTextAreaElement)?.value ?? '',
+        new Date().toLocaleString()
+    );
 
     // Retrieve existing data from local storage
-    let allData: any[] = JSON.parse(localStorage.getItem('formData') ?? '[]');
+    let allData = JSON.parse(localStorage.getItem('formData') ?? '[]');
     // Add new data
-    allData.push(data);
+    allData.push(formSubmission);
     // Store updated data in local storage
     localStorage.setItem('formData', JSON.stringify(allData));
-    // Reset the form
+    // Form Reset
     (document.getElementById('dataForm') as HTMLFormElement)?.reset();
-  
 });
 </script>
 
