@@ -169,12 +169,14 @@
 .component-service:nth-of-type(3) {
   background-image: url('/images/social-media.png'); 
 }
+/* Modal page layout */
 .modal-page {
   display: flex;
   align-items: flex-start; 
   gap: 5px; 
 }
 
+/* Modal image styling */
 .modal-image {
   width: 400px; 
   height: 250px;
@@ -182,6 +184,7 @@
   flex-shrink: 0;
 }
 
+/* Modal text styling */
 .modal-text {
   flex: 1;
   line-height: 1.0;
@@ -193,6 +196,7 @@
   color: #F0F8FF;
 }
 
+/* List styling inside modal */
 .modal-page ul {
   list-style-type: none;
   padding-left: 0;
@@ -207,6 +211,7 @@
   color: #FFD700;
 }
 
+/* Modal content styling */
 .modal-content {
   position: relative;
   color: white;
@@ -247,20 +252,20 @@
   min-height: 400px;
 }
 
-/* Media query for mobile view */
+/* Media query to adjust layout for mobile view */
 @media (max-width: 576px) {
   .modal-page {
     flex-direction: column; /* Stack image and text */
-    align-items: center; /* Center items horizontally */
+    align-items: center; /* Center-align items */
   }
 
   .modal-image {
     width: 100%; /* Make image full width */
-    height: auto; /* Adjust height to maintain aspect ratio */
+    height: auto; /* Maintain aspect ratio */
   }
 
   .modal-text {
-    text-align: center; /* Center-align text on smaller screens */
-    padding-top: 20px; /* Add some space between image and text */
-  }
-}
+    text-align: center; /* Center-align text */
+    padding-top: 20px; 
+
+</style>
