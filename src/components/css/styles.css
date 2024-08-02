@@ -632,10 +632,6 @@ a:hover .overlay {
   gap: 5px; /* Space between image and text */
 }
 
-.modal-image{
-  flex:1;
-}
-
 .modal-height {
     min-height: 430px; /* Adjust height as needed */
   }
