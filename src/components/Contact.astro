@@ -1,6 +1,6 @@
 ---
 import "../components/js/leaflet.js";
-import "../components/js/leaflet.css";
+import "../components/css/leaflet.css";
 ---
 
 <div class="flex-column mb-3">
@@ -26,22 +26,27 @@ import "../components/js/leaflet.css";
       </div>
   
       <div class="component-map">
-        <div id="map"></div>
+        <div id="map" style="height: 400px;"></div>
       </div>
     </div>
 </div>
 
 <script>
-  const map = L.map('map').setView([53.38116, -6.59122], 14); 
-  //Maynooth Town
-  L.marker([53.38116, -6.59122], {
-    draggable: true,
-    title: "Hover Text"
-  }).addTo(map).bindPopup('<div style="text-align: center;"><h3><strong>Inspirado Marketing</strong></h3><br/>Maynooth<br/>Co Kildare<br/>W24 5677<br/>Ireland</div>');
+  // Ensure this script runs after the page is fully loaded
+  document.addEventListener('DOMContentLoaded', () => {
+    // Initialize Leaflet map
+    const map = L.map('map').setView([53.38116, -6.59122], 14); 
+    // Add a draggable marker
+    L.marker([53.38116, -6.59122], {
+      draggable: true,
+      title: "Hover Text"
+    }).addTo(map).bindPopup('<div style="text-align: center;"><h3><strong>Inspirado Marketing</strong></h3><br/>Maynooth<br/>Co Kildare<br/>W24 5677<br/>Ireland</div>');
 
-  L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    attribution: ''
-  }).addTo(map);       
+    // Add OpenStreetMap tiles
+    L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: ''
+    }).addTo(map);       
+  });
 </script>
 
 <style>
