@@ -28,16 +28,25 @@
 </div>
 
 <script>
-document.getElementById('facebookShare').addEventListener('click', function() {
-    const urlToShare = encodeURIComponent(window.location.href);
-    const facebookShareUrl = `https://www.facebook.com/sharer/sharer.php?u=${urlToShare}`;
-    window.open(facebookShareUrl, 'facebook-share-dialog', 'width=800,height=600');
-});
+document.addEventListener('DOMContentLoaded', function() {
+    const facebookShareButton = document.getElementById('facebookShare');
+    const twitterShareButton = document.getElementById('twitterShare');
 
-document.getElementById('twitterShare').addEventListener('click', function() {
-    const urlToShare = encodeURIComponent(window.location.href);
-    const textToShare = encodeURIComponent('Check out this awesome webpage: ');
-    const twitterShareUrl = `https://twitter.com/intent/tweet?url=${urlToShare}&text=${textToShare}`;
-    window.open(twitterShareUrl, 'twitter-share-dialog', 'width=800,height=600');
-});
+    if (facebookShareButton) {
+      facebookShareButton.addEventListener('click', function() {
+        const urlToShare = encodeURIComponent(window.location.href);
+        const facebookShareUrl = `https://www.facebook.com/sharer/sharer.php?u=${urlToShare}`;
+        window.open(facebookShareUrl, 'facebook-share-dialog', 'width=800,height=600');
+      });
+    }
+
+    if (twitterShareButton) {
+      twitterShareButton.addEventListener('click', function() {
+        const urlToShare = encodeURIComponent(window.location.href);
+        const textToShare = encodeURIComponent('Check out this awesome webpage: ');
+        const twitterShareUrl = `https://twitter.com/intent/tweet?url=${urlToShare}&text=${textToShare}`;
+        window.open(twitterShareUrl, 'twitter-share-dialog', 'width=800,height=600');
+      });
+    }
+  });
 </script>

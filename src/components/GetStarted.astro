@@ -59,34 +59,42 @@
 </div>
 
 <script>
-    document.getElementById('dataForm').addEventListener('submit', function (e) {
+    document.getElementById('dataForm')?.addEventListener('submit', function (e) {
         e.preventDefault(); // Prevents the default form submission
 
         // Gather form data
+        const firstnameElement = document.getElementById('firstname') as HTMLInputElement | null;
+        const lastnameElement = document.getElementById('lastname') as HTMLInputElement | null;
+        const companyNameElement = document.getElementById('company-name') as HTMLInputElement | null;
+        const addressElement = document.getElementById('address') as HTMLInputElement | null;
+        const emailElement = document.getElementById('email') as HTMLInputElement | null;
+        const phoneElement = document.getElementById('phone') as HTMLInputElement | null;
+        const messageElement = document.getElementById('message') as HTMLTextAreaElement | null;
+
+        // Check if elements exist and gather their values
         const data = {
-            firstname: document.getElementById('firstname').value,
-            lastname: document.getElementById('lastname').value,
-            companyName: document.getElementById('company-name').value,
-            address: document.getElementById('address').value,
-            email: document.getElementById('email').value,
-            phone: document.getElementById('phone').value,
-            message: document.getElementById('message').value,
+            firstname: firstnameElement?.value ?? '',
+            lastname: lastnameElement?.value ?? '',
+            companyName: companyNameElement?.value ?? '',
+            address: addressElement?.value ?? '',
+            email: emailElement?.value ?? '',
+            phone: phoneElement?.value ?? '',
+            message: messageElement?.value ?? '',
             date: new Date().toISOString()
         };
 
         // Retrieve existing data from local storage
-        let allData = JSON.parse(localStorage.getItem('formData')) || [];
+        let allData: any[] = JSON.parse(localStorage.getItem('formData') ?? '[]');
         // Add new data
         allData.push(data);
         // Store updated data in local storage
         localStorage.setItem('formData', JSON.stringify(allData));
         // Reset the form
-        document.getElementById('dataForm').reset();
+        (document.getElementById('dataForm') as HTMLFormElement)?.reset();
         // Notify the user
         alert('Information Submitted!');
     });
 </script>
-
 
 <style>
 .component-form {
@@ -138,4 +146,3 @@ textarea.form-control {
 }    
 
 </style>
-    

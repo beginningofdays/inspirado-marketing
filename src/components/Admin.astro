@@ -1,7 +1,6 @@
 ---
 
 ---
-
 <div class="flex-column mb-3">
     <div class="">
         <p>Welcome to the Administration Page of my Inspirado Marketing</p>
@@ -61,82 +60,106 @@
 
 
 <script>
-// Display data in the table
-function displayData(data) {
-    const dataDisplay = document.getElementById('dataDisplay');
-    dataDisplay.innerHTML = ''; // Clear previous content
-
-    data.forEach(entry => {
-    const row = document.createElement('tr');
-        row.innerHTML = `
+    // Define the shape of each entry in the data
+    interface DataEntry {
+      firstname?: string;
+      lastname?: string;
+      country?: string;
+      email?: string;
+      text?: string;
+      date?: string;
+    }
+  
+    // Display data in the table
+    function displayData(data: DataEntry[]) {
+      const dataDisplay = document.getElementById('dataDisplay');
+      if (dataDisplay) {
+        dataDisplay.innerHTML = ''; // Clear previous content
+  
+        data.forEach(entry => {
+          const row = document.createElement('tr');
+          row.innerHTML = `
             <td>${entry.firstname || 'N/A'}</td>
             <td>${entry.lastname || 'N/A'}</td>
             <td>${entry.country || 'N/A'}</td>
             <td>${entry.email || 'N/A'}</td>
             <td>${entry.text || 'N/A'}</td>
             <td>${entry.date || 'N/A'}</td>
-        `;
-        dataDisplay.appendChild(row);
-    });
-}
-
-// Filters based on user input
-function applyFilter() {
-  const filterFirstname = document.getElementById('filterFirstname').value.toLowerCase();
-  const filterLastname = document.getElementById('filterLastname').value.toLowerCase();
-  const filterCountry = document.getElementById('filterCountry').value.toLowerCase();
-  const filterEmail = document.getElementById('filterEmail').value.toLowerCase();
-  const filterDate = document.getElementById('filterDate').value;
-
-  let allData = JSON.parse(localStorage.getItem('formData')) || [];
-        
-  if (filterFirstname) {
-    allData = allData.filter(entry => 
-            (entry.firstname || '').toLowerCase().includes(filterFirstname)
-        );
+          `;
+          dataDisplay.appendChild(row);
+        });
+      }
     }
-   if (filterLastname) {
-    allData = allData.filter(entry => 
-            (entry.lastname || '').toLowerCase().includes(filterLastname)
+  
+    // Filters based on user input
+    function applyFilter() {
+      const filterFirstname = (document.getElementById('filterFirstname') as HTMLInputElement)?.value.toLowerCase() || '';
+      const filterLastname = (document.getElementById('filterLastname') as HTMLInputElement)?.value.toLowerCase() || '';
+      const filterCountry = (document.getElementById('filterCountry') as HTMLInputElement)?.value.toLowerCase() || '';
+      const filterEmail = (document.getElementById('filterEmail') as HTMLInputElement)?.value.toLowerCase() || '';
+      const filterDate = (document.getElementById('filterDate') as HTMLInputElement)?.value || '';
+  
+      const storedData = localStorage.getItem('formData');
+      let allData: DataEntry[] = storedData ? JSON.parse(storedData) : [];
+  
+      if (filterFirstname) {
+        allData = allData.filter((entry: DataEntry) => 
+          (entry.firstname || '').toLowerCase().includes(filterFirstname)
         );
-    }
-   if (filterCountry) {
-    allData = allData.filter(entry => 
-            (entry.country || '').toLowerCase().includes(filterCountry)
+      }
+      if (filterLastname) {
+        allData = allData.filter((entry: DataEntry) => 
+          (entry.lastname || '').toLowerCase().includes(filterLastname)
         );
-    }
-   if (filterEmail) {
-    allData = allData.filter(entry => 
-                (entry.email || '').toLowerCase().includes(filterEmail)
+      }
+      if (filterCountry) {
+        allData = allData.filter((entry: DataEntry) => 
+          (entry.country || '').toLowerCase().includes(filterCountry)
         );
-    }
-   if (filterDate) {
-    allData = allData.filter(entry => 
-                entry.date.startsWith(filterDate)
+      }
+      if (filterEmail) {
+        allData = allData.filter((entry: DataEntry) => 
+          (entry.email || '').toLowerCase().includes(filterEmail)
         );
+      }
+      if (filterDate) {
+        allData = allData.filter((entry: DataEntry) => 
+          entry.date?.startsWith(filterDate)
+        );
+      }
+  
+      displayData(allData);
     }
-
-    displayData(allData);
-}
-
-// Function to clear all filters
-function clearFilters() {
-    document.getElementById('filterFirstname').value = '';
-    document.getElementById('filterLastname').value = '';
-    document.getElementById('filterCountry').value = '';
-    document.getElementById('filterEmail').value = '';
-    document.getElementById('filterDate').value = '';
-    displayData(JSON.parse(localStorage.getItem('formData')) || []);
-}
-
-// Set up event listeners for filter buttons
+  
+    // Function to clear all filters
+    function clearFilters() {
+      const filterFirstname = document.getElementById('filterFirstname') as HTMLInputElement | null;
+      const filterLastname = document.getElementById('filterLastname') as HTMLInputElement | null;
+      const filterCountry = document.getElementById('filterCountry') as HTMLInputElement | null;
+      const filterEmail = document.getElementById('filterEmail') as HTMLInputElement | null;
+      const filterDate = document.getElementById('filterDate') as HTMLInputElement | null;
+  
+      if (filterFirstname) filterFirstname.value = '';
+      if (filterLastname) filterLastname.value = '';
+      if (filterCountry) filterCountry.value = '';
+      if (filterEmail) filterEmail.value = '';
+      if (filterDate) filterDate.value = '';
+  
+      const storedData = localStorage.getItem('formData');
+      displayData(storedData ? JSON.parse(storedData) : []);
+    }
+  
+    // Set up event listeners for filter buttons
     document.addEventListener('DOMContentLoaded', function() {
-    document.getElementById('filterButton').addEventListener('click', applyFilter);
-    document.getElementById('clearButton').addEventListener('click', clearFilters);
-});
-
-// Initial display of data
-    window.onload = function() {
-        displayData(JSON.parse(localStorage.getItem('formData')) || []);
-};
-</script>
+      const filterButton = document.getElementById('filterButton');
+      const clearButton = document.getElementById('clearButton');
+  
+      if (filterButton) filterButton.addEventListener('click', applyFilter);
+      if (clearButton) clearButton.addEventListener('click', clearFilters);
+  
+      // Initial display of data
+      const storedData = localStorage.getItem('formData');
+      displayData(storedData ? JSON.parse(storedData) : []);
+    });
+  </script>
+  
