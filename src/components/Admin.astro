@@ -1,172 +1,168 @@
----
-
----
 <div class="flex-column mb-3">
-    <div class="component-title-wrapper">
+  <div class="component-title-wrapper">
       <div class="component-line"></div>
-        <h2>Administration Page - Inspirado Marketing</h2>
+      <h2>Administration Page - Inspirado Marketing</h2>
       <div class="component-line"></div>
-    </div>
-    <div class="component-admin-form pt-3 pb-3">
-        <h3>Filter Data:</h3>        
-<!-- Filter Inputs in two rows and buttons in one row -->
-    <div class="filter-container">
-        <div class="filter-row">
-            <label for="filterFirstname">First Name:</label>
-            <input type="text" id="filterFirstname">
-                
-            <label for="filterLastname">Last Name:</label>
-            <input type="text" id="filterLastname">
-        </div>
-            
-        <div class="filter-row">
-            <label for="filterCountry">Country:</label>
-            <input type="text" id="filterCountry">
-                
-            <label for="filterEmail">Email:</label>
-            <input type="text" id="filterEmail">
-                
-            <label for="filterDate">Date:</label>
-            <input type="date" id="filterDate">
-        </div>
+  </div>
+  <div class="component-admin-form pt-3 pb-3">
+      <h3>Filter Data:</h3>
+      <!-- Filter Inputs in two rows and buttons in one row -->
+      <div class="filter-container">
+          <div class="filter-row">
+              <label for="filterFirstname">First Name:</label>
+              <input type="text" id="filterFirstname">
+              
+              <label for="filterLastname">Last Name:</label>
+              <input type="text" id="filterLastname">
+          </div>
+              
+          <div class="filter-row">
+              <label for="filterCompanyName">Company Name:</label>
+              <input type="text" id="filterCompanyName">
+              
+              <label for="filterEmail">Email:</label>
+              <input type="text" id="filterEmail">
+              
+              <label for="filterDate">Date:</label>
+              <input type="date" id="filterDate">
+          </div>
 
-        <div class="button-row">
-            <button id="filterButton">Apply Filter</button>
-            <button id="clearButton">Clear Filters</button>
-        </div>
-    </div>
+          <div class="button-row">
+              <button id="filterButton">Apply Filter</button>
+              <button id="clearButton">Clear Filters</button>
+          </div>
+      </div>
 
-    <span class="admin-title"><h3>Data:</h3></span>
-    <!-- Table for displaying data -->
-    <table id="dataTable">
-        <thead>
-            <tr>
-                <th>First Name</th>
-                <th>Last Name</th>
-                <th>Country</th>
-                <th>Email</th>
-                <th>Text</th>
-                <th>Date</th>
-            </tr>
-        </thead>
-        <tbody id="dataDisplay">
-                <!-- Rows will be inserted here dynamically -->
-        </tbody>
-    </table>
-    </div> 
+      <span class="admin-title"><h3>Data:</h3></span>
+      <!-- Table for displaying data -->
+      <table id="dataTable">
+          <thead>
+              <tr>
+                  <th>First Name</th>
+                  <th>Last Name</th>
+                  <th>Company Name</th>
+                  <th>Email</th>
+                  <th>Message</th>
+                  <th>Date</th>
+              </tr>
+          </thead>
+          <tbody id="dataDisplay">
+              <!-- Rows will be inserted here dynamically -->
+          </tbody>
+      </table>
+  </div>
 </div>
 
-
 <script>
-    // Define the shape of each entry in the data
-    interface DataEntry {
+  // Define the shape of each entry in the data
+  interface DataEntry {
       firstname?: string;
       lastname?: string;
-      country?: string;
+      companyName?: string;  // Updated from country to companyName
       email?: string;
-      text?: string;
+      message?: string;      // Updated from text to message
       date?: string;
-    }
-  
-    // Display data in the table
-    function displayData(data: DataEntry[]) {
+  }
+
+  // Display data in the table
+  function displayData(data: DataEntry[]) {
       const dataDisplay = document.getElementById('dataDisplay');
       if (dataDisplay) {
-        dataDisplay.innerHTML = ''; // Clear previous content
-  
-        data.forEach(entry => {
-          const row = document.createElement('tr');
-          row.innerHTML = `
-            <td>${entry.firstname || 'N/A'}</td>
-            <td>${entry.lastname || 'N/A'}</td>
-            <td>${entry.country || 'N/A'}</td>
-            <td>${entry.email || 'N/A'}</td>
-            <td>${entry.text || 'N/A'}</td>
-            <td>${entry.date || 'N/A'}</td>
-          `;
-          dataDisplay.appendChild(row);
-        });
+          dataDisplay.innerHTML = ''; // Clear previous content
+
+          data.forEach(entry => {
+              const row = document.createElement('tr');
+              row.innerHTML = `
+                  <td>${entry.firstname || 'N/A'}</td>
+                  <td>${entry.lastname || 'N/A'}</td>
+                  <td>${entry.companyName || 'N/A'}</td>
+                  <td>${entry.email || 'N/A'}</td>
+                  <td>${entry.message || 'N/A'}</td>
+                  <td>${entry.date || 'N/A'}</td>
+              `;
+              dataDisplay.appendChild(row);
+          });
       }
-    }
-  
-    // Filters based on user input
-    function applyFilter() {
+  }
+
+  // Filters based on user input
+  function applyFilter() {
       const filterFirstname = (document.getElementById('filterFirstname') as HTMLInputElement)?.value.toLowerCase() || '';
       const filterLastname = (document.getElementById('filterLastname') as HTMLInputElement)?.value.toLowerCase() || '';
-      const filterCountry = (document.getElementById('filterCountry') as HTMLInputElement)?.value.toLowerCase() || '';
+      const filterCompanyName = (document.getElementById('filterCompanyName') as HTMLInputElement)?.value.toLowerCase() || '';
       const filterEmail = (document.getElementById('filterEmail') as HTMLInputElement)?.value.toLowerCase() || '';
       const filterDate = (document.getElementById('filterDate') as HTMLInputElement)?.value || '';
-  
+
       const storedData = localStorage.getItem('formData');
       let allData: DataEntry[] = storedData ? JSON.parse(storedData) : [];
-  
+
       if (filterFirstname) {
-        allData = allData.filter((entry: DataEntry) => 
-          (entry.firstname || '').toLowerCase().includes(filterFirstname)
-        );
+          allData = allData.filter((entry: DataEntry) => 
+              (entry.firstname || '').toLowerCase().includes(filterFirstname)
+          );
       }
       if (filterLastname) {
-        allData = allData.filter((entry: DataEntry) => 
-          (entry.lastname || '').toLowerCase().includes(filterLastname)
-        );
+          allData = allData.filter((entry: DataEntry) => 
+              (entry.lastname || '').toLowerCase().includes(filterLastname)
+          );
       }
-      if (filterCountry) {
-        allData = allData.filter((entry: DataEntry) => 
-          (entry.country || '').toLowerCase().includes(filterCountry)
-        );
+      if (filterCompanyName) {
+          allData = allData.filter((entry: DataEntry) => 
+              (entry.companyName || '').toLowerCase().includes(filterCompanyName)
+          );
       }
       if (filterEmail) {
-        allData = allData.filter((entry: DataEntry) => 
-          (entry.email || '').toLowerCase().includes(filterEmail)
-        );
+          allData = allData.filter((entry: DataEntry) => 
+              (entry.email || '').toLowerCase().includes(filterEmail)
+          );
       }
       if (filterDate) {
-        allData = allData.filter((entry: DataEntry) => 
-          entry.date?.startsWith(filterDate)
-        );
+          allData = allData.filter((entry: DataEntry) => 
+              entry.date?.startsWith(filterDate)
+          );
       }
-  
+
       displayData(allData);
-    }
-  
-    // Function to clear all filters
-    function clearFilters() {
+  }
+
+  // Function to clear all filters
+  function clearFilters() {
       const filterFirstname = document.getElementById('filterFirstname') as HTMLInputElement | null;
       const filterLastname = document.getElementById('filterLastname') as HTMLInputElement | null;
-      const filterCountry = document.getElementById('filterCountry') as HTMLInputElement | null;
+      const filterCompanyName = document.getElementById('filterCompanyName') as HTMLInputElement | null;
       const filterEmail = document.getElementById('filterEmail') as HTMLInputElement | null;
       const filterDate = document.getElementById('filterDate') as HTMLInputElement | null;
-  
+
       if (filterFirstname) filterFirstname.value = '';
       if (filterLastname) filterLastname.value = '';
-      if (filterCountry) filterCountry.value = '';
+      if (filterCompanyName) filterCompanyName.value = '';
       if (filterEmail) filterEmail.value = '';
       if (filterDate) filterDate.value = '';
-  
+
       const storedData = localStorage.getItem('formData');
       displayData(storedData ? JSON.parse(storedData) : []);
-    }
-  
-    // Set up event listeners for filter buttons
-    document.addEventListener('DOMContentLoaded', function() {
+  }
+
+  // Set up event listeners for filter buttons
+  document.addEventListener('DOMContentLoaded', function() {
       const filterButton = document.getElementById('filterButton');
       const clearButton = document.getElementById('clearButton');
-  
+
       if (filterButton) filterButton.addEventListener('click', applyFilter);
       if (clearButton) clearButton.addEventListener('click', clearFilters);
-  
+
       // Initial display of data
       const storedData = localStorage.getItem('formData');
       displayData(storedData ? JSON.parse(storedData) : []);
-    });
-  </script>
-  
+  });
+</script>
+
 <style>
-.admin-title h3{
-  color:red;
+.admin-title h3 {
+  color: red;
 }
 
-.component-admin-form h3{
-      color:red;
+.component-admin-form h3 {
+  color: red;
 }
 </style>
