@@ -633,7 +633,7 @@ a:hover .overlay {
 }
 
 .modal-image{
-  height:50px;
+  flex:1;
 }
 
 .modal-height {
