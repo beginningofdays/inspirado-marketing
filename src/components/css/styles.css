@@ -389,8 +389,10 @@ a:hover .overlay {
 
 
 /* Login Component Styles */
+/* Login Component Styles */
 .login-container {
   display: flex;
+  flex-direction: column; /* Arrange elements vertically */
   background-color: var(--header); /* Dark background for the form */
   padding: 2rem; /* Add padding around the form content */
   border-radius: 8px; /* Rounded corners for the form */
@@ -399,10 +401,11 @@ a:hover .overlay {
   max-width: 600px; /* Set a maximum width for the form */
 }
 
-.login-container h1 {
+.login-heading {
   color: var(--secondary);
   text-align: center;
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem; /* Space below the heading */
+  font-size: 2rem; /* Increase the font size */
 }
 
 .login-container label {
