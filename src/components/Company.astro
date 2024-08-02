@@ -30,7 +30,9 @@ import images from './js/teams.json';
             {images[0] && (
             <div class="team-member-content">
                 <img src={images[0].src} alt={images[0].alt} class="component-image" />
-                  <p class="team-member-text">Albert Gillick, the dynamic CEO, has carved a niche for himself by leveraging his diverse background in acting, marketing, and community engagement.Albert's commitment to community engagement has been a cornerstone of his career. He believes in the power of community and the importance of giving back. Under his leadership,companies have launched numerous initiatives aimed at fostering community development and social responsibility. His ability to bring people together and inspire collective action has earned him respect and admiration both within and outside the corporate world.</p> 
+                  <p>Albert Gillick, the dynamic CEO, has carved a niche for himself by leveraging his diverse background in acting, marketing, and community engagement.Albert's commitment to community engagement has been a cornerstone of his career. 
+                    He believes in the power of community and the importance of giving back. Under his leadership,companies have launched numerous initiatives aimed at fostering community development and social responsibility. 
+                    His ability to bring people together and inspire collective action has earned him respect and admiration both within and outside the corporate world.</p> 
             </div>
          )}
         </div>
@@ -70,10 +72,6 @@ import images from './js/teams.json';
 .team-member-content {
   flex-direction: column; /* Stack image and text vertically on small screens */
   align-items: center;
-  text-align: center;
-}
-.team-member-text {
-  margin-left: 0; /* Remove left margin for smaller screens */
 }
 }
 </style>
