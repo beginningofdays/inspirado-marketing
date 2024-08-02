@@ -1,5 +1,5 @@
 [
-    { "src": "../images/sweetgreens.png","title": "sweetgreens", "alt": "Sweet Greens" },
+    { "src": "/inspirado-marketing/images/sweetgreens.png","title": "sweetgreens", "alt": "Sweet Greens" },
     { "src": "/images/stack.png","title": "stack", "alt": "stack" },
     { "src": "/images/physio.jpg","title": "sports physio ireland", "alt": "sports physio ireland"}
 ]
