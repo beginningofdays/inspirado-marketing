@@ -21,7 +21,7 @@ LOGON PAGE
 **********
 Open Logon.html 
 Enter the following
-Username: Administrator 
+Username: administrator 
 Password: lordoftherings
 
 ADMIN PAGE
