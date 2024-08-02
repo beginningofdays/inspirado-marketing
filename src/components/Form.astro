@@ -80,7 +80,7 @@ document.getElementById('dataForm')?.addEventListener('submit', function(e) {
         email: (document.getElementById('email') as HTMLInputElement)?.value ?? '',
         phone: (document.getElementById('phone') as HTMLInputElement)?.value ?? '',
         message: (document.getElementById('message') as HTMLTextAreaElement)?.value ?? '',
-        date: new Date().toISOString()
+        date: new Date().toLocaleString()
     };
 
     // Retrieve existing data from local storage
