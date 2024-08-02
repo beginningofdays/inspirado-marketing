@@ -169,57 +169,47 @@
 .component-service:nth-of-type(3) {
   background-image: url('/images/social-media.png'); 
 }
-/* Modal page layout */
-.modal-page {
+.modal-page{
   display: flex;
-  align-items: flex-start; 
-  gap: 5px; 
+  align-items: flex-start; /* Align items to the start of the container */
+  gap: 5px; /* Space between image and text */
 }
 
-/* Modal image styling */
+/*modal image sizing and styling*/
 .modal-image {
-  width: 400px; 
-  height: 250px;
-  border-radius: 8px;
-  flex-shrink: 0;
+  width:400px; /* Adjust width as needed */
+  height: 250px; /* Maintain aspect ratio */
+  border-radius: 8px; /* rounded corners for the image */
+  flex-shrink: 0; /* Prevent image from shrinking */
 }
-
-/* Modal text styling */
 .modal-text {
-  flex: 1;
-  line-height: 1.0;
+  flex: 1; /* Allow text to take remaining space */
+  line-height: 1.0; /* Improve readability */
 }
-
-.modal-text h2 {
-  text-align: center;
+.modal-text h2{
+  text-align:center;   
   text-decoration: underline;
   color: #F0F8FF;
 }
-
-/* List styling inside modal */
 .modal-page ul {
-  list-style-type: none;
-  padding-left: 0;
-  margin: 0;
+  list-style-type: none; /* Remove bullets */
+  padding-left: 0; /* Remove padding */
+  margin: 0; /* Remove margin */
 }
-
 .modal-page li {
-  margin-bottom: 10px; 
+  margin-bottom: 10px; /* Space between list items */
 }
-
-.modal-page .list-header {
-  color: #FFD700;
+.modal-page .list-header{
+  color:#FFD700;
 }
-
-/* Modal content styling */
+/*modal content relative postioning*/
 .modal-content {
-  position: relative;
+  position: relative; 
   color: white;
   border: none;
   width: 100%;
-  overflow: hidden;
+  overflow: hidden; 
 }
-
 .modal-content::before {
   content: '';
   position: absolute;
@@ -227,45 +217,29 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent overlay */
   z-index: 1;
-  pointer-events: none;
+  pointer-events: none; /* Ensure interactions with the modal content are not blocked */
 }
-
-.modal-body, .modal-footer, .modal-header {
+.modal-body,.modal-footer,.modal-header {
   position: relative;
   z-index: 2;
 }
-
 .modal-footer .btn-secondary {
   border: none;
 }
-
 .btn-close {
-  color: #ffffff;
+  color: #ffffff; /* Set the text color to white */
   background-color: white;
   opacity: 0.75;
   filter: invert(1);
 }
-
 .modal-height {
-  min-height: 400px;
+  min-height: 400px; /* Adjust height as needed */
 }
-
-/* Media query to adjust layout for mobile view */
-@media (max-width: 576px) {
-  .modal-page {
-    flex-direction: column; /* Stack image and text */
-    align-items: center; /* Center-align items */
-  }
-
-  .modal-image {
-    width: 100%; /* Make image full width */
-    height: auto; /* Maintain aspect ratio */
-  }
-
-  .modal-text {
-    text-align: center; /* Center-align text */
-    padding-top: 20px; 
-
+@media (max-width: 992px) {
+.component-services-wrapper {
+  flex-direction: column;
+}
+}
 </style>
