@@ -616,8 +616,6 @@ a:hover .overlay {
 /* Stack image and text vertically on small screens */
 .team-member-content { 
   flex-direction: column; 
-  align-items: center;
-  text-align: center;
 }
 
 /* Remove left margin for smaller screens */
