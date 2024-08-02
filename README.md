@@ -20,7 +20,7 @@ admin.html can be accessed via the logon.html page.
 LOGON PAGE
 **********
 Open Logon.html 
-Enter the following Username and Password:
+Enter the following
 Username: Administrator 
 Password: lordoftherings
 
