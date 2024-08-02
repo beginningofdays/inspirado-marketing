@@ -45,28 +45,37 @@ const { imageURL } = Astro.props;
 
 <script>
   document.addEventListener("DOMContentLoaded", function () {
-  const mobileNav = document.querySelector('.mobile-nav a');
-  const slidingPanel = document.getElementById('slidingPanel');
-  const closePanel = document.querySelector('.close-panel');
-  
+    const mobileNav = document.querySelector('.mobile-nav a');
+    const slidingPanel = document.getElementById('slidingPanel');
+    const closePanel = document.querySelector('.close-panel');
+
+    // Function to toggle the sliding panel
     function togglePanel() {
-      if (slidingPanel.classList.contains('active')) {
-        mobileNav.textContent = 'MENU';
-        slidingPanel.classList.remove('active');
-      } else {
-        mobileNav.textContent = 'CLOSE';
-        slidingPanel.classList.add('active');
+      if (slidingPanel && mobileNav) { // Check if slidingPanel and mobileNav are not null
+        if (slidingPanel.classList.contains('active')) {
+          mobileNav.textContent = 'MENU';
+          slidingPanel.classList.remove('active');
+        } else {
+          mobileNav.textContent = 'CLOSE';
+          slidingPanel.classList.add('active');
+        }
       }
     }
-  
-    mobileNav.addEventListener('click', function (event) {
-      event.preventDefault();
-      togglePanel();
-    });
-  
-    closePanel.addEventListener('click', function (event) {
-      event.preventDefault();
-      togglePanel();
-    });
-    
+
+    // Event listener for mobileNav, only if mobileNav exists
+    if (mobileNav) {
+      mobileNav.addEventListener('click', function (event) {
+        event.preventDefault();
+        togglePanel();
+      });
+    }
+
+    // Event listener for closePanel, only if closePanel exists
+    if (closePanel) {
+      closePanel.addEventListener('click', function (event) {
+        event.preventDefault();
+        togglePanel();
+      });
+    }
+  });
 </script>
