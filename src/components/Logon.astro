@@ -1,33 +1,39 @@
 ---
-
 ---
 <div class="flex-column mb-3">
-<div class="login-container">
-    <h1>Login</h1>
-    <form id="loginForm">
-        <label for="username">Username:</label>
-        <input type="text" id="username" required>
-        
-        <label for="password">Password:</label>
-        <input type="password" id="password" required>     
-        <button type="submit">Log In</button>
-    </form>
-</div>
-</div>
-
-<script>
-document.getElementById('loginForm').addEventListener('submit', function(event) {
-    event.preventDefault(); // Prevent form from submitting normally
-        
-    const username = document.getElementById('username').value;
-    const password = document.getElementById('password').value;
-
-    if (username === 'administrator' && password === 'lordoftherings') {
-        // Redirect to admin page if credentials are correct
-        window.location.href = 'admin.html';
-    } else {
-        alert('Invalid username or password');
-     }
-});
-</script>
-
+    <div class="login-container">
+        <h1>Login</h1>
+        <form id="loginForm">
+            <label for="username">Username:</label>
+            <input type="text" id="username" required>
+            
+            <label for="password">Password:</label>
+            <input type="password" id="password" required>     
+            <button type="submit">Log In</button>
+        </form>
+    </div>
+    </div>
+    
+    <script>
+    document.getElementById('loginForm')?.addEventListener('submit', function(event) {
+        event.preventDefault(); // Prevent form from submitting normally
+    
+        const usernameElement = document.getElementById('username') as HTMLInputElement | null;
+        const passwordElement = document.getElementById('password') as HTMLInputElement | null;
+    
+        if (usernameElement && passwordElement) {
+            const username = usernameElement.value;
+            const password = passwordElement.value;
+    
+            if (username === 'administrator' && password === 'lordoftherings') {
+                // Redirect to admin page if credentials are correct
+                window.location.href = 'admin.html';
+            } else {
+                alert('Invalid username or password');
+            }
+        } else {
+            console.error('Form elements not found');
+        }
+    });
+    </script>
+    
