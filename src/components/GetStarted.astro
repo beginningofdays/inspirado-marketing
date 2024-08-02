@@ -59,41 +59,75 @@
 </div>
 
 <script>
-    document.getElementById('dataForm')?.addEventListener('submit', function (e) {
-        e.preventDefault(); // Prevents the default form submission
+// Define the FormSubmission class with proper types
+class FormSubmission {
+    firstname: string;
+    lastname: string;
+    companyName: string;
+    address: string;
+    email: string;
+    phone: string;
+    message: string;
+    date: string;
 
-        // Gather form data
-        const firstnameElement = document.getElementById('firstname') as HTMLInputElement | null;
-        const lastnameElement = document.getElementById('lastname') as HTMLInputElement | null;
-        const companyNameElement = document.getElementById('company-name') as HTMLInputElement | null;
-        const addressElement = document.getElementById('address') as HTMLInputElement | null;
-        const emailElement = document.getElementById('email') as HTMLInputElement | null;
-        const phoneElement = document.getElementById('phone') as HTMLInputElement | null;
-        const messageElement = document.getElementById('message') as HTMLTextAreaElement | null;
+    constructor(
+        firstname: string,
+        lastname: string,
+        companyName: string,
+        address: string,
+        email: string,
+        phone: string,
+        message: string,
+        date: string
+    ) {
+        this.firstname = firstname;
+        this.lastname = lastname;
+        this.companyName = companyName;
+        this.address = address;
+        this.email = email;
+        this.phone = phone;
+        this.message = message;
+        this.date = date;
+    }
+}
 
-        // Check if elements exist and gather their values
-        const data = {
-            firstname: firstnameElement?.value ?? '',
-            lastname: lastnameElement?.value ?? '',
-            companyName: companyNameElement?.value ?? '',
-            address: addressElement?.value ?? '',
-            email: emailElement?.value ?? '',
-            phone: phoneElement?.value ?? '',
-            message: messageElement?.value ?? '',
-            date: new Date().toISOString()
-        };
+// Event listener for form submission
+document.getElementById('dataForm')?.addEventListener('submit', function(e) {
+    e.preventDefault(); // Prevents the default form submission
 
-        // Retrieve existing data from local storage
-        let allData: any[] = JSON.parse(localStorage.getItem('formData') ?? '[]');
-        // Add new data
-        allData.push(data);
-        // Store updated data in local storage
-        localStorage.setItem('formData', JSON.stringify(allData));
-        // Reset the form
-        (document.getElementById('dataForm') as HTMLFormElement)?.reset();
-        // Notify the user
-        alert('Information Submitted!');
-    });
+    // Gather form data and cast elements to the correct type
+    const form = document.getElementById('dataForm') as HTMLFormElement;
+    const firstname = (document.getElementById('firstname') as HTMLInputElement)?.value ?? '';
+    const lastname = (document.getElementById('lastname') as HTMLInputElement)?.value ?? '';
+    const companyName = (document.getElementById('company-name') as HTMLInputElement)?.value ?? '';
+    const address = (document.getElementById('address') as HTMLInputElement)?.value ?? '';
+    const email = (document.getElementById('email') as HTMLInputElement)?.value ?? '';
+    const phone = (document.getElementById('phone') as HTMLInputElement)?.value ?? '';
+    const message = (document.getElementById('message') as HTMLTextAreaElement)?.value ?? '';
+    const date = new Date().toLocaleString();
+
+    // Create a new instance of FormSubmission
+    const formSubmission = new FormSubmission(
+        firstname,
+        lastname,
+        companyName,
+        address,
+        email,
+        phone,
+        message,
+        date
+    );
+
+    // Retrieve existing data from local storage
+    let allData: FormSubmission[] = JSON.parse(localStorage.getItem('formData') ?? '[]');
+    // Add new data
+    allData.push(formSubmission);
+    // Store updated data in local storage
+    localStorage.setItem('formData', JSON.stringify(allData));
+    // Form Reset
+    form.reset();
+});
+
 </script>
 
 <style>
