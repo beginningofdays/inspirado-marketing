@@ -3,8 +3,8 @@
   --primary: #EFEDE4;
   --secondary: #ffffff;
   --header: #000000;
-  --accent: #FF5733; /* Button Color */
-  --hover-accent: #C70039; /* Darker shade for hover effect */
+  --accent: #D84315; /* Adjusted Button Color */
+  --hover-accent: #C70039;
 }
 
 /* Body */
