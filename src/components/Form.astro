@@ -68,27 +68,9 @@ import images from './js/services.json';
 </div>
 
 <script>
-// Define the FormSubmission class with proper types
+// Define the FormSubmission class
 class FormSubmission {
-    firstName: string;
-    lastName: string;
-    companyName: string;
-    address: string;
-    email: string;
-    phone: string;
-    message: string;
-    date: string;
-
-    constructor(
-        firstName: string,
-        lastName: string,
-        companyName: string,
-        address: string,
-        email: string,
-        phone: string,
-        message: string,
-        date: string
-    ) {
+    constructor(firstName, lastName, companyName, address, email, phone, message, date) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.companyName = companyName;
@@ -101,39 +83,30 @@ class FormSubmission {
 }
 
 // Event listener for form submission
-document.getElementById('dataForm')?.addEventListener('submit', function(e) {
+document.getElementById('dataForm').addEventListener('submit', function(e) {
     e.preventDefault(); // Prevents the default form submission
 
-    const form = document.getElementById('dataForm') as HTMLFormElement;
-
+    const form = document.getElementById('dataForm');
+    
     // Gather form data
-    const firstName = (document.getElementById('firstName') as HTMLInputElement)?.value ?? '';
-    const lastName = (document.getElementById('lastName') as HTMLInputElement)?.value ?? '';
-    const companyName = (document.getElementById('companyName') as HTMLInputElement)?.value ?? '';
-    const address = (document.getElementById('address') as HTMLInputElement)?.value ?? '';
-    const email = (document.getElementById('email') as HTMLInputElement)?.value ?? '';
-    const phone = (document.getElementById('phone') as HTMLInputElement)?.value ?? '';
-    const message = (document.getElementById('message') as HTMLTextAreaElement)?.value ?? '';
+    const firstName = document.getElementById('firstName').value.trim();
+    const lastName = document.getElementById('lastName').value.trim();
+    const companyName = document.getElementById('companyName').value.trim();
+    const address = document.getElementById('address').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const phone = document.getElementById('phone').value.trim();
+    const message = document.getElementById('message').value.trim();
     const date = new Date().toLocaleString();
 
     // Create a new instance of FormSubmission
-    const formSubmission = new FormSubmission(
-        firstName,
-        lastName,
-        companyName,
-        address,
-        email,
-        phone,
-        message,
-        date
-    );
+    const formSubmission = new FormSubmission(firstName, lastName, companyName, address, email, phone, message, date);
 
     // Store form data in local storage
-    let allData: FormSubmission[] = JSON.parse(localStorage.getItem('formData') ?? '[]');
+    let allData = JSON.parse(localStorage.getItem('formData') || '[]');
     allData.push(formSubmission);
     localStorage.setItem('formData', JSON.stringify(allData));
 
-    // Send form data to the server which triggers the thank you message
+    // Send form data to the server (Google Sheets API)
     fetch(form.action, {
         method: 'POST',
         body: new FormData(form),
@@ -145,6 +118,9 @@ document.getElementById('dataForm')?.addEventListener('submit', function(e) {
         return response.json();
     })
     .then(data => {
+        // Check if the API responded correctly
+        console.log('API response:', data);
+
         // Display a temporary thank you message
         const thankYouMessage = document.createElement('div');
         thankYouMessage.innerText = 'Thank you for your submission!';
@@ -168,11 +144,11 @@ document.getElementById('dataForm')?.addEventListener('submit', function(e) {
         form.reset();
     })
     .catch(error => {
-        // Handle errors
+        // Handle errors and log them
         console.error('There was a problem with the fetch operation:', error);
+        alert('There was an error submitting the form. Please try again.');
     });
 });
-
 
 
 </script>
