@@ -10,10 +10,12 @@
 - [ClassesFunctionsMethods](#classesfunctionsmethods)
 - [Usage](#usage)
 - [Demo](#demo)
+- [Usage](#usage)
 - [Pages](#pages)
 - [Accessibility Report](#accessibility)
 - [Lighthouse Report](#lighthouse)
 - [Performance Report](#Performance)
+- [Seo](#seo)
 - [Technologies](#technologies)
 - [Conclusion](#conclusion)
   
@@ -314,7 +316,21 @@ document.getElementById('sheetdb-form')?.addEventListener('submit', function(e) 
 ```
 ## Demo
 
-Check out a live demo of the app [here](https://github.com/beginningofdays/inspirado-marketing).
+Check out a live demo of the website [here](https://github.com/beginningofdays/inspirado-marketing) inspirado-marketing
+
+## Usage
+Google Account to access Google Sheetdb API <br/>
+Visit: https://sheetdb.io/
+<br/>
+Use the following:<br/>
+Email: inspiradomarketing776@gmail.com<br/>
+Password:lordoftherings!
+
+Administrator Information to logon to Administration page of website.<br/>  
+Visit: https://beginningofdays.github.io/inspirado-marketing/logon/ <br/> 
+Enter the following credentials:<br/> 
+Username: administrator<br/> 
+Password: lordoftherings
 
 ## Pages
 * Index - This is the home page of the website. Allow users to submit personal / business information and get service information.
@@ -325,98 +341,36 @@ Check out a live demo of the app [here](https://github.com/beginningofdays/inspi
 * Logon - Logon page for the Admin page
 * Admin - This page allows user to filter and view the information gathered from the forms on the Index page and GetStarted Page. 
 
-## Accessibility
+## Accessibility Report
+This report is in the Docs Folder
 
+## Lighthouse Report
+This report is in the Docs Folder
 
-SEO 
----
-Inspirado Marketing | Build & Engage
-Leading community marketing agency offering comprehensive services to build and engage your brand's online community.
+## Performance Report
+This report is in the Docs Folder
 
-Website Features:
------------------
-FORM
-*****
-This Form exists on two pages, Index.html and GetStarted.html
-Information entered into these forms will be storage in local storage. 
-This information will be accessiable only from the admin.html page. 
-admin.html can be accessed via the logon.html page. 
+## Seo Report
+This report is in the Docs Folder
 
-https://sheetdb.io/
-usage 
-inspiradomarketing776@gmail.com
-lordoftherings!
-
-LOGON PAGE
-**********
-Open Logon.html 
-Enter the following
-Username: administrator 
-Password: lordoftherings
-
-ADMIN PAGE
-**********
-Local storage data is retrieve and is presented as a table on this page. 
-This setup provides an interface for administrators to view and filter data entries based on various criteria.
-
-# Astro Starter Kit: Basics
-
-```sh
-npm create astro@latest -- --template basics
+Standard Meta Description Applied to Website 
+```javascript
+   <meta charset="UTF-8" />
+   <meta name="description" content="Leading community marketing agency offering comprehensive services to build and engage your brand's online community." />
+   <meta name="viewport" content="width=device-width" />
+   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+   <meta name="generator" content={Astro.generator} />
 ```
-
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/basics)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/basics)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/basics/devcontainer.json)
-
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
-
-![just-the-basics](https://github.com/withastro/astro/assets/2244813/a0a5533c-a856-4198-8470-2d67b1d7c554)
-
-## 🚀 Project Structure
-
-Inside of your Astro project, you'll see the following folders and files:
-
-```text
-/
-├── public/
-│   └── favicon.svg
-├── src/
-│   ├── components/
-│   │   └── Card.astro
-│   ├── layouts/
-│   │   └── Layout.astro
-│   └── pages/
-│       └── index.astro
-└── package.json
+```javascript
+<Layout title="Inspirado Marketing | Build & Engage">
 ```
+## Technologies & Coding Language
+*Astro Framework
+*Node JS
+*HTML 
+*CSS
+*Javascript
+*API
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
-
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
-
-Any static assets, like images, can be placed in the `public/` directory.
-
-## 🧞 Commands
-
-All commands are run from the root of the project, from a terminal:
-
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
-
-
-
-
-
-
-
+## Conclusion
+Creating Inspirado Marketing website was an interesting challenge. The website can be developed alot more. Given enough time I would of liked to have added more features to the site, like a blog. I did not achieve exactly what I wanted with design and functionality, but i am satisfied with the result. 
