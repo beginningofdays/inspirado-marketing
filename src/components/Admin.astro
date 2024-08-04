@@ -54,21 +54,25 @@
 </div>
 
 <script>
-  // Define the shape of each entry in the data
-  interface DataEntry {
-      firstname?: string;
-      lastname?: string;
-      companyName?: string;  // Updated from country to companyName
-      email?: string;
-      message?: string;      // Updated from text to message
-      date?: string;
+class DataManager {
+  constructor() {
+      // Initialize data and set up event listeners
+      this.dataDisplay = document.getElementById('dataDisplay');
+      this.loadData();
+      this.setUpEventListeners();
+  }
+
+  // Load data from localStorage and display it
+  loadData() {
+      const storedData = localStorage.getItem('formData');
+      this.data = storedData ? JSON.parse(storedData) : [];
+      this.displayData(this.data);
   }
 
   // Display data in the table
-  function displayData(data: DataEntry[]) {
-      const dataDisplay = document.getElementById('dataDisplay');
-      if (dataDisplay) {
-          dataDisplay.innerHTML = ''; // Clear previous content
+  displayData(data) {
+      if (this.dataDisplay) {
+          this.dataDisplay.innerHTML = ''; // Clear previous content
 
           data.forEach(entry => {
               const row = document.createElement('tr');
@@ -80,81 +84,75 @@
                   <td>${entry.message || 'N/A'}</td>
                   <td>${entry.date || 'N/A'}</td>
               `;
-              dataDisplay.appendChild(row);
+              this.dataDisplay.appendChild(row);
           });
       }
   }
 
-  // Filters based on user input
-  function applyFilter() {
-      const filterFirstname = (document.getElementById('filterFirstname') as HTMLInputElement)?.value.toLowerCase() || '';
-      const filterLastname = (document.getElementById('filterLastname') as HTMLInputElement)?.value.toLowerCase() || '';
-      const filterCompanyName = (document.getElementById('filterCompanyName') as HTMLInputElement)?.value.toLowerCase() || '';
-      const filterEmail = (document.getElementById('filterEmail') as HTMLInputElement)?.value.toLowerCase() || '';
-      const filterDate = (document.getElementById('filterDate') as HTMLInputElement)?.value || '';
+  // Apply filters based on user input
+  applyFilter() {
+      const filterFirstname = (document.getElementById('filterFirstname')?.value.toLowerCase()) || '';
+      const filterLastname = (document.getElementById('filterLastname')?.value.toLowerCase()) || '';
+      const filterCompanyName = (document.getElementById('filterCompanyName')?.value.toLowerCase()) || '';
+      const filterEmail = (document.getElementById('filterEmail')?.value.toLowerCase()) || '';
+      const filterDate = (document.getElementById('filterDate')?.value) || '';
 
-      const storedData = localStorage.getItem('formData');
-      let allData: DataEntry[] = storedData ? JSON.parse(storedData) : [];
+      let filteredData = this.data;
 
       if (filterFirstname) {
-          allData = allData.filter((entry: DataEntry) => 
+          filteredData = filteredData.filter(entry => 
               (entry.firstname || '').toLowerCase().includes(filterFirstname)
           );
       }
       if (filterLastname) {
-          allData = allData.filter((entry: DataEntry) => 
+          filteredData = filteredData.filter(entry => 
               (entry.lastname || '').toLowerCase().includes(filterLastname)
           );
       }
       if (filterCompanyName) {
-          allData = allData.filter((entry: DataEntry) => 
+          filteredData = filteredData.filter(entry => 
               (entry.companyName || '').toLowerCase().includes(filterCompanyName)
           );
       }
       if (filterEmail) {
-          allData = allData.filter((entry: DataEntry) => 
+          filteredData = filteredData.filter(entry => 
               (entry.email || '').toLowerCase().includes(filterEmail)
           );
       }
       if (filterDate) {
-          allData = allData.filter((entry: DataEntry) => 
+          filteredData = filteredData.filter(entry => 
               entry.date?.startsWith(filterDate)
           );
       }
 
-      displayData(allData);
+      this.displayData(filteredData);
   }
 
-  // Function to clear all filters
-  function clearFilters() {
-      const filterFirstname = document.getElementById('filterFirstname') as HTMLInputElement | null;
-      const filterLastname = document.getElementById('filterLastname') as HTMLInputElement | null;
-      const filterCompanyName = document.getElementById('filterCompanyName') as HTMLInputElement | null;
-      const filterEmail = document.getElementById('filterEmail') as HTMLInputElement | null;
-      const filterDate = document.getElementById('filterDate') as HTMLInputElement | null;
+  // Clear all filters
+  clearFilters() {
+      const filterElements = ['filterFirstname', 'filterLastname', 'filterCompanyName', 'filterEmail', 'filterDate'];
+      filterElements.forEach(id => {
+          const element = document.getElementById(id);
+          if (element) element.value = '';
+      });
 
-      if (filterFirstname) filterFirstname.value = '';
-      if (filterLastname) filterLastname.value = '';
-      if (filterCompanyName) filterCompanyName.value = '';
-      if (filterEmail) filterEmail.value = '';
-      if (filterDate) filterDate.value = '';
-
-      const storedData = localStorage.getItem('formData');
-      displayData(storedData ? JSON.parse(storedData) : []);
+      this.displayData(this.data);
   }
 
-  // Set up event listeners for filter buttons
-  document.addEventListener('DOMContentLoaded', function() {
+  // Set up event listeners for the buttons
+  setUpEventListeners() {
       const filterButton = document.getElementById('filterButton');
       const clearButton = document.getElementById('clearButton');
 
-      if (filterButton) filterButton.addEventListener('click', applyFilter);
-      if (clearButton) clearButton.addEventListener('click', clearFilters);
+      if (filterButton) filterButton.addEventListener('click', () => this.applyFilter());
+      if (clearButton) clearButton.addEventListener('click', () => this.clearFilters());
+  }
+}
 
-      // Initial display of data
-      const storedData = localStorage.getItem('formData');
-      displayData(storedData ? JSON.parse(storedData) : []);
-  });
+// Instantiate the class when the document is ready
+document.addEventListener('DOMContentLoaded', () => {
+  new DataManager();
+});
 </script>
 
 <style>
