@@ -68,67 +68,77 @@ import images from './js/services.json';
 </div>
 
 <script>
-  class FormSubmission {
-      constructor(firstName, lastName, companyName, address, email, phone, message, date) {
-          this.firstName = firstName;
-          this.lastName = lastName;
-          this.companyName = companyName;
-          this.address = address;
-          this.email = email;
-          this.phone = phone;
-          this.message = message;
-          this.date = date;
-      }
-  }
+// Define the FormSubmission class with proper types
+class FormSubmission {
+    firstName: string;
+    lastName: string;
+    companyName: string;
+    address: string;
+    email: string;
+    phone: string;
+    message: string;
+    date: string;
 
-  document.getElementById('dataForm')?.addEventListener('submit', function(e) {
-      e.preventDefault(); // Prevents the default form submission
+    constructor(
+        firstName: string,
+        lastName: string,
+        companyName: string,
+        address: string,
+        email: string,
+        phone: string,
+        message: string,
+        date: string
+    ) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.companyName = companyName;
+        this.address = address;
+        this.email = email;
+        this.phone = phone;
+        this.message = message;
+        this.date = date;
+    }
+}
 
-      const form = document.getElementById('dataForm');
-      const firstName = document.getElementById('firstName').value || '';
-      const lastName = document.getElementById('lastName').value || '';
-      const companyName = document.getElementById('companyName').value || '';
-      const address = document.getElementById('address').value || '';
-      const email = document.getElementById('email').value || '';
-      const phone = document.getElementById('phone').value || '';
-      const message = document.getElementById('message').value || '';
-      const date = new Date().toLocaleString();
+// Event listener for form submission
+document.getElementById('dataForm')?.addEventListener('submit', function(e) {
 
-      const formSubmission = new FormSubmission(
-          firstName,
-          lastName,
-          companyName,
-          address,
-          email,
-          phone,
-          message,
-          date
-      );
 
-      // Store data locally
-      let allData = JSON.parse(localStorage.getItem('formData') || '[]');
-      allData.push(formSubmission);
-      localStorage.setItem('formData', JSON.stringify(allData));
+    // Gather form data and cast elements to the correct type
+    const form = document.getElementById('dataForm') as HTMLFormElement;
+    const firstName = (document.getElementById('firstName') as HTMLInputElement)?.value ?? '';
+    const lastName = (document.getElementById('lastName') as HTMLInputElement)?.value ?? '';
+    const companyName = (document.getElementById('companyName') as HTMLInputElement)?.value ?? '';
+    const address = (document.getElementById('address') as HTMLInputElement)?.value ?? '';
+    const email = (document.getElementById('email') as HTMLInputElement)?.value ?? '';
+    const phone = (document.getElementById('phone') as HTMLInputElement)?.value ?? '';
+    const message = (document.getElementById('message') as HTMLTextAreaElement)?.value ?? '';
+    const date = new Date().toLocaleString();
 
-      // Send data to API
-      fetch('https://sheetdb.io/api/v1/w7z9c2i2imfvw', {
-          method: 'POST',
-          headers: {
-              'Content-Type': 'application/json',
-          },
-          body: JSON.stringify({ data: [formSubmission] }), // Send data as an array of objects
-      })
-      .then(response => response.json())
-      .then(data => {
-          console.log('Success:', data);
-          form.reset(); // Reset form after submission
-      })
-      .catch((error) => {
-          console.error('Error:', error);
-      });
-  });
+    // Create a new instance of FormSubmission
+    const formSubmission = new FormSubmission(
+        firstName,
+        lastName,
+        companyName,
+        address,
+        email,
+        phone,
+        message,
+        date
+    );
+
+    // Retrieve existing data from local storage
+    let allData: FormSubmission[] = JSON.parse(localStorage.getItem('formData') ?? '[]');
+    // Add new data
+    allData.push(formSubmission);
+    // Store updated data in local storage
+    localStorage.setItem('formData', JSON.stringify(allData));
+    // Form Reset
+    form.reset();
+});
+
+
 </script>
-
 
 <style>
 .community-message {
