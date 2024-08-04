@@ -96,12 +96,10 @@ It allows the users to submit their information so inspirado marketing can conta
 └── Ts env.d.ts
 
 ##Features
-<ul>
-<li>User Form: Collects user information such as name, email, and company.</li>
-<li>Local Storage: Saves user data locally for quick access and retrieval.</li>
-<li>Google Sheets Integration: Sends collected data to a Google Sheet using the Google Sheets API.</li>
-<li>Data Filtering: Allows users to filter and view data on another page.</li>
-</ul>
+* User Form: Collects user information such as name, email, and company.
+* Local Storage: Saves user data locally for quick access and retrieval.
+* Google Sheets Integration: Sends collected data to a Google Sheet using the Google Sheets API.
+* Data Filtering: Allows users to filter and view data on another page.
 
 
 ## Demo
