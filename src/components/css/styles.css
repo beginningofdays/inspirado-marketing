@@ -3,7 +3,7 @@
   --primary: #EFEDE4;
   --secondary: #ffffff;
   --header: #000000;
-  --accent: #D84315; /* Adjusted Button Color */
+  --accent: #D84315; 
   --hover-accent: #C70039;
 }
 
@@ -200,7 +200,7 @@ p {
 
 /*Button hover transform*/
 .banner-button:hover {
-  background-color: var(--hover-accent); /* Darker accent color on hover */
+  background-color: red; /* Darker accent color on hover */
   transform: scale(1.05); /* Slight scaling effect */
 }
 
