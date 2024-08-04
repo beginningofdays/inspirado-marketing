@@ -37,17 +37,11 @@
                     <th>First Name</th>
                     <th>Last Name</th>
                     <th>Company Name</th>
-                </tr>
-            </thead>
-
-            <thead>
-                <tr>
                     <th>Email</th>
                     <th>Message</th>
                     <th>Date</th>
                 </tr>
             </thead>
-
             <tbody id="dataDisplay">
                 <!-- Rows will be inserted here dynamically -->
             </tbody>
@@ -79,15 +73,6 @@
                   <td>${entry.firstName || 'N/A'}</td>
                   <td>${entry.lastName || 'N/A'}</td>
                   <td>${entry.companyName || 'N/A'}</td>
-           
-              `;
-              dataDisplay.appendChild(row);
-
-          });
-
-          data.forEach(entry => {
-              const row = document.createElement('tr');
-              row.innerHTML = `
                   <td>${entry.email || 'N/A'}</td>
                   <td>${entry.message || 'N/A'}</td>
                   <td>${entry.date || 'N/A'}</td>
@@ -95,6 +80,7 @@
               dataDisplay.appendChild(row);
 
           });
+          
       }
   }
 
