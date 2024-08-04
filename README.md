@@ -98,8 +98,9 @@ It allows the users to submit their information so inspirado marketing can conta
 ## Features
 * User Form: Collects user information such as Firstname, Lastname, Company Name, Address, Email, Phone, Message and Date.
 * Local Storage: Saves user data locally for quick access and retrieval.
-* Google Sheets Integration: Sends collected data to a Google Sheet using the Google Sheets API.
+* Google Sheets Integration: Sends collected data to a Google Sheet using the Google Sheetsdb API. 
 * Data Filtering: Allows users to filter and view data on another page.
+* Business Location: With the use of the leaflet API, the user can a google map style map to find and contact the business. 
 
 ## Demo
 
@@ -133,7 +134,7 @@ Information entered into these forms will be storage in local storage.
 This information will be accessiable only from the admin.html page. 
 admin.html can be accessed via the logon.html page. 
 
-
+https://sheetdb.io/
 usage 
 inspiradomarketing776@gmail.com
 lordoftherings!
