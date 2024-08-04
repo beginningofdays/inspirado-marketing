@@ -7,7 +7,7 @@
 - [Introduction](#introduction)
 - [Website Structure](#websitestructure)
 - [Features](#features)
-- [Classes Functions Methods](#classesfunctionsmethods)
+- [ClassesFunctionsMethods](#classesfunctionsmethods)
 - [Usage](#usage)
 - [Demo](#demo)
 - [Pages](#pages)
