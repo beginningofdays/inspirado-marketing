@@ -105,11 +105,11 @@ It allows the users to submit their information so inspirado marketing can conta
 ## Functions and Methods
 Within this section I will highlight some key <strong>Functions</stronG> and <strong>Methods</strong> I used through my website. 
 
-Logon.astro 
+* <strong><u>Logon.astro<u></strong>
 ```javascript
-function greet(name) {
-    return `Hello, ${name}!`;
-}
+document.addEventListener('DOMContentLoaded', () => {
+    // Code to run when DOM is loaded
+});
 ```
 ## Demo
 
