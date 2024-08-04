@@ -68,9 +68,27 @@ import images from './js/services.json';
 </div>
 
 <script>
-// Define the FormSubmission class
+// Define the FormSubmission class with proper types
 class FormSubmission {
-    constructor(firstName, lastName, companyName, address, email, phone, message, date) {
+    firstName: string;
+    lastName: string;
+    companyName: string;
+    address: string;
+    email: string;
+    phone: string;
+    message: string;
+    date: string;
+
+    constructor(
+        firstName: string,
+        lastName: string,
+        companyName: string,
+        address: string,
+        email: string,
+        phone: string,
+        message: string,
+        date: string
+    ) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.companyName = companyName;
@@ -83,73 +101,80 @@ class FormSubmission {
 }
 
 // Event listener for form submission
-document.getElementById('dataForm').addEventListener('submit', function(e) {
-    e.preventDefault(); // Prevents the default form submission
+const form = document.getElementById('dataForm') as HTMLFormElement | null;
 
-    const form = document.getElementById('dataForm');
-    
-    // Gather form data
-    const firstName = document.getElementById('firstName').value.trim();
-    const lastName = document.getElementById('lastName').value.trim();
-    const companyName = document.getElementById('companyName').value.trim();
-    const address = document.getElementById('address').value.trim();
-    const email = document.getElementById('email').value.trim();
-    const phone = document.getElementById('phone').value.trim();
-    const message = document.getElementById('message').value.trim();
-    const date = new Date().toLocaleString();
+if (form) {
+    form.addEventListener('submit', function(e) {
+        e.preventDefault(); // Prevents the default form submission
 
-    // Create a new instance of FormSubmission
-    const formSubmission = new FormSubmission(firstName, lastName, companyName, address, email, phone, message, date);
+        // Gather form data
+        const firstName = (document.getElementById('firstName') as HTMLInputElement)?.value.trim();
+        const lastName = (document.getElementById('lastName') as HTMLInputElement)?.value.trim();
+        const companyName = (document.getElementById('companyName') as HTMLInputElement)?.value.trim();
+        const address = (document.getElementById('address') as HTMLInputElement)?.value.trim();
+        const email = (document.getElementById('email') as HTMLInputElement)?.value.trim();
+        const phone = (document.getElementById('phone') as HTMLInputElement)?.value.trim();
+        const message = (document.getElementById('message') as HTMLTextAreaElement)?.value.trim();
+        const date = new Date().toLocaleString();
 
-    // Store form data in local storage
-    let allData = JSON.parse(localStorage.getItem('formData') || '[]');
-    allData.push(formSubmission);
-    localStorage.setItem('formData', JSON.stringify(allData));
+        // Create a new instance of FormSubmission
+        const formSubmission = new FormSubmission(
+            firstName,
+            lastName,
+            companyName,
+            address,
+            email,
+            phone,
+            message,
+            date
+        );
 
-    // Send form data to the server (Google Sheets API)
-    fetch(form.action, {
-        method: 'POST',
-        body: new FormData(form),
-    })
-    .then(response => {
-        if (!response.ok) {
-            throw new Error('Network response was not ok');
-        }
-        return response.json();
-    })
-    .then(data => {
-        // Check if the API responded correctly
-        console.log('API response:', data);
+        // Store form data in local storage
+        let allData: FormSubmission[] = JSON.parse(localStorage.getItem('formData') ?? '[]');
+        allData.push(formSubmission);
+        localStorage.setItem('formData', JSON.stringify(allData));
 
-        // Display a temporary thank you message
-        const thankYouMessage = document.createElement('div');
-        thankYouMessage.innerText = 'Thank you for your submission!';
-        thankYouMessage.style.position = 'fixed';
-        thankYouMessage.style.bottom = '20px';
-        thankYouMessage.style.right = '20px';
-        thankYouMessage.style.padding = '10px';
-        thankYouMessage.style.backgroundColor = '#28a745';
-        thankYouMessage.style.color = '#fff';
-        thankYouMessage.style.borderRadius = '5px';
-        thankYouMessage.style.zIndex = '1000';
+        // Send form data to the server (Google Sheets API)
+        fetch(form.action, {
+            method: 'POST',
+            body: new FormData(form),
+        })
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            return response.json();
+        })
+        .then(data => {
+            // Display a temporary thank you message
+            const thankYouMessage = document.createElement('div');
+            thankYouMessage.innerText = 'Thank you for your submission!';
+            thankYouMessage.style.position = 'fixed';
+            thankYouMessage.style.bottom = '20px';
+            thankYouMessage.style.right = '20px';
+            thankYouMessage.style.padding = '10px';
+            thankYouMessage.style.backgroundColor = '#28a745';
+            thankYouMessage.style.color = '#fff';
+            thankYouMessage.style.borderRadius = '5px';
+            thankYouMessage.style.zIndex = '1000';
 
-        document.body.appendChild(thankYouMessage);
+            document.body.appendChild(thankYouMessage);
 
-        // Remove the message after 3 seconds
-        setTimeout(() => {
-            thankYouMessage.remove();
-        }, 3000);
+            // Remove the message after 3 seconds
+            setTimeout(() => {
+                thankYouMessage.remove();
+            }, 3000);
 
-        // Reset the form after submission
-        form.reset();
-    })
-    .catch(error => {
-        // Handle errors and log them
-        console.error('There was a problem with the fetch operation:', error);
-        alert('There was an error submitting the form. Please try again.');
+            // Reset the form after submission
+            form.reset();
+        })
+        .catch(error => {
+            // Handle errors and log them
+            console.error('There was a problem with the fetch operation:', error);
+            alert('There was an error submitting the form. Please try again.');
+        });
     });
-});
-
+}
 
 </script>
 
