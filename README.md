@@ -1,8 +1,7 @@
 #Website Name: Inspirado-Marketing<br/>
 #Author: Albert Gillick
 
-Introduction
-------------
+<strong>Introduction</strong>
 The Aim of the project is to create a Community Marketing Website.<br/>
 The Marketing Website offers information about the about the business services. <br/>
 It allows the users to submit their information so inspirado marketing can contact them.<br/>
