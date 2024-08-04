@@ -1,5 +1,5 @@
-#Website Name: Inspirado-Marketing<br/>
-#Author: Albert Gillick
+##Website Name: Inspirado-Marketing
+##Author: Albert Gillick
 
 
 ## Table of Contents
