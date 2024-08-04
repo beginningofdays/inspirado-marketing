@@ -53,8 +53,9 @@
   </div>
 </div>
 
+
 <script>
-  type MarketingInformation = {
+  interface MarketingInformation {
       firstname?: string;
       lastname?: string;
       companyName?: string;  // Updated from country to companyName
@@ -170,7 +171,6 @@
       displayData(MarketingData);
   });
 </script>
-
 <style>
 .admin-title h3 {
   color: red;
