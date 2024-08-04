@@ -1,19 +1,18 @@
-##Website Name: Inspirado-Marketing
-##Author: Albert Gillick
+#Website Name: Inspirado-Marketing<br/>
+#Author: Albert Gillick
 
 
 ## Table of Contents
 
 - [Introduction](#introduction)
 - [Features](#features)
-- [Demo](#demo)
-- [Installation](#installation)
+- [Functions and Methods](functions&methods)
 - [Usage](#usage)
+- [Demo](#demo)
+- [Accessibility Report](#accessibility)
+- [Lighthouse Report](#lighthouse)
+- [Performance Report](#Performance)
 - [Technologies](#technologies)
-- [Contributing](#contributing)
-- [License](#license)
-- [Contact](#contact)
-- [Acknowledgements](#acknowledgements)
   
 <strong>Introduction</strong><br/>
 The Aim of the project is to create a Community Marketing Website.<br/>
