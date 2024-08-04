@@ -318,6 +318,7 @@ a:hover .overlay {
   max-width: 800px; /* Reduced max width to bring items closer */
   gap: 20px; /* Add some gap between the sections */
   margin: 0 auto; /* Center the container horizontally */
+  background-color: var(--header);
 }
 
 .logo {
