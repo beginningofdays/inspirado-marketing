@@ -68,6 +68,7 @@ import images from './js/services.json';
 </div>
 
 <script>
+// Define the FormSubmission class with proper types<script>
 // Define the FormSubmission class with proper types
 class FormSubmission {
     firstName: string;
@@ -102,6 +103,7 @@ class FormSubmission {
 
 // Event listener for form submission
 document.getElementById('dataForm')?.addEventListener('submit', function(e) {
+    e.preventDefault(); // Prevents the default form submission
 
     // Gather form data and cast elements to the correct type
     const form = document.getElementById('dataForm') as HTMLFormElement;
@@ -132,9 +134,30 @@ document.getElementById('dataForm')?.addEventListener('submit', function(e) {
     allData.push(formSubmission);
     // Store updated data in local storage
     localStorage.setItem('formData', JSON.stringify(allData));
-    // Form Reset
-    form.reset();
+
+    // Send data to API
+    fetch('https://sheetdb.io/api/v1/w7z9c2i2imfvw', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ data: [formSubmission] }) // Match API format
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.error) {
+            console.error('Error:', data.error);
+        } else {
+            console.log('Success:', data);
+            form.reset(); // Reset form after successful submission
+        }
+    })
+    .catch((error) => {
+        console.error('Error:', error);
+    });
 });
+</script>
+
 
 
 </script>
