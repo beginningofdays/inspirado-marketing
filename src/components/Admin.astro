@@ -54,144 +54,107 @@
 </div>
 
 <script>
-class DataEntry {
-    firstname?: string;
-    lastname?: string;
-    companyName?: string;
-    email?: string;
-    message?: string;
-    date?: string;
+  // Define the shape of each entry in the data
+  type DataEntry {
+      firstname?: string;
+      lastname?: string;
+      companyName?: string;  // Updated from country to companyName
+      email?: string;
+      message?: string;      // Updated from text to message
+      date?: string;
+  }
 
-    constructor(firstname?: string, lastname?: string, companyName?: string, email?: string, message?: string, date?: string) {
-        this.firstname = firstname;
-        this.lastname = lastname;
-        this.companyName = companyName;
-        this.email = email;
-        this.message = message;
-        this.date = date;
-    }
+  // Display data in the table
+  function displayData(data: DataEntry[]) {
+      const dataDisplay = document.getElementById('dataDisplay');
+      if (dataDisplay) {
+          dataDisplay.innerHTML = ''; // Clear previous content
 
-    getFullName(): string {
-        return `${this.firstname || ''} ${this.lastname || ''}`.trim();
-    }
+          data.forEach(entry => {
+              const row = document.createElement('tr');
+              row.innerHTML = `
+                  <td>${entry.firstname || 'N/A'}</td>
+                  <td>${entry.lastname || 'N/A'}</td>
+                  <td>${entry.companyName || 'N/A'}</td>
+                  <td>${entry.email || 'N/A'}</td>
+                  <td>${entry.message || 'N/A'}</td>
+                  <td>${entry.date || 'N/A'}</td>
+              `;
+              dataDisplay.appendChild(row);
+          });
+      }
+  }
 
-    static fromObject(data: Partial<DataEntry>): DataEntry {
-        return new DataEntry(
-            data.firstname,
-            data.lastname,
-            data.companyName,
-            data.email,
-            data.message,
-            data.date
-        );
-    }
-}
+  // Filters based on user input
+  function applyFilter() {
+      const filterFirstname = (document.getElementById('filterFirstname') as HTMLInputElement)?.value.toLowerCase() || '';
+      const filterLastname = (document.getElementById('filterLastname') as HTMLInputElement)?.value.toLowerCase() || '';
+      const filterCompanyName = (document.getElementById('filterCompanyName') as HTMLInputElement)?.value.toLowerCase() || '';
+      const filterEmail = (document.getElementById('filterEmail') as HTMLInputElement)?.value.toLowerCase() || '';
+      const filterDate = (document.getElementById('filterDate') as HTMLInputElement)?.value || '';
 
-class DataManager {
-    data: DataEntry[] = [];
-    dataDisplay: HTMLElement | null;
+      const storedData = localStorage.getItem('formData');
+      let allData: DataEntry[] = storedData ? JSON.parse(storedData) : [];
 
-    constructor() {
-        this.dataDisplay = document.getElementById('dataDisplay');
-        this.loadData();
-        this.setUpEventListeners();
-    }
+      if (filterFirstname) {
+          allData = allData.filter((entry: DataEntry) => 
+              (entry.firstname || '').toLowerCase().includes(filterFirstname)
+          );
+      }
+      if (filterLastname) {
+          allData = allData.filter((entry: DataEntry) => 
+              (entry.lastname || '').toLowerCase().includes(filterLastname)
+          );
+      }
+      if (filterCompanyName) {
+          allData = allData.filter((entry: DataEntry) => 
+              (entry.companyName || '').toLowerCase().includes(filterCompanyName)
+          );
+      }
+      if (filterEmail) {
+          allData = allData.filter((entry: DataEntry) => 
+              (entry.email || '').toLowerCase().includes(filterEmail)
+          );
+      }
+      if (filterDate) {
+          allData = allData.filter((entry: DataEntry) => 
+              entry.date?.startsWith(filterDate)
+          );
+      }
 
-    // Load data from localStorage and display it
-    loadData() {
-        const storedData = localStorage.getItem('formData');
-        if (storedData) {
-            const parsedData = JSON.parse(storedData);
-            this.data = parsedData.map((entry: Partial<DataEntry>) => DataEntry.fromObject(entry));
-        }
-        this.displayData(this.data);
-    }
+      displayData(allData);
+  }
 
-    // Display data in the table
-    displayData(data: DataEntry[]) {
-        if (this.dataDisplay) {
-            this.dataDisplay.innerHTML = ''; // Clear previous content
+  // Function to clear all filters
+  function clearFilters() {
+      const filterFirstname = document.getElementById('filterFirstname') as HTMLInputElement | null;
+      const filterLastname = document.getElementById('filterLastname') as HTMLInputElement | null;
+      const filterCompanyName = document.getElementById('filterCompanyName') as HTMLInputElement | null;
+      const filterEmail = document.getElementById('filterEmail') as HTMLInputElement | null;
+      const filterDate = document.getElementById('filterDate') as HTMLInputElement | null;
 
-            data.forEach(entry => {
-                const row = document.createElement('tr');
-                row.innerHTML = `
-                    <td>${entry.firstname || 'N/A'}</td>
-                    <td>${entry.lastname || 'N/A'}</td>
-                    <td>${entry.companyName || 'N/A'}</td>
-                    <td>${entry.email || 'N/A'}</td>
-                    <td>${entry.message || 'N/A'}</td>
-                    <td>${entry.date || 'N/A'}</td>
-                `;
-                this.dataDisplay.appendChild(row);
-            });
-        }
-    }
+      if (filterFirstname) filterFirstname.value = '';
+      if (filterLastname) filterLastname.value = '';
+      if (filterCompanyName) filterCompanyName.value = '';
+      if (filterEmail) filterEmail.value = '';
+      if (filterDate) filterDate.value = '';
 
-    // Apply filters based on user input
-    applyFilter() {
-        const filterFirstname = document.getElementById('filterFirstname')?.value.toLowerCase() || '';
-        const filterLastname = document.getElementById('filterLastname')?.value.toLowerCase() || '';
-        const filterCompanyName = document.getElementById('filterCompanyName')?.value.toLowerCase() || '';
-        const filterEmail = document.getElementById('filterEmail')?.value.toLowerCase() || '';
-        const filterDate = document.getElementById('filterDate')?.value || '';
+      const storedData = localStorage.getItem('formData');
+      displayData(storedData ? JSON.parse(storedData) : []);
+  }
 
-        let filteredData = this.data;
+  // Set up event listeners for filter buttons
+  document.addEventListener('DOMContentLoaded', function() {
+      const filterButton = document.getElementById('filterButton');
+      const clearButton = document.getElementById('clearButton');
 
-        if (filterFirstname) {
-            filteredData = filteredData.filter(entry => 
-                (entry.firstname || '').toLowerCase().includes(filterFirstname)
-            );
-        }
-        if (filterLastname) {
-            filteredData = filteredData.filter(entry => 
-                (entry.lastname || '').toLowerCase().includes(filterLastname)
-            );
-        }
-        if (filterCompanyName) {
-            filteredData = filteredData.filter(entry => 
-                (entry.companyName || '').toLowerCase().includes(filterCompanyName)
-            );
-        }
-        if (filterEmail) {
-            filteredData = filteredData.filter(entry => 
-                (entry.email || '').toLowerCase().includes(filterEmail)
-            );
-        }
-        if (filterDate) {
-            filteredData = filteredData.filter(entry => 
-                entry.date?.startsWith(filterDate)
-            );
-        }
+      if (filterButton) filterButton.addEventListener('click', applyFilter);
+      if (clearButton) clearButton.addEventListener('click', clearFilters);
 
-        this.displayData(filteredData);
-    }
-
-    // Clear all filters
-    clearFilters() {
-        const filterElements = ['filterFirstname', 'filterLastname', 'filterCompanyName', 'filterEmail', 'filterDate'];
-        filterElements.forEach(id => {
-            const element = document.getElementById(id) as HTMLInputElement | null;
-            if (element) element.value = '';
-        });
-
-        this.displayData(this.data);
-    }
-
-    // Set up event listeners for the buttons
-    setUpEventListeners() {
-        const filterButton = document.getElementById('filterButton');
-        const clearButton = document.getElementById('clearButton');
-
-        if (filterButton) filterButton.addEventListener('click', () => this.applyFilter());
-        if (clearButton) clearButton.addEventListener('click', () => this.clearFilters());
-    }
-}
-
-// Instantiate the class when the document is ready
-document.addEventListener('DOMContentLoaded', () => {
-    new DataManager();
-});
-
+      // Initial display of data
+      const storedData = localStorage.getItem('formData');
+      displayData(storedData ? JSON.parse(storedData) : []);
+  });
 </script>
 
 <style>
