@@ -475,6 +475,7 @@ a:hover .overlay {
 /* Filter Row Styles */
 .filter-row {
   display: flex;
+  gap:5px;
 }
 
 .filter-row label {
@@ -492,8 +493,8 @@ a:hover .overlay {
 /* Button Row Styles */
 .button-row {
   display: flex;
-  gap: 10px; /* Space between buttons */
-  flex-wrap: wrap;
+  flex-direction: row;
+  gap: 5px; /* Space between buttons */
 }
 
 .button-row button {
