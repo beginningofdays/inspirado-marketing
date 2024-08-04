@@ -1,6 +1,6 @@
 <strong>Website Name:</strong> Inspirado-Marketing<br/>
 <strong>Author:</strong> Albert Gillick<br/>
-<strong>Sudent Number</strong>E10869287
+<strong>Sudent Number:</strong>E10869287
 
 
 ## Table of Contents
@@ -137,6 +137,7 @@ Redirects the user to admin.astro if they enter the correct credentials
 window.location.href = '/inspirado-marketing/admin'; // Redirect to admin page
 ```
 <strong>Admin.astro</strong><br/>
+Code will only run when the DOM is loaded. Data is retrieved from the broswers local storage passed in from the forms on Index.astro and GetStarted.astro from sheetdb-form.
 ```javascript
 document.addEventListener('DOMContentLoaded', function() {
     const filterButton = document.getElementById('filterButton');
