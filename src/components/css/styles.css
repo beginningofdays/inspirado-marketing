@@ -315,7 +315,6 @@ a:hover .overlay {
   justify-content: center; /* Center the entire content */
   align-items: center;
   width: 100%;
-  max-width: 800px; /* Reduced max width to bring items closer */
   gap: 20px; /* Add some gap between the sections */
   margin: 0 auto; /* Center the container horizontally */
   background-color: var(--header);
@@ -435,7 +434,6 @@ a:hover .overlay {
   background-color: var(--hover-accent); /* Darker accent on hover */
 }
 
-/* Admin Component Styles */
 /* Admin Component Styles */
 /* Table Styles */
 #dataTable {
