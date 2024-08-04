@@ -503,7 +503,7 @@ a:hover .overlay {
   border-radius: 4px;
   cursor: pointer;
   flex: 1;
-  min-width: 100px; /* Minimum width for buttons */
+  width: 80px; /* Minimum width for buttons */
 }
 
 /* Filter Button Styles */
