@@ -106,12 +106,11 @@ It allows the users to submit their information so inspirado marketing can conta
 Within this section I will highlight some key <strong>Functions</stronG> and <strong>Methods</strong> I used through my website. 
 
 Logon.astro 
-<pre>
-```language
+<pre><code class="language-javascript">
 document.addEventListener('DOMContentLoaded', () => {
     // Code to run when DOM is loaded
 });
-```
+</code></pre>
 </pre>
 
 
