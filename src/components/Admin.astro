@@ -55,7 +55,7 @@
 
 <script>
   // Define the shape of each entry in the data
-  interface DataEntry {
+  interface MarketingInformation {
       firstname?: string;
       lastname?: string;
       companyName?: string;  // Updated from country to companyName
@@ -65,7 +65,7 @@
   }
 
   // Display data in the table
-  function displayData(data: DataEntry[]) {
+  function displayData(data: MarketingInformation[]) {
       const dataDisplay = document.getElementById('dataDisplay');
       if (dataDisplay) {
           dataDisplay.innerHTML = ''; // Clear previous content
@@ -94,30 +94,30 @@
       const filterDate = (document.getElementById('filterDate') as HTMLInputElement)?.value || '';
 
       const storedData = localStorage.getItem('formData');
-      let allData: DataEntry[] = storedData ? JSON.parse(storedData) : [];
+      let allData: MarketingInformation[] = storedData ? JSON.parse(storedData) : [];
 
       if (filterFirstname) {
-          allData = allData.filter((entry: DataEntry) => 
+          allData = allData.filter((entry: MarketingInformation) => 
               (entry.firstname || '').toLowerCase().includes(filterFirstname)
           );
       }
       if (filterLastname) {
-          allData = allData.filter((entry: DataEntry) => 
+          allData = allData.filter((entry: MarketingInformation) => 
               (entry.lastname || '').toLowerCase().includes(filterLastname)
           );
       }
       if (filterCompanyName) {
-          allData = allData.filter((entry: DataEntry) => 
+          allData = allData.filter((entry: MarketingInformation) => 
               (entry.companyName || '').toLowerCase().includes(filterCompanyName)
           );
       }
       if (filterEmail) {
-          allData = allData.filter((entry: DataEntry) => 
+          allData = allData.filter((entry: MarketingInformation) => 
               (entry.email || '').toLowerCase().includes(filterEmail)
           );
       }
       if (filterDate) {
-          allData = allData.filter((entry: DataEntry) => 
+          allData = allData.filter((entry: MarketingInformation) => 
               entry.date?.startsWith(filterDate)
           );
       }
