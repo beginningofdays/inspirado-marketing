@@ -139,7 +139,7 @@
       if (filterEmail) filterEmail.value = '';
       if (filterDate) filterDate.value = '';
 
-      const storedData = localStorage.getItem('formData');
+      const storedData = localStorage.getItem('sheetdb-form');
       displayData(storedData ? JSON.parse(storedData) : []);
   }
 
@@ -152,7 +152,7 @@
       if (clearButton) clearButton.addEventListener('click', clearFilters);
 
       // Initial display of data
-      const storedData = localStorage.getItem('formData');
+      const storedData = localStorage.getItem('sheetdb-form');
       displayData(storedData ? JSON.parse(storedData) : []);
   });
 </script>
