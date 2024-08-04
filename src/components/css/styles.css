@@ -495,13 +495,12 @@ a:hover .overlay {
 }
 
 .button-row button {
-  gap: 10px; /* Space between buttons */
   padding: 10px 20px;
   border: none;
   border-radius: 4px;
   cursor: pointer;
   flex: 1;
-  width: 80px; /* Minimum width for buttons */
+  width: 100%
 }
 
 /* Filter Button Styles */
