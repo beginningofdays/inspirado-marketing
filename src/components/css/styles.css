@@ -436,6 +436,7 @@ a:hover .overlay {
 }
 
 /* Admin Component Styles */
+/* Admin Component Styles */
 /* Table Styles */
 #dataTable {
   width: 100%;
@@ -476,9 +477,9 @@ a:hover .overlay {
 /* Filter Row Styles */
 .filter-row {
   display: flex;
+  flex-wrap: wrap;
   gap: 10px; /* Space between elements */
   margin-bottom: 10px;
-  flex-wrap: wrap;
 }
 
 .filter-row label {
@@ -489,12 +490,15 @@ a:hover .overlay {
 .filter-row input {
   margin-right: 10px;
   padding: 5px;
+  flex: 1; /* Allow inputs to grow and shrink */
+  min-width: 150px; /* Minimum width for inputs */
 }
 
 /* Button Row Styles */
 .button-row {
   display: flex;
   gap: 10px; /* Space between buttons */
+  flex-wrap: wrap;
 }
 
 .button-row button {
@@ -502,9 +506,11 @@ a:hover .overlay {
   border: none;
   border-radius: 4px;
   cursor: pointer;
+  flex: 1;
+  min-width: 120px; /* Minimum width for buttons */
 }
 
-/* filter butoon coloring*/
+/* Filter Button Styles */
 .button-row #filterButton {
   background-color: var(--header); /* Dark blue background for the Apply Filter button */
   color: var(--secondary); /* White text color */
@@ -514,7 +520,7 @@ a:hover .overlay {
   background-color: var(--hover-accent); /* Darker blue on hover */
 }
 
-/*filter clear button*/
+/* Clear Button Styles */
 .button-row #clearButton {
   background-color: #cccccc; /* Light gray background for the Clear Filters button */
   color: black; /* Black text color */
@@ -523,6 +529,58 @@ a:hover .overlay {
 .button-row #clearButton:hover {
   background-color: #b3b3b3; /* Darker gray on hover */
 }
+
+/* Media Queries */
+
+/* Tablet Landscape and Up (≥ 768px) */
+@media (min-width: 768px) {
+  .filter-row {
+    flex-direction: row;
+  }
+
+  .button-row {
+    flex-direction: row;
+  }
+}
+
+/* Desktop and Up (≥ 1024px) */
+@media (min-width: 1024px) {
+  .filter-row {
+    flex-direction: row;
+  }
+
+  .button-row {
+    flex-direction: row;
+  }
+}
+
+/* Mobile Portrait (≤ 767px) */
+@media (max-width: 767px) {
+  .component-title-wrapper h2 {
+    font-size: 1.5em;
+  }
+
+  .filter-row {
+    flex-direction: column;
+  }
+
+  .filter-row input {
+    width: 100%; /* Full width inputs on mobile */
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
+
+  .button-row {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .button-row button {
+    width: 100%; /* Full width buttons on mobile */
+    margin-bottom: 10px;
+  }
+}
+
 
 /* Base Styles (default desktop layout) */
 .image-gallery {
