@@ -103,7 +103,7 @@ It allows the users to submit their information so inspirado marketing can conta
 * Business Location: With the use of the leaflet API, the user can a google map style map to find and contact the business. 
 
 ## Functions and Methods
-Within this section I will highlight some key <strong>Functions</stronG> and <strong>Methods</strong> I used through my website. 
+Within this section I will highlight some key <strong>Functions</stronG> and <strong>Methods</strong> I used throughout my website. 
 
 <strong>Logon.astro</strong><br/>
 Code will only run when the DOM is loaded
@@ -127,7 +127,16 @@ loginForm?.addEventListener('submit', (event) => {
     }
 });
 ```
-
+Removes leading and trailing whitespace within the input fields 
+```javascript
+const username = usernameElement.value.trim(); 
+const password = passwordElement.value.trim(); 
+```
+Redirects the user to admin.astro if they enter the correct credentials 
+```javascript
+window.location.href = '/inspirado-marketing/admin'; // Redirect to admin page
+```
+<strong>.astro</strong><br/>
 
 
 
