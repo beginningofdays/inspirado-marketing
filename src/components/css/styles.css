@@ -494,10 +494,10 @@ a:hover .overlay {
 .button-row {
   display: flex;
   flex-direction: row;
-  gap: 5px; /* Space between buttons */
 }
 
 .button-row button {
+  gap: 5px; /* Space between buttons */
   padding: 10px 20px;
   border: none;
   border-radius: 4px;
