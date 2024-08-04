@@ -102,7 +102,7 @@ It allows the users to submit their information so inspirado marketing can conta
 * Data Filtering: Allows users to filter and view data on another page.
 * Business Location: With the use of the leaflet API, the user can a google map style map to find and contact the business. 
 
-## Functions and Methods
+## Functions&Methods
 Within this section I will highlight some key <strong>Functions</stronG> and <strong>Methods</strong> I used throughout my website. 
 
 <strong>Logon.astro</strong><br/>
