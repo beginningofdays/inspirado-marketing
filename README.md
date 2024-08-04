@@ -317,13 +317,13 @@ document.getElementById('sheetdb-form')?.addEventListener('submit', function(e) 
 Check out a live demo of the app [here](https://github.com/beginningofdays/inspirado-marketing).
 
 ## Pages
-* Index - This is the home page of the website. Allow users to get submit information and get service information
-* Work - This page shows the different clients inspirado agency has worked with. 
+* Index - This is the home page of the website. Allow users to submit personal / business information and get service information.
+* Work - This page shows the different clients inspirado Marketing has worked with and is currently working with. 
 * Company - This page gives some insight in the business and the people involved.
 * Contact - This page provides contact information
-* GetStarted - This page allows user to submit information 
+* GetStarted -This page allows user to submit personal / business information
 * Logon - Logon page for the Admin page
-* Admin - This page allows user to filter and viewthe information gather from the forms on Index page and GetStarted Page. 
+* Admin - This page allows user to filter and view the information gathered from the forms on the Index page and GetStarted Page. 
 
 Accessibility
 -------------
