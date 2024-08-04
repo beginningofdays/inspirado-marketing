@@ -105,14 +105,33 @@ It allows the users to submit their information so inspirado marketing can conta
 ## Functions and Methods
 Within this section I will highlight some key <strong>Functions</stronG> and <strong>Methods</strong> I used through my website. 
 
-```html
-<h3><u>Logon.astro</u></h3>
+<strong>Logon.astro</strong><br/>
 Code will only run when the DOM is loaded
-```
 ```javascript
 document.addEventListener('DOMContentLoaded', () => {
 });
 ```
+Manages form submissions, validates user credentials, and either redirects or alerts depending on the user input.
+```javascript
+loginForm?.addEventListener('submit', (event) => {
+    event.preventDefault(); // Prevent default form submission
+
+    const username = usernameElement.value.trim();
+    const password = passwordElement.value.trim();
+
+    if (username === 'administrator' && password === 'lordoftherings') {
+        // Redirect to admin page if credentials are correct
+        window.location.href = '/inspirado-marketing/admin';
+    } else {
+        alert('Invalid username or password');
+    }
+});
+```
+
+
+
+
+
 ## Demo
 
 Check out a live demo of the app [here](https://github.com/beginningofdays/inspirado-marketing).
