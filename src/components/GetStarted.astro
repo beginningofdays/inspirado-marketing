@@ -16,19 +16,19 @@
             <div class="row mb-3">
                 <div class="col">
                     <div data-mdb-input-init class="form-outline">
-                        <input type="text" id="firstname" class="form-control" placeholder="First Name"/>
+                        <input type="text" id="firstName" class="form-control" placeholder="First Name"/>
                     </div>
                 </div>
                 <div class="col"> 
                     <div data-mdb-input-init class="form-outline">
-                        <input type="text" id="lastname" class="form-control" placeholder="Last Name" />
+                        <input type="text" id="lastName" class="form-control" placeholder="Last Name" />
                     </div>
                 </div>
             </div>
                       
             <!-- Text input -->
             <div data-mdb-input-init class="form-outline mb-4">
-                <input type="text" id="company-name" class="form-control" placeholder="Company Name"/>
+                <input type="text" id="companyName" class="form-control" placeholder="Company Name"/>
             </div>
                       
             <!-- Text input -->
@@ -59,8 +59,8 @@
 
 <script>// Define the FormSubmission class with proper types
 class FormSubmission {
-    firstname: string;
-    lastname: string;
+    firstName: string;
+    lastName: string;
     companyName: string;
     address: string;
     email: string;
@@ -69,8 +69,8 @@ class FormSubmission {
     date: string;
 
     constructor(
-        firstname: string,
-        lastname: string,
+        firstName: string,
+        lastName: string,
         companyName: string,
         address: string,
         email: string,
@@ -78,8 +78,8 @@ class FormSubmission {
         message: string,
         date: string
     ) {
-        this.firstname = firstname;
-        this.lastname = lastname;
+        this.firstName = firstName;
+        this.lastName = lastName;
         this.companyName = companyName;
         this.address = address;
         this.email = email;
@@ -95,9 +95,9 @@ document.getElementById('dataForm')?.addEventListener('submit', function(e) {
 
     // Gather form data and cast elements to the correct type
     const form = document.getElementById('dataForm') as HTMLFormElement;
-    const firstname = (document.getElementById('firstname') as HTMLInputElement)?.value ?? '';
-    const lastname = (document.getElementById('lastname') as HTMLInputElement)?.value ?? '';
-    const companyName = (document.getElementById('company-name') as HTMLInputElement)?.value ?? '';
+    const firstName = (document.getElementById('firstName') as HTMLInputElement)?.value ?? '';
+    const lastName = (document.getElementById('lastName') as HTMLInputElement)?.value ?? '';
+    const companyName = (document.getElementById('companyName') as HTMLInputElement)?.value ?? '';
     const address = (document.getElementById('address') as HTMLInputElement)?.value ?? '';
     const email = (document.getElementById('email') as HTMLInputElement)?.value ?? '';
     const phone = (document.getElementById('phone') as HTMLInputElement)?.value ?? '';
@@ -106,8 +106,8 @@ document.getElementById('dataForm')?.addEventListener('submit', function(e) {
 
     // Create a new instance of FormSubmission
     const formSubmission = new FormSubmission(
-        firstname,
-        lastname,
+        firstName,
+        lastName,
         companyName,
         address,
         email,

@@ -56,8 +56,8 @@
 <script>
   // Define the shape of each entry in the data
   interface MarketingInformation {
-      firstname?: string;
-      lastname?: string;
+      firstName?: string;
+      lastName?: string;
       companyName?: string;  // Updated from country to companyName
       email?: string;
       message?: string;      // Updated from text to message
@@ -73,8 +73,8 @@
           data.forEach(entry => {
               const row = document.createElement('tr');
               row.innerHTML = `
-                  <td>${entry.firstname || 'N/A'}</td>
-                  <td>${entry.lastname || 'N/A'}</td>
+                  <td>${entry.firstName || 'N/A'}</td>
+                  <td>${entry.lastName || 'N/A'}</td>
                   <td>${entry.companyName || 'N/A'}</td>
                   <td>${entry.email || 'N/A'}</td>
                   <td>${entry.message || 'N/A'}</td>
@@ -98,12 +98,12 @@
 
       if (filterFirstname) {
           allData = allData.filter((entry: MarketingInformation) => 
-              (entry.firstname || '').toLowerCase().includes(filterFirstname)
+              (entry.firstName || '').toLowerCase().includes(filterFirstname)
           );
       }
       if (filterLastname) {
           allData = allData.filter((entry: MarketingInformation) => 
-              (entry.lastname || '').toLowerCase().includes(filterLastname)
+              (entry.lastName || '').toLowerCase().includes(filterLastname)
           );
       }
       if (filterCompanyName) {
