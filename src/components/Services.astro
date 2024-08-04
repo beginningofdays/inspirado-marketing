@@ -7,7 +7,7 @@
       <div class="component-services-wrapper">
         <!-- Community Marketing Section -->
         <div class="component-service p-5 border border-1 mb-3">
-          <p>Community Marketing</p>
+          <h1>Community Marketing</h1>
           <p>As a community marketing agency, our mission is to help brands connect with their audiences on a deeper level.</p>
           <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#communityMarketingModal">
             More Information
@@ -94,6 +94,8 @@
   </div>
 </div>
 
+
+
 <!-- Social Media Modal -->
 <div class="modal fade" id="socialMediaModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="socialMediaModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-lg">
@@ -132,20 +134,16 @@
   justify-content: space-between;
   gap: 20px; /* Space between the columns */
 }
-
-/* Space left over, background positioning */
 .component-service {
-  position: relative; 
+  position: relative; /* Necessary for the pseudo-element positioning */
   flex: 1;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   color: white;
-  overflow: hidden; /*to prevent overflow*/
-  padding: 20px; 
+  overflow: hidden; /* To ensure the pseudo-element stays within the bounds */
+  padding: 20px; /* Optional: adds padding inside the component */
 }
-
-/*transparent overlay*/
 .component-service::before {
   content: '';
   position: absolute;
@@ -153,12 +151,12 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.7); /* overlay */
+  background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent overlay */
   z-index: 1;
 }
 .component-service * {
   position: relative;
-  z-index: 2; <!-- -->
+  z-index: 2;
 }
 
 /*modal background images*/
@@ -179,26 +177,25 @@
 
 /*modal image sizing and styling*/
 .modal-image {
-  flex:1; /*space left over*/
-  width:100%; 
-  height: 250px; 
+  flex:1;
+  width:100%; /* Adjust width as needed */
+  height: 250px; /* Maintain aspect ratio */
   border-radius: 8px; /* rounded corners for the image */
   flex-shrink: 0; /* Prevent image from shrinking */
 }
 .modal-text {
   flex: 1; /* Allow text to take remaining space */
-  line-height: 1.0; 
+  line-height: 1.0; /* Improve readability */
 }
 .modal-text h2{
   text-align:center;   
   text-decoration: underline;
   color: #F0F8FF;
 }
-/*remove padding, list-style and margain*/
 .modal-page ul {
-  list-style-type: none; 
-  padding-left: 0;
-  margin: 0;
+  list-style-type: none; /* Remove bullets */
+  padding-left: 0; /* Remove padding */
+  margin: 0; /* Remove margin */
 }
 .modal-page li {
   margin-bottom: 10px; /* Space between list items */
@@ -223,7 +220,7 @@
   height: 100%;
   background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent overlay */
   z-index: 1;
-  pointer-events: none; /*prevents blocking*/
+  pointer-events: none; /* Ensure interactions with the modal content are not blocked */
 }
 .modal-body,.modal-footer,.modal-header {
   position: relative;
@@ -232,7 +229,6 @@
 .modal-footer .btn-secondary {
   border: none;
 }
-/*inverting color for close button top-right of modal*/
 .btn-close {
   color: #ffffff;
   background-color: white;
@@ -242,8 +238,6 @@
 .modal-height {
   min-height: 400px; 
 }
-
-/*local media query*/
 @media (max-width: 992px) {
 .component-services-wrapper {
   flex-direction: column;
