@@ -364,6 +364,15 @@ Standard Meta Description Applied to Website
 ```javascript
 <Layout title="Inspirado Marketing | Build & Engage">
 ```
+## Technologies & Coding Language
+*Astro Framework
+*Node JS
+*HTML 
+*CSS
+*Javascript
+*API
+
+## Conclusion
 
 
 # Astro Starter Kit: Basics
