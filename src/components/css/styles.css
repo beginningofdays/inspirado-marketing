@@ -525,58 +525,6 @@ a:hover .overlay {
   background-color: #b3b3b3; /* Darker gray on hover */
 }
 
-/* Media Queries */
-
-/* Tablet Landscape and Up (≥ 768px) */
-@media (min-width: 768px) {
-  .filter-row {
-    flex-direction: row;
-  }
-
-  .button-row {
-    flex-direction: row;
-  }
-}
-
-/* Desktop and Up (≥ 1024px) */
-@media (min-width: 1024px) {
-  .filter-row {
-    flex-direction: row;
-  }
-
-  .button-row {
-    flex-direction: row;
-  }
-}
-
-/* Mobile Portrait (≤ 767px) */
-@media (max-width: 767px) {
-  .component-title-wrapper h2 {
-    font-size: 1.5em;
-  }
-
-  .filter-row {
-    flex-direction: column;
-  }
-
-  .filter-row input {
-    width: 100%; /* Full width inputs on mobile */
-    margin-right: 0;
-    margin-bottom: 10px;
-  }
-
-  .button-row {
-    flex-direction: column;
-    align-items: stretch;
-  }
-
-  .button-row button {
-    width: 100%; /* Full width buttons on mobile */
-    margin-bottom: 10px;
-  }
-}
-
-
 /* Base Styles (default desktop layout) */
 .image-gallery {
   display: flex;
@@ -693,7 +641,14 @@ a:hover .overlay {
     min-height: 430px; /* Adjust height as needed */
   }
 
+  .filter-row {
+    flex-direction: column;
+  }
+  
+
+
 }
+
 
 
 /* Medium devices (tablets, 768px and up) */
@@ -737,3 +692,4 @@ a:hover .overlay {
   margin-left: 20px; 
 }
 }
+
