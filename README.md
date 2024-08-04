@@ -316,7 +316,7 @@ document.getElementById('sheetdb-form')?.addEventListener('submit', function(e) 
 ```
 ## Demo
 
-Check out a live demo of the app [here](https://github.com/beginningofdays/inspirado-marketing).
+Check out a live demo of the website [here](https://github.com/beginningofdays/inspirado-marketing)https://beginningofdays.github.io/inspirado-marketing/
 
 ## Usage
 Google Account to access Google Sheetdb API <br/>
