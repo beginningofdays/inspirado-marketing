@@ -477,9 +477,6 @@ a:hover .overlay {
 /* Filter Row Styles */
 .filter-row {
   display: flex;
-  flex-wrap: wrap;
-  gap: 10px; /* Space between elements */
-  margin-bottom: 10px;
 }
 
 .filter-row label {
