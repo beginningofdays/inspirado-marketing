@@ -591,14 +591,14 @@ a:hover .overlay {
   /* Shows mobile menu */
 .menu .nav .mobile-nav {
   display: block; /* Show the mobile menu */
-  font-size: 16px; /* Set font size to 16px */
+  font-size: 24px; /* Set font size to 16px */
   text-align: center; /* Center align the text */
   padding: 10px; /* Add padding around the text for better click area */
 }
   
   /* Ensure the font size for the link inside mobile-nav is 16px */
 .menu .nav .mobile-nav a {
-  font-size: 16px; /* Set font size to 16px */
+  font-size: 24px; /* Set font size to 16px */
   text-decoration: none; /* Remove underline from link */
 }
 
