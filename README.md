@@ -325,9 +325,8 @@ Check out a live demo of the app [here](https://github.com/beginningofdays/inspi
 * Logon - Logon page for the Admin page
 * Admin - This page allows user to filter and view the information gathered from the forms on the Index page and GetStarted Page. 
 
-Accessibility
--------------
-The score for the website is 73
+## Accessibility
+
 
 SEO 
 ---
