@@ -17,20 +17,35 @@
             <input type="text" id="filterCompanyName">
         </div>
         <div class="filter-row">
-            <label for="filterFirstname">First Name:</label>
-            <input type="text" id="filterFirstname">
-            
-            <label for="filterLastname">Last Name:</label>
-            <input type="text" id="filterLastname">
-        
-            <label for="filterCompanyName">Company Name:</label>
-            <input type="text" id="filterCompanyName">
+            <label for="filterEmail">Email:</label>
+              <input type="text" id="filterEmail">
+              
+              <label for="filterDate">Date:</label>
+              <input type="date" id="filterDate">
         </div>
 
         <div class="button-row">
             <button id="filterButton">Apply Filter</button>
             <button id="clearButton">Clear Filters</button>
         </div>
+
+        <span class="admin-title"><h3>Data:</h3></span>
+        <!-- Table for displaying data -->
+        <table id="dataTable">
+            <thead>
+                <tr>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Company Name</th>
+                    <th>Email</th>
+                    <th>Message</th>
+                    <th>Date</th>
+                </tr>
+            </thead>
+            <tbody id="dataDisplay">
+                <!-- Rows will be inserted here dynamically -->
+            </tbody>
+        </table>
     </div>
 </div>
 
