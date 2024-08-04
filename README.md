@@ -94,7 +94,7 @@ It allows the users to submit their information so inspirado marketing can conta
 └── tsconfig.json
 └── README.md
 └── Ts env.d.ts
-
+/
 ## Website Structure
 
 ## Features
