@@ -309,28 +309,21 @@ a:hover .overlay {
 }
 
 
-/* Footer Component Styles */
-.component-footer {
-  background-color: var(--header);
-  color: var(--secondary);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 20px; /* Adjusted padding for better spacing */
-}
-
 /*Footer item positioning*/ 
 .footer-content {
   display: flex;
-  justify-content: space-between;
+  justify-content: center; /* Center the entire content */
   align-items: center;
   width: 100%;
   max-width: 800px; /* Reduced max width to bring items closer */
   gap: 20px; /* Add some gap between the sections */
+  margin: 0 auto; /* Center the container horizontally */
 }
 
 .logo {
-  flex: 1; /* Take up equal space */
+  flex: 1;
+  display: flex;
+  justify-content: center; /* Center the logo */
 }
 
 .logo img {
@@ -347,6 +340,7 @@ a:hover .overlay {
   list-style: none; /* Remove list dots */
   padding: 0;
   margin: 0;
+  line-height: 1.5; /* Adjust line-height for better spacing */
 }
 
 .contact-info li {
@@ -367,7 +361,7 @@ a:hover .overlay {
   display: flex; /* Display icons in a row */
   justify-content: center; /* Center the icons */
   gap: 15px; /* Increased gap between icons */
-  margin-bottom: 5px; /* Reduced space between social icons and CSS validator */
+  margin-bottom: 10px; /* Increased space between social icons and CSS validator */
 }
 
 /*social icon sizing*/
@@ -388,7 +382,8 @@ a:hover .overlay {
 }
 
 
-/* Login Component Styles */
+
+
 /* Login Component Styles */
 .login-container {
   display: flex;
