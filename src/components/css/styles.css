@@ -440,14 +440,14 @@ a:hover .overlay {
 /* ADMIN STYLES*/
 .table-responsive {
   width: 100%;
-  overflow-x: auto; 
+  overflow-x: auto;
 }
 
 /* table styles */
 #dataTable {
   width: 100%;
   border-collapse: collapse;
-  margin-top: 20px;
+  margin-top: 5px;
   table-layout: fixed; /* Fix the table layout to control the column widths */
 }
 
