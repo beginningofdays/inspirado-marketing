@@ -435,7 +435,22 @@ a:hover .overlay {
 }
 
 /* Admin Component Styles */
-/* Table Styles */
+/* Container around the table to control overflow */
+.table-responsive {
+  width: 100%;
+  overflow-x: auto; /* Enable horizontal scrolling if necessary */
+}
+
+/* Adjusting table width and overflow within the flex-column */
+.flex-column {
+  display: flex;
+  flex-direction: column;
+  gap: 20px; /* Space between elements */
+  max-width: 100%; /* Ensure it doesn’t overflow the parent */
+  overflow: hidden; /* Contain the overflow */
+}
+
+/* General table styles */
 #dataTable {
   width: 100%;
   border-collapse: collapse;
@@ -467,15 +482,11 @@ a:hover .overlay {
   border-bottom: 1px solid #ddd; /* Light gray border for rows */
 }
 
-/* Filter Container Styles */
-.filter-container {
-
-}
-
 /* Filter Row Styles */
 .filter-row {
   display: flex;
-  gap:5px;
+  gap: 5px;
+  flex-wrap: wrap; /* Allows inputs to wrap on smaller screens */
 }
 
 .filter-row label {
@@ -485,7 +496,7 @@ a:hover .overlay {
 
 .filter-row input {
   flex: 1; /* Allow inputs to grow and shrink */
-  width:100%
+  width: 100%;
 }
 
 /* Button Row Styles */
@@ -495,13 +506,12 @@ a:hover .overlay {
 }
 
 .button-row button {
-  margin-top:10px;
-  padding: 10px 10px;
+  margin-top: 10px;
+  padding: 10px;
   border: none;
   border-radius: 4px;
   cursor: pointer;
   flex: 1;
-  width: 100%
 }
 
 /* Filter Button Styles */
@@ -523,6 +533,7 @@ a:hover .overlay {
 .button-row #clearButton:hover {
   background-color: #b3b3b3; /* Darker gray on hover */
 }
+
 
 /* Base Styles (default desktop layout) */
 .image-gallery {

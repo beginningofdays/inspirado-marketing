@@ -1,7 +1,3 @@
----
-
----
-
 <div class="flex-column mb-3">
     <h3>Filter Data:</h3>
     <!-- Filter Inputs in two rows and buttons in one row -->
@@ -30,25 +26,28 @@
         </div>
 
         <span class="admin-title"><h3>Data:</h3></span>
-        <!-- Table for displaying data -->
-        <table id="dataTable">
-            <thead>
-                <tr>
-                    <th>First Name</th>
-                    <th>Last Name</th>
-                    <th>Company Name</th>
-                    <th>Email</th>
-                    <th>Message</th>
-                    <th>Date</th>
-                </tr>
-            </thead>
-            <tbody id="dataDisplay">
-                <!-- Rows will be inserted here dynamically -->
-            </tbody>
-        </table>
+        <!-- Table container to make it responsive -->
+        <div class="table-responsive">
+            <table id="dataTable">
+                <thead>
+                    <tr>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <th>Company Name</th>
+                        <th>Email</th>
+                        <th>Message</th>
+                        <th>Date</th>
+                    </tr>
+                </thead>
+                <tbody id="dataDisplay">
+                    <!-- Rows will be inserted here dynamically -->
+                </tbody>
+            </table>
+        </div>
         
     </div>
 </div>
+
 
 <script>
   // Define the shape of each entry in the data
@@ -84,6 +83,8 @@
       }
   }
 
+
+  
   // Filters based on user input
   function applyFilter() {
       const filterFirstname = (document.getElementById('filterFirstname') as HTMLInputElement)?.value.toLowerCase() || '';
