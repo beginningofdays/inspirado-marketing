@@ -95,7 +95,7 @@ It allows the users to submit their information so inspirado marketing can conta
 └── README.md
 └── Ts env.d.ts
 
-##Features
+## Features
 * User Form: Collects user information such as name, email, and company.
 * Local Storage: Saves user data locally for quick access and retrieval.
 * Google Sheets Integration: Sends collected data to a Google Sheet using the Google Sheets API.
