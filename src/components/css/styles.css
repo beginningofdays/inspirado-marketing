@@ -591,6 +591,7 @@ a:hover .overlay {
 /*shows mobile menu*/
 .menu .nav .mobile-nav {
   display: block; /* Show the mobile menu */
+  font-size: 2rem;
 }
 
 .image-gallery {
