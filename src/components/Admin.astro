@@ -54,105 +54,144 @@
 </div>
 
 <script>
+class DataEntry {
+    firstname?: string;
+    lastname?: string;
+    companyName?: string;
+    email?: string;
+    message?: string;
+    date?: string;
+
+    constructor(firstname?: string, lastname?: string, companyName?: string, email?: string, message?: string, date?: string) {
+        this.firstname = firstname;
+        this.lastname = lastname;
+        this.companyName = companyName;
+        this.email = email;
+        this.message = message;
+        this.date = date;
+    }
+
+    getFullName(): string {
+        return `${this.firstname || ''} ${this.lastname || ''}`.trim();
+    }
+
+    static fromObject(data: Partial<DataEntry>): DataEntry {
+        return new DataEntry(
+            data.firstname,
+            data.lastname,
+            data.companyName,
+            data.email,
+            data.message,
+            data.date
+        );
+    }
+}
+
 class DataManager {
-  constructor() {
-      // Initialize data and set up event listeners
-      this.dataDisplay = document.getElementById('dataDisplay');
-      this.loadData();
-      this.setUpEventListeners();
-  }
+    data: DataEntry[] = [];
+    dataDisplay: HTMLElement | null;
 
-  // Load data from localStorage and display it
-  loadData() {
-      const storedData = localStorage.getItem('formData');
-      this.data = storedData ? JSON.parse(storedData) : [];
-      this.displayData(this.data);
-  }
+    constructor() {
+        this.dataDisplay = document.getElementById('dataDisplay');
+        this.loadData();
+        this.setUpEventListeners();
+    }
 
-  // Display data in the table
-  displayData(data) {
-      if (this.dataDisplay) {
-          this.dataDisplay.innerHTML = ''; // Clear previous content
+    // Load data from localStorage and display it
+    loadData() {
+        const storedData = localStorage.getItem('formData');
+        if (storedData) {
+            const parsedData = JSON.parse(storedData);
+            this.data = parsedData.map((entry: Partial<DataEntry>) => DataEntry.fromObject(entry));
+        }
+        this.displayData(this.data);
+    }
 
-          data.forEach(entry => {
-              const row = document.createElement('tr');
-              row.innerHTML = `
-                  <td>${entry.firstname || 'N/A'}</td>
-                  <td>${entry.lastname || 'N/A'}</td>
-                  <td>${entry.companyName || 'N/A'}</td>
-                  <td>${entry.email || 'N/A'}</td>
-                  <td>${entry.message || 'N/A'}</td>
-                  <td>${entry.date || 'N/A'}</td>
-              `;
-              this.dataDisplay.appendChild(row);
-          });
-      }
-  }
+    // Display data in the table
+    displayData(data: DataEntry[]) {
+        if (this.dataDisplay) {
+            this.dataDisplay.innerHTML = ''; // Clear previous content
 
-  // Apply filters based on user input
-  applyFilter() {
-      const filterFirstname = (document.getElementById('filterFirstname')?.value.toLowerCase()) || '';
-      const filterLastname = (document.getElementById('filterLastname')?.value.toLowerCase()) || '';
-      const filterCompanyName = (document.getElementById('filterCompanyName')?.value.toLowerCase()) || '';
-      const filterEmail = (document.getElementById('filterEmail')?.value.toLowerCase()) || '';
-      const filterDate = (document.getElementById('filterDate')?.value) || '';
+            data.forEach(entry => {
+                const row = document.createElement('tr');
+                row.innerHTML = `
+                    <td>${entry.firstname || 'N/A'}</td>
+                    <td>${entry.lastname || 'N/A'}</td>
+                    <td>${entry.companyName || 'N/A'}</td>
+                    <td>${entry.email || 'N/A'}</td>
+                    <td>${entry.message || 'N/A'}</td>
+                    <td>${entry.date || 'N/A'}</td>
+                `;
+                this.dataDisplay.appendChild(row);
+            });
+        }
+    }
 
-      let filteredData = this.data;
+    // Apply filters based on user input
+    applyFilter() {
+        const filterFirstname = document.getElementById('filterFirstname')?.value.toLowerCase() || '';
+        const filterLastname = document.getElementById('filterLastname')?.value.toLowerCase() || '';
+        const filterCompanyName = document.getElementById('filterCompanyName')?.value.toLowerCase() || '';
+        const filterEmail = document.getElementById('filterEmail')?.value.toLowerCase() || '';
+        const filterDate = document.getElementById('filterDate')?.value || '';
 
-      if (filterFirstname) {
-          filteredData = filteredData.filter(entry => 
-              (entry.firstname || '').toLowerCase().includes(filterFirstname)
-          );
-      }
-      if (filterLastname) {
-          filteredData = filteredData.filter(entry => 
-              (entry.lastname || '').toLowerCase().includes(filterLastname)
-          );
-      }
-      if (filterCompanyName) {
-          filteredData = filteredData.filter(entry => 
-              (entry.companyName || '').toLowerCase().includes(filterCompanyName)
-          );
-      }
-      if (filterEmail) {
-          filteredData = filteredData.filter(entry => 
-              (entry.email || '').toLowerCase().includes(filterEmail)
-          );
-      }
-      if (filterDate) {
-          filteredData = filteredData.filter(entry => 
-              entry.date?.startsWith(filterDate)
-          );
-      }
+        let filteredData = this.data;
 
-      this.displayData(filteredData);
-  }
+        if (filterFirstname) {
+            filteredData = filteredData.filter(entry => 
+                (entry.firstname || '').toLowerCase().includes(filterFirstname)
+            );
+        }
+        if (filterLastname) {
+            filteredData = filteredData.filter(entry => 
+                (entry.lastname || '').toLowerCase().includes(filterLastname)
+            );
+        }
+        if (filterCompanyName) {
+            filteredData = filteredData.filter(entry => 
+                (entry.companyName || '').toLowerCase().includes(filterCompanyName)
+            );
+        }
+        if (filterEmail) {
+            filteredData = filteredData.filter(entry => 
+                (entry.email || '').toLowerCase().includes(filterEmail)
+            );
+        }
+        if (filterDate) {
+            filteredData = filteredData.filter(entry => 
+                entry.date?.startsWith(filterDate)
+            );
+        }
 
-  // Clear all filters
-  clearFilters() {
-      const filterElements = ['filterFirstname', 'filterLastname', 'filterCompanyName', 'filterEmail', 'filterDate'];
-      filterElements.forEach(id => {
-          const element = document.getElementById(id);
-          if (element) element.value = '';
-      });
+        this.displayData(filteredData);
+    }
 
-      this.displayData(this.data);
-  }
+    // Clear all filters
+    clearFilters() {
+        const filterElements = ['filterFirstname', 'filterLastname', 'filterCompanyName', 'filterEmail', 'filterDate'];
+        filterElements.forEach(id => {
+            const element = document.getElementById(id) as HTMLInputElement | null;
+            if (element) element.value = '';
+        });
 
-  // Set up event listeners for the buttons
-  setUpEventListeners() {
-      const filterButton = document.getElementById('filterButton');
-      const clearButton = document.getElementById('clearButton');
+        this.displayData(this.data);
+    }
 
-      if (filterButton) filterButton.addEventListener('click', () => this.applyFilter());
-      if (clearButton) clearButton.addEventListener('click', () => this.clearFilters());
-  }
+    // Set up event listeners for the buttons
+    setUpEventListeners() {
+        const filterButton = document.getElementById('filterButton');
+        const clearButton = document.getElementById('clearButton');
+
+        if (filterButton) filterButton.addEventListener('click', () => this.applyFilter());
+        if (clearButton) clearButton.addEventListener('click', () => this.clearFilters());
+    }
 }
 
 // Instantiate the class when the document is ready
 document.addEventListener('DOMContentLoaded', () => {
-  new DataManager();
+    new DataManager();
 });
+
 </script>
 
 <style>
