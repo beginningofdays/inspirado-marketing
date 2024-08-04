@@ -1,5 +1,6 @@
-<strong> Website Name:</strong> Inspirado-Marketing<br/>
-<strong>Author:</strong> Albert Gillick
+<strong>Website Name:</strong> Inspirado-Marketing<br/>
+<strong>Author:</strong> Albert Gillick<br/>
+<strong>Sudent Number</strong>E10869287
 
 
 ## Table of Contents
