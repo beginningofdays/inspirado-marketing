@@ -188,8 +188,8 @@ p {
 
 /* Banner Button */
 .banner-button {
-  background-color: var(--button);
-  color: red;
+  background-color: red;
+  color: white;
   border: none;
   padding: 10px 20px;
   font-size: 16px;
@@ -201,7 +201,6 @@ p {
 
 /*Button hover transform*/
 .banner-button:hover {
-  background-color: var(--hover-accent); /* Darker accent color on hover */
   transform: scale(1.05); /* Slight scaling effect */
 }
 
