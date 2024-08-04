@@ -495,7 +495,7 @@ a:hover .overlay {
 }
 
 .button-row button {
-  gap: 5px; /* Space between buttons */
+  gap: 10px; /* Space between buttons */
   padding: 10px 20px;
   border: none;
   border-radius: 4px;
