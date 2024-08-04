@@ -340,7 +340,6 @@ a:hover .overlay {
 
 .contact-info {
   flex: 1;
-  text-align: center; /* Center the contact info text */
 }
 
 .contact-info ul {
