@@ -134,6 +134,7 @@
   justify-content: space-between;
   gap: 20px; /* Space between the columns */
 }
+
 .component-service {
   position: relative; /* Necessary for the pseudo-element positioning */
   flex: 1;
@@ -144,6 +145,7 @@
   overflow: hidden; /* To ensure the pseudo-element stays within the bounds */
   padding: 20px; /* Optional: adds padding inside the component */
 }
+
 .component-service::before {
   content: '';
   position: absolute;
@@ -154,6 +156,7 @@
   background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent overlay */
   z-index: 1;
 }
+
 .component-service * {
   position: relative;
   z-index: 2;
@@ -171,12 +174,15 @@
 .component-service:first-of-type {
   background-image: url('/images/community-marketing.jpg'); 
 }
+
 .component-service:nth-of-type(2) {
   background-image: url('/images/community-building.jpg'); 
 }
+
 .component-service:nth-of-type(3) {
   background-image: url('/images/social-media.png'); 
 }
+
 .modal-page{
   display: flex;
   align-items: flex-start; /* Align items to the start of the container */
@@ -186,31 +192,37 @@
 /*modal image sizing and styling*/
 .modal-image {
   flex:1;
-  width:100%; /* Adjust width as needed */
+  width:100%; 
   height:250px; /* Maintain aspect ratio */
   border-radius: 8px; /* rounded corners for the image */
   flex-shrink: 0; /* Prevent image from shrinking */
 }
+
 .modal-text {
   flex: 1; /* Allow text to take remaining space */
   line-height: 1.0; /* Improve readability */
 }
+
 .modal-text h2{
   text-align:center;   
   text-decoration: underline;
   color: #F0F8FF;
 }
+
 .modal-page ul {
   list-style-type: none; /* Remove bullets */
   padding-left: 0; /* Remove padding */
   margin: 0; /* Remove margin */
 }
+
 .modal-page li {
   margin-bottom: 10px; /* Space between list items */
 }
+
 .modal-page .list-header{
   color:#FFD700;
 }
+
 /*modal content relative postioning*/
 .modal-content {
   position: relative; 
@@ -219,6 +231,7 @@
   width: 100%;
   overflow: hidden; 
 }
+
 .modal-content::before {
   content: '';
   position: absolute;
@@ -230,19 +243,23 @@
   z-index: 1;
   pointer-events: none; /* Ensure interactions with the modal content are not blocked */
 }
+
 .modal-body,.modal-footer,.modal-header {
   position: relative;
   z-index: 2;
 }
+
 .modal-footer .btn-secondary {
   border: none;
 }
+
 .btn-close {
   color: #ffffff;
   background-color: white;
   opacity: 0.75;
   filter: invert(1);
 }
+
 .modal-height {
   min-height: 400px; 
 }
