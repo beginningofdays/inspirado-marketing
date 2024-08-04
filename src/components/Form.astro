@@ -33,7 +33,7 @@ import images from './js/services.json';
   <p class="component-content">Are you ready to build a thriving community for your brand on Reddit, Quora, or Discord? Discover your customized community strategy by <span class="text-hightlight">filling out the form below.</span> Our team at Inspirado Marketing will analyze your brand’s needs and provide a tailored plan to help you create and sustain a vibrant, engaged community.</p>
   <!-- Form Section -->
   <div class="component-form mb-1">
-      <form method="post" action="https://sheetdb.io/api/v1/w7z9c2i2imfvw" id="dataForm">
+      <form method="post" action="https://sheetdb.io/api/v1/w7z9c2i2imfvw" id="sheetdb-form">
           <!-- Form Inputs -->
           <div class="row mb-3">
               <div class="col">
@@ -101,11 +101,11 @@ class FormSubmission {
 }
 
 // Event listener for form submission
-document.getElementById('dataForm')?.addEventListener('submit', function(e) {
-    e.preventDefault(); // Prevents the default form submission
+document.getElementById('sheetdb-form')?.addEventListener('submit', function(e) {
+
 
     // Gather form data and cast elements to the correct type
-    const form = document.getElementById('dataForm') as HTMLFormElement;
+    const form = document.getElementById('sheetdb-form') as HTMLFormElement;
     const firstName = (document.getElementById('firstName') as HTMLInputElement)?.value ?? '';
     const lastName = (document.getElementById('lastName') as HTMLInputElement)?.value ?? '';
     const companyName = (document.getElementById('companyName') as HTMLInputElement)?.value ?? '';
@@ -128,49 +128,33 @@ document.getElementById('dataForm')?.addEventListener('submit', function(e) {
     );
 
     // Retrieve existing data from local storage
-    let allData: FormSubmission[] = JSON.parse(localStorage.getItem('formData') ?? '[]');
+    let allData: FormSubmission[] = JSON.parse(localStorage.getItem('sheetdb-form') ?? '[]');
     // Add new data
     allData.push(formSubmission);
     // Store updated data in local storage
-    localStorage.setItem('formData', JSON.stringify(allData));
-
-    // Send data to API
-    fetch('https://sheetdb.io/api/v1/w7z9c2i2imfvw', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-            firstName,
-            lastName,
-            companyName,
-            address,
-            email,
-            phone,
-            message,
-            date
-        }) // Sending flat object as JSON
-    })
-    .then(response => response.json())
-    .then(data => {
-        if (data.error) {
-            console.error('Error:', data.error);
-        } else {
-            console.log('Success:', data);
-            form.reset(); // Reset form after successful submission
-        }
-    })
-    .catch((error) => {
-        console.error('Error:', error);
-    });
+    localStorage.setItem('sheetdb-form', JSON.stringify(allData));
+    // Form Reset
+    form.reset();
 });
 </script>
 
+<script>
+const form = document.getElementById('sheetdb-form');
+form.addEventListener("submit", e => {
+e.preventDefault();
+fetch(form.action, {
+    method : "POST",
+    body: new FormData(document.getElementById("sheetdb-form")),
+}).then(
+    response => response.json()
+).then((html) => {
+  // you can put any JS code here
+  window.open('page2.html', '_blank');
 
-
-
-
+});
+});
 </script>
+
 
 <style>
 .community-message {
