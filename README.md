@@ -7,7 +7,7 @@
 - [Introduction](#introduction)
 - [Website Structure](#websitestructure)
 - [Features](#features)
-- [Functions and Methods](functions&methods)
+- [Functions&Methods](functions&methods)
 - [Usage](#usage)
 - [Demo](#demo)
 - [Accessibility Report](#accessibility)
