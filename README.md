@@ -96,11 +96,10 @@ It allows the users to submit their information so inspirado marketing can conta
 └── Ts env.d.ts
 ```
 ## Features
-* User Form: Collects user information such as name, email, and company.
+* User Form: Collects user information such as Firstname, Lastname, Company Name, Address, Email, Phone, Message and Date.
 * Local Storage: Saves user data locally for quick access and retrieval.
 * Google Sheets Integration: Sends collected data to a Google Sheet using the Google Sheets API.
 * Data Filtering: Allows users to filter and view data on another page.
-
 
 ## Demo
 
@@ -133,6 +132,11 @@ This Form exists on two pages, Index.html and GetStarted.html
 Information entered into these forms will be storage in local storage. 
 This information will be accessiable only from the admin.html page. 
 admin.html can be accessed via the logon.html page. 
+
+
+usage 
+inspiradomarketing776@gmail.com
+lordoftherings!
 
 LOGON PAGE
 **********
