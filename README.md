@@ -14,6 +14,7 @@
 - [Accessibility Report](#accessibility)
 - [Lighthouse Report](#lighthouse)
 - [Performance Report](#Performance)
+- [Seo](#seo)
 - [Technologies](#technologies)
 - [Conclusion](#conclusion)
   
@@ -326,7 +327,7 @@ Check out a live demo of the app [here](https://github.com/beginningofdays/inspi
 * Admin - This page allows user to filter and view the information gathered from the forms on the Index page and GetStarted Page. 
 
 ## Accessibility
-
+This report is in the Docs Folder
 
 SEO 
 ---
