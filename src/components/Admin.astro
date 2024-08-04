@@ -73,15 +73,21 @@
                   <td>${entry.firstName || 'N/A'}</td>
                   <td>${entry.lastName || 'N/A'}</td>
                   <td>${entry.companyName || 'N/A'}</td>
+           
               `;
               dataDisplay.appendChild(row);
 
+          });
+
+          data.forEach(entry => {
+              const row = document.createElement('tr');
               row.innerHTML = `
                   <td>${entry.email || 'N/A'}</td>
                   <td>${entry.message || 'N/A'}</td>
                   <td>${entry.date || 'N/A'}</td>
               `;
               dataDisplay.appendChild(row);
+
           });
       }
   }
