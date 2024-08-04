@@ -437,9 +437,9 @@ a:hover .overlay {
 /* Admin Component Styles */
 /* Table Styles */
 #dataTable {
-  display:flex;
-  flex-direction: column; /* Arrange elements vertically */
-  margin-top: 20px;
+  display: block;
+  width: 100%; /* Makes each cell occupy the full width */
+  box-sizing: border-box;
 }
 
 /* Table Header Styles */
