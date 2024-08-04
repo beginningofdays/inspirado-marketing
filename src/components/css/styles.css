@@ -530,6 +530,7 @@ a:hover .overlay {
 @media screen and (max-width: 600px) {
   #dataTable th, #dataTable td {
     padding: 8px; /* Slightly reduce padding on smaller screens */
+    font-size: 12px; /* Reduce text size for table headers and cells */
   }
 
   .filter-row {
@@ -544,6 +545,14 @@ a:hover .overlay {
     flex-direction: column; /* Stack buttons vertically on smaller screens */
   }
 }
+
+@media screen and (max-width: 400px) {
+  #dataTable th, #dataTable td {
+    font-size: 10px; /* Further reduce text size on very small screens */
+    padding: 6px; /* Reduce padding to fit more content */
+  }
+}
+
 
 /* Base Styles (default desktop layout) */
 .image-gallery {
