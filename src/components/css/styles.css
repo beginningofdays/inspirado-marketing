@@ -319,6 +319,7 @@ a:hover .overlay {
   gap: 20px; /* Add some gap between the sections */
   margin: 0 auto; /* Center the container horizontally */
   background-color: var(--header);
+  color:var(--secondary);
 }
 
 .logo {
