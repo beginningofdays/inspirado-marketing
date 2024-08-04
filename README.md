@@ -94,7 +94,9 @@ It allows the users to submit their information so inspirado marketing can conta
 └── README.md
 └── Ts env.d.ts
 
+## Demo
 
+Check out a live demo of the app [here](https://github.com/beginningofdays/inspirado-marketing).
 
 Pages
 -----
