@@ -1,7 +1,3 @@
----
-
----
-
 <div class="flex-column mb-3">
   <div class="component-title-wrapper">
       <div class="component-line"></div>
@@ -57,9 +53,9 @@
   </div>
 </div>
 
-
 <script>
-  interface MarketingInformation {
+  // Define the shape of each entry in the data
+  interface DataEntry {
       firstname?: string;
       lastname?: string;
       companyName?: string;  // Updated from country to companyName
@@ -68,12 +64,13 @@
       date?: string;
   }
 
-  function displayData(data: MarketingInformation[]) {
+  // Display data in the table
+  function displayData(data: DataEntry[]) {
       const dataDisplay = document.getElementById('dataDisplay');
       if (dataDisplay) {
           dataDisplay.innerHTML = ''; // Clear previous content
 
-          data.forEach((entry: MarketingInformation) => {
+          data.forEach(entry => {
               const row = document.createElement('tr');
               row.innerHTML = `
                   <td>${entry.firstname || 'N/A'}</td>
@@ -88,6 +85,7 @@
       }
   }
 
+  // Filters based on user input
   function applyFilter() {
       const filterFirstname = (document.getElementById('filterFirstname') as HTMLInputElement)?.value.toLowerCase() || '';
       const filterLastname = (document.getElementById('filterLastname') as HTMLInputElement)?.value.toLowerCase() || '';
@@ -95,43 +93,39 @@
       const filterEmail = (document.getElementById('filterEmail') as HTMLInputElement)?.value.toLowerCase() || '';
       const filterDate = (document.getElementById('filterDate') as HTMLInputElement)?.value || '';
 
-      let MarketingData: MarketingInformation[] = [];
-      try {
-          const storedData = localStorage.getItem('formData');
-          MarketingData = storedData ? JSON.parse(storedData) : [];
-      } catch (e) {
-          console.error('Error parsing localStorage data:', e);
-      }
+      const storedData = localStorage.getItem('formData');
+      let allData: DataEntry[] = storedData ? JSON.parse(storedData) : [];
 
       if (filterFirstname) {
-          MarketingData = MarketingData.filter((entry: MarketingInformation) => 
+          allData = allData.filter((entry: DataEntry) => 
               (entry.firstname || '').toLowerCase().includes(filterFirstname)
           );
       }
       if (filterLastname) {
-          MarketingData = MarketingData.filter((entry: MarketingInformation) => 
+          allData = allData.filter((entry: DataEntry) => 
               (entry.lastname || '').toLowerCase().includes(filterLastname)
           );
       }
       if (filterCompanyName) {
-          MarketingData = MarketingData.filter((entry: MarketingInformation) => 
+          allData = allData.filter((entry: DataEntry) => 
               (entry.companyName || '').toLowerCase().includes(filterCompanyName)
           );
       }
       if (filterEmail) {
-          MarketingData = MarketingData.filter((entry: MarketingInformation) => 
+          allData = allData.filter((entry: DataEntry) => 
               (entry.email || '').toLowerCase().includes(filterEmail)
           );
       }
       if (filterDate) {
-          MarketingData = MarketingData.filter((entry: MarketingInformation) => 
+          allData = allData.filter((entry: DataEntry) => 
               entry.date?.startsWith(filterDate)
           );
       }
 
-      displayData(MarketingData);
+      displayData(allData);
   }
 
+  // Function to clear all filters
   function clearFilters() {
       const filterFirstname = document.getElementById('filterFirstname') as HTMLInputElement | null;
       const filterLastname = document.getElementById('filterLastname') as HTMLInputElement | null;
@@ -145,17 +139,11 @@
       if (filterEmail) filterEmail.value = '';
       if (filterDate) filterDate.value = '';
 
-      let MarketingData: MarketingInformation[] = [];
-      try {
-          const storedData = localStorage.getItem('formData');
-          MarketingData = storedData ? JSON.parse(storedData) : [];
-      } catch (e) {
-          console.error('Error parsing localStorage data:', e);
-      }
-
-      displayData(MarketingData);
+      const storedData = localStorage.getItem('formData');
+      displayData(storedData ? JSON.parse(storedData) : []);
   }
 
+  // Set up event listeners for filter buttons
   document.addEventListener('DOMContentLoaded', function() {
       const filterButton = document.getElementById('filterButton');
       const clearButton = document.getElementById('clearButton');
@@ -164,17 +152,11 @@
       if (clearButton) clearButton.addEventListener('click', clearFilters);
 
       // Initial display of data
-      let MarketingData: MarketingInformation[] = [];
-      try {
-          const storedData = localStorage.getItem('formData');
-          MarketingData = storedData ? JSON.parse(storedData) : [];
-      } catch (e) {
-          console.error('Error parsing localStorage data:', e);
-      }
-
-      displayData(MarketingData);
+      const storedData = localStorage.getItem('formData');
+      displayData(storedData ? JSON.parse(storedData) : []);
   });
 </script>
+
 <style>
 .admin-title h3 {
   color: red;
