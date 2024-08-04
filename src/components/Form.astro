@@ -68,7 +68,6 @@ import images from './js/services.json';
 </div>
 
 <script>
-// Define the FormSubmission class with proper types<script>
 // Define the FormSubmission class with proper types
 class FormSubmission {
     firstName: string;
@@ -141,7 +140,16 @@ document.getElementById('dataForm')?.addEventListener('submit', function(e) {
         headers: {
             'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ data: [formSubmission] }) // Match API format
+        body: JSON.stringify({
+            firstName,
+            lastName,
+            companyName,
+            address,
+            email,
+            phone,
+            message,
+            date
+        }) // Sending flat object as JSON
     })
     .then(response => response.json())
     .then(data => {
@@ -157,6 +165,8 @@ document.getElementById('dataForm')?.addEventListener('submit', function(e) {
     });
 });
 </script>
+
+
 
 
 
