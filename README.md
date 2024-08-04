@@ -222,18 +222,95 @@ toLowerCase().includes(filterLastname)
 <strong>Form.astro</strong><br/>
 This code exists on both Index.astro and GetStarted.astro, but for this explaination I will be focusing on the Form present on the Index.astro<br/>
 
-Code will only run when the DOM is loaded
+The structure of the form.
 clearfilters() clears all filter inputs and resets.
 ```javascript
+class FormSubmission {
+    firstName: string;
+    lastName: string;
+    companyName: string;
+    address: string;
+    email: string;
+    phone: string;
+    message: string;
+    date: string;
 
+    constructor(
+        firstName: string,
+        lastName: string,
+        companyName: string,
+        address: string,
+        email: string,
+        phone: string,
+        message: string,
+        date: string
+    ) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.companyName = companyName;
+        this.address = address;
+        this.email = email;
+        this.phone = phone;
+        this.message = message;
+        this.date = date;
+    }
+}
 ```
-
-clearfilters() clears all filter inputs and resets.
+This function sets up the form submission event listener and processes the form data. It saves the form submission data to localStorage which in turn sends form data to the Google Sheetsdb API using fetch. Logging any errors encountered during the fetch request and resets the form if successful.
 ```javascript
+document.getElementById('sheetdb-form')?.addEventListener('submit', function(e) {
+    e.preventDefault(); // Prevent the default form submission
 
+    // Gather form data
+    const firstName = (document.getElementById('firstName') as HTMLInputElement)?.value ?? '';
+    const lastName = (document.getElementById('lastName') as HTMLInputElement)?.value ?? '';
+    const companyName = (document.getElementById('companyName') as HTMLInputElement)?.value ?? '';
+    const address = (document.getElementById('address') as HTMLInputElement)?.value ?? '';
+    const email = (document.getElementById('email') as HTMLInputElement)?.value ?? '';
+    const phone = (document.getElementById('phone') as HTMLInputElement)?.value ?? '';
+    const message = (document.getElementById('message') as HTMLTextAreaElement)?.value ?? '';
+    const date = new Date().toLocaleString();
+
+    // Create FormSubmission instance
+    const formSubmission = new FormSubmission(
+        firstName,
+        lastName,
+        companyName,
+        address,
+        email,
+        phone,
+        message,
+        date
+    );
+
+    // Store form data in local storage
+    let allData: FormSubmission[] = JSON.parse(localStorage.getItem('sheetdb-form') ?? '[]');
+    allData.push(formSubmission);
+    localStorage.setItem('sheetdb-form', JSON.stringify(allData));
+
+    // Submit data to API
+    fetch(document.getElementById('sheetdb-form')?.action ?? '', {
+        method: 'POST',
+        body: new FormData(document.getElementById('sheetdb-form') as HTMLFormElement),
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.error) {
+            console.error('Error:', data.error);
+        } else {
+            console.log('Success:', data);
+            (document.getElementById('sheetdb-form') as HTMLFormElement).reset(); // Reset form
+        }
+    })
+    .catch((error) => {
+        console.error('Error:', error);
+    });
+});
 ```
-
-
+.reset() This method is called on the HTMLFormElement and resets all the form fields 
+```javascript
+(document.getElementById('sheetdb-form') as HTMLFormElement).reset(); 
+```
 ## Demo
 
 Check out a live demo of the app [here](https://github.com/beginningofdays/inspirado-marketing).
