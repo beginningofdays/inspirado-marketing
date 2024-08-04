@@ -1,6 +1,20 @@
 #Website Name: Inspirado-Marketing<br/>
 #Author: Albert Gillick
 
+
+## Table of Contents
+
+- [Introduction](#introduction)
+- [Features](#features)
+- [Demo](#demo)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Technologies](#technologies)
+- [Contributing](#contributing)
+- [License](#license)
+- [Contact](#contact)
+- [Acknowledgements](#acknowledgements)
+  
 <strong>Introduction</strong><br/>
 The Aim of the project is to create a Community Marketing Website.<br/>
 The Marketing Website offers information about the about the business services. <br/>
@@ -79,6 +93,8 @@ It allows the users to submit their information so inspirado marketing can conta
 └── tsconfig.json
 └── README.md
 └── Ts env.d.ts
+
+
 
 Pages
 -----
