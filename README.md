@@ -1,5 +1,5 @@
-## Website Name: Inspirado-Marketing<br/>
-## Author: Albert Gillick
+<strong> Website Name:</strong> Inspirado-Marketing<br/>
+<strong>Author:</strong> Albert Gillick
 
 
 ## Table of Contents
