@@ -7,7 +7,7 @@
 - [Introduction](#introduction)
 - [Website Structure](#websitestructure)
 - [Features](#features)
-- [Functions&Methods](functions&methods)
+- [Classes Functions Methods](classes functions methods)
 - [Usage](#usage)
 - [Demo](#demo)
 - [Accessibility Report](#accessibility)
@@ -102,7 +102,7 @@ It allows the users to submit their information so inspirado marketing can conta
 * Data Filtering: Allows users to filter and view data on another page.
 * Business Location: With the use of the leaflet API, the user can a google map style map to find and contact the business. 
 
-## Functions&Methods
+## Classes Functions Methods
 Within this section I will highlight some key <strong>Functions</stronG> and <strong>Methods</strong> I used throughout my website. 
 
 <strong>Logon.astro</strong><br/>
@@ -219,7 +219,10 @@ toLowerCase() sonverts a string to lowercase.
 ```javascript
 toLowerCase().includes(filterLastname)
 ```
+<strong>Form.astro</strong><br/>
+This code exists on both Index.astro and GetStarted.astro, but for this explaination I will be focusing on the Form present on the Index.astro<br/>
 
+Code will only run when the DOM is loaded
 clearfilters() clears all filter inputs and resets.
 ```javascript
 
