@@ -102,6 +102,19 @@ It allows the users to submit their information so inspirado marketing can conta
 * Data Filtering: Allows users to filter and view data on another page.
 * Business Location: With the use of the leaflet API, the user can a google map style map to find and contact the business. 
 
+## Functions and Methods
+Within this section I will highlight some key <strong>Functions</stronG> and <strong>Methods</strong> I used through my website. 
+
+Logon.astro 
+<pre>
+```language
+document.addEventListener('DOMContentLoaded', () => {
+    // Code to run when DOM is loaded
+});
+```
+</pre>
+
+
 ## Demo
 
 Check out a live demo of the app [here](https://github.com/beginningofdays/inspirado-marketing).
