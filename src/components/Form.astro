@@ -33,34 +33,34 @@ import images from './js/services.json';
   <p class="component-content">Are you ready to build a thriving community for your brand on Reddit, Quora, or Discord? Discover your customized community strategy by <span class="text-hightlight">filling out the form below.</span> Our team at Inspirado Marketing will analyze your brand’s needs and provide a tailored plan to help you create and sustain a vibrant, engaged community.</p>
   <!-- Form Section -->
   <div class="component-form mb-1">
-      <form id="dataForm" method="post" action="https://sheetdb.io/api/v1/w7z9c2i2imfvw">
+      <form method="post" action="https://sheetdb.io/api/v1/w7z9c2i2imfvw" id="dataForm">
           <!-- Form Inputs -->
           <div class="row mb-3">
               <div class="col">
                   <div data-mdb-input-init class="form-outline">
-                      <input type="text" id="firstName" name="firstName" class="form-control" placeholder="First Name" />
+                      <input type="text" id="firstName" name="data[firstName]" class="form-control" placeholder="First Name" />
                   </div>
               </div>
               <div class="col">
                   <div data-mdb-input-init class="form-outline">
-                      <input type="text" id="lastName" name="lastName" class="form-control" placeholder="Last Name" />
+                      <input type="text" id="lastName" name="data[lastName]" class="form-control" placeholder="Last Name" />
                   </div>
               </div>
           </div>
           <div data-mdb-input-init class="form-outline mb-4">
-              <input type="text" id="companyName" name="companyName" class="form-control" placeholder="Company Name" />
+              <input type="text" id="companyName" name="data[companyName]" class="form-control" placeholder="Company Name" />
           </div>
           <div data-mdb-input-init class="form-outline mb-4">
-              <input type="text" id="address" name="address" class="form-control" placeholder="Address" />
+              <input type="text" id="address" name="data[address]" class="form-control" placeholder="Address" />
           </div>
           <div data-mdb-input-init class="form-outline mb-4">
-              <input type="email" id="email" name="email" class="form-control" placeholder="Email" />
+              <input type="email" id="email" name="data[email]" class="form-control" placeholder="Email" />
           </div>
           <div data-mdb-input-init class="form-outline mb-4">
-              <input type="number" id="phone" name="phone" class="form-control" placeholder="Phone" />
+              <input type="number" id="phone" name="data[phone]" class="form-control" placeholder="Phone" />
           </div>
           <div data-mdb-input-init class="form-outline mb-4">
-              <textarea class="form-control" id="message" name="message" rows="4" placeholder="Message"></textarea>
+              <textarea class="form-control" id="data[message]" name="message" rows="4" placeholder="Message"></textarea>
           </div>
           <button data-mdb-ripple-init type="submit" class="btn btn-primary btn-block mb-4">Submit</button>
       </form>
