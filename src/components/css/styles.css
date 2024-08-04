@@ -1,9 +1,9 @@
-/* Root Styles */
+/* ROOT STYLES */
 :root {
   --primary: #EFEDE4;
   --secondary: #ffffff;
   --header: #000000;
-  --accent: #FF5733; /* Accent color for call-to-action buttons */
+  --accent: #FF5733; /* Button Color */
   --hover-accent: #C70039; /* Darker shade for hover effect */
 }
 
@@ -28,7 +28,7 @@ body {
   height: 100%;
 }
 
-/* Fonts */
+/* FONT STYLES */
 h1 { 
   color: var(--secondary);
 }
@@ -66,6 +66,7 @@ p {
   background: var(--accent); /* Accent color for the line */
 }
 
+/*NAVIGATION STYLING*/
 /* Navbar Logo positioning */
 .flex-row {
   display: flex;
@@ -182,6 +183,8 @@ p {
   color: var(--accent); /* Accent color on hover */
 }
 
+/*BANNER STYLING*/
+
 /* Banner Button */
 .banner-button {
   background-color: var(--accent);
@@ -251,7 +254,8 @@ p {
   margin-bottom: 20px;
 }
 
-/* Lightbox Component Styles */
+
+/* LIGHTBOX STYLES */
 .image-gallery {
   display: flex;
   justify-content: space-between;
@@ -308,7 +312,7 @@ a:hover .overlay {
   pointer-events: auto; /* Allow interactions with the overlay */
 }
 
-
+/*FOOTER STYLES*/
 /*Footer item positioning*/ 
 .footer-content {
   display: flex;
@@ -384,8 +388,7 @@ a:hover .overlay {
 
 
 
-
-/* Login Component Styles */
+/* LOGON STYLES */
 .login-container {
   display: flex;
   flex-direction: column; /* Arrange elements vertically */
@@ -434,14 +437,13 @@ a:hover .overlay {
   background-color: var(--hover-accent); /* Darker accent on hover */
 }
 
-/* Admin Component Styles */
-/* Container around the table to control overflow */
+/* ADMIN STYLES*/
 .table-responsive {
   width: 100%;
   overflow-x: auto; /* Enable horizontal scrolling if necessary */
 }
 
-/* General table styles */
+/* table styles */
 #dataTable {
   width: 100%;
   border-collapse: collapse;
@@ -583,10 +585,7 @@ a:hover .overlay {
   pointer-events: auto;
 }
 
-/* Responsive Adjustments */
-@media screen and (max-width: 600px) {
-
-}
+/*MEDIA QUERIES*/
 
 /* Mobile view adjustments (smartphones and below, 767px and below) */
 @media (max-width: 767px) {
@@ -671,8 +670,6 @@ a:hover .overlay {
   }
 
 }
-
-
 
 /* Medium devices (tablets, 768px and up) */
 @media (min-width: 768px) {
