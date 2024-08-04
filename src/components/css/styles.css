@@ -85,7 +85,7 @@ p {
 .component-logo img {
   max-width: 100%;
   height: auto;
-  width: 200px; /* Adjust as necessary */
+  width: 200px; 
 }
 
 /* Desktop Navbar Menu */
@@ -97,7 +97,7 @@ p {
   width: 100%;
   height: 60px;
   padding: 0 15px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add shadow for depth */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /*shadow */
 }
 
 /*Divides Nav bar equally*/
@@ -180,7 +180,7 @@ p {
 }
 
 .panel-nav a:hover {
-  color: var(--accent); /* Accent color on hover */
+  color: var(--accent);
 }
 
 /*BANNER STYLING*/
@@ -271,8 +271,8 @@ p {
 .left-column a, .right-column a {
   position: relative; /* For positioning the overlay and text */
   margin-bottom: 5px;
-  overflow: hidden; /* To clip the overlay */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add shadow to images */
+  overflow: hidden; 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adds shadow to images */
 }
 
 /* left column child padding reset*/ 
@@ -397,7 +397,7 @@ a:hover .overlay {
   border-radius: 8px; /* Rounded corners for the form */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow effect for the form */
   width: 100%;
-  max-width: 600px; /* Set a maximum width for the form */
+  max-width: 600px; /*Max width for the form */
 }
 
 .login-heading {
@@ -440,7 +440,7 @@ a:hover .overlay {
 /* ADMIN STYLES*/
 .table-responsive {
   width: 100%;
-  overflow-x: auto; /* Enable horizontal scrolling if necessary */
+  overflow-x: auto; 
 }
 
 /* table styles */
@@ -537,13 +537,13 @@ a:hover .overlay {
 }
 
 .left-column {
-  width: 60%; /* Adjust as needed */
+  width: 60%; 
 }
 
 .right-column {
-  width: 38%; /* Adjust as needed */
   display: flex;
   flex-direction: column;
+  width: 38%; 
   gap: 10px; /* Space between stacked images */
 }
 
