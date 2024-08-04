@@ -441,31 +441,28 @@ a:hover .overlay {
   overflow-x: auto; /* Enable horizontal scrolling if necessary */
 }
 
-/* Adjusting table width and overflow within the flex-column */
-.flex-column {
-  display: flex;
-  flex-direction: column;
-  gap: 20px; /* Space between elements */
-  max-width: 100%; /* Ensure it doesn’t overflow the parent */
-  overflow: hidden; /* Contain the overflow */
-}
-
 /* General table styles */
 #dataTable {
   width: 100%;
   border-collapse: collapse;
   margin-top: 20px;
+  table-layout: fixed; /* Fix the table layout to control the column widths */
 }
 
-/* Table Header Styles */
 #dataTable thead {
   background-color: var(--header); /* Dark header background */
   color: var(--secondary); /* White text color */
 }
 
-#dataTable th {
+#dataTable th, #dataTable td {
   padding: 10px;
   text-align: left;
+  word-wrap: break-word; /* Allow content to wrap within cells */
+  white-space: normal; /* Allow text to wrap to the next line */
+}
+
+#dataTable th {
+  width: auto; /* Allow columns to adjust based on content */
 }
 
 /* Row Styles */
@@ -475,11 +472,6 @@ a:hover .overlay {
 
 #dataTable tbody tr:nth-child(odd) {
   background-color: #f9d0d0; /* Light red background for odd rows */
-}
-
-#dataTable td {
-  padding: 10px;
-  border-bottom: 1px solid #ddd; /* Light gray border for rows */
 }
 
 /* Filter Row Styles */
@@ -534,6 +526,24 @@ a:hover .overlay {
   background-color: #b3b3b3; /* Darker gray on hover */
 }
 
+/* Responsive Adjustments */
+@media screen and (max-width: 600px) {
+  #dataTable th, #dataTable td {
+    padding: 8px; /* Slightly reduce padding on smaller screens */
+  }
+
+  .filter-row {
+    flex-direction: column; /* Stack filters vertically on smaller screens */
+  }
+  
+  .filter-row input, .filter-row label {
+    width: 100%;
+  }
+
+  .button-row {
+    flex-direction: column; /* Stack buttons vertically on smaller screens */
+  }
+}
 
 /* Base Styles (default desktop layout) */
 .image-gallery {
