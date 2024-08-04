@@ -150,7 +150,85 @@ document.addEventListener('DOMContentLoaded', function() {
     const storedData = localStorage.getItem('sheetdb-form');
     displayData(storedData ? JSON.parse(storedData) : []);
 });
+```
+ApplyFilters() stored data based on user input 
+```javascript
+function applyFilter() {
+    const filterFirstname = (document.getElementById('filterFirstname') as HTMLInputElement)?.value.toLowerCase() || '';
+    const filterLastname = (document.getElementById('filterLastname') as HTMLInputElement)?.value.toLowerCase() || '';
+    const filterCompanyName = (document.getElementById('filterCompanyName') as HTMLInputElement)?.value.toLowerCase() || '';
+    const filterEmail = (document.getElementById('filterEmail') as HTMLInputElement)?.value.toLowerCase() || '';
+    const filterDate = (document.getElementById('filterDate') as HTMLInputElement)?.value || '';
 
+    const storedData = localStorage.getItem('sheetdb-form');
+    let allData: MarketingInformation[] = storedData ? JSON.parse(storedData) : [];
+
+    // Filtering logic
+    if (filterFirstname) allData = allData.filter((entry) => (entry.firstName || '').toLowerCase().includes(filterFirstname));
+    if (filterLastname) allData = allData.filter((entry) => (entry.lastName || '').toLowerCase().includes(filterLastname));
+    if (filterCompanyName) allData = allData.filter((entry) => (entry.companyName || '').toLowerCase().includes(filterCompanyName));
+    if (filterEmail) allData = allData.filter((entry) => (entry.email || '').toLowerCase().includes(filterEmail));
+    if (filterDate) allData = allData.filter((entry) => entry.date?.startsWith(filterDate));
+
+    displayData(allData);
+}
+```
+clearfilters() clears all filter inputs and resets.
+```javascript
+function clearFilters() {
+    const filterFirstname = document.getElementById('filterFirstname') as HTMLInputElement | null;
+    const filterLastname = document.getElementById('filterLastname') as HTMLInputElement | null;
+    const filterCompanyName = document.getElementById('filterCompanyName') as HTMLInputElement | null;
+    const filterEmail = document.getElementById('filterEmail') as HTMLInputElement | null;
+    const filterDate = document.getElementById('filterDate') as HTMLInputElement | null;
+
+    if (filterFirstname) filterFirstname.value = '';
+    if (filterLastname) filterLastname.value = '';
+    if (filterCompanyName) filterCompanyName.value = '';
+    if (filterEmail) filterEmail.value = '';
+    if (filterDate) filterDate.value = '';
+
+    const storedData = localStorage.getItem('sheetdb-form');
+    displayData(storedData ? JSON.parse(storedData) : []);
+}
+
+```
+displayData() displays data in the HTML table based on what filter is currently being used.
+```javascript
+function displayData(data: MarketingInformation[]) {
+    const dataDisplay = document.getElementById('dataDisplay');
+    if (dataDisplay) {
+        dataDisplay.innerHTML = ''; // Clear previous content
+
+        data.forEach(entry => {
+            const row = document.createElement('tr');
+            row.innerHTML = `
+                <td>${entry.firstName || 'N/A'}</td>
+                <td>${entry.lastName || 'N/A'}</td>
+                <td>${entry.companyName || 'N/A'}</td>
+                <td>${entry.email || 'N/A'}</td>
+                <td>${entry.message || 'N/A'}</td>
+                <td>${entry.date || 'N/A'}</td>
+            `;
+            dataDisplay.appendChild(row);
+        });
+    }
+}
+```
+toLowerCase() sonverts a string to lowercase.
+```javascript
+toLowerCase().includes(filterLastname)
+```
+
+clearfilters() clears all filter inputs and resets.
+```javascript
+
+```
+
+clearfilters() clears all filter inputs and resets.
+```javascript
+
+```
 
 
 ## Demo
