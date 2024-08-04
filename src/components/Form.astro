@@ -38,29 +38,29 @@ import images from './js/services.json';
           <div class="row mb-3">
               <div class="col">
                   <div data-mdb-input-init class="form-outline">
-                      <input type="text" id="firstName" name="data[firstName]" class="form-control" placeholder="First Name" />
+                      <input type="text" id="firstName" name="firstName" class="form-control" placeholder="First Name" />
                   </div>
               </div>
               <div class="col">
                   <div data-mdb-input-init class="form-outline">
-                      <input type="text" id="lastName" name="data[lastName]" class="form-control" placeholder="Last Name" />
+                      <input type="text" id="lastName" name="lastName" class="form-control" placeholder="Last Name" />
                   </div>
               </div>
           </div>
           <div data-mdb-input-init class="form-outline mb-4">
-              <input type="text" id="companyName" name="data[companyName]" class="form-control" placeholder="Company Name" />
+              <input type="text" id="companyName" name="companyName" class="form-control" placeholder="Company Name" />
           </div>
           <div data-mdb-input-init class="form-outline mb-4">
-              <input type="text" id="address" name="data[address]" class="form-control" placeholder="Address" />
+              <input type="text" id="address" name="address" class="form-control" placeholder="Address" />
           </div>
           <div data-mdb-input-init class="form-outline mb-4">
-              <input type="email" id="email" name="data[email]" class="form-control" placeholder="Email" />
+              <input type="email" id="email" name="email" class="form-control" placeholder="Email" />
           </div>
           <div data-mdb-input-init class="form-outline mb-4">
-              <input type="number" id="phone" name="data[phone]" class="form-control" placeholder="Phone" />
+              <input type="number" id="phone" name="phone" class="form-control" placeholder="Phone" />
           </div>
           <div data-mdb-input-init class="form-outline mb-4">
-              <textarea class="form-control" id="data[message]" name="message" rows="4" placeholder="Message"></textarea>
+              <textarea class="form-control" id="message" name="message" rows="4" placeholder="Message"></textarea>
           </div>
           <button data-mdb-ripple-init type="submit" class="btn btn-primary btn-block mb-4">Submit</button>
       </form>
@@ -102,7 +102,7 @@ class FormSubmission {
 
 // Event listener for form submission
 document.getElementById('dataForm')?.addEventListener('submit', function(e) {
-    e.preventDefault(); // Prevents the default form submission
+
 
     // Gather form data and cast elements to the correct type
     const form = document.getElementById('dataForm') as HTMLFormElement;
@@ -126,17 +126,6 @@ document.getElementById('dataForm')?.addEventListener('submit', function(e) {
         message,
         date
     );
-
-    fetch(form.action, {
-              method : "POST",
-              body: new FormData(document.getElementById("dataForm")),
-          }).then(
-              response => response.json()
-          ).then((html) => {
-            // you can put any JS code here
-            window.open('page2.html', '_blank');
-
-          });
 
     // Retrieve existing data from local storage
     let allData: FormSubmission[] = JSON.parse(localStorage.getItem('formData') ?? '[]');
