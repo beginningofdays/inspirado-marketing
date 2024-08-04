@@ -661,6 +661,10 @@ a:hover .overlay {
   .button-row {
     flex-direction: column; /* Stack buttons vertically on smaller screens */
   }
+
+  .component-services-wrapper {
+    flex-direction: column;
+  }
 }
 
 @media screen and (max-width: 400px) {
