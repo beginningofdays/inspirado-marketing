@@ -3,8 +3,9 @@
   --primary: #EFEDE4;
   --secondary: #ffffff;
   --header: #000000;
-  --accent: #ddff00; 
+  --accent: #D84315; 
   --hover-accent: #C70039;
+  --button:yellow;
 }
 
 /* Body */
@@ -187,8 +188,8 @@ p {
 
 /* Banner Button */
 .banner-button {
-  background-color: var(--accent);
-  color: var(--secondary);
+  background-color: var(--button);
+  color: red;
   border: none;
   padding: 10px 20px;
   font-size: 16px;
@@ -200,7 +201,7 @@ p {
 
 /*Button hover transform*/
 .banner-button:hover {
-  background-color: red; /* Darker accent color on hover */
+  background-color: var(--hover-accent); /* Darker accent color on hover */
   transform: scale(1.05); /* Slight scaling effect */
 }
 
