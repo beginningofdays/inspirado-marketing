@@ -136,8 +136,19 @@ Redirects the user to admin.astro if they enter the correct credentials
 ```javascript
 window.location.href = '/inspirado-marketing/admin'; // Redirect to admin page
 ```
-<strong>.astro</strong><br/>
+<strong>Admin.astro</strong><br/>
+```javascript
+document.addEventListener('DOMContentLoaded', function() {
+    const filterButton = document.getElementById('filterButton');
+    const clearButton = document.getElementById('clearButton');
 
+    if (filterButton) filterButton.addEventListener('click', applyFilter);
+    if (clearButton) clearButton.addEventListener('click', clearFilters);
+
+    // Initial display of data
+    const storedData = localStorage.getItem('sheetdb-form');
+    displayData(storedData ? JSON.parse(storedData) : []);
+});
 
 
 
