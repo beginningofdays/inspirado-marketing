@@ -526,34 +526,6 @@ a:hover .overlay {
   background-color: #b3b3b3; /* Darker gray on hover */
 }
 
-/* Responsive Adjustments */
-@media screen and (max-width: 600px) {
-  #dataTable th, #dataTable td {
-    padding: 8px; /* Slightly reduce padding on smaller screens */
-    font-size: 12px; /* Reduce text size for table headers and cells */
-  }
-
-  .filter-row {
-    flex-direction: column; /* Stack filters vertically on smaller screens */
-  }
-  
-  .filter-row input, .filter-row label {
-    width: 100%;
-  }
-
-  .button-row {
-    flex-direction: column; /* Stack buttons vertically on smaller screens */
-  }
-}
-
-@media screen and (max-width: 400px) {
-  #dataTable th, #dataTable td {
-    font-size: 10px; /* Further reduce text size on very small screens */
-    padding: 6px; /* Reduce padding to fit more content */
-  }
-}
-
-
 /* Base Styles (default desktop layout) */
 .image-gallery {
   display: flex;
@@ -611,6 +583,10 @@ a:hover .overlay {
   pointer-events: auto;
 }
 
+/* Responsive Adjustments */
+@media screen and (max-width: 600px) {
+
+}
 
 /* Mobile view adjustments (smartphones and below, 767px and below) */
 @media (max-width: 767px) {
@@ -670,11 +646,29 @@ a:hover .overlay {
     min-height: 430px; /* Adjust height as needed */
   }
 
+  #dataTable th, #dataTable td {
+    padding: 8px; /* Slightly reduce padding on smaller screens */
+    font-size: 12px; /* Reduce text size for table headers and cells */
+  }
+
   .filter-row {
-    flex-direction: column;
+    flex-direction: column; /* Stack filters vertically on smaller screens */
   }
   
+  .filter-row input, .filter-row label {
+    width: 100%;
+  }
 
+  .button-row {
+    flex-direction: column; /* Stack buttons vertically on smaller screens */
+  }
+}
+
+@media screen and (max-width: 400px) {
+  #dataTable th, #dataTable td {
+    font-size: 10px; /* Further reduce text size on very small screens */
+    padding: 6px; /* Reduce padding to fit more content */
+  }
 
 }
 
