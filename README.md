@@ -105,10 +105,10 @@ It allows the users to submit their information so inspirado marketing can conta
 ## Functions and Methods
 Within this section I will highlight some key <strong>Functions</stronG> and <strong>Methods</strong> I used through my website. 
 
-* <strong><u>Logon.astro<u></strong>
+* <strong>Logon.astro</strong>
+ // Code will only run when the DOM is loaded
 ```javascript
 document.addEventListener('DOMContentLoaded', () => {
-    // Code to run when DOM is loaded
 });
 ```
 ## Demo
