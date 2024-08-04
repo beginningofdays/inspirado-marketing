@@ -114,7 +114,7 @@ document.getElementById('sheetdb-form')?.addEventListener('submit', function(e) 
     const message = (document.getElementById('message') as HTMLTextAreaElement)?.value ?? '';
     const date = new Date().toLocaleString();
 
-    // Create a new instance of FormSubmission
+    // Instance of FormSubmission
     const formSubmission = new FormSubmission(
         firstName,
         lastName,
