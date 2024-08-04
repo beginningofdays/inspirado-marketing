@@ -110,7 +110,7 @@ Logon.astro
 function greet(name) {
     return `Hello, ${name}!`;
 }
-
+```
 ## Demo
 
 Check out a live demo of the app [here](https://github.com/beginningofdays/inspirado-marketing).
