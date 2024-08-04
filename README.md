@@ -10,6 +10,7 @@
 - [ClassesFunctionsMethods](#classesfunctionsmethods)
 - [Usage](#usage)
 - [Demo](#demo)
+- [Usage](#usage)
 - [Pages](#pages)
 - [Accessibility Report](#accessibility)
 - [Lighthouse Report](#lighthouse)
@@ -317,6 +318,20 @@ document.getElementById('sheetdb-form')?.addEventListener('submit', function(e) 
 
 Check out a live demo of the app [here](https://github.com/beginningofdays/inspirado-marketing).
 
+## Usage
+Google Account to access Google Sheetdb API <br/>
+Visit: https://sheetdb.io/
+<br/>
+Use the following:<br/>
+Email: inspiradomarketing776@gmail.com<br/>
+Password:lordoftherings!
+
+Administrator Information to logon to Administration page of website. 
+Visit: https://beginningofdays.github.io/inspirado-marketing/logon/ <br/> 
+Enter the following credentials:<br/> 
+Username: administrator<br/> 
+Password: lordoftherings
+
 ## Pages
 * Index - This is the home page of the website. Allow users to submit personal / business information and get service information.
 * Work - This page shows the different clients inspirado Marketing has worked with and is currently working with. 
@@ -326,39 +341,30 @@ Check out a live demo of the app [here](https://github.com/beginningofdays/inspi
 * Logon - Logon page for the Admin page
 * Admin - This page allows user to filter and view the information gathered from the forms on the Index page and GetStarted Page. 
 
-## Accessibility
+## Accessibility Report
 This report is in the Docs Folder
 
-SEO 
----
-Inspirado Marketing | Build & Engage
-Leading community marketing agency offering comprehensive services to build and engage your brand's online community.
+## Lighthouse Report
+This report is in the Docs Folder
 
-Website Features:
------------------
-FORM
-*****
-This Form exists on two pages, Index.html and GetStarted.html
-Information entered into these forms will be storage in local storage. 
-This information will be accessiable only from the admin.html page. 
-admin.html can be accessed via the logon.html page. 
+## Performance Report
+This report is in the Docs Folder
 
-https://sheetdb.io/
-usage 
-inspiradomarketing776@gmail.com
-lordoftherings!
+## Seo Report
+This report is in the Docs Folder
 
-LOGON PAGE
-**********
-Open Logon.html 
-Enter the following
-Username: administrator 
-Password: lordoftherings
+Standard Meta Description Applied to Website 
+```javascript
+   <meta charset="UTF-8" />
+   <meta name="description" content="Leading community marketing agency offering comprehensive services to build and engage your brand's online community." />
+   <meta name="viewport" content="width=device-width" />
+   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+   <meta name="generator" content={Astro.generator} />
+```
+```javascript
+<Layout title="Inspirado Marketing | Build & Engage">
+```
 
-ADMIN PAGE
-**********
-Local storage data is retrieve and is presented as a table on this page. 
-This setup provides an interface for administrators to view and filter data entries based on various criteria.
 
 # Astro Starter Kit: Basics
 
