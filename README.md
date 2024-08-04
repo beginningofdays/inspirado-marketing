@@ -13,6 +13,7 @@
 - [Lighthouse Report](#lighthouse)
 - [Performance Report](#Performance)
 - [Technologies](#technologies)
+- [Conclusion](#conclusion)
   
 <strong>Introduction</strong><br/>
 The Aim of the project is to create a Community Marketing Website.<br/>
