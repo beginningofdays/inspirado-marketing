@@ -1,10 +1,10 @@
-##Website Name: Inspirado-Marketing<br/>
-#Author: Albert Gillick
+## Website Name: Inspirado-Marketing<br/>
+## Author: Albert Gillick
 
 
 ## Table of Contents
-
 - [Introduction](#introduction)
+- [Website Structure](#websitestructure)
 - [Features](#features)
 - [Functions and Methods](functions&methods)
 - [Usage](#usage)
@@ -15,12 +15,12 @@
 - [Technologies](#technologies)
 - [Conclusion](#conclusion)
   
-<strong>Introduction</strong><br/>
+## Introduction<br/>
 The Aim of the project is to create a Community Marketing Website.<br/>
 The Marketing Website offers information about the about the business services. <br/>
 It allows the users to submit their information so inspirado marketing can contact them.<br/>
 
-<strong>Structure of the Website</strong>
+## Structure of the Website
 ```text
 /
 ├── public/
