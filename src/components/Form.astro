@@ -127,6 +127,17 @@ document.getElementById('dataForm')?.addEventListener('submit', function(e) {
         date
     );
 
+    fetch(form.action, {
+              method : "POST",
+              body: new FormData(document.getElementById("dataForm")),
+          }).then(
+              response => response.json()
+          ).then((html) => {
+            // you can put any JS code here
+            window.open('page2.html', '_blank');
+
+          });
+
     // Retrieve existing data from local storage
     let allData: FormSubmission[] = JSON.parse(localStorage.getItem('formData') ?? '[]');
     // Add new data
