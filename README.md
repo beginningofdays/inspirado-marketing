@@ -368,12 +368,12 @@ Standard Meta Description Applied to Website
 <Layout title="Inspirado Marketing | Build & Engage">
 ```
 ## Technologies & Coding Language
-*Astro Framework
-*Node JS
-*HTML 
-*CSS
-*Javascript
-*API
+* Astro Framework
+* Node JS
+* HTML 
+* CSS
+* Javascript
+* API
 
 ## Conclusion
 Creating Inspirado Marketing website was an interesting challenge. The website can be developed alot more. Given enough time I would of liked to have added more features to the site, like a blog. I did not achieve exactly what I wanted with design and functionality, but i am satisfied with the result. 
