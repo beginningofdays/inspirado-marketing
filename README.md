@@ -352,6 +352,9 @@ Enter the following credentials:<br/>
 Username: administrator<br/> 
 Password: lordoftherings
 
+<strong>LocalStorage</strong> <br/>
+Due to the limitations of local storage, when testing the forms on the website be aware that the data will only be stored on the broswer you are using at the time. 
+
 ## Pages
 * Index - This is the home page of the website. Allow users to submit personal / business information and get service information.
 * Work - This page shows the different clients inspirado Marketing has worked with and is currently working with. 
@@ -379,4 +382,4 @@ This report is in the Docs Folder
 * API
 
 ## Conclusion
-Creating Inspirado Marketing website was an interesting challenge. The website can be developed alot more. Given enough time I would of liked to have added more features to the site, like a blog. I did not achieve exactly what I wanted with design and functionality, but i am satisfied with the result. 
+Creating Inspirado Marketing website was an interesting challenge. The website can be developed alot more. Given enough time I would of liked to have added more features to the site, like a blog. I did not achieve exactly what I wanted with design and functionality, and there is a limitation using clientside localstorage. But i am satisfied with the result. 
