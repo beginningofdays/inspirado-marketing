@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://github.com/beginningofdays/inspirado-marketing/blob/main/sitemap.xml
