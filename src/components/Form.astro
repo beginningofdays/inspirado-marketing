@@ -54,10 +54,6 @@ import images from './js/services.json';
           <input type="text" id="companyName" name="companyName" class="form-control" placeholder="Company Name" />
       </div>
       <div data-mdb-input-init class="form-outline mb-4">
-          <label for="address">Address:</label>
-          <input type="text" id="address" name="address" class="form-control" placeholder="Address" />
-      </div>
-      <div data-mdb-input-init class="form-outline mb-4">
           <label for="email">Email:</label>
           <input type="email" id="email" name="email" class="form-control" placeholder="Email" />
       </div>
@@ -80,7 +76,6 @@ class FormSubmission {
     firstName: string;
     lastName: string;
     companyName: string;
-    address: string;
     email: string;
     phone: string;
     message: string;
@@ -90,7 +85,6 @@ class FormSubmission {
         firstName: string,
         lastName: string,
         companyName: string,
-        address: string,
         email: string,
         phone: string,
         message: string,
@@ -99,7 +93,6 @@ class FormSubmission {
         this.firstName = firstName;
         this.lastName = lastName;
         this.companyName = companyName;
-        this.address = address;
         this.email = email;
         this.phone = phone;
         this.message = message;
@@ -116,7 +109,6 @@ document.getElementById('sheetdb-form')?.addEventListener('submit', function(e) 
     const firstName = (document.getElementById('firstName') as HTMLInputElement)?.value ?? '';
     const lastName = (document.getElementById('lastName') as HTMLInputElement)?.value ?? '';
     const companyName = (document.getElementById('companyName') as HTMLInputElement)?.value ?? '';
-    const address = (document.getElementById('address') as HTMLInputElement)?.value ?? '';
     const email = (document.getElementById('email') as HTMLInputElement)?.value ?? '';
     const phone = (document.getElementById('phone') as HTMLInputElement)?.value ?? '';
     const message = (document.getElementById('message') as HTMLTextAreaElement)?.value ?? '';
@@ -127,7 +119,6 @@ document.getElementById('sheetdb-form')?.addEventListener('submit', function(e) 
         firstName,
         lastName,
         companyName,
-        address,
         email,
         phone,
         message,
