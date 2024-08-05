@@ -5,7 +5,7 @@ import images from './js/services.json';
   <div class="component-title">
       <div class="component-title-wrapper">
           <div class="component-line"></div>
-          <h2>Community Marketing</h2>
+          <span class="community-headers">Community Marketing</span>
           <div class="component-line"></div>
       </div>
   </div>
@@ -27,7 +27,7 @@ import images from './js/services.json';
 
   <div class="component-title-wrapper">
       <div class="component-line"></div>
-      <h2>Community Strategy</h2>
+      <span class="community-headers">Community Strategy</span>
       <div class="component-line"></div>
   </div>
   <p class="component-content">Are you ready to build a thriving community for your brand on Reddit, Quora, or Discord? Discover your customized community strategy by <span class="text-hightlight">filling out the form below.</span> Our team at Inspirado Marketing will analyze your brand’s needs and provide a tailored plan to help you create and sustain a vibrant, engaged community.</p>
@@ -213,6 +213,10 @@ document.getElementById('sheetdb-form')?.addEventListener('submit', function(e) 
   align-items: center;
   margin-bottom: 10px;
   width: 100%;
+}
+
+.community-headers{
+  font-size: 1.8em; 
 }
 
 /* Highlighted and White Form Labels */
