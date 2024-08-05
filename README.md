@@ -319,17 +319,17 @@ document.getElementById('sheetdb-form')?.addEventListener('submit', function(e) 
 Check out a live demo of the website [here](https://github.com/beginningofdays/inspirado-marketing) inspirado-marketing
 
 ## Usage
-Home Page Link<br/>
+<strong>Home Page Link</strong><br/>
 This has been embedded within the main Inspirado Marketing Logo on the main Navigation bar and on the Inspirado Marketing Logo located on the site footer.
 
-Google Account to access Google Sheetdb API <br/>
+<strong>Google Account to access Google Sheetdb API</strong> <br/>
 Visit: https://sheetdb.io/
 <br/>
 Use the following:<br/>
 Email: inspiradomarketing776@gmail.com<br/>
 Password:lordoftherings!
 
-Administrator Information to logon to Administration page of website.<br/>  
+<strong>Administrator Information to logon to Administration page of website.</strong><br/>  
 Visit: https://beginningofdays.github.io/inspirado-marketing/logon/ <br/> 
 Enter the following credentials:<br/> 
 Username: administrator<br/> 
