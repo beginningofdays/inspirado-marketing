@@ -2,7 +2,6 @@
 <strong>Author:</strong> Albert Gillick<br/>
 <strong>Sudent Number: </strong>E10869287
 
-
 ## Table of Contents
 - [Introduction](#introduction)
 - [Website Structure](#websitestructure)
