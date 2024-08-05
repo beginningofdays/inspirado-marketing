@@ -352,6 +352,9 @@ Enter the following credentials:<br/>
 Username: administrator<br/> 
 Password: lordoftherings
 
+<strong>LocalStorage</strong> <br/>
+Due to the limitations of local storage, when testing the forms on the website be aware that the data will only be stored on the broswer you are using at the time. 
+
 ## Pages
 * Index - This is the home page of the website. Allow users to submit personal / business information and get service information.
 * Work - This page shows the different clients inspirado Marketing has worked with and is currently working with. 
