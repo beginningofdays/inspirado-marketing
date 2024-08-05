@@ -1,28 +1,3 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Responsive PDF Viewer</title>
-    <style>
-        .pdf-container {
-            position: relative;
-            width: 100%;
-            height: 100vh; /* Full viewport height */
-            overflow: hidden;
-        }
-        .pdf-container iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            border: none;
-        }
-    </style>
-</head>
-<body>
-    <h1>PDF Document</h1>
-    <div class="pdf-container">
-        <iframe src="path/to/your-file.pdf"></iframe>
-    </div>
-</body>
-</html>
+# Project Documentation
+
+You can view the PDF documentation [here](docs/Accessibility-Report.pdf).
