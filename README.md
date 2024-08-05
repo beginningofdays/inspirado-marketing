@@ -20,9 +20,9 @@
 - [Conclusion](#conclusion)
   
 ## Introduction<br/>
-The Aim of the project is to create a Community Marketing Website.<br/>
-The Marketing Website offers information about the about the business services. <br/>
-It allows the users to submit their information so inspirado marketing can contact them.<br/>
+The Aim of the project swas to create a Community Marketing Website.<br/>
+The Marketing Website named "Inspriado Marketing" offers information about community marketing and the business services offered. <br/>
+The primary goals of the website is to gather customer information and to inform the customer of inspirado marketing services<br/>
 
 ## Website Structure
 ```text
