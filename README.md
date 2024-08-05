@@ -329,8 +329,8 @@ Standard Meta Description and Title Applied to Website
 <Layout title="Inspirado Marketing | Build & Engage">
 ```
 <br/>
-Sitemap.XML - [here](https://github.com/beginningofdays/inspirado-marketing/blob/main/sitemap.xml) <br/>
-Robot.txt - [here](https://github.com/beginningofdays/inspirado-marketing/blob/main/robots.txt)
+Sitemap.XML - Click [here](https://github.com/beginningofdays/inspirado-marketing/blob/main/sitemap.xml) <br/>
+Robot.txt - Click [here](https://github.com/beginningofdays/inspirado-marketing/blob/main/robots.txt)
 
 ## Usage
 <strong>Home Page Link</strong><br/>
