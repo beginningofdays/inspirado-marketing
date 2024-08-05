@@ -9,7 +9,6 @@
 - [ClassesFunctionsMethods](#classesfunctionsmethods)
 - [Usage](#usage)
 - [Demo](#demo)
-- [Usage](#usage)
 - [Pages](#pages)
 - [Accessibility Report](#accessibility)
 - [Lighthouse Report](#lighthouse)
