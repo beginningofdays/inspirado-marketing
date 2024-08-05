@@ -1,6 +1,7 @@
 <strong>Website Name:</strong> Inspirado-Marketing<br/>
 <strong>Author:</strong> Albert Gillick<br/>
-<strong>Sudent Number: </strong>E10869287
+<strong>Student Number: </strong>E10869287
+<strong>Website URL: </strong>https://beginningofdays.github.io/inspirado-marketing/index
 
 ## Table of Contents
 - [Introduction](#introduction)
