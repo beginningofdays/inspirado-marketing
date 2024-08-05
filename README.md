@@ -319,6 +319,9 @@ document.getElementById('sheetdb-form')?.addEventListener('submit', function(e) 
 Check out a live demo of the website [here](https://github.com/beginningofdays/inspirado-marketing) inspirado-marketing
 
 ## Usage
+Home Page Link<br/>
+This has been embedded within the main Inspirado Marketing Logo on the main Navigation bar and on the Inspirado Marketing Logo located on the site footer.
+
 Google Account to access Google Sheetdb API <br/>
 Visit: https://sheetdb.io/
 <br/>
