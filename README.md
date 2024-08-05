@@ -1,6 +1,6 @@
 <strong>Website Name:</strong> Inspirado-Marketing<br/>
 <strong>Author:</strong> Albert Gillick<br/>
-<strong>Sudent Number:</strong>E10869287
+<strong>Sudent Number: </strong>E10869287
 
 
 ## Table of Contents
@@ -20,9 +20,9 @@
 - [Conclusion](#conclusion)
   
 ## Introduction<br/>
-The Aim of the project is to create a Community Marketing Website.<br/>
-The Marketing Website offers information about the about the business services. <br/>
-It allows the users to submit their information so inspirado marketing can contact them.<br/>
+The Aim of the project swas to create a Community Marketing Website.<br/>
+The Marketing Website named "Inspriado Marketing" offers information about community marketing and the business services offered. <br/>
+The primary goals of the website is to gather customer information and to inform the customer of inspirado marketing services<br/>
 
 ## Website Structure
 ```text
@@ -319,15 +319,18 @@ document.getElementById('sheetdb-form')?.addEventListener('submit', function(e) 
 Check out a live demo of the website [here](https://github.com/beginningofdays/inspirado-marketing) inspirado-marketing
 
 ## Usage
-Google Account to access Google Sheetdb API <br/>
+<strong>Home Page Link</strong><br/>
+This has been embedded within the main Inspirado Marketing Logo on the main Navigation bar and on the Inspirado Marketing Logo located on the site footer.
+
+<strong>Google Account to access Google Sheetdb API</strong> <br/>
 Visit: https://sheetdb.io/
 <br/>
 Use the following:<br/>
 Email: inspiradomarketing776@gmail.com<br/>
 Password:lordoftherings!
 
-Administrator Information to logon to Administration page of website.<br/>  
-Visit: https://beginningofdays.github.io/inspirado-marketing/logon/ <br/> 
+<strong>Administrator Information to logon to Administration page of website.</strong> <br/>
+https://beginningofdays.github.io/inspirado-marketing/logon/ <br/> 
 Enter the following credentials:<br/> 
 Username: administrator<br/> 
 Password: lordoftherings
@@ -365,12 +368,12 @@ Standard Meta Description Applied to Website
 <Layout title="Inspirado Marketing | Build & Engage">
 ```
 ## Technologies & Coding Language
-*Astro Framework
-*Node JS
-*HTML 
-*CSS
-*Javascript
-*API
+* Astro Framework
+* Node JS
+* HTML 
+* CSS
+* Javascript
+* API
 
 ## Conclusion
 Creating Inspirado Marketing website was an interesting challenge. The website can be developed alot more. Given enough time I would of liked to have added more features to the site, like a blog. I did not achieve exactly what I wanted with design and functionality, but i am satisfied with the result. 
