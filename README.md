@@ -379,4 +379,4 @@ This report is in the Docs Folder
 * API
 
 ## Conclusion
-Creating Inspirado Marketing website was an interesting challenge. The website can be developed alot more. Given enough time I would of liked to have added more features to the site, like a blog. I did not achieve exactly what I wanted with design and functionality, but i am satisfied with the result. 
+Creating Inspirado Marketing website was an interesting challenge. The website can be developed alot more. Given enough time I would of liked to have added more features to the site, like a blog. I did not achieve exactly what I wanted with design and functionality, and there is a limitation using clientside localstorage. But i am satisfied with the result. 
