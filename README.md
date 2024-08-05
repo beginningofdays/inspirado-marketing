@@ -370,6 +370,7 @@ This report is in the Docs Folder
 
 ## Technologies & Coding Language
 * Astro Framework
+* Bootstrap
 * Node JS
 * HTML 
 * CSS
