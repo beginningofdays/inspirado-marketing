@@ -97,7 +97,7 @@ The primary goals of the website is to gather customer information and to inform
 └── Ts env.d.ts
 ```
 ## Features
-* User Form: Collects user information such as Firstname, Lastname, Company Name, Address, Email, Phone, Message and Date.
+* User Form: Collects user information such as Firstname, Lastname, Company Name, Email, Phone, Message and Date.
 * Local Storage: Saves user data locally for quick access and retrieval.
 * Google Sheets Integration: Sends collected data to a Google Sheet using the Google Sheetsdb API. 
 * Data Filtering: Allows users to filter and view data on another page.
@@ -230,7 +230,6 @@ class FormSubmission {
     firstName: string;
     lastName: string;
     companyName: string;
-    address: string;
     email: string;
     phone: string;
     message: string;
@@ -240,7 +239,6 @@ class FormSubmission {
         firstName: string,
         lastName: string,
         companyName: string,
-        address: string,
         email: string,
         phone: string,
         message: string,
@@ -249,7 +247,6 @@ class FormSubmission {
         this.firstName = firstName;
         this.lastName = lastName;
         this.companyName = companyName;
-        this.address = address;
         this.email = email;
         this.phone = phone;
         this.message = message;
@@ -266,7 +263,6 @@ document.getElementById('sheetdb-form')?.addEventListener('submit', function(e) 
     const firstName = (document.getElementById('firstName') as HTMLInputElement)?.value ?? '';
     const lastName = (document.getElementById('lastName') as HTMLInputElement)?.value ?? '';
     const companyName = (document.getElementById('companyName') as HTMLInputElement)?.value ?? '';
-    const address = (document.getElementById('address') as HTMLInputElement)?.value ?? '';
     const email = (document.getElementById('email') as HTMLInputElement)?.value ?? '';
     const phone = (document.getElementById('phone') as HTMLInputElement)?.value ?? '';
     const message = (document.getElementById('message') as HTMLTextAreaElement)?.value ?? '';
@@ -277,7 +273,6 @@ document.getElementById('sheetdb-form')?.addEventListener('submit', function(e) 
         firstName,
         lastName,
         companyName,
-        address,
         email,
         phone,
         message,
