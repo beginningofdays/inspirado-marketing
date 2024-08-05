@@ -92,7 +92,7 @@
       const filterEmail = (document.getElementById('filterEmail') as HTMLInputElement)?.value.toLowerCase() || '';
       const filterDate = (document.getElementById('filterDate') as HTMLInputElement)?.value || '';
 
-      const storedData = localStorage.getItem('formData');
+      const storedData = localStorage.getItem('sheetdb-form');
       let allData: MarketingInformation[] = storedData ? JSON.parse(storedData) : [];
 
       if (filterFirstname) {
