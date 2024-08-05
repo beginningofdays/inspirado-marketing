@@ -316,6 +316,22 @@ document.getElementById('sheetdb-form')?.addEventListener('submit', function(e) 
 
 Check out a live demo of the website [here](https://github.com/beginningofdays/inspirado-marketing) inspirado-marketing
 
+## Seo 
+Standard Meta Description and Title Applied to Website 
+```javascript
+   <meta charset="UTF-8" />
+   <meta name="description" content="Leading community marketing agency offering comprehensive services to build and engage your brand's online community." />
+   <meta name="viewport" content="width=device-width" />
+   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+   <meta name="generator" content={Astro.generator} />
+```
+```javascript
+<Layout title="Inspirado Marketing | Build & Engage">
+```
+<br/>
+Sitemap.XML - [here](https://github.com/beginningofdays/inspirado-marketing/blob/main/sitemap.xml) <br/>
+Robot.txt - [here](https://github.com/beginningofdays/inspirado-marketing/blob/main/robots.txt)
+
 ## Usage
 <strong>Home Page Link</strong><br/>
 This has been embedded within the main Inspirado Marketing Logo on the main Navigation bar and on the Inspirado Marketing Logo located on the site footer.
@@ -355,20 +371,6 @@ This report is in the Docs Folder
 ## Performance Report
 This report is in the Docs Folder
 
-## Seo Report
-This report is in the Docs Folder
-
-Standard Meta Description Applied to Website 
-```javascript
-   <meta charset="UTF-8" />
-   <meta name="description" content="Leading community marketing agency offering comprehensive services to build and engage your brand's online community." />
-   <meta name="viewport" content="width=device-width" />
-   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-   <meta name="generator" content={Astro.generator} />
-```
-```javascript
-<Layout title="Inspirado Marketing | Build & Engage">
-```
 ## Technologies & Coding Language
 * Astro Framework
 * Node JS
