@@ -387,7 +387,6 @@ a:hover .overlay {
 }
 
 
-
 /* LOGON STYLES */
 .login-container {
   display: flex;
@@ -667,7 +666,7 @@ a:hover .overlay {
 @media screen and (max-width: 400px) {
   #dataTable th, #dataTable td {
     font-size: 10px; /* Further reduce text size on very small screens */
-    padding: 6px; /* Reduce padding to fit more content */
+    padding: 6px; 
   }
 
 }
