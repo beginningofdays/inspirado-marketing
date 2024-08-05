@@ -331,10 +331,6 @@ Visit: https://sheetdb.io/ <br/>
 Use the Same Google account to access the dashboard. 
 <br/>
 
-Use the following:<br/>
-Email: inspiradomarketing776@gmail.com<br/>
-Password:lordoftherings!
-
 <strong>Administrator Information to logon to Administration page of website.</strong> <br/>
 https://beginningofdays.github.io/inspirado-marketing/logon/ <br/> 
 Enter the following credentials:<br/> 
