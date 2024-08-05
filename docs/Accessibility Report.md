@@ -1,3 +1,3 @@
-# Project Documentation
+# Accessibility Report
 
-You can view the PDF documentation [here](docs/Accessibility-Report.pdf).
+You can view the full PDF [here](https://github.com/beginningofdays/inspirado-marketing/blob/main/docs/Accessibility-Report.pdf).
