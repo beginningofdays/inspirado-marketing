@@ -330,7 +330,7 @@ Email: inspiradomarketing776@gmail.com<br/>
 Password:lordoftherings!
 
 <strong>Administrator Information to logon to Administration page of website.</strong> 
-Visit: https://beginningofdays.github.io/inspirado-marketing/logon/ <br/> 
+https://beginningofdays.github.io/inspirado-marketing/logon/ <br/> 
 Enter the following credentials:<br/> 
 Username: administrator<br/> 
 Password: lordoftherings
