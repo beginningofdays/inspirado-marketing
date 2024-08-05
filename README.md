@@ -2,7 +2,6 @@
 <strong>Author:</strong> Albert Gillick<br/>
 <strong>Sudent Number: </strong>E10869287
 
-
 ## Table of Contents
 - [Introduction](#introduction)
 - [Website Structure](#websitestructure)
@@ -10,7 +9,6 @@
 - [ClassesFunctionsMethods](#classesfunctionsmethods)
 - [Usage](#usage)
 - [Demo](#demo)
-- [Usage](#usage)
 - [Pages](#pages)
 - [Accessibility Report](#accessibility)
 - [Lighthouse Report](#lighthouse)
@@ -322,12 +320,16 @@ Check out a live demo of the website [here](https://github.com/beginningofdays/i
 <strong>Home Page Link</strong><br/>
 This has been embedded within the main Inspirado Marketing Logo on the main Navigation bar and on the Inspirado Marketing Logo located on the site footer.
 
-<strong>Google Account to access Google Sheetdb API</strong> <br/>
-Visit: https://sheetdb.io/
-<br/>
-Use the following:<br/>
+<strong>Google Account to access Google Spreadsheet(MarketingInformation) and Sheetdb API</strong> <br/>
+Visit:https://mail.google.com/<br/>
 Email: inspiradomarketing776@gmail.com<br/>
-Password:lordoftherings!
+Password: lordoftherings!<br/>
+Select google Spreadsheets linked to the account and it will show you the google spreadsheet created for the API
+
+<strong>Backend of Google Sheetdb API</strong><br/>
+Visit: https://sheetdb.io/ <br/>
+Use the Same Google account to access the dashboard. 
+<br/>
 
 <strong>Administrator Information to logon to Administration page of website.</strong> <br/>
 https://beginningofdays.github.io/inspirado-marketing/logon/ <br/> 
