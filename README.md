@@ -323,7 +323,7 @@ This has been embedded within the main Inspirado Marketing Logo on the main Navi
 <strong>Google Account to access Google Spreadsheet(MarketingInformation) and Sheetdb API</strong> <br/>
 Visit:https://mail.google.com/<br/>
 Email: inspiradomarketing776@gmail.com<br/>
-Password:lordoftherings!
+Password:lordoftherings!<br/>
 Select google Spreadsheets linked to the account and it will show you the google spreadsheet created for the API
 
 <strong>Backend of Google Sheetdb API</strong><br/>
